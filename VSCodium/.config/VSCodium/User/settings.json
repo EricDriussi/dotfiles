@@ -1,0 +1,30 @@
+{
+    "workbench.startupEditor": "newUntitledFile",
+    "editor.formatOnPaste": true,
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "prettier.tabWidth": 4,
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.fontFamily": "'ubuntu mono',  'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "window.zoomLevel": 0,
+    "files.autoSave": "off",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "prettier.singleQuote": true,
+    "prettier.useTabs": true,
+    "html.format.indentInnerHtml": true,
+    "emmet.excludeLanguages": [
+    
+        "markdown"
+    ],
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.insertSpaces": false,
+    "editor.fontSize": 16
+}

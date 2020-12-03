@@ -1,0 +1,38 @@
+[2020-11-28 16:43:40.453] [sharedprocess] [info] main {"machineId":"b5d9a34477c8b06012bf2ff573785c5c898d3a042eadbe40e2905ff9e678b92f","windowId":2}
+[2020-11-28 16:44:20.462] [sharedprocess] [info] Starting to clean up unused language packs.
+[2020-11-28 17:49:36.021] [sharedprocess] [info] Installing extension: esbenp.prettier-vscode
+[2020-11-28 17:49:37.191] [sharedprocess] [info] Downloaded extension: esbenp.prettier-vscode undefined
+[2020-11-28 17:49:37.551] [sharedprocess] [info] Extracted extension to /home/eric/.vscode-oss/extensions/.esbenp.prettier-vscode-5.8.0: esbenp.prettier-vscode
+[2020-11-28 17:49:37.552] [sharedprocess] [info] Renamed to /home/eric/.vscode-oss/extensions/esbenp.prettier-vscode-5.8.0
+[2020-11-28 17:49:37.553] [sharedprocess] [info] Installation completed. esbenp.prettier-vscode
+[2020-11-28 17:49:37.559] [sharedprocess] [info] Extensions installed successfully: esbenp.prettier-vscode
+[2020-11-28 17:50:47.927] [sharedprocess] [info] Installing extension: fivethree.vscode-ionic-snippets
+[2020-11-28 17:50:48.297] [sharedprocess] [info] Downloaded extension: fivethree.vscode-ionic-snippets undefined
+[2020-11-28 17:50:48.327] [sharedprocess] [info] Extracted extension to /home/eric/.vscode-oss/extensions/.fivethree.vscode-ionic-snippets-2.2.2: fivethree.vscode-ionic-snippets
+[2020-11-28 17:50:48.327] [sharedprocess] [info] Renamed to /home/eric/.vscode-oss/extensions/fivethree.vscode-ionic-snippets-2.2.2
+[2020-11-28 17:50:48.328] [sharedprocess] [info] Installation completed. fivethree.vscode-ionic-snippets
+[2020-11-28 17:50:48.331] [sharedprocess] [info] Extensions installed successfully: fivethree.vscode-ionic-snippets
+[2020-11-28 17:50:55.519] [sharedprocess] [info] Installing extension: mikael.angular-beastcode
+[2020-11-28 17:50:56.480] [sharedprocess] [info] Downloaded extension: mikael.angular-beastcode undefined
+[2020-11-28 17:50:56.571] [sharedprocess] [info] Extracted extension to /home/eric/.vscode-oss/extensions/.mikael.angular-beastcode-10.0.3: mikael.angular-beastcode
+[2020-11-28 17:50:56.571] [sharedprocess] [info] Renamed to /home/eric/.vscode-oss/extensions/mikael.angular-beastcode-10.0.3
+[2020-11-28 17:50:56.572] [sharedprocess] [info] Installation completed. mikael.angular-beastcode
+[2020-11-28 17:50:56.576] [sharedprocess] [info] Extensions installed successfully: mikael.angular-beastcode
+[2020-11-28 17:55:45.202] [sharedprocess] [info] Installing extension: vscodevim.vim
+[2020-11-28 17:55:45.953] [sharedprocess] [info] Downloaded extension: vscodevim.vim undefined
+[2020-11-28 17:55:46.046] [sharedprocess] [info] Extracted extension to /home/eric/.vscode-oss/extensions/.vscodevim.vim-1.17.1: vscodevim.vim
+[2020-11-28 17:55:46.046] [sharedprocess] [info] Renamed to /home/eric/.vscode-oss/extensions/vscodevim.vim-1.17.1
+[2020-11-28 17:55:46.048] [sharedprocess] [info] Installation completed. vscodevim.vim
+[2020-11-28 17:55:46.052] [sharedprocess] [info] Extensions installed successfully: vscodevim.vim
+[2020-11-28 17:58:10.284] [sharedprocess] [info] Installing extension: pkief.material-icon-theme
+[2020-11-28 17:58:11.047] [sharedprocess] [info] Downloaded extension: pkief.material-icon-theme undefined
+[2020-11-28 17:58:11.729] [sharedprocess] [info] Extracted extension to /home/eric/.vscode-oss/extensions/.pkief.material-icon-theme-4.4.0: pkief.material-icon-theme
+[2020-11-28 17:58:11.729] [sharedprocess] [info] Renamed to /home/eric/.vscode-oss/extensions/pkief.material-icon-theme-4.4.0
+[2020-11-28 17:58:11.730] [sharedprocess] [info] Installation completed. pkief.material-icon-theme
+[2020-11-28 17:58:11.734] [sharedprocess] [info] Extensions installed successfully: pkief.material-icon-theme
+[2020-11-28 17:58:59.203] [sharedprocess] [info] Installing extension: abusaidm.html-snippets
+[2020-11-28 17:58:59.597] [sharedprocess] [info] Downloaded extension: abusaidm.html-snippets undefined
+[2020-11-28 17:58:59.615] [sharedprocess] [info] Extracted extension to /home/eric/.vscode-oss/extensions/.abusaidm.html-snippets-0.2.1: abusaidm.html-snippets
+[2020-11-28 17:58:59.616] [sharedprocess] [info] Renamed to /home/eric/.vscode-oss/extensions/abusaidm.html-snippets-0.2.1
+[2020-11-28 17:58:59.617] [sharedprocess] [info] Installation completed. abusaidm.html-snippets
+[2020-11-28 17:58:59.620] [sharedprocess] [info] Extensions installed successfully: abusaidm.html-snippets

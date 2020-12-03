@@ -1,0 +1,75 @@
+Looking for git in: git
+Using git 2.29.2 from git
+> git rev-parse --git-dir
+Open repository: /home/eric/Documents/ionic/AppPacientes
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git check-ignore -v -z --stdin
+> git show --textconv :ionic.config.json
+> git ls-files --stage -- /home/eric/Documents/ionic/AppPacientes/ionic.config.json
+> git cat-file -s 4d7f2186a589df28e4e039f4d00b8eb227a68bf2
+> git check-ignore -v -z --stdin
+> git show --textconv :src/main.ts
+> git ls-files --stage -- /home/eric/Documents/ionic/AppPacientes/src/main.ts
+> git cat-file -s 9cf694b169edfe64ab57be3cc6608d8cc3b8c3ea
+> git show --textconv :src/main.ts
+> git ls-files --stage -- /home/eric/Documents/ionic/AppPacientes/src/main.ts
+> git cat-file -s 9cf694b169edfe64ab57be3cc6608d8cc3b8c3ea
+> git show --textconv :src/main.ts
+> git ls-files --stage -- /home/eric/Documents/ionic/AppPacientes/src/main.ts
+> git cat-file -s 9cf694b169edfe64ab57be3cc6608d8cc3b8c3ea
+> git show --textconv :src/main.ts
+> git ls-files --stage -- /home/eric/Documents/ionic/AppPacientes/src/main.ts
+> git cat-file -s 9cf694b169edfe64ab57be3cc6608d8cc3b8c3ea
+> git show --textconv :src/main.ts
+> git ls-files --stage -- /home/eric/Documents/ionic/AppPacientes/src/main.ts
+> git cat-file -s 9cf694b169edfe64ab57be3cc6608d8cc3b8c3ea
+> git show --textconv :src/main.ts
+> git ls-files --stage -- /home/eric/Documents/ionic/AppPacientes/src/main.ts
+> git cat-file -s 9cf694b169edfe64ab57be3cc6608d8cc3b8c3ea
+> git show --textconv :src/main.ts
+> git ls-files --stage -- /home/eric/Documents/ionic/AppPacientes/src/main.ts
+> git cat-file -s 9cf694b169edfe64ab57be3cc6608d8cc3b8c3ea
+> git show --textconv :src/main.ts
+> git ls-files --stage -- /home/eric/Documents/ionic/AppPacientes/src/main.ts
+> git cat-file -s 9cf694b169edfe64ab57be3cc6608d8cc3b8c3ea
+> git show --textconv :src/main.ts
+> git ls-files --stage -- /home/eric/Documents/ionic/AppPacientes/src/main.ts
+> git cat-file -s 9cf694b169edfe64ab57be3cc6608d8cc3b8c3ea
+> git log --format=%H%n%aN%n%aE%n%at%n%ct%n%P%n%B -z -n21 -- /home/eric/Documents/ionic/AppPacientes/src/main.ts
+> git check-ignore -v -z --stdin
+> git show --textconv :src/main.ts
+> git ls-files --stage -- /home/eric/Documents/ionic/AppPacientes/src/main.ts
+> git cat-file -s 9cf694b169edfe64ab57be3cc6608d8cc3b8c3ea
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git check-ignore -v -z --stdin
+> git show --textconv :package-lock.json
+> git ls-files --stage -- /home/eric/Documents/ionic/AppPacientes/package-lock.json
+> git cat-file -s 32ee67649dce7c298dfa03390d62c260ecc06948
+> git show --textconv :package.json
+> git ls-files --stage -- /home/eric/Documents/ionic/AppPacientes/package.json
+> git cat-file -s b7b25cf48922d6af16ecc68d806ba29b58589bbc
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :src/main.ts
+> git ls-files --stage -- /home/eric/Documents/ionic/AppPacientes/src/main.ts
+> git cat-file -s 9cf694b169edfe64ab57be3cc6608d8cc3b8c3ea
