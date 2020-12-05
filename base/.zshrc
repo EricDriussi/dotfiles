@@ -8,14 +8,9 @@ export PATH="${PATH}:/home/eric/scripts"
 # Path to your oh-my-zsh installation.
 export ZSH="/home/eric/.oh-my-zsh"
 
-if type rg &> /dev/null; then
-  export FZF_DEFAULT_COMMAND='rg --files'
-  export FZF_DEFAULT_OPTS='-m --height 50% --border'
-fi
-
 bindkey '^H' backward-kill-word
 alias update="sudo pacman -Syu"
-alias install="sudo pacman -S"
+alias install="sudo pacman -Sy"
 alias remove="sudo pacman -Rs"
 alias search="sudo pacman -Ss"
 alias v="nvim"

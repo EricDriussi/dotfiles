@@ -173,7 +173,7 @@ type = custom/script
 exec = /home/eric/.config/polybar/scripts/packages.sh
 label = "%output%"
 format-prefix = "📦 "
-
+click-left = /home/eric/.config/polybar/scripts/pack_by_date.sh
 interval = 30
 
 [module/memory]

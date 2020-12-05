@@ -64,7 +64,9 @@ bindsym $Mod+Return     exec --no-startup-id exo-open --launch TerminalEmulator
 bindsym $Mod+x exec --no-startup-id rofi_run -l
 
 # Screenshot
-bindsym Print exec --no-startup-id escrotum -s ~/Images/%Y-%m-%d-%H%M%screencap.png
+# bindsym Print exec --no-startup-id "scrot '%S.png' -e 'mv $f $$(xdg-user-dir PICTURES)/ArchLabs-%S-$wx$h.png ; feh $$(xdg-user-dir PICTURES)/ArchLabs-%S-$wx$h.png'"
+
+bindsym Print exec --no-startup-id escrotum -s ~/Pictures/%Y-%m-%d-%H%M%screencap.png
 
 # audio
 bindsym Control+F7 exec --no-startup-id pactl set-sink-volume alsa_output.pci-0000_05_00.6.analog-stereo -5%
