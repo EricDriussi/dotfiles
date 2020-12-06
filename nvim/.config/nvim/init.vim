@@ -2,7 +2,7 @@
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'morhetz/gruvbox'
-Plug 'leafgarland/typescript-vim'
+" Plug 'leafgarland/typescript-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'mbbill/undotree'
@@ -10,6 +10,7 @@ Plug 'mbbill/undotree'
 Plug 'frazrepo/vim-rainbow'
 Plug 'tpope/vim-surround'
 Plug 'itchyny/lightline.vim'
+Plug 'preservim/nerdcommenter'
 
 call plug#end()
 
@@ -66,6 +67,9 @@ nnoremap <Esc> :noh<return><Esc>
 "Close tab
 nnoremap <C-w> :q <CR>
 
+"Save all 
+nnoremap <M-s> :wa <CR>
+
 "Better tabbing
 vnoremap < <gv
 vnoremap > >gv
@@ -84,6 +88,12 @@ vnoremap > >gv
 " inoremap <down> <down><C-O>zz
 " nnoremap o <C-E>o
 
+"Coc-explorer
+nmap <space>t :CocCommand explorer<CR>
+
+"NerdCommenter
+nmap <C-/> :call NERDComment(0, "toggle")<CR>
+
 "Using leader to nav between visible buffers
 let mapleader = " "
 nnoremap <leader>h :wincmd h<CR>
@@ -94,6 +104,9 @@ nnoremap <leader>u :UndotreeToggle<CR>
 nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 20<CR>
 nnoremap <Leader>+ :vertical resize +2<CR>
 nnoremap <Leader>- :vertical resize -2<CR>
+nnoremap <Leader>( ysiw)
+nnoremap <Leader>[ ysiw]
+nnoremap <Leader>{ ysiw}
 
 " ---------------------------Le COC---------------------------"
 
@@ -105,7 +118,7 @@ set hidden
 set nowritebackup
 
 " Give more space for displaying messages.
-" set cmdheight=2
+set cmdheight=2
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.

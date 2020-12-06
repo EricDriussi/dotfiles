@@ -8,6 +8,19 @@
 		"yaml",
 		"json",
 		"python",
-		"typescript"
-	]
+		"typescript",
+		"java"
+	],
+	// explorer
+	"explorer.width": 30,
+	"explorer.icon.enableNerdfont": true,
+	"explorer.previewAction.onHover": false,
+	"explorer.keyMappings.global": {
+		"<cr>": [
+			"expandable?",
+			"expand",
+			"open:tab"
+		],
+		"v": "open:vsplit"
+	}
 }
