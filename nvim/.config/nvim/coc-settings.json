@@ -1,26 +1,23 @@
 {
-	"coc.preferences.formatOnSaveFiletypes": [
-		"css",
-		"markdown",
-		"javascript",
-		"graphql",
-		"html",
-		"yaml",
-		"json",
-		"python",
-		"typescript",
-		"java"
-	],
-	// explorer
-	"explorer.width": 30,
-	"explorer.icon.enableNerdfont": true,
-	"explorer.previewAction.onHover": false,
-	"explorer.keyMappings.global": {
-		"<cr>": [
-			"expandable?",
-			"expand",
-			"open:tab"
-		],
-		"v": "open:vsplit"
-	}
+    "coc.preferences.formatOnSaveFiletypes": [
+        "css",
+        "markdown",
+        "javascript",
+        "graphql",
+        "html",
+        "yaml",
+        "json",
+        "python",
+        "typescript",
+        "java"
+    ],
+    // explorer
+    "explorer.width": 30,
+    "explorer.icon.enableNerdfont": true,
+    "explorer.previewAction.onHover": false,
+    "explorer.keyMappings.global": {
+        "<cr>": ["expandable?", "expand", "open:tab"],
+        "v": "open:vsplit"
+    },
+    "prettier.tabWidth": 8
 }

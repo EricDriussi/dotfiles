@@ -7,10 +7,12 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'mbbill/undotree'
 
-Plug 'frazrepo/vim-rainbow'
 Plug 'tpope/vim-surround'
 Plug 'itchyny/lightline.vim'
 Plug 'preservim/nerdcommenter'
+Plug 'junegunn/fzf.vim'
+Plug 'airblade/vim-rooter'
+Plug 'honza/vim-snippets'
 
 call plug#end()
 
@@ -21,6 +23,7 @@ let g:gruvbox_contrast_dark = 'hard'
 colorscheme gruvbox
 set background=dark 
 
+
 "Settings
 syntax on
 set smartcase
@@ -30,7 +33,6 @@ set undodir=~/.config/nvim/undodir
 set undofile
 set incsearch
 set cursorline
-"set list lcs=tab:\|\ 
 set spelllang=en,es,cjk
 set encoding=utf-8
 set fileencoding=utf-8
@@ -44,11 +46,10 @@ set splitright
 "Old settings
 set number relativenumber
 set mouse=a
-set tabstop=4
-set softtabstop=-1
-set shiftwidth=0
+"set tabstop=4
+"set softtabstop=-1
+"set shiftwidth=0
 set smartindent
-
 
 " ---------------------------MAPPINGS---------------------------"
 
@@ -65,10 +66,13 @@ cnoremap <C-z> <C-c><Esc>
 nnoremap <Esc> :noh<return><Esc>
 
 "Close tab
-nnoremap <C-w> :q <CR>
+nnoremap <C-w> :q<CR>
 
-"Save all 
-nnoremap <M-s> :wa <CR>
+"FZF
+nnoremap <C-f> :FZF<CR>
+
+"FZF+RipGrep
+nnoremap <M-f> :Rg<CR>
 
 "Better tabbing
 vnoremap < <gv
@@ -79,20 +83,32 @@ vnoremap > >gv
 :command! Wq wq
 :command! W w
 :command! Q q
-"Keeps cursor line vertically centered
-" augroup KeepCentered
-  " autocmd!
-  " autocmd CursorMoved * normal! zz
-" augroup END
-" inoremap <up> <up><C-O>zz
-" inoremap <down> <down><C-O>zz
-" nnoremap o <C-E>o
+
+"Save all 
+nnoremap <M-s> :wa <CR>
 
 "Coc-explorer
-nmap <space>t :CocCommand explorer<CR>
+nnoremap <M-e> :CocCommand explorer<CR>
+
+"UndoTree
+nnoremap <M-u> :UndotreeToggle<CR>
 
 "NerdCommenter
-nmap <C-/> :call NERDComment(0, "toggle")<CR>
+nnoremap <M-c> :call NERDComment(0, "toggle")<CR>
+vnoremap <M-c> :call NERDComment(0, "toggle")<CR>gv
+
+"Surround.vim
+vmap ( S)
+vmap [ S]
+vmap { S}
+
+"Prettier Formatting
+vnoremap <leader>f  <Plug>(coc-format-selected)
+nnoremap <leader>F  :CocCommand prettier.formatFile<CR>
+
+"Resize splits
+nnoremap + :vertical resize +2<CR>
+nnoremap - :vertical resize -2<CR>
 
 "Using leader to nav between visible buffers
 let mapleader = " "
@@ -100,13 +116,7 @@ nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
-nnoremap <leader>u :UndotreeToggle<CR>
 nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 20<CR>
-nnoremap <Leader>+ :vertical resize +2<CR>
-nnoremap <Leader>- :vertical resize -2<CR>
-nnoremap <Leader>( ysiw)
-nnoremap <Leader>[ ysiw]
-nnoremap <Leader>{ ysiw}
 
 " ---------------------------Le COC---------------------------"
 
@@ -226,19 +236,19 @@ xmap ac <Plug>(coc-classobj-a)
 omap ac <Plug>(coc-classobj-a)
 
 " Remap <C-f> and <C-b> for scroll float windows/popups.
-if has('nvim-0.4.0') || has('patch-8.2.0750')
-  nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-  nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-  inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
-  inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
-  vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-  vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-endif
+"if has('nvim-0.4.0') || has('patch-8.2.0750')
+  "nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+  "nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+  "inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+  "inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+  "vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+  "vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+"endif
 
 " Use CTRL-S for selections ranges.
 " Requires 'textDocument/selectionRange' support of language server.
-nmap <silent> <C-s> <Plug>(coc-range-select)
-xmap <silent> <C-s> <Plug>(coc-range-select)
+"nmap <silent> <C-s> <Plug>(coc-range-select)
+"xmap <silent> <C-s> <Plug>(coc-range-select)
 
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
