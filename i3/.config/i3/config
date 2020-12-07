@@ -9,7 +9,7 @@ gaps outer 0
 
 # font
 
-font pango: UbuntuMonoNerdFontRegular 9
+font pango: UbuntuMonoNerdFontRegular 8
 #font pango:monospace 11
 
 # mod key used for most binds

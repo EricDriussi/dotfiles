@@ -23,6 +23,11 @@ let g:gruvbox_contrast_dark = 'hard'
 colorscheme gruvbox
 set background=dark 
 
+let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'sharp' } }
+
+let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline'
+let $FZF_DEFAULT_COMMAND="rg --files --hidden"
+
 
 "Settings
 syntax on
@@ -42,6 +47,7 @@ set updatetime=300
 set timeoutlen=500
 set formatoptions-=cro
 set splitright
+set noshowmode
 
 "Old settings
 set number relativenumber

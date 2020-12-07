@@ -10,12 +10,11 @@ export ZSH="/home/eric/.oh-my-zsh"
 
 bindkey '^H' backward-kill-word
 alias update="sudo pacman -Syu"
-alias install="sudo pacman -Sy"
+alias install="sudo pacman -S"
 alias remove="sudo pacman -Rs"
 alias search="sudo pacman -Ss"
 alias v="nvim"
 open() { nvim $(find .| fzf) }
-
   #
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
