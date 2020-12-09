@@ -1,9 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-export PATH=$PATH:/usr/lib/jvm/java-11-openjdk/bin/
-export JAVA_HOME=/usr/lib/jvm/java-11-openjdk/
-export JAVA_HOME=/usr/lib/jvm/javafx-sdk-11.0.2/
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk/
+export ANDROID_SDK_ROOT=/home/eric/Android/Sdk/
 export PATH="${PATH}:/home/eric/scripts"
 # Path to your oh-my-zsh installation.
 export ZSH="/home/eric/.oh-my-zsh"
@@ -14,7 +13,7 @@ alias install="sudo pacman -S"
 alias remove="sudo pacman -Rs"
 alias search="sudo pacman -Ss"
 alias v="nvim"
-open() { nvim $(find .| fzf) }
+vo() { nvim $(find .| fzf) }
   #
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,

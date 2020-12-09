@@ -19,5 +19,5 @@
         "<cr>": ["expandable?", "expand", "open:tab"],
         "v": "open:vsplit"
     },
-    "prettier.tabWidth": 8
+    "prettier.tabWidth": 4
 }
