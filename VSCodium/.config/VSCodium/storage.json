@@ -2,6 +2,8 @@
     "telemetry.machineId": "b5d9a34477c8b06012bf2ff573785c5c898d3a042eadbe40e2905ff9e678b92f",
     "openedPathsList": {
         "workspaces3": [
+            "file:///home/eric/Documents/ionic/ionic-firebase-authentication",
+            "file:///home/eric/Documents/ionic/pacientes_PRO",
             "file:///home/eric/Documents/ionic/AppPacientes"
         ],
         "files2": [
@@ -42,8 +44,7 @@
                             "items": [
                                 {
                                     "id": "workbench.action.reopenClosedEditor",
-                                    "label": "&&Reopen Closed Editor",
-                                    "enabled": false
+                                    "label": "&&Reopen Closed Editor"
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
@@ -52,7 +53,29 @@
                                     "id": "openRecentFolder",
                                     "uri": {
                                         "$mid": 1,
-                                        "fsPath": "/home/eric/Documents/ionic/AppPacientes",
+                                        "fsPath": "/home/eric/Documents/ionic/ionic-firebase-authentication",
+                                        "external": "file:///home/eric/Documents/ionic/ionic-firebase-authentication",
+                                        "path": "/home/eric/Documents/ionic/ionic-firebase-authentication",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/Documents/ionic/ionic-firebase-authentication"
+                                },
+                                {
+                                    "id": "openRecentFolder",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "external": "file:///home/eric/Documents/ionic/pacientes_PRO",
+                                        "path": "/home/eric/Documents/ionic/pacientes_PRO",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/Documents/ionic/pacientes_PRO"
+                                },
+                                {
+                                    "id": "openRecentFolder",
+                                    "uri": {
+                                        "$mid": 1,
                                         "external": "file:///home/eric/Documents/ionic/AppPacientes",
                                         "path": "/home/eric/Documents/ionic/AppPacientes",
                                         "scheme": "file"
@@ -385,8 +408,7 @@
                                 },
                                 {
                                     "id": "workbench.action.toggleSidebarVisibility",
-                                    "label": "Show &&Side Bar",
-                                    "checked": true
+                                    "label": "Show &&Side Bar"
                                 },
                                 {
                                     "id": "workbench.action.toggleStatusbarVisibility",
@@ -405,8 +427,7 @@
                                 },
                                 {
                                     "id": "workbench.action.togglePanel",
-                                    "label": "Show &&Panel",
-                                    "checked": true
+                                    "label": "Show &&Panel"
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
@@ -590,8 +611,7 @@
                     },
                     {
                         "id": "workbench.action.navigateToLastEditLocation",
-                        "label": "&&Last Edit Location",
-                        "enabled": false
+                        "label": "&&Last Edit Location"
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -907,7 +927,8 @@
                     },
                     {
                         "id": "workbench.action.terminal.split",
-                        "label": "&&Split Terminal"
+                        "label": "&&Split Terminal",
+                        "enabled": false
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -1468,14 +1489,14 @@
     "themeBackground": "#1e1e1e",
     "windowsState": {
         "lastActiveWindow": {
-            "folder": "file:///home/eric/Documents/ionic/AppPacientes",
-            "backupPath": "/home/eric/.config/VSCodium/Backups/acd1b7d80fa10a1aa34ac11c4d4190de",
+            "folder": "file:///home/eric/Documents/ionic/ionic-firebase-authentication",
+            "backupPath": "/home/eric/.config/VSCodium/Backups/e46adfcb6d8c3717aed18ab0251898de",
             "uiState": {
                 "mode": 1,
-                "x": 10,
-                "y": 10,
-                "width": 1900,
-                "height": 1040
+                "x": 966,
+                "y": 32,
+                "width": 944,
+                "height": 920
             }
         },
         "openedWindows": []

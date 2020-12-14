@@ -59,9 +59,16 @@ set smartindent
 
 " ---------------------------MAPPINGS---------------------------"
 
+"Kinda scrolling
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+
 "Sensible copy-pasting
 vnoremap <C-c> "+y
 map <C-p> "+P
+
+"Select all
+nnoremap <C-a> ggVG
 
 "Esc key is far from home
 map <C-z> <Esc>

@@ -1,6 +1,6 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-
+export PATH=$HOME/bin:/usr/bin:$PATH
+export PATH=$PATH:/opt
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk/
 export ANDROID_SDK_ROOT=/home/eric/Android/Sdk/
 export PATH="${PATH}:/home/eric/scripts"

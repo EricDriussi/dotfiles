@@ -1,0 +1,7 @@
+[2020-12-11 16:08:25.406] [sharedprocess] [info] main {"machineId":"b5d9a34477c8b06012bf2ff573785c5c898d3a042eadbe40e2905ff9e678b92f","windowId":2}
+[2020-12-11 16:08:27.741] [sharedprocess] [info] Installing extension: vscodevim.vim
+[2020-12-11 16:08:29.379] [sharedprocess] [info] Downloaded extension: vscodevim.vim undefined
+[2020-12-11 16:08:29.526] [sharedprocess] [info] Extracted extension to /home/eric/.vscode-oss/extensions/.vscodevim.vim-1.18.4: vscodevim.vim
+[2020-12-11 16:08:29.527] [sharedprocess] [info] Renamed to /home/eric/.vscode-oss/extensions/vscodevim.vim-1.18.4
+[2020-12-11 16:08:29.528] [sharedprocess] [info] Installation completed. vscodevim.vim
+[2020-12-11 16:08:29.536] [sharedprocess] [info] Extensions installed successfully: vscodevim.vim
