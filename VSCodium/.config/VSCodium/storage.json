@@ -2,8 +2,8 @@
     "telemetry.machineId": "b5d9a34477c8b06012bf2ff573785c5c898d3a042eadbe40e2905ff9e678b92f",
     "openedPathsList": {
         "workspaces3": [
-            "file:///home/eric/Documents/ionic/ionic-firebase-authentication",
             "file:///home/eric/Documents/ionic/pacientes_PRO",
+            "file:///home/eric/Documents/ionic/ionic-firebase-authentication",
             "file:///home/eric/Documents/ionic/AppPacientes"
         ],
         "files2": [
@@ -44,7 +44,8 @@
                             "items": [
                                 {
                                     "id": "workbench.action.reopenClosedEditor",
-                                    "label": "&&Reopen Closed Editor"
+                                    "label": "&&Reopen Closed Editor",
+                                    "enabled": false
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
@@ -53,24 +54,24 @@
                                     "id": "openRecentFolder",
                                     "uri": {
                                         "$mid": 1,
-                                        "fsPath": "/home/eric/Documents/ionic/ionic-firebase-authentication",
-                                        "external": "file:///home/eric/Documents/ionic/ionic-firebase-authentication",
-                                        "path": "/home/eric/Documents/ionic/ionic-firebase-authentication",
-                                        "scheme": "file"
-                                    },
-                                    "enabled": true,
-                                    "label": "~/Documents/ionic/ionic-firebase-authentication"
-                                },
-                                {
-                                    "id": "openRecentFolder",
-                                    "uri": {
-                                        "$mid": 1,
+                                        "fsPath": "/home/eric/Documents/ionic/pacientes_PRO",
                                         "external": "file:///home/eric/Documents/ionic/pacientes_PRO",
                                         "path": "/home/eric/Documents/ionic/pacientes_PRO",
                                         "scheme": "file"
                                     },
                                     "enabled": true,
                                     "label": "~/Documents/ionic/pacientes_PRO"
+                                },
+                                {
+                                    "id": "openRecentFolder",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "external": "file:///home/eric/Documents/ionic/ionic-firebase-authentication",
+                                        "path": "/home/eric/Documents/ionic/ionic-firebase-authentication",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/Documents/ionic/ionic-firebase-authentication"
                                 },
                                 {
                                     "id": "openRecentFolder",
@@ -137,7 +138,8 @@
                     },
                     {
                         "id": "workbench.action.files.saveAll",
-                        "label": "Save A&&ll"
+                        "label": "Save A&&ll",
+                        "enabled": false
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -284,10 +286,6 @@
                     {
                         "id": "editor.emmet.action.expandAbbreviation",
                         "label": "Emmet: E&&xpand Abbreviation"
-                    },
-                    {
-                        "id": "workbench.action.showEmmetCommands",
-                        "label": "E&&mmet..."
                     }
                 ]
             },
@@ -408,7 +406,8 @@
                                 },
                                 {
                                     "id": "workbench.action.toggleSidebarVisibility",
-                                    "label": "Show &&Side Bar"
+                                    "label": "Show &&Side Bar",
+                                    "checked": true
                                 },
                                 {
                                     "id": "workbench.action.toggleStatusbarVisibility",
@@ -427,7 +426,8 @@
                                 },
                                 {
                                     "id": "workbench.action.togglePanel",
-                                    "label": "Show &&Panel"
+                                    "label": "Show &&Panel",
+                                    "checked": true
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
@@ -611,7 +611,8 @@
                     },
                     {
                         "id": "workbench.action.navigateToLastEditLocation",
-                        "label": "&&Last Edit Location"
+                        "label": "&&Last Edit Location",
+                        "enabled": false
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -927,8 +928,7 @@
                     },
                     {
                         "id": "workbench.action.terminal.split",
-                        "label": "&&Split Terminal",
-                        "enabled": false
+                        "label": "&&Split Terminal"
                     },
                     {
                         "id": "vscode.menubar.separator"
@@ -1489,14 +1489,14 @@
     "themeBackground": "#1e1e1e",
     "windowsState": {
         "lastActiveWindow": {
-            "folder": "file:///home/eric/Documents/ionic/ionic-firebase-authentication",
-            "backupPath": "/home/eric/.config/VSCodium/Backups/e46adfcb6d8c3717aed18ab0251898de",
+            "folder": "file:///home/eric/Documents/ionic/pacientes_PRO",
+            "backupPath": "/home/eric/.config/VSCodium/Backups/193f7de69c30ca2863e3126b6c048889",
             "uiState": {
                 "mode": 1,
-                "x": 966,
+                "x": 10,
                 "y": 32,
-                "width": 944,
-                "height": 920
+                "width": 1900,
+                "height": 1038
             }
         },
         "openedWindows": []

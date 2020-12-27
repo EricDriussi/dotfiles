@@ -114,6 +114,7 @@ vnoremap <M-c> :call NERDComment(0, "toggle")<CR>gv
 vmap ( S)
 vmap [ S]
 vmap { S}
+vmap ' S'
 
 "Prettier Formatting
 vnoremap <leader>f  <Plug>(coc-format-selected)

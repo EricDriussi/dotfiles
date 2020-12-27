@@ -47,7 +47,7 @@ bindsym Control+m exec touchpad-toggle
 exec_always --no-startup-id alternating_layouts.py
 
 exec --no-startup-id brave
-exec --no-startup-id nautilus
+exec --no-startup-id nemo
 exec --no-startup-id thunderbird
 exec --no-startup-id qbittorrent
 
@@ -171,7 +171,7 @@ bindsym $Mod+shift+b border toggle
 # assign applications to specific workspace
 assign [class="(?i)(?:brave)"] → 1
 assign [class="(?i)(?:thunderbird)"]   → 2
-assign [class="(?i)(?:nautilus)"]  → 4
+assign [class="(?i)(?:nemo)"]  → 4
 
 # focus, floating, & sticky
 for_window [class="(?i)(?:qt5ct|pinentry)"]          floating enable, focus

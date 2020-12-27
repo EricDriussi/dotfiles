@@ -7,6 +7,12 @@ export PATH="${PATH}:/home/eric/scripts"
 # Path to your oh-my-zsh installation.
 export ZSH="/home/eric/.oh-my-zsh"
 
+export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin
+
+export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+
+export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
+
 bindkey '^H' backward-kill-word
 alias update="sudo pacman -Syu"
 alias install="sudo pacman -S"
