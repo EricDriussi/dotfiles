@@ -14,12 +14,22 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
 
 bindkey '^H' backward-kill-word
-alias update="sudo pacman -Syu"
+
+alias gcom='git add . && git commit'
+alias gpush='git push origin master'
+alias ginit='git init && git config credential.helper store'
+alias glg= "git log --pretty=oneline"
+
+alias v="nvim"
+vo() { nvim $(find .| fzf) }
+
+alias updatesys="sudo pacman -Syu"
 alias install="sudo pacman -S"
 alias remove="sudo pacman -Rs"
 alias search="sudo pacman -Ss"
-alias v="nvim"
-vo() { nvim $(find .| fzf) }
+alias cleansys="sudo paccache -rk2 -ruk0 && sudo pacman -Sc && yay -Sc --aur && rm -rf ~/.local/share/Trash/*"
+setopt rm_star_silent
+
   #
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,

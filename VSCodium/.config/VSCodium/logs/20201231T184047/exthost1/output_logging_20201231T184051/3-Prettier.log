@@ -1,0 +1,581 @@
+["INFO" - 6:40:51 PM] Extension Name: esbenp.prettier-vscode.
+["INFO" - 6:40:51 PM] Extension Version: 5.8.0.
+["INFO" - 6:40:51 PM] Enabling prettier for languages: ansible, css, graphql, home-assistant, html, javascript, javascriptreact, json, json5, jsonc, less, markdown, mdx, mongo, postcss, scss, typescript, typescriptreact, vue, yaml
+["INFO" - 6:40:51 PM] Enabling prettier for file extensions: .JSON-tmLanguage, ._js, .avsc, .bones, .cjs, .component.html, .css, .es, .es6, .frag, .geojson, .gltf, .gql, .graphql, .graphqls, .gs, .har, .htm, .html, .html.hl, .ice, .inc, .jake, .js, .js.flow, .jsb, .jscad, .jsfl, .jsm, .json, .json5, .jsonc, .jss, .jsx, .less, .markdown, .mcmeta, .md, .mdown, .mdwn, .mdx, .mir, .mjml, .mjs, .mkd, .mkdn, .mkdown, .njs, .pac, .pcss, .postcss, .reek, .ronn, .rviz, .scss, .sjs, .ssjs, .st, .sublime-build, .sublime-commands, .sublime-completions, .sublime-keymap, .sublime-macro, .sublime-menu, .sublime-mousemap, .sublime-project, .sublime-settings, .sublime-syntax, .sublime-theme, .sublime-workspace, .sublime_metrics, .sublime_session, .syntax, .tfstate, .tfstate.backup, .topojson, .ts, .tsx, .vue, .webapp, .webmanifest, .workbook, .wxs, .wxss, .xht, .xhtml, .xsjs, .xsjslib, .yaml, .yaml-tmlanguage, .yaml.sed, .yml, .yml.mysql, .yy, .yyp
+["INFO" - 6:40:51 PM] Enabling prettier for range supported languages: graphql, javascript, javascriptreact, json, typescript, typescriptreact
+["INFO" - 6:41:16 PM] Formatting /home/eric/Documents/ionic/pacientes_PRO/src/app/services/solicitud-admin.service.ts
+["INFO" - 6:41:16 PM] Formatting /home/eric/Documents/ionic/pacientes_PRO/src/app/listaSolicitudes/listaSolicitudes.page.ts
+["INFO" - 6:41:16 PM] Using ignore file (if present) at /home/eric/Documents/ionic/pacientes_PRO/.prettierignore
+["INFO" - 6:41:16 PM] Using bundled version of prettier.
+["INFO" - 6:41:16 PM] Using ignore file (if present) at /home/eric/Documents/ionic/pacientes_PRO/.prettierignore
+["INFO" - 6:41:16 PM] Using bundled version of prettier.
+["INFO" - 6:41:16 PM] File Info:
+{
+  "ignored": false,
+  "inferredParser": "typescript"
+}
+["INFO" - 6:41:16 PM] File Info:
+{
+  "ignored": false,
+  "inferredParser": "typescript"
+}
+["INFO" - 6:41:16 PM] No local configuration (i.e. .prettierrc or .editorconfig) detected, falling back to VS Code configuration
+["INFO" - 6:41:16 PM] Prettier Options:
+{
+  "arrowParens": "always",
+  "bracketSpacing": true,
+  "endOfLine": "lf",
+  "htmlWhitespaceSensitivity": "css",
+  "insertPragma": false,
+  "jsxBracketSameLine": false,
+  "jsxSingleQuote": false,
+  "printWidth": 80,
+  "proseWrap": "preserve",
+  "quoteProps": "as-needed",
+  "requirePragma": false,
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 4,
+  "trailingComma": "es5",
+  "useTabs": true,
+  "vueIndentScriptAndStyle": false,
+  "filepath": "/home/eric/Documents/ionic/pacientes_PRO/src/app/services/solicitud-admin.service.ts",
+  "parser": "typescript"
+}
+["INFO" - 6:41:17 PM] Formatting completed in 304.581269ms.
+["INFO" - 6:41:17 PM] No local configuration (i.e. .prettierrc or .editorconfig) detected, falling back to VS Code configuration
+["INFO" - 6:41:17 PM] Prettier Options:
+{
+  "arrowParens": "always",
+  "bracketSpacing": true,
+  "endOfLine": "lf",
+  "htmlWhitespaceSensitivity": "css",
+  "insertPragma": false,
+  "jsxBracketSameLine": false,
+  "jsxSingleQuote": false,
+  "printWidth": 80,
+  "proseWrap": "preserve",
+  "quoteProps": "as-needed",
+  "requirePragma": false,
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 4,
+  "trailingComma": "es5",
+  "useTabs": true,
+  "vueIndentScriptAndStyle": false,
+  "filepath": "/home/eric/Documents/ionic/pacientes_PRO/src/app/listaSolicitudes/listaSolicitudes.page.ts",
+  "parser": "typescript"
+}
+["INFO" - 6:41:17 PM] Formatting completed in 339.368305ms.
+["INFO" - 6:41:50 PM] Formatting /home/eric/Documents/ionic/pacientes_PRO/src/app/services/solicitud-admin.service.ts
+["INFO" - 6:41:50 PM] Using ignore file (if present) at /home/eric/Documents/ionic/pacientes_PRO/.prettierignore
+["INFO" - 6:41:50 PM] Using bundled version of prettier.
+["INFO" - 6:41:50 PM] File Info:
+{
+  "ignored": false,
+  "inferredParser": "typescript"
+}
+["INFO" - 6:41:50 PM] No local configuration (i.e. .prettierrc or .editorconfig) detected, falling back to VS Code configuration
+["INFO" - 6:41:50 PM] Prettier Options:
+{
+  "arrowParens": "always",
+  "bracketSpacing": true,
+  "endOfLine": "lf",
+  "htmlWhitespaceSensitivity": "css",
+  "insertPragma": false,
+  "jsxBracketSameLine": false,
+  "jsxSingleQuote": false,
+  "printWidth": 80,
+  "proseWrap": "preserve",
+  "quoteProps": "as-needed",
+  "requirePragma": false,
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 4,
+  "trailingComma": "es5",
+  "useTabs": true,
+  "vueIndentScriptAndStyle": false,
+  "filepath": "/home/eric/Documents/ionic/pacientes_PRO/src/app/services/solicitud-admin.service.ts",
+  "parser": "typescript"
+}
+["INFO" - 6:41:50 PM] Formatting completed in 89.332592ms.
+["INFO" - 6:42:14 PM] Formatting /home/eric/Documents/ionic/pacientes_PRO/src/app/detallePerfil/detallePerfil.page.ts
+["INFO" - 6:42:14 PM] Formatting /home/eric/Documents/ionic/pacientes_PRO/src/app/services/solicitud-admin.service.ts
+["INFO" - 6:42:14 PM] Using ignore file (if present) at /home/eric/Documents/ionic/pacientes_PRO/.prettierignore
+["INFO" - 6:42:14 PM] Using bundled version of prettier.
+["INFO" - 6:42:14 PM] File Info:
+{
+  "ignored": false,
+  "inferredParser": "typescript"
+}
+["INFO" - 6:42:14 PM] Using ignore file (if present) at /home/eric/Documents/ionic/pacientes_PRO/.prettierignore
+["INFO" - 6:42:14 PM] Using bundled version of prettier.
+["INFO" - 6:42:14 PM] File Info:
+{
+  "ignored": false,
+  "inferredParser": "typescript"
+}
+["INFO" - 6:42:14 PM] No local configuration (i.e. .prettierrc or .editorconfig) detected, falling back to VS Code configuration
+["INFO" - 6:42:14 PM] Prettier Options:
+{
+  "arrowParens": "always",
+  "bracketSpacing": true,
+  "endOfLine": "lf",
+  "htmlWhitespaceSensitivity": "css",
+  "insertPragma": false,
+  "jsxBracketSameLine": false,
+  "jsxSingleQuote": false,
+  "printWidth": 80,
+  "proseWrap": "preserve",
+  "quoteProps": "as-needed",
+  "requirePragma": false,
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 4,
+  "trailingComma": "es5",
+  "useTabs": true,
+  "vueIndentScriptAndStyle": false,
+  "filepath": "/home/eric/Documents/ionic/pacientes_PRO/src/app/services/solicitud-admin.service.ts",
+  "parser": "typescript"
+}
+["INFO" - 6:42:14 PM] Formatting completed in 94.551552ms.
+["INFO" - 6:42:14 PM] No local configuration (i.e. .prettierrc or .editorconfig) detected, falling back to VS Code configuration
+["INFO" - 6:42:14 PM] Prettier Options:
+{
+  "arrowParens": "always",
+  "bracketSpacing": true,
+  "endOfLine": "lf",
+  "htmlWhitespaceSensitivity": "css",
+  "insertPragma": false,
+  "jsxBracketSameLine": false,
+  "jsxSingleQuote": false,
+  "printWidth": 80,
+  "proseWrap": "preserve",
+  "quoteProps": "as-needed",
+  "requirePragma": false,
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 4,
+  "trailingComma": "es5",
+  "useTabs": true,
+  "vueIndentScriptAndStyle": false,
+  "filepath": "/home/eric/Documents/ionic/pacientes_PRO/src/app/detallePerfil/detallePerfil.page.ts",
+  "parser": "typescript"
+}
+["INFO" - 6:42:14 PM] Formatting completed in 181.790161ms.
+["INFO" - 6:42:27 PM] Formatting /home/eric/Documents/ionic/pacientes_PRO/src/app/services/solicitud-admin.service.ts
+["INFO" - 6:42:27 PM] Formatting /home/eric/Documents/ionic/pacientes_PRO/src/app/listaSolicitudes/listaSolicitudes.page.ts
+["INFO" - 6:42:27 PM] Formatting /home/eric/Documents/ionic/pacientes_PRO/src/app/listaSolicitudes/listaSolicitudes.page.html
+["INFO" - 6:42:27 PM] Using ignore file (if present) at /home/eric/Documents/ionic/pacientes_PRO/.prettierignore
+["INFO" - 6:42:27 PM] Using bundled version of prettier.
+["INFO" - 6:42:27 PM] Using ignore file (if present) at /home/eric/Documents/ionic/pacientes_PRO/.prettierignore
+["INFO" - 6:42:27 PM] Using bundled version of prettier.
+["INFO" - 6:42:27 PM] Using ignore file (if present) at /home/eric/Documents/ionic/pacientes_PRO/.prettierignore
+["INFO" - 6:42:27 PM] Using bundled version of prettier.
+["INFO" - 6:42:27 PM] File Info:
+{
+  "ignored": false,
+  "inferredParser": "typescript"
+}
+["INFO" - 6:42:27 PM] File Info:
+{
+  "ignored": false,
+  "inferredParser": "typescript"
+}
+["INFO" - 6:42:27 PM] File Info:
+{
+  "ignored": false,
+  "inferredParser": "html"
+}
+["INFO" - 6:42:27 PM] No local configuration (i.e. .prettierrc or .editorconfig) detected, falling back to VS Code configuration
+["INFO" - 6:42:27 PM] Prettier Options:
+{
+  "arrowParens": "always",
+  "bracketSpacing": true,
+  "endOfLine": "lf",
+  "htmlWhitespaceSensitivity": "css",
+  "insertPragma": false,
+  "jsxBracketSameLine": false,
+  "jsxSingleQuote": false,
+  "printWidth": 80,
+  "proseWrap": "preserve",
+  "quoteProps": "as-needed",
+  "requirePragma": false,
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 4,
+  "trailingComma": "es5",
+  "useTabs": true,
+  "vueIndentScriptAndStyle": false,
+  "filepath": "/home/eric/Documents/ionic/pacientes_PRO/src/app/listaSolicitudes/listaSolicitudes.page.html",
+  "parser": "html"
+}
+["INFO" - 6:42:27 PM] Formatting completed in 206.979818ms.
+["INFO" - 6:42:27 PM] No local configuration (i.e. .prettierrc or .editorconfig) detected, falling back to VS Code configuration
+["INFO" - 6:42:27 PM] Prettier Options:
+{
+  "arrowParens": "always",
+  "bracketSpacing": true,
+  "endOfLine": "lf",
+  "htmlWhitespaceSensitivity": "css",
+  "insertPragma": false,
+  "jsxBracketSameLine": false,
+  "jsxSingleQuote": false,
+  "printWidth": 80,
+  "proseWrap": "preserve",
+  "quoteProps": "as-needed",
+  "requirePragma": false,
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 4,
+  "trailingComma": "es5",
+  "useTabs": true,
+  "vueIndentScriptAndStyle": false,
+  "filepath": "/home/eric/Documents/ionic/pacientes_PRO/src/app/services/solicitud-admin.service.ts",
+  "parser": "typescript"
+}
+["INFO" - 6:42:27 PM] Formatting completed in 234.597088ms.
+["INFO" - 6:42:27 PM] No local configuration (i.e. .prettierrc or .editorconfig) detected, falling back to VS Code configuration
+["INFO" - 6:42:27 PM] Prettier Options:
+{
+  "arrowParens": "always",
+  "bracketSpacing": true,
+  "endOfLine": "lf",
+  "htmlWhitespaceSensitivity": "css",
+  "insertPragma": false,
+  "jsxBracketSameLine": false,
+  "jsxSingleQuote": false,
+  "printWidth": 80,
+  "proseWrap": "preserve",
+  "quoteProps": "as-needed",
+  "requirePragma": false,
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 4,
+  "trailingComma": "es5",
+  "useTabs": true,
+  "vueIndentScriptAndStyle": false,
+  "filepath": "/home/eric/Documents/ionic/pacientes_PRO/src/app/listaSolicitudes/listaSolicitudes.page.ts",
+  "parser": "typescript"
+}
+["INFO" - 6:42:27 PM] Formatting completed in 257.514179ms.
+["INFO" - 6:46:04 PM] Formatting /home/eric/Documents/ionic/pacientes_PRO/src/app/components/menu/menu.component.html
+["INFO" - 6:46:04 PM] Formatting /home/eric/Documents/ionic/pacientes_PRO/src/app/components/menu/menu.component.ts
+["INFO" - 6:46:05 PM] Using ignore file (if present) at /home/eric/Documents/ionic/pacientes_PRO/.prettierignore
+["INFO" - 6:46:05 PM] Using bundled version of prettier.
+["INFO" - 6:46:05 PM] Using ignore file (if present) at /home/eric/Documents/ionic/pacientes_PRO/.prettierignore
+["INFO" - 6:46:05 PM] Using bundled version of prettier.
+["INFO" - 6:46:05 PM] File Info:
+{
+  "ignored": false,
+  "inferredParser": "angular"
+}
+["INFO" - 6:46:05 PM] File Info:
+{
+  "ignored": false,
+  "inferredParser": "typescript"
+}
+["INFO" - 6:46:05 PM] No local configuration (i.e. .prettierrc or .editorconfig) detected, falling back to VS Code configuration
+["INFO" - 6:46:05 PM] Prettier Options:
+{
+  "arrowParens": "always",
+  "bracketSpacing": true,
+  "endOfLine": "lf",
+  "htmlWhitespaceSensitivity": "css",
+  "insertPragma": false,
+  "jsxBracketSameLine": false,
+  "jsxSingleQuote": false,
+  "printWidth": 80,
+  "proseWrap": "preserve",
+  "quoteProps": "as-needed",
+  "requirePragma": false,
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 4,
+  "trailingComma": "es5",
+  "useTabs": true,
+  "vueIndentScriptAndStyle": false,
+  "filepath": "/home/eric/Documents/ionic/pacientes_PRO/src/app/components/menu/menu.component.html",
+  "parser": "angular"
+}
+["INFO" - 6:46:05 PM] Formatting completed in 208.38286ms.
+["INFO" - 6:46:05 PM] No local configuration (i.e. .prettierrc or .editorconfig) detected, falling back to VS Code configuration
+["INFO" - 6:46:05 PM] Prettier Options:
+{
+  "arrowParens": "always",
+  "bracketSpacing": true,
+  "endOfLine": "lf",
+  "htmlWhitespaceSensitivity": "css",
+  "insertPragma": false,
+  "jsxBracketSameLine": false,
+  "jsxSingleQuote": false,
+  "printWidth": 80,
+  "proseWrap": "preserve",
+  "quoteProps": "as-needed",
+  "requirePragma": false,
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 4,
+  "trailingComma": "es5",
+  "useTabs": true,
+  "vueIndentScriptAndStyle": false,
+  "filepath": "/home/eric/Documents/ionic/pacientes_PRO/src/app/components/menu/menu.component.ts",
+  "parser": "typescript"
+}
+["INFO" - 6:46:05 PM] Formatting completed in 234.83846ms.
+["INFO" - 6:46:50 PM] Formatting /home/eric/Documents/ionic/pacientes_PRO/src/app/components/menu/menu.component.html
+["INFO" - 6:46:50 PM] Formatting /home/eric/Documents/ionic/pacientes_PRO/src/app/components/menu/menu.component.ts
+["INFO" - 6:46:50 PM] Using ignore file (if present) at /home/eric/Documents/ionic/pacientes_PRO/.prettierignore
+["INFO" - 6:46:50 PM] Using bundled version of prettier.
+["INFO" - 6:46:50 PM] Using ignore file (if present) at /home/eric/Documents/ionic/pacientes_PRO/.prettierignore
+["INFO" - 6:46:50 PM] Using bundled version of prettier.
+["INFO" - 6:46:50 PM] File Info:
+{
+  "ignored": false,
+  "inferredParser": "angular"
+}
+["INFO" - 6:46:50 PM] File Info:
+{
+  "ignored": false,
+  "inferredParser": "typescript"
+}
+["INFO" - 6:46:50 PM] No local configuration (i.e. .prettierrc or .editorconfig) detected, falling back to VS Code configuration
+["INFO" - 6:46:50 PM] Prettier Options:
+{
+  "arrowParens": "always",
+  "bracketSpacing": true,
+  "endOfLine": "lf",
+  "htmlWhitespaceSensitivity": "css",
+  "insertPragma": false,
+  "jsxBracketSameLine": false,
+  "jsxSingleQuote": false,
+  "printWidth": 80,
+  "proseWrap": "preserve",
+  "quoteProps": "as-needed",
+  "requirePragma": false,
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 4,
+  "trailingComma": "es5",
+  "useTabs": true,
+  "vueIndentScriptAndStyle": false,
+  "filepath": "/home/eric/Documents/ionic/pacientes_PRO/src/app/components/menu/menu.component.html",
+  "parser": "angular"
+}
+["INFO" - 6:46:50 PM] Formatting completed in 130.904918ms.
+["INFO" - 6:46:50 PM] No local configuration (i.e. .prettierrc or .editorconfig) detected, falling back to VS Code configuration
+["INFO" - 6:46:50 PM] Prettier Options:
+{
+  "arrowParens": "always",
+  "bracketSpacing": true,
+  "endOfLine": "lf",
+  "htmlWhitespaceSensitivity": "css",
+  "insertPragma": false,
+  "jsxBracketSameLine": false,
+  "jsxSingleQuote": false,
+  "printWidth": 80,
+  "proseWrap": "preserve",
+  "quoteProps": "as-needed",
+  "requirePragma": false,
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 4,
+  "trailingComma": "es5",
+  "useTabs": true,
+  "vueIndentScriptAndStyle": false,
+  "filepath": "/home/eric/Documents/ionic/pacientes_PRO/src/app/components/menu/menu.component.ts",
+  "parser": "typescript"
+}
+["INFO" - 6:46:50 PM] Formatting completed in 162.517598ms.
+["INFO" - 6:47:29 PM] Formatting /home/eric/Documents/ionic/pacientes_PRO/src/app/listaPacientes/listaPacientes.page.ts
+["INFO" - 6:47:29 PM] Formatting /home/eric/Documents/ionic/pacientes_PRO/src/app/listaPacientes/listaPacientes.page.html
+["INFO" - 6:47:29 PM] Formatting /home/eric/Documents/ionic/pacientes_PRO/src/app/searchbar/searchbar.page.ts
+["INFO" - 6:47:29 PM] Formatting /home/eric/Documents/ionic/pacientes_PRO/src/app/searchbar/searchbar.page.html
+["INFO" - 6:47:29 PM] Using ignore file (if present) at /home/eric/Documents/ionic/pacientes_PRO/.prettierignore
+["INFO" - 6:47:29 PM] Using bundled version of prettier.
+["INFO" - 6:47:29 PM] Using ignore file (if present) at /home/eric/Documents/ionic/pacientes_PRO/.prettierignore
+["INFO" - 6:47:29 PM] Using bundled version of prettier.
+["INFO" - 6:47:29 PM] Using ignore file (if present) at /home/eric/Documents/ionic/pacientes_PRO/.prettierignore
+["INFO" - 6:47:29 PM] Using bundled version of prettier.
+["INFO" - 6:47:29 PM] Using ignore file (if present) at /home/eric/Documents/ionic/pacientes_PRO/.prettierignore
+["INFO" - 6:47:29 PM] Using bundled version of prettier.
+["INFO" - 6:47:29 PM] File Info:
+{
+  "ignored": false,
+  "inferredParser": "html"
+}
+["INFO" - 6:47:29 PM] File Info:
+{
+  "ignored": false,
+  "inferredParser": "typescript"
+}
+["INFO" - 6:47:29 PM] File Info:
+{
+  "ignored": false,
+  "inferredParser": "html"
+}
+["INFO" - 6:47:29 PM] File Info:
+{
+  "ignored": false,
+  "inferredParser": "typescript"
+}
+["INFO" - 6:47:29 PM] No local configuration (i.e. .prettierrc or .editorconfig) detected, falling back to VS Code configuration
+["INFO" - 6:47:29 PM] Prettier Options:
+{
+  "arrowParens": "always",
+  "bracketSpacing": true,
+  "endOfLine": "lf",
+  "htmlWhitespaceSensitivity": "css",
+  "insertPragma": false,
+  "jsxBracketSameLine": false,
+  "jsxSingleQuote": false,
+  "printWidth": 80,
+  "proseWrap": "preserve",
+  "quoteProps": "as-needed",
+  "requirePragma": false,
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 4,
+  "trailingComma": "es5",
+  "useTabs": true,
+  "vueIndentScriptAndStyle": false,
+  "filepath": "/home/eric/Documents/ionic/pacientes_PRO/src/app/listaPacientes/listaPacientes.page.html",
+  "parser": "html"
+}
+["INFO" - 6:47:29 PM] Formatting completed in 252.460114ms.
+["INFO" - 6:47:29 PM] No local configuration (i.e. .prettierrc or .editorconfig) detected, falling back to VS Code configuration
+["INFO" - 6:47:29 PM] Prettier Options:
+{
+  "arrowParens": "always",
+  "bracketSpacing": true,
+  "endOfLine": "lf",
+  "htmlWhitespaceSensitivity": "css",
+  "insertPragma": false,
+  "jsxBracketSameLine": false,
+  "jsxSingleQuote": false,
+  "printWidth": 80,
+  "proseWrap": "preserve",
+  "quoteProps": "as-needed",
+  "requirePragma": false,
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 4,
+  "trailingComma": "es5",
+  "useTabs": true,
+  "vueIndentScriptAndStyle": false,
+  "filepath": "/home/eric/Documents/ionic/pacientes_PRO/src/app/searchbar/searchbar.page.ts",
+  "parser": "typescript"
+}
+["INFO" - 6:47:29 PM] Formatting completed in 275.324964ms.
+["INFO" - 6:47:29 PM] No local configuration (i.e. .prettierrc or .editorconfig) detected, falling back to VS Code configuration
+["INFO" - 6:47:29 PM] Prettier Options:
+{
+  "arrowParens": "always",
+  "bracketSpacing": true,
+  "endOfLine": "lf",
+  "htmlWhitespaceSensitivity": "css",
+  "insertPragma": false,
+  "jsxBracketSameLine": false,
+  "jsxSingleQuote": false,
+  "printWidth": 80,
+  "proseWrap": "preserve",
+  "quoteProps": "as-needed",
+  "requirePragma": false,
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 4,
+  "trailingComma": "es5",
+  "useTabs": true,
+  "vueIndentScriptAndStyle": false,
+  "filepath": "/home/eric/Documents/ionic/pacientes_PRO/src/app/listaPacientes/listaPacientes.page.ts",
+  "parser": "typescript"
+}
+["INFO" - 6:47:29 PM] Formatting completed in 328.995058ms.
+["INFO" - 6:47:29 PM] No local configuration (i.e. .prettierrc or .editorconfig) detected, falling back to VS Code configuration
+["INFO" - 6:47:29 PM] Prettier Options:
+{
+  "arrowParens": "always",
+  "bracketSpacing": true,
+  "endOfLine": "lf",
+  "htmlWhitespaceSensitivity": "css",
+  "insertPragma": false,
+  "jsxBracketSameLine": false,
+  "jsxSingleQuote": false,
+  "printWidth": 80,
+  "proseWrap": "preserve",
+  "quoteProps": "as-needed",
+  "requirePragma": false,
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 4,
+  "trailingComma": "es5",
+  "useTabs": true,
+  "vueIndentScriptAndStyle": false,
+  "filepath": "/home/eric/Documents/ionic/pacientes_PRO/src/app/searchbar/searchbar.page.html",
+  "parser": "html"
+}
+["INFO" - 6:47:29 PM] Formatting completed in 352.482684ms.
+["INFO" - 6:47:57 PM] Formatting /home/eric/Documents/ionic/pacientes_PRO/src/app/listaUsuarios/listaUsuarios.page.ts
+["INFO" - 6:47:57 PM] Formatting /home/eric/Documents/ionic/pacientes_PRO/src/app/listaUsuarios/listaUsuarios.page.html
+["INFO" - 6:47:57 PM] Using ignore file (if present) at /home/eric/Documents/ionic/pacientes_PRO/.prettierignore
+["INFO" - 6:47:57 PM] Using bundled version of prettier.
+["INFO" - 6:47:57 PM] Using ignore file (if present) at /home/eric/Documents/ionic/pacientes_PRO/.prettierignore
+["INFO" - 6:47:57 PM] Using bundled version of prettier.
+["INFO" - 6:47:57 PM] File Info:
+{
+  "ignored": false,
+  "inferredParser": "typescript"
+}
+["INFO" - 6:47:57 PM] File Info:
+{
+  "ignored": false,
+  "inferredParser": "html"
+}
+["INFO" - 6:47:57 PM] No local configuration (i.e. .prettierrc or .editorconfig) detected, falling back to VS Code configuration
+["INFO" - 6:47:57 PM] Prettier Options:
+{
+  "arrowParens": "always",
+  "bracketSpacing": true,
+  "endOfLine": "lf",
+  "htmlWhitespaceSensitivity": "css",
+  "insertPragma": false,
+  "jsxBracketSameLine": false,
+  "jsxSingleQuote": false,
+  "printWidth": 80,
+  "proseWrap": "preserve",
+  "quoteProps": "as-needed",
+  "requirePragma": false,
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 4,
+  "trailingComma": "es5",
+  "useTabs": true,
+  "vueIndentScriptAndStyle": false,
+  "filepath": "/home/eric/Documents/ionic/pacientes_PRO/src/app/listaUsuarios/listaUsuarios.page.html",
+  "parser": "html"
+}
+["INFO" - 6:47:57 PM] Formatting completed in 140.438953ms.
+["INFO" - 6:47:57 PM] No local configuration (i.e. .prettierrc or .editorconfig) detected, falling back to VS Code configuration
+["INFO" - 6:47:57 PM] Prettier Options:
+{
+  "arrowParens": "always",
+  "bracketSpacing": true,
+  "endOfLine": "lf",
+  "htmlWhitespaceSensitivity": "css",
+  "insertPragma": false,
+  "jsxBracketSameLine": false,
+  "jsxSingleQuote": false,
+  "printWidth": 80,
+  "proseWrap": "preserve",
+  "quoteProps": "as-needed",
+  "requirePragma": false,
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 4,
+  "trailingComma": "es5",
+  "useTabs": true,
+  "vueIndentScriptAndStyle": false,
+  "filepath": "/home/eric/Documents/ionic/pacientes_PRO/src/app/listaUsuarios/listaUsuarios.page.ts",
+  "parser": "typescript"
+}
+["INFO" - 6:47:57 PM] Formatting completed in 171.131753ms.
