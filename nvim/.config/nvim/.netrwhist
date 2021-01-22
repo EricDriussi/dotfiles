@@ -1,12 +1,12 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =1
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/home/eric/dotfiles/.git'
+let g:netrw_dirhist_4='/home/eric/dotfiles/zathura/.config/zathura'
+let g:netrw_dirhist_3='/home/eric/dotfiles/zathura/.config'
+let g:netrw_dirhist_2='/home/eric/dotfiles/zathura'
 let g:netrw_dirhist_1='/etc/X11/xorg.conf.d'
 let g:netrw_dirhist_0='/home/eric/dotfiles/polybar/.config/polybar'
 let g:netrw_dirhist_9='/home/eric/dotfiles/polybar/.config'
 let g:netrw_dirhist_8='/home/eric/dotfiles/alacritty/.config/alacritty'
 let g:netrw_dirhist_7='/home/eric/dotfiles/alacritty/.config'
 let g:netrw_dirhist_6='/home/eric/.config/alacritty'
-let g:netrw_dirhist_5='/home/eric/dotfiles/polybar/.config/polybar'
-let g:netrw_dirhist_4='/home/eric/dotfiles/polybar/.config'
-let g:netrw_dirhist_3='/home/eric/Documents/ionic/bug/src/app/home'
-let g:netrw_dirhist_2='/home/eric/.config/i3'

@@ -48,13 +48,11 @@ set timeoutlen=500
 set formatoptions-=cro
 set splitright
 set noshowmode
+set scrolloff=10
 
 "Old settings
 set number relativenumber
 set mouse=a
-"set tabstop=4
-"set softtabstop=-1
-"set shiftwidth=0
 set smartindent
 
 " ---------------------------MAPPINGS---------------------------"
@@ -142,7 +140,7 @@ set hidden
 set nowritebackup
 
 " Give more space for displaying messages.
-set cmdheight=2
+set cmdheight=1
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.

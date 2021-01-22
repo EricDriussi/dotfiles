@@ -16,7 +16,7 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
 bindkey '^H' backward-kill-word
 
 alias gcom='git add . && git commit'
-alias gpush='git push origin master'
+alias gpush='git push origin'
 alias ginit='git init && git config credential.helper store'
 alias glg= "git log --pretty=oneline"
 
