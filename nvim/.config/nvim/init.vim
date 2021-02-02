@@ -50,6 +50,11 @@ set splitright
 set noshowmode
 set scrolloff=10
 
+"Tab be gud
+set tabstop=4
+set softtabstop=0 noexpandtab
+set shiftwidth=4
+
 "Old settings
 set number relativenumber
 set mouse=a
@@ -113,6 +118,7 @@ vmap ( S)
 vmap [ S]
 vmap { S}
 vmap ' S'
+vmap " S"
 
 "Prettier Formatting
 vnoremap <leader>f  <Plug>(coc-format-selected)

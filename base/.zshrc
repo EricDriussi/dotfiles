@@ -4,31 +4,16 @@ export PATH=$PATH:/opt
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk/
 export ANDROID_SDK_ROOT=/home/eric/Android/Sdk/
 export PATH="${PATH}:/home/eric/scripts"
+export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin
+export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
 # Path to your oh-my-zsh installation.
 export ZSH="/home/eric/.oh-my-zsh"
 
-export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin
-
-export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
-
-export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
-
 bindkey '^H' backward-kill-word
 
-alias gcom='git add . && git commit'
-alias gpush='git push origin'
-alias ginit='git init && git config credential.helper store'
-alias glg= "git log --pretty=oneline"
-
-alias v="nvim"
-vo() { nvim $(find .| fzf) }
-
-alias updatesys="sudo pacman -Syu"
-alias install="sudo pacman -S"
-alias remove="sudo pacman -Rs"
-alias search="sudo pacman -Ss"
-alias cleansys="sudo paccache -rk2 -ruk0 && sudo pacman -Sc && yay -Sc --aur && rm -rf ~/.local/share/Trash/*"
 setopt rm_star_silent
+
 
   #
 # Set name of the theme to load --- if set to "random", it will
@@ -41,7 +26,6 @@ ZSH_THEME="half-life"
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
-ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "candy" "af-magic" "steeef" "fino-time" "cypher" "jbergantine" "half-life" "itchy" "dstufft" "amuse")
   #
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -125,3 +109,17 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
   #
+alias ls="exa -bghla"
+alias gcom='git add . && git commit'
+alias gpush='git push origin'
+alias ginit='git init && git config credential.helper store'
+alias glg="git log --pretty=oneline"
+
+alias v="nvim"
+vo() { nvim $(find .| fzf) }
+
+alias updatesys="sudo pacman -Syu"
+alias install="sudo pacman -S"
+alias remove="sudo pacman -Rs"
+alias search="sudo pacman -Ss"
+alias cleansys="sudo paccache -rk2 -ruk0 && sudo pacman -Sc && paru -Sc --aur && rm -rf ~/.local/share/Trash/*"
