@@ -1,11 +1,12 @@
 [colors]
-background = #B3000000
+background = #282A36
 background-wm =  ${xrdb:color8}
-background-alt = #40403d
+background-alt = #44475A
 foreground = #f5ecda
 foreground-alt = #a4aabf
 primary = #a4aabf
-alert = ${xrdb:color1}
+alert = #FF5555 
+;${xrdb:color1}
 
 [settings]
 format-foreground = ${colors.foreground}

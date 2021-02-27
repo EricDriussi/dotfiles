@@ -1,7 +1,8 @@
 "Plugins
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'morhetz/gruvbox'
+Plug 'tomasiser/vim-code-dark'
+" Plug 'morhetz/gruvbox'
 " Plug 'leafgarland/typescript-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -12,22 +13,30 @@ Plug 'itchyny/lightline.vim'
 Plug 'preservim/nerdcommenter'
 Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-rooter'
-Plug 'honza/vim-snippets'
+
+Plug 'luochen1990/rainbow'
+Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 
 " ---------------------------SETTINGS---------------------------"
 
 "Theme
-let g:gruvbox_contrast_dark = 'hard'
-colorscheme gruvbox
-set background=dark 
+colorscheme codedark
+let g:lightline = {
+      \ 'colorscheme': 'codedark',
+      \ }
+
+"let g:gruvbox_contrast_dark = 'hard'
+"colorscheme gruvbox
+"set background=dark 
 
 let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'sharp' } }
 
 let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline'
 let $FZF_DEFAULT_COMMAND="rg --files --hidden"
 
+let g:rainbow_active = 1
 
 "Settings
 syntax on
@@ -59,6 +68,9 @@ set shiftwidth=4
 set number relativenumber
 set mouse=a
 set smartindent
+
+"ejs files look like ass :D
+au BufNewFile,BufRead *.ejs set filetype=html
 
 " ---------------------------MAPPINGS---------------------------"
 

@@ -1,14 +1,16 @@
 # ArchLabs i3 config
 
 # border & title
-for_window [class="^.*"] border pixel 1, title_format "<b> %class >> %title </b>"
+for_window [class="^.*"] border pixel 2, title_format "<b> %class >> %title </b>"
 
 # gaps
 gaps inner 8
 gaps outer 0
 
 # font
-font pango:monospace 11
+
+font pango: UbuntuMonoNerdFontRegular 10
+#font pango:monospace 11
 
 # mod key used for most binds
 # Mod1 = Alt
@@ -22,64 +24,59 @@ set $left h
 set $right l
 
 ###############        Bar         ##################
-bar {
-        status_command i3status
-}
+#bar {
+#        status_command i3status
+#}
 
 ###############     Autostart      ##################
 
 # run with reload
 exec_always --no-startup-id xrdb -load ~/.Xresources
+exec_always --no-startup-id /home/eric/.config/polybar/launch.sh
 
 # run once
 exec --no-startup-id xfsettingsd
 
 # needed for super to launch rofi through ksuperkey, see ~/.xprofile
-#bindsym Mod1+F1 exec --no-startup-id rofi_run -r
+bindsym Mod1+F1 exec --no-startup-id #rofi_run -r
 
 #############         Bindings           ##################
 
-bindsym Control+F7 exec --no-startup-id pactl set-sink-volume alsa_output.pci-0000_05_00.6.analog-stereo -10%
-bindsym Control+F8 exec --no-startup-id pactl set-sink-volume alsa_output.pci-0000_05_00.6.analog-stereo +10%
-
-bindsym Control+F2 exec --no-startup-id light -U 10
-bindsym Control+F3 exec --no-startup-id light -A 10
-
+bindsym $Mod+f fullscreen toggle
+bindsym Control+m exec touchpad-toggle
 exec_always --no-startup-id alternating_layouts.py
+
+exec --no-startup-id brave
+exec --no-startup-id nemo
+exec --no-startup-id thunderbird
+exec --no-startup-id qbittorrent
 
 # kill focused window
 bindsym $Mod+Shift+q kill
-#bindsym Mod1+q kill
-#bindsym Mod1+F4 kill
 
 # launchers
 bindsym Mod1+space exec --no-startup-id rofi_run -r
 
 # core
-#bindsym $Mod+w          exec --no-startup-id exo-open --launch WebBrowser
-#bindsym $Mod+f          exec --no-startup-id exo-open --launch FileManager
-#bindsym $Mod+t          exec --no-startup-id exo-open --launch TerminalEmulator
-#bindsym $Mod+Return     exec --no-startup-id exo-open --launch TerminalEmulator
-#bindsym Control+Shift+t exec --no-startup-id exo-open --launch TerminalEmulator
+# bindsym $Mod+Return exec --no-startup-id alacritty
+bindsym $Mod+Return     exec --no-startup-id exo-open --launch TerminalEmulator
 
 # logout script
 bindsym $Mod+x exec --no-startup-id rofi_run -l
 
 # Screenshot
-bindsym Print exec --no-startup-id "scrot '%S.png' -e 'mv $f $$(xdg-user-dir PICTURES)/ArchLabs-%S-$wx$h.png ; feh $$(xdg-user-dir PICTURES)/ArchLabs-%S-$wx$h.png'"
+# bindsym Print exec --no-startup-id "scrot '%S.png' -e 'mv $f $$(xdg-user-dir PICTURES)/ArchLabs-%S-$wx$h.png ; feh $$(xdg-user-dir PICTURES)/ArchLabs-%S-$wx$h.png'"
+
+bindsym Print exec --no-startup-id escrotum -s ~/Pictures/%Y-%m-%d_%H:%M:%S_screencap.png
 
 # audio
-#bindsym XF86AudioPlay        exec --no-startup-id playerctl play-pause
-#bindsym XF86AudioNext        exec --no-startup-id playerctl next
-#bindsym XF86AudioPrev        exec --no-startup-id playerctl previous
-#bindsym XF86AudioStop        exec --no-startup-id playerctl stop
-#bindsym XF86AudioMute        exec --no-startup-id pamixer -t
-#bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 2
-#bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 2
+bindsym Control+F7 exec --no-startup-id pactl set-sink-volume alsa_output.pci-0000_05_00.6.analog-stereo -5%
+bindsym Control+F8 exec --no-startup-id pactl set-sink-volume alsa_output.pci-0000_05_00.6.analog-stereo +5%
+bindsym Control+F6 exec --no-startup-id pactl set-sink-volume alsa_output.pci-0000_05_00.6.analog-stereo 0
 
 # backlight
-#bindsym XF86MonBrightnessUp   exec --no-startup-id xbacklight -inc 10
-#bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
+bindsym Control+F2 exec --no-startup-id light -U 10
+bindsym Control+F3 exec --no-startup-id light -A 10
 
 ###########          Workspace Bindings          ###############
 
@@ -92,16 +89,6 @@ bindsym $Mod+5 workspace 5
 bindsym $Mod+6 workspace 6
 bindsym $Mod+7 workspace 7
 bindsym $Mod+8 workspace 8
-
-# switch to workspace - numpad alternatives
-bindsym $mod+Mod2+KP_1 workspace 1
-bindsym $mod+Mod2+KP_2 workspace 2
-bindsym $mod+Mod2+KP_3 workspace 3
-bindsym $mod+Mod2+KP_4 workspace 4
-bindsym $mod+Mod2+KP_5 workspace 5
-bindsym $mod+Mod2+KP_6 workspace 6
-bindsym $mod+Mod2+KP_7 workspace 7
-bindsym $mod+Mod2+KP_8 workspace 8
 
 # switch to next or previous workspace
 bindsym $mod+Mod1+Left workspace prev
@@ -117,17 +104,6 @@ bindsym $Mod+Shift+6 move container to workspace 6; workspace 6
 bindsym $Mod+Shift+7 move container to workspace 7; workspace 7
 bindsym $Mod+Shift+8 move container to workspace 8; workspace 8
 
-# move focused container to workspace - numpad alternatives
-bindsym $Mod+Shift+Mod2+KP_End   move container to workspace 1; workspace 1
-bindsym $Mod+Shift+Mod2+KP_Down  move container to workspace 2; workspace 2
-bindsym $Mod+Shift+Mod2+KP_Next  move container to workspace 3; workspace 3
-bindsym $Mod+Shift+Mod2+KP_Left  move container to workspace 4; workspace 4
-bindsym $Mod+Shift+Mod2+KP_Begin move container to workspace 5; workspace 5
-bindsym $Mod+Shift+Mod2+KP_Right move container to workspace 6; workspace 7
-bindsym $Mod+Shift+Mod2+KP_Home  move container to workspace 7; workspace 7
-bindsym $Mod+Shift+Mod2+KP_Up    move container to workspace 8; workspace 8
-
-
 ##############     Reload configs           ################
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -140,7 +116,7 @@ bindsym $Mod+Shift+c reload
 
 # Scratchpad, Floating
 bindsym $Mod+space floating toggle
-floating_modifier  Mod1
+floating_modifier  $Mod
 
 bindsym $Mod+Shift+z move scratchpad
 bindsym $Mod+z scratchpad show
@@ -156,9 +132,6 @@ bindsym $Mod+Left  focus left
 bindsym $Mod+Down  focus down
 bindsym $Mod+Up    focus up
 bindsym $Mod+Right focus right
-
-bindsym $Mod+p focus parent
-bindsym $Mod+c focus child
 
 # move focused window
 bindsym $Mod+Shift+$left  move left  10px
@@ -182,17 +155,6 @@ bindsym Mod1+Right resize grow   width  10 px or 1 ppt
 bindcode Mod1+23 layout toggle tabbed split
 bindcode $Mod+23 layout toggle splitv splith
 
-# switch to workspace with urgent window
-for_window [urgent="latest"] focus
-focus_on_window_activation   focus
-
-# container layout
-#bindsym $Mod+h split h
-#bindsym $Mod+v split v
-#bindsym $Mod+Shift+t layout tabbed
-#bindsym $Mod+Shift+s layout stacking
-#bindsym $Mod+Shift+h layout toggle split
-
 default_orientation horizontal
 
 ###############      Border & Gaps     ###############
@@ -204,27 +166,12 @@ hide_edge_borders both
 
 bindsym $Mod+shift+b border toggle
 
-# changing border style
-bindsym $Mod+n border normal
-bindsym $Mod+y border 1pixel
-bindsym $Mod+u border none
-
-# change gaps
-bindsym $Mod+plus                gaps inner current plus  5
-bindsym $Mod+minus               gaps inner current minus 5
-bindsym $Mod+Shift+plus          gaps outer current plus  5
-bindsym $Mod+Shift+minus         gaps outer current minus 5
-bindsym $Mod+Control+plus        gaps inner all     plus  5
-bindsym $Mod+Control+minus       gaps inner all     minus 5
-bindsym $Mod+Control+Shift+plus  gaps outer all     plus  5
-bindsym $Mod+Control+Shift+minus gaps outer all     minus 5
-
 ############    application settings   ############
 
 # assign applications to specific workspace
-assign [class="(?i)(?:firefox)"] → 1
-assign [class="(?i)(?:geany)"]   → 2
-assign [class="(?i)(?:thunar)"]  → 3
+assign [class="(?i)(?:brave)"] → 1
+assign [class="(?i)(?:thunderbird)"]   → 2
+assign [class="(?i)(?:nemo)"]  → 4
 
 # focus, floating, & sticky
 for_window [class="(?i)(?:qt5ct|pinentry)"]          floating enable, focus
