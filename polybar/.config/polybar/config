@@ -1,11 +1,20 @@
 [colors]
-background = #282A36
-background-wm =  ${xrdb:color8}
-background-alt = #44475A
-foreground = #f5ecda
-foreground-alt = #a4aabf
-primary = #a4aabf
-alert = #FF5555 
+background = #282828
+background-alt = #444
+foreground = #ebdbb2
+foreground-alt = #555
+primary = #d79921
+secondary = #cc241d
+alert = #fb4934
+
+;background = #17181f
+;#282A36
+;background-wm =  ${xrdb:color8}
+;background-alt = #44475A
+;foreground = #f5ecda
+;foreground-alt = #a4aabf
+;primary = #a4aabf
+;alert = #FF5555 
 ;${xrdb:color1}
 
 [settings]

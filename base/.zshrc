@@ -1,9 +1,10 @@
 export PATH=$HOME/bin:/usr/bin:$PATH
 export PATH=$PATH:/opt
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk/
-export ANDROID_SDK_ROOT=/home/eric/Android/Sdk/
+export ANDROID_SDK_ROOT=$HOME/Android/Sdk/
 export PATH="${PATH}:/home/eric/scripts"
-export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin
+export PATH=$PATH:$ANDROID_SDK_ROOT
+export PATH=$PATH:$ANDROID_SDK_ROOT/tools
 export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
 

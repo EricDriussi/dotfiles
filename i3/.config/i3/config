@@ -47,7 +47,7 @@ bindsym Control+m exec touchpad-toggle
 exec_always --no-startup-id alternating_layouts.py
 
 exec --no-startup-id brave
-exec --no-startup-id nemo
+exec --no-startup-id thunar
 exec --no-startup-id thunderbird
 exec --no-startup-id qbittorrent
 
@@ -171,7 +171,7 @@ bindsym $Mod+shift+b border toggle
 # assign applications to specific workspace
 assign [class="(?i)(?:brave)"] → 1
 assign [class="(?i)(?:thunderbird)"]   → 2
-assign [class="(?i)(?:nemo)"]  → 4
+assign [class="(?i)(?:thunar)"]  → 4
 
 # focus, floating, & sticky
 for_window [class="(?i)(?:qt5ct|pinentry)"]          floating enable, focus
@@ -180,11 +180,5 @@ for_window [window_role="(?i)(?:pop-up|setup)"]      floating enable
 
 popup_during_fullscreen smart
 
-# class                 border  bground text    indicator child_border
-client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
-client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
-client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
-client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
-client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
-
-client.background       #F8F8F2
+client.focused #ebdbb2 #282828 #ffffff #ebdbb2 #ebdbb2
+client.unfocused #282828 #282828 #ffffff #282828 #282828
