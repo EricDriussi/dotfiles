@@ -1,5 +1,4 @@
-nvim/.config/nvim/undodir/
-.git/
-base/.oh-my-szh/.git/
-base/.icons/
-base/.themes/
+/nvim/.config/nvim/undodir
+/nvim/.config/nvim/undotree
+/.git
+/base/.oh-my-szh/.git

@@ -1,4 +1,4 @@
 WebBrowser=brave
 TerminalEmulator=custom-TerminalEmulator
-FileManager=custom-FileManager
+FileManager=thunar
 

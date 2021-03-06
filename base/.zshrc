@@ -25,7 +25,8 @@ alias ginit='git init && git config credential.helper store'
 alias glg="git log --pretty=oneline"
 
 alias v="nvim"
-vo() { nvim $(find .| fzf) }
+# vo() { nvim $(find .| fzf) }
+ vo() { nvim $(rg --files --hidden .| fzf) }
 
 alias updatesys="sudo pacman -Syu"
 alias install="sudo pacman -S"
