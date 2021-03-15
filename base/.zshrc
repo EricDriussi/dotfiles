@@ -18,6 +18,8 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting npm)
 source $ZSH/oh-my-zsh.sh
 alias ls="exa -bghla"
 alias yt="youtube-dl -o \"%(title)s.%(ext)s\""
+alias tree="tree -L 3 -C"
+alias pass="keepassxc-cli clip Documents/Passwords-BitWarden.kdbx" 
 
 alias gcom='git add . && git commit'
 alias gpush='git push origin'
@@ -33,4 +35,5 @@ alias install="sudo pacman -S"
 alias remove="sudo pacman -Rs"
 alias search="sudo pacman -Ss"
 alias cleansys="sudo paccache -rk2 -ruk0 && sudo pacman -Sc && paru -Sc --aur && rm -rf ~/.local/share/Trash/*"
+
 # rsync -vrP ~/Documents/niceadsl/ root@niceadsl.xyz:/var/www/niceadsl

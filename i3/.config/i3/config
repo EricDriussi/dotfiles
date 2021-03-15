@@ -48,8 +48,8 @@ exec_always --no-startup-id alternating_layouts.py
 
 exec --no-startup-id prime-run brave
 exec --no-startup-id thunar
-exec --no-startup-id prime-run 
-exec --no-startup-id prime-run
+exec --no-startup-id thunderbird
+exec --no-startup-id qbittorrent
 
 # kill focused window
 bindsym $Mod+Shift+q kill
