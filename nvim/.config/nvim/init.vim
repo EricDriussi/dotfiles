@@ -115,9 +115,6 @@ vnoremap > >gv
 "Save all 
 nnoremap <M-s> :wa <CR>
 
-"Terminal
-"nnoremap <leader>t :set splitbelow<CR>:set termsize=10x2<CR>:term<CR>:set splitright<CR>
-
 "Coc-explorer
 nnoremap <M-e> :CocCommand explorer<CR>
 
@@ -134,6 +131,7 @@ vmap [ S]
 vmap { S}
 vmap ' S'
 vmap " S"
+vmap * S*
 
 "Prettier Formatting
 vnoremap <leader>f  <Plug>(coc-format-selected)
@@ -177,9 +175,9 @@ function! TermToggle(height)
 endfunction
 
 " Toggle terminal on/off (neovim)
-nnoremap <leader>t :call TermToggle(10)<CR>
-inoremap <leader>t  <Esc>:call TermToggle(10)<CR>
-tnoremap <leader>t <C-\><C-n>:call TermToggle(10)<CR>
+nnoremap <leader>t :call TermToggle(8)<CR>
+"inoremap <leader>t  <Esc>:call TermToggle(8)<CR>
+tnoremap <leader>t <C-\><C-n>:call TermToggle(8)<CR>
 
 " Terminal go back to normal mode
 tnoremap <Esc> <C-\><C-n>
