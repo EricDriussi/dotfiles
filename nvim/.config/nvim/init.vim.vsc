@@ -1,38 +1,14 @@
-"Plugins
-call plug#begin('~/.config/nvim/plugged')
-
-"Plug 'tomasiser/vim-code-dark'
-Plug 'morhetz/gruvbox'
-Plug 'jiangmiao/auto-pairs'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'mbbill/undotree'
-
-Plug 'tpope/vim-surround'
-Plug 'itchyny/lightline.vim'
-Plug 'preservim/nerdcommenter'
-Plug 'junegunn/fzf.vim'
-Plug 'airblade/vim-rooter'
-
-Plug 'luochen1990/rainbow'
-Plug 'sheerun/vim-polyglot'
-
-call plug#end()
-
 " ---------------------------SETTINGS---------------------------"
 
-let g:gruvbox_contrast_dark = 'hard'
-colorscheme gruvbox
 set background=dark 
-
-let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'sharp' } }
-
-let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline'
-let $FZF_DEFAULT_COMMAND="rg --files --hidden"
 
 "Settings
 syntax on
-set ignorecase
 set smartcase
+set noswapfile
+set nobackup
+set undodir=~/.config/nvim/undodir
+set undofile
 set incsearch
 set cursorline
 set spelllang=en,es,cjk
@@ -47,20 +23,6 @@ set formatoptions-=cro
 set splitright
 set noshowmode
 set scrolloff=10
-set noerrorbells
-
-" Highlight colors
-hi Visual cterm=bold 
-hi DiffAdd guifg=142 ctermfg=142
-hi DiffChange guifg=66 ctermfg=66
-hi DiffDelete guifg=167 ctermfg=167
-hi DiffText guifg=172 ctermfg=172
-
-" History
-set noswapfile
-set nobackup
-set undodir=~/.config/nvim/undodir
-set undofile
 
 "Tab be gud
 set tabstop=4
@@ -99,14 +61,6 @@ nnoremap <Esc> :noh<return><Esc>
 "Close tab
 nnoremap <C-w> :q<CR>
 
-"FZF ignore .gitignore
-nnoremap <expr> <C-f> (len(system('git rev-parse')) ? ':Files' : ':GFiles --exclude-standard --others --cached')."\<cr>"
-
-"nnoremap <C-f> :FZF<CR>
-
-"FZF+RipGrep
-nnoremap <M-f> :Rg<CR>
-
 "Better tabbing
 vnoremap < <gv
 vnoremap > >gv
@@ -120,14 +74,7 @@ vnoremap > >gv
 "Save all 
 nnoremap <M-s> :wa <CR>
 
-"Coc-explorer
-nnoremap <M-e> :CocCommand explorer<CR>
-
-"UndoTree
-nnoremap <M-u> :UndotreeToggle<CR>
-
-"NerdCommenter
-nnoremap <M-c> :call NERDComment(0, "toggle")<CR>
+vnoremap <M-c> :call NERDComment(0, "toggle")<CR>
 vnoremap <M-c> :call NERDComment(0, "toggle")<CR>gv
 
 "Surround.vim

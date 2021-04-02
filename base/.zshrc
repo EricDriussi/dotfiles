@@ -1,8 +1,10 @@
 export PATH=$HOME/bin:/usr/bin:$PATH
 export PATH=$PATH:/opt
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk/
+export PATH=$PATH:/home/eric/.config/vifm
+export JAVA_HOME=/usr/lib/jvm/java-15-openjdk/
 export ANDROID_SDK_ROOT=$HOME/Android/Sdk/
 export PATH="${PATH}:/home/eric/scripts"
+export PATH="${PATH}:/home/eric/.config/vifm/vifmimg"
 export PATH=$PATH:$ANDROID_SDK_ROOT
 export PATH=$PATH:$ANDROID_SDK_ROOT/tools
 export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
@@ -20,13 +22,15 @@ alias ls="exa -bghla"
 alias yt="youtube-dl -o \"%(title)s.%(ext)s\""
 alias tree="tree -L 3 -C"
 alias pass="keepassxc-cli clip Documents/Passwords-BitWarden.kdbx" 
+alias mkdir="mkdir -p"
+mkcd(){mkdir "$1" && cd "$1"}
 
 alias gcom='git add . && git commit'
 alias gpush='git push origin'
 alias ginit='git init && git config credential.helper store'
 alias glg="git log --pretty=oneline"
 
-alias v="nvim"
+alias vfm=~/.config/vifm/vifmimg/vifmrun
 # vo() { nvim $(find .| fzf) }
  vo() { nvim $(rg --files --hidden .| fzf) }
 

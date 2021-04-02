@@ -47,7 +47,8 @@ bindsym Control+m exec touchpad-toggle
 exec_always --no-startup-id alternating_layouts.py
 
 exec --no-startup-id prime-run brave
-exec --no-startup-id thunar
+exec --no-startup-id i3-msg 'workspace 4; exec alacritty -e bash -c ~/.config/vifm/vifmimg/vifmrun'
+#exec --no-startup-id i3-msg 'workspace 4; exec thunar'
 exec --no-startup-id thunderbird
 exec --no-startup-id qbittorrent
 
@@ -171,10 +172,10 @@ bindsym $Mod+shift+b border toggle
 # assign applications to specific workspace
 assign [class="(?i)(?:brave)"] → 1
 assign [class="(?i)(?:thunderbird)"]   → 2
-assign [class="(?i)(?:thunar)"]  → 4
+#assign [class="(?i)(?:thunar)"]  → 4
 
 # focus, floating, & sticky
-for_window [class="Gparted"]          floating enable, focus
+for_window [class="(?i)(?:Gparted)"]          floating enable, focus
 for_window [class="(?i)(?:qt5ct|pinentry)"]          floating enable, focus
 for_window [title="(?i)(?:copying|deleting|moving)"] floating enable
 for_window [window_role="(?i)(?:pop-up|setup)"]      floating enable
