@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =2
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/home/eric/dotfiles/nvim/.config/nvim/plugged/auto-pairs'
 let g:netrw_dirhist_2='/home/eric/Documents/hugo/blog/themes/zzo/layouts/partials'
 let g:netrw_dirhist_1='/home/eric/Documents/hugo/blog/content/en/resume'
 let g:netrw_dirhist_0='/home/eric/Documents/hugo/blog/content/en'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_7='/home/eric/dotfiles/i3/.config/i3'
 let g:netrw_dirhist_6='/home/eric/dotfiles'
 let g:netrw_dirhist_5='/home/eric/Documents/node/controllers'
 let g:netrw_dirhist_4='/home/eric/Documents/node'
-let g:netrw_dirhist_3='/home/eric/Documents'
