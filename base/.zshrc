@@ -1,7 +1,7 @@
 export PATH=$HOME/bin:/usr/bin:$PATH
 export PATH=$PATH:/opt
 export PATH=$PATH:/home/eric/.config/vifm
-export JAVA_HOME=/usr/lib/jvm/java-15-openjdk/
+#export JAVA_HOME=/usr/lib/jvm/java-15-openjdk/
 export ANDROID_SDK_ROOT=$HOME/Android/Sdk/
 export PATH="${PATH}:/home/eric/scripts"
 export PATH="${PATH}:/home/eric/.config/vifm/vifmimg"

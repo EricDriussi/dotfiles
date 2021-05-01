@@ -47,8 +47,7 @@ bindsym Control+m exec touchpad-toggle
 exec_always --no-startup-id alternating_layouts.py
 
 exec --no-startup-id prime-run brave
-exec --no-startup-id i3-msg 'workspace 4; exec alacritty -e bash -c ~/.config/vifm/vifmimg/vifmrun'
-#exec --no-startup-id i3-msg 'workspace 4; exec thunar'
+#exec_always --no-startup-id i3-msg 'workspace 4; exec alacritty -e zsh -c ~/.config/vifm/vifmimg/vifmrun'
 exec --no-startup-id thunderbird
 exec --no-startup-id qbittorrent
 
