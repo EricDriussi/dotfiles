@@ -31,8 +31,11 @@ alias ginit='git init && git config credential.helper store'
 alias glg="git log --pretty=oneline"
 
 alias vfm=~/.config/vifm/vifmimg/vifmrun
-# vo() { nvim $(find .| fzf) }
- vo() { nvim $(rg --files --hidden .| fzf) }
+
+vo() { nvim $(fzf) }
+export FZF_DEFAULT_COMMAND='rg --files --hidden .'
+export FZF_DEFAULT_OPTS='--height 70% --layout=reverse --border --preview="head -$LINES {}" --info=inline'
+
 
 alias updatesys="sudo pacman -Syu"
 alias install="sudo pacman -S"
