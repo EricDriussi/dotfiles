@@ -77,8 +77,8 @@ au BufNewFile,BufRead *.ejs set filetype=html
 " ---------------------------MAPPINGS---------------------------"
 
 "Kinda scrolling
-nnoremap <C-d> <C-d>zz
-nnoremap <C-u> <C-u>zz
+"nnoremap <C-d> <C-d>zz
+"nnoremap <C-u> <C-u>zz
 
 "Sensible copy-pasting
 vnoremap <C-c> "+y
@@ -146,7 +146,7 @@ inoremap { {}<Left>
 inoremap {<CR> {<CR>}<Esc>O
 inoremap [ []<Left>
 inoremap < <><Left>
-inoremap ' ''<Left>
+"inoremap ' ''<Left>
 inoremap " ""<Left>
 
 

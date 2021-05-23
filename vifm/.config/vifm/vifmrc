@@ -4,6 +4,9 @@
 " Yank path to system clipboard
 nnoremap yp :!echo -n %c:p | xclip -selection clipboard %i<cr>:echo expand('%"c:p') "is yanked to clipboard"<cr>
 
+" Yank name
+nnoremap yn :!echo -n %c | xclip -selection clipboard %i<cr>:echo expand('%"c') "is yanked to clipboard"<cr>
+
 " Open selected dir in new pane and switch
 nnoremap <c-t> :sync %c <cr><space>
 
