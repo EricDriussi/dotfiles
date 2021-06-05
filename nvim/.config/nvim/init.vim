@@ -158,5 +158,27 @@ nnoremap - :vertical resize -2<CR>
 nnoremap <C-M-l> :wincmd l<cr>
 nnoremap <C-M-h> :wincmd h<cr>
 
+"Set up usable diff view
+command! Diffme call DiffMeBby()
+function! DiffMeBby()
+	let g:current_split = win_getid()
+	:wincmd h
+	set cursorbind
+	set scrollbind
+	diffthis
+	:wincmd l
+	set cursorbind
+	set scrollbind
+	diffthis
+	call win_gotoid(g:current_split)
+endfunction
+
+command! Undiffme call UnDiffMeBby()
+function! UnDiffMeBby()
+	set nocursorbind
+	set noscrollbind
+	diffoff
+endfunction
+
 " ---------------------------Terminal & CoC---------------------------"
 source ~/.config/nvim/term-coc.vim

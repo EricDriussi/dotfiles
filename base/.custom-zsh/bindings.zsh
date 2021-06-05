@@ -56,3 +56,6 @@ bindkey -M viins '^[[1;5C' forward-word
 # [Ctrl-LeftArrow] - move backward one word
 bindkey -M viins '^[[1;5D' backward-word
 
+# [Delete] - Delete a single char
+bindkey -M viins '^[[3~' delete-char
+
