@@ -166,10 +166,12 @@ function! DiffMeBby()
 	set cursorbind
 	set scrollbind
 	diffthis
+	set wrap
 	:wincmd l
 	set cursorbind
 	set scrollbind
 	diffthis
+	set wrap
 	call win_gotoid(g:current_split)
 endfunction
 
