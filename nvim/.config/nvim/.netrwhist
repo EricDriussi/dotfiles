@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =9
+let g:netrw_dirhistcnt =1
+let g:netrw_dirhist_1='/home/eric/Documents/BDD'
+let g:netrw_dirhist_0='/home/eric/Documents/BDD/bddbook-translation'
 let g:netrw_dirhist_9='/home/eric/dotfiles/nvim/.config/nvim/plugged/coc.nvim'
 let g:netrw_dirhist_8='/home/eric/dotfiles/.git'
 let g:netrw_dirhist_7='/home/eric/dotfiles'
@@ -8,5 +10,3 @@ let g:netrw_dirhist_5='/home/eric/Documents/hugo/blog'
 let g:netrw_dirhist_4='/home/eric/Documents/hugo'
 let g:netrw_dirhist_3='/home/eric/dotfiles/nvim/.config/nvim/plugged/auto-pairs'
 let g:netrw_dirhist_2='/home/eric/Documents/hugo/blog/themes/zzo/layouts/partials'
-let g:netrw_dirhist_1='/home/eric/Documents/hugo/blog/content/en/resume'
-let g:netrw_dirhist_0='/home/eric/Documents/hugo/blog/content/en'

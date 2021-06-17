@@ -12,6 +12,7 @@ Plug 'airblade/vim-rooter'
 
 Plug 'luochen1990/rainbow'
 Plug 'sheerun/vim-polyglot'
+Plug 'ActivityWatch/aw-watcher-vim'
 
 call plug#end()
 
