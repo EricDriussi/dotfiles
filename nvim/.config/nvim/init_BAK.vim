@@ -1,20 +1,23 @@
 "Plugins
 call plug#begin('~/.config/nvim/plugged')
-
-"Plug 'tomasiser/vim-code-dark'
+"Looks
 Plug 'morhetz/gruvbox'
-Plug 'jiangmiao/auto-pairs'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'mbbill/undotree'
-
 Plug 'tpope/vim-surround'
 Plug 'itchyny/lightline.vim'
+Plug 'luochen1990/rainbow'
+
+"IDE
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'mbbill/undotree'
 Plug 'preservim/nerdcommenter'
 Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-rooter'
-
-Plug 'luochen1990/rainbow'
 Plug 'sheerun/vim-polyglot'
+
+"Git
+Plug 'tpope/vim-fugitive'
+
+Plug 'ActivityWatch/aw-watcher-vim'
 
 call plug#end()
 
@@ -24,10 +27,11 @@ let g:gruvbox_contrast_dark = 'hard'
 colorscheme gruvbox
 set background=dark 
 
-let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'sharp' } }
+let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'rounded' } }
+let g:fzf_preview_window = ['right:50%', 'ctrl-/']
 
-let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline'
-let $FZF_DEFAULT_COMMAND="rg --files --hidden"
+let g:rainbow_active = 1
+let g:rainbow_conf = {'ctermfgs': ['white', 'cyan', 'magenta', 'darkblue', 'darkred', 'darkgreen', 'darkmagenta', 'darkcyan']}
 
 "Settings
 syntax on
@@ -48,6 +52,22 @@ set splitright
 set noshowmode
 set scrolloff=10
 set noerrorbells
+set linebreak
+set wildmenu
+set title
+set foldmethod=indent
+set number relativenumber
+set mouse=a
+set smartindent
+" History
+set noswapfile
+set nobackup
+set undodir=~/.config/nvim/undodir
+set undofile
+"Tab be gud
+set tabstop=4
+set softtabstop=0 noexpandtab
+set shiftwidth=4
 
 " Highlight colors
 hi Visual cterm=bold 
@@ -56,30 +76,14 @@ hi DiffChange guifg=66 ctermfg=66
 hi DiffDelete guifg=167 ctermfg=167
 hi DiffText guifg=172 ctermfg=172
 
-" History
-set noswapfile
-set nobackup
-set undodir=~/.config/nvim/undodir
-set undofile
-
-"Tab be gud
-set tabstop=4
-set softtabstop=0 noexpandtab
-set shiftwidth=4
-
-"Old settings
-set number relativenumber
-set mouse=a
-set smartindent
-
 "ejs files look like ass :D
 au BufNewFile,BufRead *.ejs set filetype=html
 
 " ---------------------------MAPPINGS---------------------------"
 
 "Kinda scrolling
-nnoremap <C-d> <C-d>zz
-nnoremap <C-u> <C-u>zz
+"nnoremap <C-d> <C-d>zz
+"nnoremap <C-u> <C-u>zz
 
 "Sensible copy-pasting
 vnoremap <C-c> "+y
@@ -102,6 +106,8 @@ nnoremap <C-w> :q<CR>
 "FZF ignore .gitignore
 "nnoremap <expr> <C-f> (len(system('git rev-parse')) ? ':Files' : ':GFiles --exclude-standard --others --cached')."\<cr>"
 
+
+nmap <C-f> <plug>(fzf-maps-n)
 nnoremap <C-f> :FZF<CR>
 
 "FZF+RipGrep
@@ -139,6 +145,16 @@ vmap " S"
 vmap * S*
 vmap ` S`
 
+"Home made auto-pairs
+inoremap ( ()<Left>
+inoremap { {}<Left>
+inoremap {<CR> {<CR>}<Esc>O
+inoremap [ []<Left>
+inoremap < <><Left>
+"inoremap ' ''<Left>
+inoremap " ""<Left>
+
+
 "Resize splits
 nnoremap + :vertical resize +2<CR>
 nnoremap - :vertical resize -2<CR>
@@ -146,7 +162,32 @@ nnoremap - :vertical resize -2<CR>
 "Nav
 nnoremap <C-M-l> :wincmd l<cr>
 nnoremap <C-M-h> :wincmd h<cr>
-"<C-H> commented from ~/dotfiles/nvim/.config/nvim/plugged/auto-pairs/plugin/auto-pairs.vim line 549
+nnoremap <C-M-j> :wincmd j<cr>
+nnoremap <C-M-k> :wincmd k<cr>
+
+"Set up diff view
+command! Diffme call DiffMeBby()
+function! DiffMeBby()
+	let g:current_split = win_getid()
+	:wincmd h
+	set cursorbind
+	set scrollbind
+	diffthis
+	set wrap
+	:wincmd l
+	set cursorbind
+	set scrollbind
+	diffthis
+	set wrap
+	call win_gotoid(g:current_split)
+endfunction
+
+command! Undiffme call UnDiffMeBby()
+function! UnDiffMeBby()
+	set nocursorbind
+	set noscrollbind
+	diffoff
+endfunction
 
 " ---------------------------Terminal & CoC---------------------------"
 source ~/.config/nvim/term-coc.vim
