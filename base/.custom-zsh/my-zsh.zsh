@@ -1,10 +1,3 @@
-# ZSH specific config
-HISTFILE=~/.zsh_history
-export HISTSIZE=10000
-
-bindkey -v
-export KEYTIMEOUT=1
-
 # Bind me like OMZ
 source ~/.custom-zsh/bindings.zsh
 

@@ -46,6 +46,7 @@ let g:rainbow_conf = {'ctermfgs': ['white', 'cyan', 'magenta', 'darkblue', 'dark
 syntax on
 set ignorecase
 set termguicolors
+set wrap
 
 set smartcase
 set incsearch
@@ -87,13 +88,34 @@ set shiftwidth=2
 
 " Highlight colors
 hi visual gui=bold cterm=bold
-hi DiffAdd guifg=142 ctermfg=142
-hi DiffChange guifg=66 ctermfg=66
-hi DiffDelete guifg=167 ctermfg=167
-hi DiffText guifg=172 ctermfg=172
+hi DiffAdd    ctermfg=black ctermbg=142 guifg=#282828 guibg=#b8bb26
+hi DiffDelete ctermfg=black ctermbg=167 guifg=#282828 guibg=#fb4934
+hi DiffChange ctermfg=109 ctermbg=black guifg=#83a598 guibg=#282828  
+hi DiffText 	ctermfg=109 ctermbg=166 guifg=#83a598 guibg=#d65d0e
 
 "ejs files look like crap :D
 au BufNewFile,BufRead *.ejs set filetype=html
+
+"Set up diff view
+command! Diffme call DiffMeBby()
+function! DiffMeBby()
+	let g:current_split = win_getid()
+	:wincmd h
+	diffthis
+	:wincmd l
+	diffthis
+	windo set cursorbind
+	windo set scrollbind
+	windo set wrap
+	call win_gotoid(g:current_split)
+endfunction
+
+command! Undiffme call UnDiffMeBby()
+function! UnDiffMeBby()
+	set nocursorbind
+	set noscrollbind
+	diffoff
+endfunction
 
 " ------------------------------MAPPINGS------------------------------"
 
@@ -197,29 +219,8 @@ nnoremap <C-M-r> <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap <M-CR> <cmd>lua vim.lsp.buf.code_action()<CR>
 nnoremap <C-M-f> <cmd>lua vim.lsp.buf.formatting()<CR>
 
-"Set up diff view
-command! Diffme call DiffMeBby()
-function! DiffMeBby()
-	let g:current_split = win_getid()
-	:wincmd h
-	set cursorbind
-	set scrollbind
-	diffthis
-	set wrap
-	:wincmd l
-	set cursorbind
-	set scrollbind
-	diffthis
-	set wrap
-	call win_gotoid(g:current_split)
-endfunction
-
-command! Undiffme call UnDiffMeBby()
-function! UnDiffMeBby()
-	set nocursorbind
-	set noscrollbind
-	diffoff
-endfunction
+"Fugitive Split
+nnoremap <silent> gs <cmd>Gvdiffsplit<bar>windo set wrap<CR>
 
 " ---------------------------Terminal---------------------------"
 

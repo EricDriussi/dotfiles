@@ -21,3 +21,5 @@ alias vfm=~/.config/vifm/vifmimg/vifmrun
 
 mkcd(){mkdir "$1" && cd "$1"}
 vo() { nvim $(fzf) }
+alias vov="nvim ~/dotfiles/nvim/.config/nvim/init.vim"
+alias voz="nvim ~/dotfiles/base/.zshrc"

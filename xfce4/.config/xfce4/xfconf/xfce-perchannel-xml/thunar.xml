@@ -20,7 +20,7 @@
     <value type="string" value="92389ef3-12fb-4438-beef-d0c1933a2a2d"/>
   </property>
   <property name="last-details-view-zoom-level" type="string" value="THUNAR_ZOOM_LEVEL_38_PERCENT"/>
-  <property name="last-details-view-column-widths" type="string" value="50,138,50,50,1357,50,50,85,50,151"/>
+  <property name="last-details-view-column-widths" type="string" value="50,132,50,50,1336,50,50,80,50,183"/>
   <property name="last-show-hidden" type="bool" value="false"/>
   <property name="misc-confirm-close-multiple-tabs" type="bool" value="false"/>
   <property name="last-sort-column" type="string" value="THUNAR_COLUMN_NAME"/>

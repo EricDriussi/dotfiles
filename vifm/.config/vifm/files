@@ -56,6 +56,10 @@
         \ %pc
         \ vifmimg clear
 
+" TS
+filextype {*.ts},<application/ts> nvim %c
+fileviewer {*.ts},<application/ts> echo %c
+
 " Pdf
 filextype {*.pdf},<application/pdf> zathura %c %i &, apvlv %c, xpdf %c
 fileviewer {*.pdf},<application/pdf> pdftotext -nopgbrk %c -
@@ -125,7 +129,7 @@ fileviewer {*.[1-8]},<text/troff> man ./%c | col -b
 " Images
 filextype {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
         \ {View in feh}
-        \ feh %f,
+        \ feh --conversion-timeout 1 %f,
         \ {View in sxiv}
         \ sxiv %f,
         \ {View in gpicview}

@@ -1,6 +1,8 @@
 export PATH=$HOME/bin:/usr/bin:$PATH
 export PATH=$PATH:/opt
 
+export PATH=$PATH:/home/eric/intellij/bin
+
 export PATH=$PATH:/home/eric/.config/vifm
 export PATH="${PATH}:/home/eric/.config/vifm/vifmimg"
 
@@ -18,5 +20,12 @@ export VISUAL="nvim"
 export ZSH="~/.custom-zsh"
 
 source ~/.custom-zsh/my-zsh.zsh
+
+HISTFILE=~/.zsh_history
+export HISTSIZE=10000
+export SAVEHIST=10000
+
+bindkey -v
+export KEYTIMEOUT=1
 
 # rsync -vrP --rsh=ssh ~/Documents/niceadsl/ root@niceadsl.xyz:/var/www/niceadsl

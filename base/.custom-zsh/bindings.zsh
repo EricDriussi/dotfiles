@@ -59,3 +59,8 @@ bindkey -M viins '^[[1;5D' backward-word
 # [Delete] - Delete a single char
 bindkey -M viins '^[[3~' delete-char
 
+# [Ctrl-BackSpace] - Delete a single word
+bindkey '^H' backward-kill-word
+
+# [Ctrl-Delete] - Delete previous word
+bindkey '^[[3;5~' kill-word
