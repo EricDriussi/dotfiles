@@ -88,10 +88,10 @@ set shiftwidth=2
 
 " Highlight colors
 hi visual gui=bold cterm=bold
-hi DiffAdd    ctermfg=black ctermbg=142 guifg=#282828 guibg=#b8bb26
-hi DiffDelete ctermfg=black ctermbg=167 guifg=#282828 guibg=#fb4934
-hi DiffChange ctermfg=109 ctermbg=black guifg=#83a598 guibg=#282828  
-hi DiffText 	ctermfg=109 ctermbg=166 guifg=#83a598 guibg=#d65d0e
+hi DiffAdd    ctermfg=142 ctermbg=black guifg=#282828 guibg=#b8bb26
+hi DiffDelete ctermfg=167 ctermbg=black guifg=#282828 guibg=#fb4934
+hi DiffChange ctermfg=109 ctermbg=black guifg=#282828 guibg=#83a598 
+hi DiffText 	ctermfg=208 ctermbg=black guifg=#282828 guibg=#fe8019
 
 "ejs files look like crap :D
 au BufNewFile,BufRead *.ejs set filetype=html

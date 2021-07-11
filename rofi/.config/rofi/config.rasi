@@ -149,3 +149,4 @@ button selected {
     background-color: var(selected-normal-background);
     text-color:       var(selected-normal-foreground);
 }
+@import "/usr/share/rofi/themes/gruvbox-dark.rasi"
