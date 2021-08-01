@@ -35,7 +35,7 @@ call plug#end()
 
 " ---------------------------SETTINGS---------------------------"
 
-let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_contrast_dark = 'medium'
 colorscheme gruvbox
 set background=dark 
 
@@ -173,7 +173,7 @@ inoremap { {}<Left>
 inoremap {<CR> {<CR>}<Esc>O
 inoremap [ []<Left>
 inoremap < <><Left>
-inoremap ' ''<Left>
+"inoremap ' ''<Left>
 inoremap " ""<Left>
 
 " ------------------------------MAPPINGS-Plugins------------------------------"
@@ -193,7 +193,7 @@ vmap ( S)
 vmap [ S]
 vmap { S}
 vmap ' S'
-vmap " S"
+"vmap " S"
 vmap * S*
 vmap ` S`
 

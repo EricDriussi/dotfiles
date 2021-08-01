@@ -11,7 +11,6 @@ alias search="sudo pacman -Ss"
 alias cleansys="sudo paccache -rk2 -ruk0 && sudo pacman -Sc && paru -Sc --aur && rm -rf ~/.local/share/Trash/*"
 
 alias gs='git status'
-
 alias gcom='git add . && git commit'
 alias gpush='git push origin'
 alias ginit='git init && git config credential.helper store'
@@ -21,5 +20,9 @@ alias vfm=~/.config/vifm/vifmimg/vifmrun
 
 mkcd(){mkdir "$1" && cd "$1"}
 vo() { nvim $(fzf) }
+
 alias vov="nvim ~/dotfiles/nvim/.config/nvim/init.vim"
 alias voz="nvim ~/dotfiles/base/.zshrc"
+alias voi="nvim ~/dotfiles/i3/.config/i3/config"
+
+alias ssh-auth='eval "$(ssh-agent -s)" && ssh-add'

@@ -1,38 +1,30 @@
 # ArchLabs i3 config
 
 # border & title
-for_window [class="^.*"] border pixel 1, title_format "<b> %class >> %title </b>"
+for_window [class="^.*"] border pixel 2, title_format "<b> %class >> %title </b>"
 
 # gaps
 gaps inner 8
 gaps outer 0
 
 # font
-
+font pango: Ubuntu Medium 12
+font pango: JetBrainsMonoMedium 10;
 font pango: FiraMonoNerdFontRegular 10
-#font pango:monospace 11
 
-# mod key used for most binds
-# Mod1 = Alt
-# Mod4 = Super
 set $Mod Mod4
-
-# direction keys
 set $up k
 set $down j
 set $left h
 set $right l
 
-###############        Bar         ##################
-#bar {
-#        status_command i3status
-#}
-
 ###############     Autostart      ##################
 
 # run with reload
+exec_always --no-startup-id exec touchpad-toggle
 exec_always --no-startup-id xrdb -load ~/.Xresources
 exec_always --no-startup-id /home/eric/.config/polybar/launch.sh
+exec_always --no-startup-id feh --bg-center /usr/share/backgrounds/archlabs/gruv-4.jpg /usr/share/backgrounds/archlabs/wp3025590-zero-two-wallpapers.png
 
 # run once
 exec --no-startup-id xfsettingsd
@@ -40,18 +32,18 @@ exec --no-startup-id xfsettingsd
 # needed for super to launch rofi through ksuperkey, see ~/.xprofile
 bindsym Mod1+F1 exec --no-startup-id #rofi_run -r
 
+exec_always --no-startup-id alternating_layouts.py
+exec --no-startup-id brave
+exec --no-startup-id thunderbird
+exec --no-startup-id slack
+exec --no-startup-id zoom
+exec --no-startup-id pavucontrol
+exec --no-startup-id aw-qt
+
 #############         Bindings           ##################
 
 bindsym $Mod+f fullscreen toggle
 bindsym Control+m exec touchpad-toggle
-exec_always --no-startup-id alternating_layouts.py
-
-exec --no-startup-id brave
-#exec_always --no-startup-id i3-msg 'workspace 4; exec alacritty -e zsh -c ~/.config/vifm/vifmimg/vifmrun'
-exec --no-startup-id thunderbird
-exec --no-startup-id qbittorrent
-exec --no-startup-id aw-qt
-exec --no-startup-id blueman-applet
 
 # kill focused window
 bindsym $Mod+Shift+q kill
@@ -60,25 +52,34 @@ bindsym $Mod+Shift+q kill
 bindsym Mod1+space exec --no-startup-id rofi_run -r
 
 # core
-# bindsym $Mod+Return exec --no-startup-id alacritty
-bindsym $Mod+Return     exec --no-startup-id exo-open --launch TerminalEmulator
+bindsym $Mod+Return exec --no-startup-id exo-open --launch TerminalEmulator
 
 # logout script
 bindsym $Mod+x exec --no-startup-id rofi_run -l
 
 # Screenshot
-# bindsym Print exec --no-startup-id "scrot '%S.png' -e 'mv $f $$(xdg-user-dir PICTURES)/ArchLabs-%S-$wx$h.png ; feh $$(xdg-user-dir PICTURES)/ArchLabs-%S-$wx$h.png'"
-
-bindsym Print exec --no-startup-id escrotum -s ~/Pictures/%Y-%m-%d_%H:%M:%S_screencap.png
+bindsym Print exec --no-startup-id flameshot gui
 
 # audio
-bindsym Control+F7 exec --no-startup-id pactl set-sink-volume alsa_output.pci-0000_05_00.6.analog-stereo -5%
-bindsym Control+F8 exec --no-startup-id pactl set-sink-volume alsa_output.pci-0000_05_00.6.analog-stereo +5%
-bindsym Control+F6 exec --no-startup-id pactl set-sink-volume alsa_output.pci-0000_05_00.6.analog-stereo 0
+bindsym Control+F7 exec --no-startup-id pactl set-sink-volume alsa_output.pci-0000_05_00.6.analog-stereo -10% && pactl set-sink-volume 0 -10%
+bindsym Control+F8 exec --no-startup-id pactl set-sink-volume alsa_output.pci-0000_05_00.6.analog-stereo +10% && pactl set-sink-volume 0 +10%
+bindsym Control+F6 exec --no-startup-id pactl set-sink-mute alsa_output.pci-0000_05_00.6.analog-stereo toggle && pactl set-sink-mute 0 toggle
 
 # backlight
 bindsym Control+F2 exec --no-startup-id light -U 10
 bindsym Control+F3 exec --no-startup-id light -A 10
+
+###########          Workspace-Monitor          ###############
+
+workspace 1 output HDMI-0
+workspace 2 output HDMI-0
+workspace 3 output HDMI-0
+workspace 4 output HDMI-0
+workspace 5 output HDMI-0
+workspace 6 output eDP-1-1
+workspace 7 output eDP-1-1
+workspace 8 output eDP-1-1
+workspace 9 output eDP-1-1
 
 ###########          Workspace Bindings          ###############
 
@@ -91,6 +92,7 @@ bindsym $Mod+5 workspace 5
 bindsym $Mod+6 workspace 6
 bindsym $Mod+7 workspace 7
 bindsym $Mod+8 workspace 8
+bindsym $Mod+9 workspace 9
 
 # switch to next or previous workspace
 bindsym $mod+Mod1+Left workspace prev
@@ -105,6 +107,7 @@ bindsym $Mod+Shift+5 move container to workspace 5; workspace 5
 bindsym $Mod+Shift+6 move container to workspace 6; workspace 6
 bindsym $Mod+Shift+7 move container to workspace 7; workspace 7
 bindsym $Mod+Shift+8 move container to workspace 8; workspace 8
+bindsym $Mod+Shift+9 move container to workspace 9; workspace 9
 
 ##############     Reload configs           ################
 
@@ -136,16 +139,16 @@ bindsym $Mod+Up    focus up
 bindsym $Mod+Right focus right
 
 # move focused window
-bindsym $Mod+Shift+$left  move left  10px
-bindsym $Mod+Shift+$down  move down  10px
-bindsym $Mod+Shift+$up    move up    10px
-bindsym $Mod+Shift+$right move right 10px
+bindsym $Mod+Shift+$left  move left  30px
+bindsym $Mod+Shift+$down  move down  30px
+bindsym $Mod+Shift+$up    move up    30px
+bindsym $Mod+Shift+$right move right 30px
 
 # alternatively, you can use the cursor keys:
-bindsym $Mod+Shift+Up    move up    10px
-bindsym $Mod+Shift+Down  move down  10px
-bindsym $Mod+Shift+Left  move left  10px
-bindsym $Mod+Shift+Right move right 10px
+bindsym $Mod+Shift+Up    move up    30px
+bindsym $Mod+Shift+Down  move down  30px
+bindsym $Mod+Shift+Left  move left  30px
+bindsym $Mod+Shift+Right move right 30px
 
 # Size
 bindsym Mod1+Up    resize shrink height 10 px or 1 ppt
@@ -173,9 +176,15 @@ bindsym $Mod+shift+b border toggle
 # assign applications to specific workspace
 assign [class="(?i)(?:brave)"] → 1
 assign [class="(?i)(?:thunderbird)"]   → 2
-#assign [class="(?i)(?:thunar)"]  → 4
+assign [class="(?i)(?:slack)"] → 6
+assign [class="(?i)(?:zoom)"] → 7
+assign [class="(?i)(?:pavucontrol)"] → 7
 
 # focus, floating, & sticky
+for_window [class="zoom"] floating enable
+for_window [class="(?i)(?:nvidia-settings)"]          floating enable, focus
+for_window [class="(?i)(?:xfce4-settings-manager)"]          floating enable, focus
+for_window [class="(?i)(?:pavucontrol)"]          floating enable, focus
 for_window [class="(?i)(?:Gparted)"]          floating enable, focus
 for_window [class="(?i)(?:qt5ct|pinentry)"]          floating enable, focus
 for_window [title="(?i)(?:copying|deleting|moving)"] floating enable
@@ -183,5 +192,26 @@ for_window [window_role="(?i)(?:pop-up|setup)"]      floating enable
 
 popup_during_fullscreen smart
 
-client.focused #ebdbb2 #282828 #ffffff #ebdbb2 #ebdbb2
-client.unfocused #282828 #282828 #ffffff #282828 #282828
+#client.focused #ebdbb2 #282828 #ffffff #ebdbb2 #ebdbb2
+#client.unfocused #282828 #282828 #ffffff #282828 #282828
+
+# set primary gruvbox colorscheme colors
+set $text-color #ebdbb2
+set $bg #242424
+set $light-red #fb4934
+set $red #cc241d
+set $green #98971a
+set $light-green #b8bb26
+set $yellow #d79921
+set $blue #458588
+set $purple #b16286
+set $aqua #689d68
+set $gray #a89984
+set $darkgray #1d2021
+
+# window colors
+#                       border              background         text                 indicator
+client.focused          $green              $green             $text-color          $purple
+client.unfocused        $bg                 $bg                $inactive-text-color $purple
+client.focused_inactive $bg                 $bg                $inactive-text-color $purple
+client.urgent           $red                $red               $text-color          $purple

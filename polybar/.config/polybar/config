@@ -1,30 +1,17 @@
 [colors]
 background = #282828
-background-alt = #444
+background-alt = #504945
 foreground = #ebdbb2
 foreground-alt = #555
 primary = #d79921
 secondary = #cc241d
 alert = #fb4934
 
-;background = #17181f
-;#282A36
-;background-wm =  ${xrdb:color8}
-;background-alt = #44475A
-;foreground = #f5ecda
-;foreground-alt = #a4aabf
-;primary = #a4aabf
-;alert = #FF5555 
-;${xrdb:color1}
-
 [settings]
 format-foreground = ${colors.foreground}
 format-underline = ${colors.primary}
 format-background = ${colors.background-alt}
-format-padding = 2
-format-overline = 
-format-margin = 0
-format-offset =
+format-margin = 1
 screenchange-reload = true
 
 [global/wm]
@@ -32,42 +19,38 @@ margin-top = 0
 margin-bottom = 0
 
 [bar/mybar]
-;monitor = ${env:MONITOR:HDMI-1}
-monitor-fallback =
+monitor = HDMI-0
 monitor-strict = false
 monitor-exact = true
 override-redirect = false
-wm-restack = bspwm
 enable-ipc = true
 fixed-center = false
 bottom = false
 separator = |
 
 width = 100%
-height = 22
+height = 1.8%
 offset-x = 0
 offset-y = 0
 radius = 0.0
 
-underline-size = 2
+underline-size = 3
 overline-size = 0
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
+module-margin = 2
 
-module-margin-left = 1
-module-margin-right = 1
-
-font-0 = JetBrainsMonoMedium:pixelsize=10;
-font-1 = HackNerdFont:pixelsize=10;
-font-2 = NotoColorEmoji:fontformat=truetype:scale=10:antialias=false;
-font-3 = IPAGothic:fontformat=truetype:pixelsize=10:antialias=false;
+font-0 = UbuntuRegular:pixelsize=10;
+font-1 = JetBrainsMonoMedium:pixelsize=10;
+font-2 = HackNerdFont:pixelsize=10;
+font-3 = NotoColorEmoji:fontformat=truetype:scale=10:antialias=false;
+font-4 = IPAGothic:fontformat=truetype:pixelsize=10:antialias=false;
 
 modules-left = i3 
 modules-center = xwindow
-modules-right = pacman-packages cpu-usage cpu-temperature memory battery time
-
+modules-right = nwspeedup nwpseeddown pacman-packages cpu-usage cpu-temperature memory battery time
 
 tray-position = right
 tray-padding = 2
@@ -82,42 +65,38 @@ cursor-scroll = default
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:30:...%
-
+label = %title:0:300:...%
 format-underline =
 format-background =
 format-padding =
 
 [module/i3]
+pin-workspaces = true
+format-margin = 1
 type = internal/i3
 format = <label-state> <label-mode>
-format-padding = 
 index-sort = true
 wrapping-scroll = false
 
-label-mode-padding = 1
+label-mode-padding = 3
 label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
-; focused = Active workspace on focused monitor
 label-focused = %icon%
 label-focused-background = ${colors.background-alt}
 label-focused-underline= ${colors.primary}
-label-focused-padding = 1
+label-focused-padding = 5
 
-; unfocused = Inactive workspace on any monitor
 label-unfocused = %icon%
 label-unfocused-background = ${colors.background}
 label-unfocused-underline= ${colors.background}
 label-unfocused-padding = 1
 
-; visible = Active workspace on unfocused monitor
 label-visible = %icon%
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
-; urgent = Workspace with urgency hint set
 label-urgent = %icon%
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 1
@@ -127,35 +106,17 @@ label-separator =  |
 ws-icon-0 = 1;🦁  
 ws-icon-1 = 2;📯
 ws-icon-2 = 3;🤖
-ws-icon-3 = 4;🗂️
-ws-icon-4 = 5;⚔️
-ws-icon-5 = 6;⚔️
-ws-icon-6 = 7;⚔️
+ws-icon-3 = 4;⚔️
+ws-icon-4 = 5;👾
+ws-icon-5 = 6;🗣️
+ws-icon-6 = 7;⚙️
 ws-icon-7 = 8;⚔️
 ws-icon-8 = 9;👾
 
-[module/ip]
-type = custom/script
-exec =/home/eric/.config/polybar/scripts/ip.sh
-label = "%output%"
-click-left = /home/eric/.config/polybar/scripts/ip_pub.sh
-interval = 30
-
-[module/pulseaudio]
-type = internal/pulseaudio
-sink = alsa_output.pci-0000_05_00.6.analog-stereo1
-use-ui-max = true
-interval = 5
-
-format-volume = <ramp-volume> <label-volume>
-label-muted = 🔇 muted
-label-muted-foreground = #666
-ramp-volume-0 = 🔈
-ramp-volume-1 = 🔉
-ramp-volume-2 = 🔊
-click-right = pavucontrol &
-
 [module/battery]
+format-charging-padding = 3
+format-discharging-padding = 3
+format-full-padding = 3
 type = internal/battery
 full-at = 99
 battery = BAT0
@@ -165,10 +126,10 @@ poll-interval = 5
 format-charging = <ramp-capacity> <label-charging>
 format-discharging = <ramp-capacity> <label-discharging>
 format-full = <ramp-capacity> <label-full>
-label-charging = %percentage%
-label-discharging = %percentage%
-label-full = Fully charged
-
+label-charging = "%percentage%  "
+label-discharging = "%percentage%  "
+label-full = 
+bar-capacity-width = 10
 
 ramp-capacity-0 = 🔋
 ramp-capacity-1 = 🔋
@@ -176,9 +137,8 @@ ramp-capacity-2 = 🔋
 ramp-capacity-3 = 🔋
 ramp-capacity-4 = 🔋
 
-bar-capacity-width = 10
-
 [module/pacman-packages]
+format-padding = 3
 type = custom/script
 exec = /home/eric/.config/polybar/scripts/packages.sh
 label = "%output%"
@@ -187,21 +147,23 @@ click-left = /home/eric/.config/polybar/scripts/pack_by_date.sh
 interval = 30
 
 [module/memory]
+format-padding = 3
 type = custom/script
 exec = /home/eric/.config/polybar/scripts/mem.sh
 label = "%output%"
-interval = 10
+interval = 5
 format-prefix = "🧠 "
 click-left = /home/eric/.config/polybar/scripts/memproc.sh
 
-
 [module/cpu-usage]
+format-padding = 3
 type = internal/cpu
 interval = 5
 label = %percentage:2%%
 format-prefix = "💻 "
 
 [module/cpu-temperature]
+format-padding = 3
 type = custom/script
 exec = /home/eric/.config/polybar/scripts/polytempamd.sh
 label = "%output%"
@@ -209,14 +171,50 @@ format-prefix="🔥 "
 interval = 5
 
 [module/time]
+format-padding = 3
 type = internal/date
 interval = 1
-
-date =
 date-alt = "%d-%m-%Y "
-
 time = %H:%M  
 time-alt = %H:%M
-
 label = %date% %time% 
 
+
+[bar/eDP1]
+monitor-strict = false
+monitor-exact = true
+override-redirect = false
+enable-ipc = true
+fixed-center = false
+bottom = false
+separator = |
+
+modules-left = i3 
+modules-center = xwindow
+modules-right = cpu-usage cpu-temperature memory time
+
+; Use $ xrandr -q | grep " connected" | cut -d ' ' -f1
+monitor = eDP-1-1
+
+width = 100%
+height = 1.8%
+offset-x = 0
+offset-y = 0
+radius = 0.0
+
+underline-size = 3
+overline-size = 0
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+module-margin = 2
+
+font-0 = UbuntuRegular:pixelsize=10;
+font-1 = JetBrainsMonoMedium:pixelsize=10;
+font-2 = HackNerdFont:pixelsize=10;
+font-3 = NotoColorEmoji:fontformat=truetype:scale=10:antialias=false;
+font-4 = IPAGothic:fontformat=truetype:pixelsize=10:antialias=false;
+
+cursor-click = pointer
+cursor-scroll = default
