@@ -129,17 +129,28 @@ nnoremap <C-A-y> "+yiw \| :echom 'copied to system clipboard!'<CR>
 nnoremap <C-A-p> "+p
 vnoremap <C-A-p> "+p
 inoremap <C-A-p> <Esc>"+pA
+nnoremap Y y$
+
+"Paste over selected text without screwing the reg
+vnoremap p "_dP
 
 "Select all
 nnoremap <C-a> ggVG
 
-"Esc key is far from home
-map <C-z> <Esc>
-imap <C-z> <Esc>
-cnoremap <C-z> <C-c><Esc>
-
 "Esc+Esc to turn off search highlighting
 nnoremap <Esc> :noh<return><Esc>
+
+"Center search selection
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+"Search selected text
+vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
+
+"Replace word in Normal mode and selection in Visual mode
+nnoremap R *``cgn
+vnoremap R y/\V<C-R>=escape(@",'/\')<CR><CR>Ncgn
+"FUCKS UP REG
 
 "Close tab
 nnoremap <C-w> :q<CR>
@@ -147,6 +158,12 @@ nnoremap <C-w> :q<CR>
 "Better tabbing
 vnoremap < <gv
 vnoremap > >gv
+
+"Move current line and selected lines
+nmap <a-j> :m .+1<cr>==
+nmap <a-k> :m .-2<cr>==
+vnoremap <a-j> :m '>+1<cr>gv=gv
+vnoremap <a-k> :m '<-2<cr>gv=gv
 
 "Exit Vim meme here
 :command! WQ wq
@@ -176,6 +193,17 @@ inoremap < <><Left>
 "inoremap ' ''<Left>
 inoremap " ""<Left>
 
+"Undo break points
+inoremap , ,<c-g>u
+inoremap . .<c-g>u
+inoremap ? ?<c-g>u
+
+"Add number and half page jumps to jumplist
+nnoremap <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k'
+nnoremap <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j'
+nnoremap <c-u> <c-u>m'
+nnoremap <c-d> <c-d>m'
+
 " ------------------------------MAPPINGS-Plugins------------------------------"
 
 "UndoTree
@@ -194,7 +222,7 @@ vmap [ S]
 vmap { S}
 vmap ' S'
 "vmap " S"
-vmap * S*
+"vmap * S*
 vmap ` S`
 
 "Telescope

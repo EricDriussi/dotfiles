@@ -7,6 +7,7 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 zmodload zsh/complist
 compinit
+unsetopt nomatch
 
 # Make sure that the terminal is in application mode when zle is active, since
 # only then values from $terminfo are valid

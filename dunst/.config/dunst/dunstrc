@@ -1,5 +1,5 @@
 [global]
-    font = "Iosevka Term 9"
+		font = "JetBrainsMonoMedium 10"
 	shrink = yes
     allow_markup = yes
     format = "<b>%s</b>\n%b"
@@ -14,7 +14,6 @@
 	notification_height = 1
 	markup = full
     transparency = 0
-    idle_threshold = 90
     monitor = 0
     follow = mouse
     sticky_history = no
@@ -45,14 +44,14 @@
 [urgency_low]
     background = "#202020"
     foreground = "#ebdbb2"
-    timeout = 5
+    timeout = 2
 
 [urgency_normal]
     background = "#202020"
     foreground = "#ebdbb2"
-    timeout = 7
+    timeout = 5
 
 [urgency_critical]
     background = "#202020"
     foreground = "#fb4934"
-    timeout = 10
+    timeout = 7

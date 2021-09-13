@@ -8,9 +8,9 @@ gaps inner 8
 gaps outer 0
 
 # font
-font pango: Ubuntu Medium 12
-font pango: JetBrainsMonoMedium 10;
-font pango: FiraMonoNerdFontRegular 10
+font pango: Ubuntu Medium 14
+font pango: JetBrainsMonoMedium 12
+font pango: FiraMonoNerdFontRegular 12
 
 set $Mod Mod4
 set $up k
@@ -22,24 +22,22 @@ set $right l
 
 # run with reload
 exec_always --no-startup-id exec touchpad-toggle
-exec_always --no-startup-id xrdb -load ~/.Xresources
+exec_always --no-startup-id exec light -S 100
 exec_always --no-startup-id /home/eric/.config/polybar/launch.sh
 exec_always --no-startup-id feh --bg-center /usr/share/backgrounds/archlabs/gruv-4.jpg /usr/share/backgrounds/archlabs/wp3025590-zero-two-wallpapers.png
+exec_always --no-startup-id /home/eric/Documents/screenconfig.sh
 
 # run once
-exec --no-startup-id xfsettingsd
+exec --no-startup-id brave
+exec --no-startup-id thunderbird
+exec --no-startup-id slack
+exec --no-startup-id aw-qt
+exec --no-startup-id i3-msg 'workspace 8; exec alacritty -e /bin/screen sxiv -s w /home/eric/Pictures/moonlander/*; workspace 8'
 
 # needed for super to launch rofi through ksuperkey, see ~/.xprofile
 bindsym Mod1+F1 exec --no-startup-id #rofi_run -r
 
 exec_always --no-startup-id alternating_layouts.py
-exec --no-startup-id brave
-exec --no-startup-id thunderbird
-exec --no-startup-id slack
-exec --no-startup-id zoom
-exec --no-startup-id pavucontrol
-exec --no-startup-id aw-qt
-
 #############         Bindings           ##################
 
 bindsym $Mod+f fullscreen toggle
@@ -61,13 +59,13 @@ bindsym $Mod+x exec --no-startup-id rofi_run -l
 bindsym Print exec --no-startup-id flameshot gui
 
 # audio
-bindsym Control+F7 exec --no-startup-id pactl set-sink-volume alsa_output.pci-0000_05_00.6.analog-stereo -10% && pactl set-sink-volume 0 -10%
-bindsym Control+F8 exec --no-startup-id pactl set-sink-volume alsa_output.pci-0000_05_00.6.analog-stereo +10% && pactl set-sink-volume 0 +10%
-bindsym Control+F6 exec --no-startup-id pactl set-sink-mute alsa_output.pci-0000_05_00.6.analog-stereo toggle && pactl set-sink-mute 0 toggle
+bindsym Control+F7 exec --no-startup-id pactl set-sink-volume alsa_output.pci-0000_05_00.6.analog-stereo -10% && pactl set-sink-volume alsa_output.usb-Corsair_CORSAIR_VOID_ELITE_Wireless_Gaming_Dongle-00.analog-stereo -10%
+bindsym Control+F8 exec --no-startup-id pactl set-sink-volume alsa_output.pci-0000_05_00.6.analog-stereo +10% && pactl set-sink-volume alsa_output.usb-Corsair_CORSAIR_VOID_ELITE_Wireless_Gaming_Dongle-00.analog-stereo +10%
+bindsym Control+F6 exec --no-startup-id pactl set-sink-mute alsa_output.pci-0000_05_00.6.analog-stereo toggle && pactl set-sink-mute alsa_output.usb-Corsair_CORSAIR_VOID_ELITE_Wireless_Gaming_Dongle-00.analog-stereo toggle
 
 # backlight
-bindsym Control+F2 exec --no-startup-id light -U 10
-bindsym Control+F3 exec --no-startup-id light -A 10
+#bindsym Control+F2 exec --no-startup-id light -U 10
+#bindsym Control+F3 exec --no-startup-id light -A 10
 
 ###########          Workspace-Monitor          ###############
 
@@ -178,13 +176,13 @@ assign [class="(?i)(?:brave)"] → 1
 assign [class="(?i)(?:thunderbird)"]   → 2
 assign [class="(?i)(?:slack)"] → 6
 assign [class="(?i)(?:zoom)"] → 7
-assign [class="(?i)(?:pavucontrol)"] → 7
 
 # focus, floating, & sticky
 for_window [class="zoom"] floating enable
 for_window [class="(?i)(?:nvidia-settings)"]          floating enable, focus
 for_window [class="(?i)(?:xfce4-settings-manager)"]          floating enable, focus
 for_window [class="(?i)(?:pavucontrol)"]          floating enable, focus
+for_window [class="(?i)(?:lxappearance)"]          floating enable, focus
 for_window [class="(?i)(?:Gparted)"]          floating enable, focus
 for_window [class="(?i)(?:qt5ct|pinentry)"]          floating enable, focus
 for_window [title="(?i)(?:copying|deleting|moving)"] floating enable

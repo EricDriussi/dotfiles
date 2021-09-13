@@ -1,7 +1,7 @@
 export PATH=$HOME/bin:/usr/bin:$PATH
 export PATH=$PATH:/opt
 
-export PATH=$PATH:/home/eric/intellij/bin
+export PATH=$PATH:/home/eric/intellijUlt/bin
 
 export PATH=$PATH:/home/eric/.config/vifm
 export PATH="${PATH}:/home/eric/.config/vifm/vifmimg"

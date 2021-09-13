@@ -1,6 +1,6 @@
 [colors]
-background = #282828
-background-alt = #504945
+background = #aa282828
+background-alt = #aa504945
 foreground = #ebdbb2
 foreground-alt = #555
 primary = #d79921
@@ -42,15 +42,15 @@ foreground = ${colors.foreground}
 
 module-margin = 2
 
-font-0 = UbuntuRegular:pixelsize=10;
-font-1 = JetBrainsMonoMedium:pixelsize=10;
-font-2 = HackNerdFont:pixelsize=10;
-font-3 = NotoColorEmoji:fontformat=truetype:scale=10:antialias=false;
-font-4 = IPAGothic:fontformat=truetype:pixelsize=10:antialias=false;
+font-0 = UbuntuRegular:pixelsize=12;
+font-1 = JetBrainsMonoMedium:pixelsize=12;
+font-2 = HackNerdFont:pixelsize=12;
+font-3 = NotoColorEmoji:fontformat=truetype:scale=12:antialias=false;
+font-4 = IPAGothic:fontformat=truetype:pixelsize=12:antialias=false;
 
 modules-left = i3 
 modules-center = xwindow
-modules-right = nwspeedup nwpseeddown pacman-packages cpu-usage cpu-temperature memory battery time
+modules-right = nwspeedup nwpseeddown pacman-packages cpu-usage cpu-temperature memory date time battery
 
 tray-position = right
 tray-padding = 2
@@ -65,7 +65,7 @@ cursor-scroll = default
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:300:...%
+label = %title:0:150:...%
 format-underline =
 format-background =
 format-padding =
@@ -103,15 +103,15 @@ label-urgent-padding = 1
 
 label-separator =  |
 
-ws-icon-0 = 1;🦁  
-ws-icon-1 = 2;📯
-ws-icon-2 = 3;🤖
-ws-icon-3 = 4;⚔️
-ws-icon-4 = 5;👾
-ws-icon-5 = 6;🗣️
-ws-icon-6 = 7;⚙️
-ws-icon-7 = 8;⚔️
-ws-icon-8 = 9;👾
+ws-icon-0 = 1;1  
+ws-icon-1 = 2;2
+ws-icon-2 = 3;3
+ws-icon-3 = 4;4
+ws-icon-4 = 5;5
+ws-icon-5 = 6;6
+ws-icon-6 = 7;7
+ws-icon-7 = 8;8
+ws-icon-8 = 9;9
 
 [module/battery]
 format-charging-padding = 3
@@ -170,14 +170,22 @@ label = "%output%"
 format-prefix="🔥 "
 interval = 5
 
+[module/date]
+format-padding = 3
+type = custom/script
+exec = /home/eric/.config/polybar/scripts/cal.sh
+click-left = /home/eric/.config/polybar/scripts/cal.sh --popup
+interval = 1
+format-background = ${colors.alt-background}
+format-foreground = ${colors.alt-foreground}
+label = %output%
+
 [module/time]
 format-padding = 3
 type = internal/date
 interval = 1
-date-alt = "%d-%m-%Y "
 time = %H:%M  
-time-alt = %H:%M
-label = %date% %time% 
+label = 🕙 %time% 
 
 
 [bar/eDP1]
