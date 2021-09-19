@@ -14,8 +14,7 @@
 	notification_height = 1
 	markup = full
     transparency = 0
-    monitor = 0
-    follow = mouse
+    monitor = 1
     sticky_history = no
     line_height = 2
     separator_height = 2
