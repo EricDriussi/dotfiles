@@ -18,6 +18,7 @@ export FZF_DEFAULT_OPTS='--height 70% --layout=reverse --border --preview="head 
 export EDITOR="nvim"
 export VISUAL="nvim"
 export ZSH="~/.custom-zsh"
+export MANPAGER='nvim +Man!'
 
 source ~/.custom-zsh/my-zsh.zsh
 

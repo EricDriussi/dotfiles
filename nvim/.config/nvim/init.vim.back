@@ -95,9 +95,6 @@ hi DiffChange ctermfg=109 ctermbg=black guifg=#282828 guibg=#83a598
 hi DiffText 	ctermfg=208 ctermbg=black guifg=#282828 guibg=#fe8019
 
 "ejs files look like crap :D
-set filetype=on
-autocmd FileType json syntax match Comment +\/\/.\+$+
-autocmd FileType json syntax match Comment +\/\*.\+$+
 au BufNewFile,BufRead *.ejs set filetype=html
 
 " ------------------------------MAPPINGS------------------------------"
@@ -371,6 +368,9 @@ highlight SignifySignChange ctermfg=black ctermbg=109   guifg=#000000 guibg=#458
 lua << EOF
 require'lspconfig'.tsserver.setup{}
 require'lspconfig'.vimls.setup{}
+require'lspconfig'.zeta_note.setup{
+  cmd = {'path/to/zeta-note'}
+}
 EOF
 
 " ---------------------------compe.nvim completion---------------------------"
