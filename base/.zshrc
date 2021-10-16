@@ -2,6 +2,9 @@ export PATH=$HOME/bin:/usr/bin:$PATH
 export PATH=$PATH:/opt
 
 export PATH=$PATH:/home/eric/intellijUlt/bin
+#export PATH=$PATH:/home/eric/grails-2.5.5/bin
+export GRAILS_HOME=/home/eric/grails-2.5.5
+export PATH=$PATH:$GRAILS_HOME/bin
 
 export PATH=$PATH:/home/eric/.config/vifm
 export PATH="${PATH}:/home/eric/.config/vifm/vifmimg"
@@ -28,6 +31,8 @@ export SAVEHIST=10000
 
 bindkey -v
 export KEYTIMEOUT=1
+
+eval "$(lua /usr/share/z.lua/z.lua --init zsh)"
 
 # rsync -rtvzP --rsh=ssh ~/Documents/niceadsl/ root@niceadsl.xyz:/var/www/niceadsl
 # ffmpeg -video_size 1920x1080 -framerate 30 -f x11grab -i :0.0+0,0 -f pulse -ac 2 -i 0 -c:v libx264rgb -crf 0 -preset ultrafast sample.mkv
