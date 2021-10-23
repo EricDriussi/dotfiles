@@ -28,8 +28,8 @@ alias gc='git add . && git commit'
 alias gp='git pull'
 alias gpush='git push'
 alias gmv='git checkout'
-alias gme='git pull --squash origin'
-alias trymerge='git merge other-branch --no-commit --no-ff; git merge --abort'
+alias gme='git merge --squash origin'
+trymerge() { git merge "$1" --no-commit --no-ff; git merge --abort }
 alias ginit='git init && git config credential.helper store'
 alias glg='git log --graph --oneline --decorate'
 
