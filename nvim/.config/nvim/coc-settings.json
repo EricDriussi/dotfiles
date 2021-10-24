@@ -1,7 +1,7 @@
 {
     "coc.preferences.formatOnSaveFiletypes": [
         "css",
-        //"markdown",
+        "markdown",
         "javascript",
         "graphql",
         "html",
@@ -12,13 +12,10 @@
         "typescript",
         "java"
     ],
-    // explorer
-    "explorer.width": 30,
-    "explorer.icon.enableNerdfont": true,
-    "explorer.previewAction.onHover": false,
-    "explorer.keyMappings.global": {
-        "<cr>": ["expandable?", "expand", "open:tab"],
-        "v": "open:vsplit"
+    "prettier.tabWidth": 4,
+    "markdownlint.config": {
+        "default": true,
+        "line_length": false
     },
-    "prettier.tabWidth": 4
+    "java.format.settings.url": "/home/eric/Default.xml"
 }
