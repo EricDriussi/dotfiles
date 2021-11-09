@@ -29,7 +29,8 @@ HISTFILE=~/.zsh_history
 export HISTSIZE=10000
 export SAVEHIST=10000
 
-bindkey -v
+# Vi mode
+#bindkey -v
 export KEYTIMEOUT=1
 
 eval "$(lua /usr/share/z.lua/z.lua --init zsh)"

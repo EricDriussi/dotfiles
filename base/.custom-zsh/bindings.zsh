@@ -65,3 +65,7 @@ bindkey '^H' backward-kill-word
 
 # [Ctrl-Delete] - Delete previous word
 bindkey '^[[3;5~' kill-word
+
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '\033' edit-command-line

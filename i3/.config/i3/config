@@ -60,9 +60,9 @@ bindsym $Mod+x exec --no-startup-id rofi_run -l
 bindsym Print exec --no-startup-id flameshot gui
 
 # audio
-bindsym Control+F7 exec --no-startup-id pactl set-sink-volume alsa_output.pci-0000_05_00.6.analog-stereo -10% && pactl set-sink-volume alsa_output.usb-Corsair_CORSAIR_VOID_ELITE_Wireless_Gaming_Dongle-00.analog-stereo -10%
-bindsym Control+F8 exec --no-startup-id pactl set-sink-volume alsa_output.pci-0000_05_00.6.analog-stereo +10% && pactl set-sink-volume alsa_output.usb-Corsair_CORSAIR_VOID_ELITE_Wireless_Gaming_Dongle-00.analog-stereo +10%
-bindsym Control+F6 exec --no-startup-id pactl set-sink-mute alsa_output.pci-0000_05_00.6.analog-stereo toggle && pactl set-sink-mute alsa_output.usb-Corsair_CORSAIR_VOID_ELITE_Wireless_Gaming_Dongle-00.analog-stereo toggle
+bindsym Control+F7 exec --no-startup-id pactl set-sink-volume 0 -10% && pactl set-sink-volume 1 -10%
+bindsym Control+F8 exec --no-startup-id pactl set-sink-volume 0 +10% && pactl set-sink-volume 1 +10%
+bindsym Control+F6 exec --no-startup-id pactl set-sink-mute 0 toggle && pactl set-sink-mute 1 toggle
 
 # backlight
 #bindsym Control+F2 exec --no-startup-id light -U 10

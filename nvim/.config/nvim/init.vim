@@ -26,8 +26,10 @@ Plug 'airblade/vim-rooter'
 Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
 
-Plug 'ActivityWatch/aw-watcher-vim'
+"Plug 'ActivityWatch/aw-watcher-vim'
 Plug 'mg979/vim-visual-multi'
+Plug 'ap/vim-css-color'
+Plug 'preservim/tagbar'
 call plug#end()
 
 " ---------------------------SETTINGS---------------------------"
@@ -38,12 +40,30 @@ set background=dark
 
 let g:rainbow_active = 1
 let g:rainbow_conf = {'ctermfgs': ['white', 'cyan', 'magenta', 'darkblue', 'darkred', 'darkgreen', 'darkmagenta', 'darkcyan']}
+
+set statusline=%{FugitiveStatusline()}
+let g:lightline = {
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'readonly', 'filename', 'modified' ],
+			\ 						[ 'gitbranch'] ],
+			\
+			\ 	'right': [ [ 'lineinfo' ],
+      \              [ 'percent' ],
+      \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead'
+      \ },
+      \ }
+
 "Settings
 "
 syntax on
 set ignorecase
 set termguicolors
 set wrap
+let mapleader = " "
 
 set smartcase
 set incsearch
@@ -255,7 +275,7 @@ vmap ( S)
 vmap [ S]
 vmap { S}
 vmap ' S'
-"vmap " S"
+vmap " S"
 "vmap * S*
 vmap ` S`
 
@@ -339,7 +359,7 @@ let g:signify_sign_change            = '~'
 
 " numbers no good
 let g:signify_sign_show_count = 0
-let g:signify_sign_show_text = 1
+"let g:signify_sign_show_text = 1
 
 highlight SignifySignAdd    ctermfg=black ctermbg=142  guifg=#000000 guibg=#b8bb26
 highlight SignifySignDelete ctermfg=black ctermbg=167  guifg=#000000 guibg=#fb4934
@@ -368,9 +388,9 @@ set shortmess+=c
 " diagnostics appear/become resolved.
 if has("nvim-0.5.0") || has("patch-8.1.1564")
   " Recently vim can merge signcolumn and number column into one
-  set signcolumn=number
+  "set signcolumn=number
 else
-  set signcolumn=yes
+  "set signcolumn=yes
 endif
 
 " Use tab for trigger completion with characters ahead and navigate.
@@ -447,7 +467,8 @@ xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>a  <Plug>(coc-codeaction-selected)
 
 " Remap keys for applying codeAction to the current buffer.
-nmap <leader>ac  <Plug>(coc-codeaction)
+"nmap <leader>ac  <Plug>(coc-codeaction)
+nmap <M-CR>  <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line.
 nmap <leader>qf  <Plug>(coc-fix-current)
 
