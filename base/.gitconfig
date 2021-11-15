@@ -1,0 +1,12 @@
+[user]
+	name = Eric Driussi
+	email = ericdriussi@gmail.com
+[core]
+	editor = nvim
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+
+[includeIf "gitdir:~/leanmind/"]
+      path = .gitconfig-leanmind

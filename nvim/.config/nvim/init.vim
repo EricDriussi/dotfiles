@@ -5,10 +5,11 @@ Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-surround'
 Plug 'itchyny/lightline.vim'
 Plug 'luochen1990/rainbow'
+Plug 'ap/vim-css-color'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
+"Plug 'roxma/nvim-yarp'
+"Plug 'roxma/vim-hug-neovim-rpc'
 
 "Undo, File Explorer and auto-comments
 Plug 'mbbill/undotree'
@@ -25,10 +26,10 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'airblade/vim-rooter'
 Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
+Plug 'sindrets/diffview.nvim'
 
 "Plug 'ActivityWatch/aw-watcher-vim'
 Plug 'mg979/vim-visual-multi'
-Plug 'ap/vim-css-color'
 Plug 'preservim/tagbar'
 call plug#end()
 
@@ -41,7 +42,6 @@ set background=dark
 let g:rainbow_active = 1
 let g:rainbow_conf = {'ctermfgs': ['white', 'cyan', 'magenta', 'darkblue', 'darkred', 'darkgreen', 'darkmagenta', 'darkcyan']}
 
-set statusline=%{FugitiveStatusline()}
 let g:lightline = {
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
@@ -100,17 +100,17 @@ set undodir=~/.config/nvim/undodir
 set undofile
 "Tab be gud
 set autoindent
-set smartindent
-set tabstop=2
-set softtabstop=0 noexpandtab
-set shiftwidth=2
+filetype plugin indent on
+set softtabstop=4
+set expandtab
+set shiftwidth=4
 
 " Highlight colors
 hi visual gui=bold cterm=bold
-hi DiffAdd    ctermfg=142 ctermbg=black guifg=#282828 guibg=#b8bb26
-hi DiffDelete ctermfg=167 ctermbg=black guifg=#282828 guibg=#fb4934
-hi DiffChange ctermfg=109 ctermbg=black guifg=#282828 guibg=#83a598 
-hi DiffText 	ctermfg=208 ctermbg=black guifg=#282828 guibg=#fe8019
+"hi DiffAdd    ctermfg=142 ctermbg=black guifg=#6e7014 guibg=#b8bb26
+"hi DiffDelete ctermfg=167 ctermbg=black guifg=#282828 guibg=#fb4934
+"hi DiffChange ctermfg=109 ctermbg=black guifg=#282828 guibg=#83a598 
+"hi DiffText 	ctermfg=208 ctermbg=black guifg=#282828 guibg=#fe8019
 
 "ejs files look like crap :D
 set filetype=on
@@ -138,6 +138,9 @@ vnoremap p "_dP
 "Select all
 nnoremap <C-a> ggVG
 
+"Increment number
+nnoremap <A-a> <C-a>
+
 "Esc+Esc to turn off search highlighting
 nnoremap <Esc> :noh<return><Esc>
 
@@ -149,8 +152,8 @@ nnoremap N Nzzzv
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
 "Replace word in Normal mode and selection in Visual mode
-nnoremap R *``cgn
-vnoremap R y/\V<C-R>=escape(@",'/\')<CR><CR>Ncgn
+nnoremap <silent> rn *``cgn
+vnoremap <silent> rn y/\V<C-R>=escape(@",'/\')<CR><CR>Ncgn
 "FUCKS UP REG
 
 "Close tab
@@ -201,7 +204,7 @@ nnoremap <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j'
 nnoremap <c-u> <c-u>m'
 nnoremap <c-d> <c-d>m'
 
-" ---------------------------Set up diff view---------------------------"
+" ---------------------------Set up diff view between different files---------------------------"
 
 command! Diffme call DiffMeBby()
 function! DiffMeBby()
@@ -287,6 +290,9 @@ nnoremap <silent> tf <cmd>Telescope find_files cwd=~<cr>
 "Fugitive Split
 nnoremap <silent> gs <cmd>Gvdiffsplit<bar>windo set wrap<CR>
 
+"Emulate IntelliJ Ctrl-K with diffview.nvim
+nnoremap <C-k> <cmd>DiffviewOpen<cr>
+
 " ---------------------------nvim.tree---------------------------"
 
 let g:nvim_tree_ignore = [ '.git', 'node_modules', '.cache' ] "empty by default
@@ -346,7 +352,7 @@ lua <<EOF
       ["a"]              = tree_cb("create"),
       ["d"]              = tree_cb("remove"),
       ["y"]              = tree_cb("copy"),
-      ["h"]              = tree_cb("dir_up"),
+      ["h"]              = tree_cb("close_node"),
     }
 EOF
 
@@ -364,6 +370,22 @@ let g:signify_sign_show_count = 0
 highlight SignifySignAdd    ctermfg=black ctermbg=142  guifg=#000000 guibg=#b8bb26
 highlight SignifySignDelete ctermfg=black ctermbg=167  guifg=#000000 guibg=#fb4934
 highlight SignifySignChange ctermfg=black ctermbg=109   guifg=#000000 guibg=#458588
+
+
+" ---------------------------diffview.nvim---------------------------"
+
+lua <<EOF
+local cb = require'diffview.config'.diffview_callback
+
+require'diffview'.setup {
+    key_bindings = {
+        disable_defaults = false,
+        view = {
+              ["gf"]    = cb("goto_file_tab"),
+        }
+    }
+}
+EOF
 
 " ---------------------------Le COC---------------------------"
 

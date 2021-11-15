@@ -1,15 +1,30 @@
-alias ls="exa -bghla"
-alias tree="tree -L 3 -C"
+alias l="exa -bghla"
+alias tree="tree -L 2 -C"
 alias pass="keepassxc-cli clip Documents/priv/pwds/Passwords-BitWarden.kdbx" 
 #alias mkdir="mkdir -p"
 alias sctl="sudo systemctl"
 alias grep="grep --color=always"
-alias rmdir="rm -rf"
+alias rmd="rm -rf"
+alias v="nvim"
 
 mkd() { mkdir "$1" && cd "$1" }
-c() { cd "$1" && ls }
+c() { cd "$1" && l }
 vo() { nvim $(fzf) }
 lo() { lvim $(fzf) }
+copyToStdout() {
+    while clipnotify;
+    do
+      SelectedText="$(xsel)"
+      CopiedText="$(xsel -b)"
+      if [[ $CopiedText == $SelectedText ]]; then
+          if [[ $# -eq 0 ]]; then
+            echo $CopiedText 
+            else 
+                echo $CopiedText | tee -a "$1"
+          fi
+      fi
+    done
+}
 
 # Shortcuts
 alias vov="nvim ~/dotfiles/nvim/.config/nvim/init.vim"
@@ -22,7 +37,8 @@ alias updatesys="sudo pacman -Syu"
 alias install="sudo pacman -S"
 alias remove="sudo pacman -Rs"
 alias search="sudo pacman -Ss"
-alias cleansys="yes | sudo paccache -rk2 -ruk0 && yes | sudo pacman -Sc && yes | paru -Sc --aur"
+alias cleansys="rm ~/.cache/paru; yes | sudo paccache -rk2 -ruk0; yes | sudo pacman -Sc; yes | paru -Sc --aur"
+alias diskUsage="sudo du -h | sort -hr | head -10"
 
 # Git
 alias gs='git status'
@@ -57,10 +73,4 @@ alias vfm=~/.config/vifm/vifmimg/vifmrun
 alias ssh-auth='eval "$(ssh-agent -s)" && ssh-add'
 alias blogUpdate="hugo -D && rsync -rtvzP --rsh=ssh ~/Documents/website/public/* root@107.191.47.211:/var/www/unixmagick"
 
-# Pandoc - Codigo Sostenible
-
-createBook() {
-	docker run --rm \
-	--volume /home/eric/Documents/codigo-sostenible-book-converter-format:/data \
-	--entrypoint "./$1" docker-book-generator
-}
+alias nr='npm run'

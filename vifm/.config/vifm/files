@@ -227,11 +227,11 @@ filetype {*.7z},<application/x-7z-compressed>
 fileviewer {*.7z},<application/x-7z-compressed> 7z l %c
 
 " Office files
-filextype {*.odt,*.doc,*.docx,*.xls,*.xlsx,*.odp,*.pptx,*.ppt},
+filextype {*.odt,*.doc,*.docx,*.xls,*.xlsx,*.odp,*.pptx,*.ppt,*.ods},
+        \ libreoffice %f,
          \<application/vnd.openxmlformats-officedocument.*,
           \application/msword,
-          \application/vnd.ms-excel>
-        \ libreoffice %f &
+          \application/vnd.ms-excel> &
 fileviewer {*.doc},<application/msword> catdoc %c
 fileviewer {*.docx},
           \<application/

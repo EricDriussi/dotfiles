@@ -1,14 +1,12 @@
 {
     "coc.preferences.formatOnSaveFiletypes": [
         "css",
-        "javascript",
         "graphql",
         "html",
         "ejs",
         "yaml",
         "json",
         "python",
-        "typescript",
         "java"
     ],
     "prettier.tabWidth": 4,
@@ -16,7 +14,7 @@
         "default": true,
         "line_length": false
     },
-    "java.format.settings.url": "/home/eric/Default.xml",
+    "java.format.comments.enabled": false,
     "languageserver": {
         "python": {
             "command": "python",
