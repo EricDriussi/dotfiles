@@ -127,9 +127,10 @@ filetype {*.[1-8]},<text/troff> man ./%c
 fileviewer {*.[1-8]},<text/troff> man ./%c | col -b
 
 " Images
-filextype {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
+filextype {*.gif},<image/*>
         \ {View in sxiv}
         \ sxiv %f,
+filextype {*.bmp,*.jpg,*.jpeg,*.png,*.xpm},<image/*>
         \ {View in feh}
         \ feh --conversion-timeout 1 %f,
         \ {View in gpicview}

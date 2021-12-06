@@ -8,5 +8,5 @@
 [difftool]
 	prompt = false
 
-[includeIf "gitdir:~/leanmind/"]
+[includeIf "gitdir:~/Documents/leanmind/"]
       path = .gitconfig-leanmind

@@ -1,7 +1,0 @@
-{
-    "workbench.colorTheme": "Gruvbox Dark Hard",
-    "workbench.iconTheme": "vscode-icons",
-    "vsicons.dontShowNewVersionMessage": true,
-    "editor.lineNumbers": "relative",
-    "editor.minimap.enabled": false
-}

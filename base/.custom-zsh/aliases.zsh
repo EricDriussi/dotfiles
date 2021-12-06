@@ -6,6 +6,7 @@ alias sctl="sudo systemctl"
 alias grep="grep --color=always"
 alias rmd="rm -rf"
 alias v="nvim"
+alias cb="cd .."
 
 mkd() { mkdir "$1" && cd "$1" }
 c() { cd "$1" && l }
@@ -42,7 +43,11 @@ alias diskUsage="sudo du -h | sort -hr | head -10"
 
 # Git
 alias gs='git status'
-alias gc='git add . && git commit'
+alias gadd='git add'
+alias gunstage='git restore --staged'
+alias gcom='git commit -m '
+alias gstash='git stash'
+alias gunstash='git stash pop'
 alias gp='git pull'
 alias gpush='git push'
 alias gmv='git checkout'
@@ -74,3 +79,13 @@ alias ssh-auth='eval "$(ssh-agent -s)" && ssh-add'
 alias blogUpdate="hugo -D && rsync -rtvzP --rsh=ssh ~/Documents/website/public/* root@107.191.47.211:/var/www/unixmagick"
 
 alias nr='npm run'
+copyMe(){
+    find ~/Music/spotify/$2 -type f -print0 | xargs -0 mv -t $1;
+}
+
+generate(){
+    currentDir="$(pwd)"
+    cd /home/eric/Documents/leanmind/codigo-sostenible-book-converter-format
+    ./generate.sh "$1" && notify-send "Pandoc is done!" " "
+    cd $currentDir
+}
