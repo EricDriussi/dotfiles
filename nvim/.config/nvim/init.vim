@@ -31,6 +31,8 @@ Plug 'sindrets/diffview.nvim'
 "Plug 'ActivityWatch/aw-watcher-vim'
 Plug 'mg979/vim-visual-multi'
 Plug 'preservim/tagbar'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'jez/vim-better-sml'
 call plug#end()
 
 " ---------------------------SETTINGS---------------------------"
@@ -41,7 +43,6 @@ set background=dark
 
 let g:rainbow_active = 1
 let g:rainbow_conf = {'ctermfgs': ['white', 'cyan', 'magenta', 'darkblue', 'darkred', 'darkgreen', 'darkmagenta', 'darkcyan']}
-
 let g:lightline = {
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
@@ -57,6 +58,10 @@ let g:lightline = {
       \ },
       \ }
 
+let g:NERDToggleCheckAllLines = 1
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+
+let g:sml_smlnj_executable = '/usr/bin/smlnj'
 "Settings
 "
 syntax on
@@ -73,6 +78,8 @@ set spell
 set encoding=utf-8
 set fileencoding=utf-8
 "set t_Co=256
+"Snek case...
+set iskeyword-=_
 set updatetime=200
 set timeoutlen=500
 "Don't comment on CR
@@ -107,10 +114,10 @@ set shiftwidth=4
 
 " Highlight colors
 hi visual gui=bold cterm=bold
-"hi DiffAdd    ctermfg=142 ctermbg=black guifg=#6e7014 guibg=#b8bb26
-"hi DiffDelete ctermfg=167 ctermbg=black guifg=#282828 guibg=#fb4934
-"hi DiffChange ctermfg=109 ctermbg=black guifg=#282828 guibg=#83a598 
-"hi DiffText 	ctermfg=208 ctermbg=black guifg=#282828 guibg=#fe8019
+hi DiffAdd    ctermfg=142 ctermbg=black guifg=#b8bb26 gui=underline
+hi DiffDelete ctermfg=167 ctermbg=black guifg=#fb4934
+hi DiffChange ctermfg=109 ctermbg=black guifg=#458588 gui=underline
+hi DiffText 	ctermfg=208 ctermbg=black guifg=#83a598 
 
 "ejs files look like crap :D
 set filetype=on
@@ -119,6 +126,10 @@ autocmd FileType json syntax match Comment +\/\*.\+$+
 au BufNewFile,BufRead *.ejs set filetype=html
 
 " ------------------------------MAPPINGS------------------------------"
+
+"SML REPL
+nnoremap <leader>s :SMLReplStop<CR>:SMLReplStart<CR>:wincmd l<cr>
+
 
 "Kinda scrolling
 nnoremap <C-d> <C-d>zz
@@ -206,8 +217,9 @@ nnoremap <c-d> <c-d>m'
 
 " ---------------------------Set up diff view between different files---------------------------"
 
-command! Diffme call DiffMeBby()
-function! DiffMeBby()
+let g:diffmode = 0
+function! DiffMe()
+    if g:diffmode == 0
 	let g:current_split = win_getid()
 	:wincmd h
 	diffthis
@@ -216,15 +228,17 @@ function! DiffMeBby()
 	windo set cursorbind
 	windo set scrollbind
 	windo set wrap
+        let g:diffmode = 1
 	call win_gotoid(g:current_split)
+    else
+        set nocursorbind
+        set noscrollbind
+        diffoff
+        let g:diffmode = 0
+    endif
 endfunction
 
-command! Undiffme call UnDiffMeBby()
-function! UnDiffMeBby()
-	set nocursorbind
-	set noscrollbind
-	diffoff
-endfunction
+nnoremap <leader>d :call DiffMe()<CR>
 
 " ---------------------------Terminal---------------------------"
 
@@ -252,8 +266,8 @@ function! TermToggle(height)
 endfunction
 
 " Toggle terminal on/off (neovim)
-nnoremap <a-t> :call TermToggle(10)<CR>
-tnoremap <a-t> <C-\><C-n>:call TermToggle(10)<CR>
+nnoremap <leader>t :call TermToggle(15)<CR>
+tnoremap <leader>t <C-\><C-n>:call TermToggle(15)<CR>
 
 " Terminal go back to normal mode
 tnoremap <Esc> <C-\><C-n>
@@ -264,14 +278,14 @@ tnoremap <C-w> <C-\><C-n>:q!<CR>
 " ------------------------------MAPPINGS-Plugins------------------------------"
 
 "UndoTree
-nnoremap <M-u> :UndotreeToggle<CR>
+nnoremap <leader>u :UndotreeToggle<CR>
 
 "NvimTree
-nnoremap <M-e> :NvimTreeToggle<CR>
+nnoremap <leader>e :NvimTreeToggle<CR>
 
 "NerdCommenter
-nnoremap <M-c> :call NERDComment(0, "toggle")<CR>
-vnoremap <M-c> :call NERDComment(0, "toggle")<CR>gv
+nnoremap <leader>/ :call nerdcommenter#Comment(0, "toggle")<CR>
+vnoremap <leader>/ :call nerdcommenter#Comment(0, "toggle")<CR>gv
 
 "Surround.vim
 vmap ( S)
@@ -283,12 +297,12 @@ vmap " S"
 vmap ` S`
 
 "Telescope
-nnoremap <C-f> <cmd>Telescope git_files<cr>
-nnoremap <M-f> <cmd>Telescope live_grep<cr>
-nnoremap <silent> tf <cmd>Telescope find_files cwd=~<cr>
+nnoremap <leader>f <cmd>Telescope git_files<cr>
+nnoremap <leader>F <cmd>Telescope live_grep<cr>
+nnoremap <leader>sf <cmd>Telescope find_files cwd=~<cr>
 
 "Fugitive Split
-nnoremap <silent> gs <cmd>Gvdiffsplit<bar>windo set wrap<CR>
+nnoremap <leader>gs <cmd>Gvdiffsplit<bar>windo set wrap<CR>
 
 "Emulate IntelliJ Ctrl-K with diffview.nvim
 nnoremap <C-k> <cmd>DiffviewOpen<cr>
@@ -489,8 +503,8 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 nmap <leader>rn <Plug>(coc-rename)
 
 " Formatting selected code.
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+"xmap <leader>f  <Plug>(coc-format-selected)
+"nmap <leader>f  <Plug>(coc-format-selected)
 
 augroup mygroup
   autocmd!
@@ -555,13 +569,13 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 " Show all diagnostics.
 nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
 " Manage extensions.
-nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
+"nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
 " Show commands.
-nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
+"nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
 " Find symbol of current document.
 nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
 " Search workspace symbols.
-nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
+"nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
 " Do default action for next item.
 nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 " Do default action for previous item.
