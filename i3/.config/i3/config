@@ -29,6 +29,7 @@ exec_always --no-startup-id /home/eric/Documents/screenconfig.sh
 
 # run once
 exec --no-startup-id brave
+exec --no-startup-id obsidian
 #exec --no-startup-id pavucontrol
 exec --no-startup-id thunderbird
 exec --no-startup-id slack
@@ -176,9 +177,9 @@ bindsym $Mod+shift+b border toggle
 # assign applications to specific workspace
 assign [class="(?i)(?:brave)"] → 1
 assign [class="(?i)(?:thunderbird)"]   → 2
-assign [class="(?i)(?:pavucontrol)"] → 7
 assign [class="(?i)(?:slack)"] → 6
-assign [class="(?i)(?:zoom)"] → 6
+assign [class="(?i)(?:pavucontrol)"] → 7
+assign [class="(?i)(?:obsidian)"] → 9
 
 # focus, floating, & sticky
 for_window [class="zoom"] floating enable
