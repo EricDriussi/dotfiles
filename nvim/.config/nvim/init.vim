@@ -33,9 +33,13 @@ Plug 'mg979/vim-visual-multi'
 Plug 'preservim/tagbar'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'jez/vim-better-sml'
+Plug 'peitalin/vim-jsx-typescript'
 call plug#end()
 
 " ---------------------------SETTINGS---------------------------"
+
+" Read JSX files like typescriptreact for nice highlighting
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
 
 let g:gruvbox_contrast_dark = 'medium'
 colorscheme gruvbox
