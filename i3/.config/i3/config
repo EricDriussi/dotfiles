@@ -32,7 +32,7 @@ exec --no-startup-id brave
 exec --no-startup-id obsidian
 #exec --no-startup-id pavucontrol
 exec --no-startup-id thunderbird
-exec --no-startup-id slack
+#exec --no-startup-id slack
 exec --no-startup-id aw-qt
 #exec --no-startup-id i3-msg 'workspace 8; exec alacritty -e /bin/screen sxiv -s w /home/eric/Pictures/moonlander/*; workspace 8'
 exec --no-startup-id nextcloud
