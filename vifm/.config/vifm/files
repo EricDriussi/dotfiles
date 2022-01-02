@@ -79,8 +79,12 @@ filextype {*.djvu},<image/vnd.djvu>
         \ apvlv %f,
 
 " Audio
-filetype {*.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus},
+filetype {*.ogg,*.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus},
         \<audio/*>
+       \ {Play using Celluloid}
+       \ celluloid %f,
+       \ {Play using mpv}
+       \ mpv %f,
        \ {Play using VLC}
        \ vlc %f,
        \ {Play using ffplay}

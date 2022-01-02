@@ -1,12 +1,13 @@
 alias l="exa -bghla"
 alias tree="tree -L 2 -C"
-alias pass="keepassxc-cli clip Documents/priv/pwds/Passwords-BitWarden.kdbx" 
-#alias mkdir="mkdir -p"
+alias pass="keepassxc-cli clip ~/Documents/priv/pwds/Passwords-BitWarden.kdbx" 
 alias sctl="sudo systemctl"
 alias grep="grep --color=always"
 alias rmd="rm -rf"
+alias cpd="cp -r"
 alias v="nvim"
 alias cb="cd .."
+alias cc="z"
 
 mkd() { mkdir "$1" && cd "$1" }
 c() { cd "$1" && l }
@@ -28,7 +29,7 @@ copyToStdout() {
 }
 
 # Shortcuts
-alias vov="nvim ~/dotfiles/nvim/.config/nvim/init.vim"
+alias vov="cd ~/.config/nvim/ && nvim init.vim"
 alias voz="nvim ~/dotfiles/base/.zshrc"
 alias voa="nvim ~/dotfiles/base/.custom-zsh/aliases.zsh"
 alias voi="nvim ~/dotfiles/i3/.config/i3/config"
@@ -51,7 +52,7 @@ alias gunstash='git stash pop'
 alias gp='git pull'
 alias gpush='git push'
 alias gmv='git checkout'
-alias gme='git merge --squash origin'
+alias gme='git merge --squash'
 trymerge() { git merge "$1" --no-commit --no-ff; git merge --abort }
 alias ginit='git init && git config credential.helper store'
 alias glg='git log --graph --abbrev-commit --decorate --format=tformat:"%C(yellow)%h%C(reset)%C(reset)%C(auto)%d%C(reset) %s %C(white) -  %C(bold green)(%ar)%C(reset) %C(dim blue)<%an>%Creset"'
@@ -60,8 +61,9 @@ alias rollback='git restore'
 
 # Docker
 alias dnuke='docker stop $(docker container ls -a -q); docker system prune -a -f --volumes; docker rmi $(docker images -q)'
-alias dstart='docker-compose up -d'
-alias dstop='docker-compose down'
+alias dup='docker-compose up -d'
+alias ddown='docker-compose down'
+alias dstop='docker stop'
 alias di='docker image ls'
 alias dc='docker container ls --format "table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.Status}}"'
 alias dv='docker volume ls'
@@ -86,7 +88,9 @@ copyMe(){
 
 generate(){
     currentDir="$(pwd)"
-    cd /home/eric/Documents/leanmind/codigo-sostenible-book-converter-format
-    ./generate.sh "$1" && notify-send "Pandoc is done!" " "
+    cd ~/Documents/leanmind/codigo-sostenible-book-converter-format
+    ./convert.sh "$1" ~/Documents/leanmind/codigo-sostenible/manuscript && notify-send "Pandoc is done!" " "
     cd $currentDir
 }
+
+alias fact='factorial fill-shifts --year 2021 --month 11 --email eric@leanmind.es --password "a#f5EqdfBM!VC^o3JN" --randomness 5 --entryTime 9 --exitTime 15\'

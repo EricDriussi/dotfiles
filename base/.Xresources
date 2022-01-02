@@ -28,6 +28,9 @@
 *color7:  #a89984
 *color15: #ebdbb2
 
+Xcursor.theme: capitaine-cursors
+Xcursor.size: 32
+
 ! Base colors
 !*.foreground:  #E1E1E1
 !*.background:  #1c2023
