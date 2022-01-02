@@ -3,6 +3,7 @@
 	email = ericdriussi@gmail.com
 [core]
 	editor = nvim
+	autocrlf = input
 [diff]
 	tool = vimdiff
 [difftool]

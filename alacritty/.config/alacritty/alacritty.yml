@@ -1,8 +1,13 @@
 dynamic_title: true
 
 font:
+  normal:
+    family: FiraMono
+    style: Medium
   size: 12
-  family: JetBrainsMonoMedium
+  offset:
+      x: 0
+      y: 5
 colors:
 
  # Default colors
