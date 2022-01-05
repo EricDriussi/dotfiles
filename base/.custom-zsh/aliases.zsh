@@ -88,8 +88,8 @@ copyMe(){
 
 generate(){
     currentDir="$(pwd)"
-    cd ~/Documents/leanmind/codigo-sostenible-book-converter-format
-    ./convert.sh "$1" ~/Documents/leanmind/codigo-sostenible/manuscript && notify-send "Pandoc is done!" " "
+    cd ~/Documents/leanmind/savvily/codigo-sostenible-book-converter-format
+    ./convert.sh "$1" ~/Documents/leanmind/savvily/codigo-sostenible/manuscript && notify-send "Pandoc is done!" " "
     cd $currentDir
 }
 
