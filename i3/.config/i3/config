@@ -266,10 +266,12 @@ set_from_resource $red color9
 set_from_resource $lightBlue color12
 set_from_resource $bg background
 set_from_resource $darkGreen color2
+set_from_resource $foreground foreground
+set_from_resource $lightGray color7
 
 # define colors for windows:
 #class		        	    border		    bground		 text		  indicator	child_border
-client.focused		      $lightBlue	  $darkblue	 $white		$darkGreen $lightBlue
+client.focused		      $lightBlue	  $darkblue	 $white		$lightGray $lightGray
 client.unfocused	      $darkblue	    $darkblue  $grey	  $bg        $bg
 client.focused_inactive	$darkblue	    $darkblue	 $grey		$bg        $bg
 client.urgent		        $urgentred	  $urgentred $white		$darkGreen $red
