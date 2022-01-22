@@ -14,7 +14,10 @@ nnoremap <c-t> :sync %c <cr><space>
 nnoremap <c-w> :q <cr>
 
 " Rename
-nnoremap <f2> cw<c-u>
+nnoremap rn cw
+
+" Terminal
+nnoremap <a-t> :!alacritty &<cr>
 
 " Back home
 nnoremap cd :cd<cr>

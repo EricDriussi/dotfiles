@@ -60,6 +60,9 @@
 filextype {*.ts},<application/ts> nvim %c
 fileviewer {*.ts},<application/ts> echo %c
 
+" epub
+filetype *.epub,*.mobi,*.azw3 ebook-viewer %f
+
 " Pdf
 filextype {*.pdf},<application/pdf> zathura %c %i &, apvlv %c, xpdf %c
 fileviewer {*.pdf},<application/pdf> pdftotext -nopgbrk %c -
