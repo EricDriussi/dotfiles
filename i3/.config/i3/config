@@ -19,8 +19,6 @@ exec --no-startup-id obsidian
 exec --no-startup-id pavucontrol
 exec --no-startup-id thunderbird
 exec --no-startup-id slack
-exec --no-startup-id aw-qt
-#exec --no-startup-id killall -r 'aw-*'; aw-qt
 exec --no-startup-id brave
 exec --no-startup-id nextcloud
 
