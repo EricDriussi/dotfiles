@@ -13,20 +13,15 @@ mkd() { mkdir "$1" && cd "$1" }
 c() { cd "$1" && l }
 vo() { nvim $(fzf) }
 lo() { lvim $(fzf) }
-copyToStdout() {
-    while clipnotify;
-    do
-      SelectedText="$(xsel)"
-      CopiedText="$(xsel -b)"
-      if [[ $CopiedText == $SelectedText ]]; then
-          if [[ $# -eq 0 ]]; then
-            echo $CopiedText 
-            else 
-                echo $CopiedText | tee -a "$1"
-          fi
-      fi
-    done
-}
+
+alias vfm=~/.config/vifm/vifmimg/vifmrun
+alias vf='vfm .'
+# Change ssh key
+alias ssh-auth='eval "$(ssh-agent -s)" && ssh-add'
+
+alias blogUpdate="hugo -D && rsync -rtvzP --rsh=ssh ~/Documents/website/public/* root@107.191.47.211:/var/www/unixmagick"
+alias nr='npm run'
+alias nv='source /usr/share/nvm/init-nvm.sh && nvm'
 
 # Shortcuts
 alias vov="cd ~/.config/nvim/ && nvim init.vim"
@@ -77,20 +72,33 @@ dlsong() { noglob yt-dlp --audio-format best -x --audio-quality 0 -o "%(title)s.
 # Open CLI as GUI
 gui() { ("${@:?}" > /dev/null 2>&1 &) }
 
-alias vfm=~/.config/vifm/vifmimg/vifmrun
-alias ssh-auth='eval "$(ssh-agent -s)" && ssh-add'
-alias blogUpdate="hugo -D && rsync -rtvzP --rsh=ssh ~/Documents/website/public/* root@107.191.47.211:/var/www/unixmagick"
-
-alias nr='npm run'
+# Show ctrl+c
+copyToStdout() {
+    while clipnotify;
+    do
+      SelectedText="$(xsel)"
+      CopiedText="$(xsel -b)"
+      if [[ $CopiedText == $SelectedText ]]; then
+          if [[ $# -eq 0 ]]; then
+            echo $CopiedText 
+            else 
+                echo $CopiedText | tee -a "$1"
+          fi
+      fi
+    done
+}
 copyMe(){
     find ~/Music/spotify/$2 -type f -print0 | xargs -0 mv -t $1;
 }
 
+# Book!
 generate(){
     currentDir="$(pwd)"
-    cd ~/Documents/leanmind/savvily/codigo-sostenible-book-converter-format
+    cd ~/Documents/leanmind/savvily/savvily-book-converter
     ./convert.sh "$1" ~/Documents/leanmind/savvily/codigo-sostenible/manuscript && notify-send "Pandoc is done!" " "
     cd $currentDir
 }
+alias eview='ebook-viewer'
 
-alias fact='factorial fill-shifts --year 2021 --month 11 --email eric@leanmind.es --password "a#f5EqdfBM!VC^o3JN" --randomness 5 --entryTime 9 --exitTime 15\'
+# pwds, keys, etc
+source ~/.sensible-aliases.zsh
