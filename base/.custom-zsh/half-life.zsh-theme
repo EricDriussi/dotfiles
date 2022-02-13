@@ -1,12 +1,3 @@
-# prompt style and colors based on Steve Losh's Prose theme:
-# https://github.com/sjl/oh-my-zsh/blob/master/themes/prose.zsh-theme
-#
-# vcs_info modifications from Bart Trojanowski's zsh prompt:
-# http://www.jukie.net/bart/blog/pimping-out-zsh-prompt
-#
-# git untracked files modification from Brian Carper:
-# https://briancarper.net/blog/570/git-info-in-your-zsh-prompt
-
 function virtualenv_info {
     [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`') '
 }
@@ -94,7 +85,18 @@ function steeef_precmd {
 }
 add-zsh-hook precmd steeef_precmd
 
+function prompt_exit_code() {
+  local EXIT="$?"
+
+  if [ $EXIT -eq 0 ]; then
+    echo -n green
+  else
+    echo -n red
+  fi
+}
+
 # Original half-life prompt
 #PROMPT=$'%{$purple%}%n%{$reset_color%} in %{$limegreen%}%~%{$reset_color%}$vcs_info_msg_0_%{$orange%} λ%{$reset_color%} '
-PROMPT=$'%{$purple%}%n%{$reset_color%} 📂 %{$limegreen%}%~%{$reset_color%} \ue0a0$vcs_info_msg_0_%{$orange%} λ
+
+PROMPT=$'%{$purple%}%n%{$reset_color%} 📂 %{$limegreen%}%~%{$reset_color%} \ue0a0$vcs_info_msg_0_ %F{$(prompt_exit_code)} λ %{$orange%}
 \U2994 %{$reset_color%}'

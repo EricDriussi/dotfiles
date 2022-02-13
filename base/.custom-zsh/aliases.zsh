@@ -1,4 +1,5 @@
 alias l="exa -bghla"
+alias mkdir="mkdir -p"
 alias tree="tree -L 2 -C"
 alias pass="keepassxc-cli clip ~/Documents/priv/pwds/Passwords-BitWarden.kdbx" 
 alias sctl="sudo systemctl"
