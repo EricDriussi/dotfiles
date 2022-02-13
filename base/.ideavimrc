@@ -17,7 +17,7 @@ set sidescrolloff=5
 set iskeyword-=_
 set iskeyword-=-
 
-set number relativenumber
+set number 
 set mouse=a
 set hls
 
