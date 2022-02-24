@@ -98,5 +98,5 @@ function prompt_exit_code() {
 # Original half-life prompt
 #PROMPT=$'%{$purple%}%n%{$reset_color%} in %{$limegreen%}%~%{$reset_color%}$vcs_info_msg_0_%{$orange%} λ%{$reset_color%} '
 
-PROMPT=$'%{$purple%}%n%{$reset_color%} 📂 %{$limegreen%}%~%{$reset_color%} \ue0a0$vcs_info_msg_0_ %F{$(prompt_exit_code)} λ %{$orange%}
+PROMPT=$'%{$purple%}%n%{$reset_color%} 📂 %{$limegreen%}%~%{$reset_color%} \ue0a0$vcs_info_msg_0_ %F{$(prompt_exit_code)}λ %{$orange%}
 \U2994 %{$reset_color%}'
