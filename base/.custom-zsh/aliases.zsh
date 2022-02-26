@@ -37,10 +37,11 @@ alias updatesys="sudo pacman -Syu"
 alias install="sudo pacman -S"
 alias remove="sudo pacman -Rs"
 alias search="sudo pacman -Ss"
-alias cleansys="rm ~/.cache/paru; yes | sudo paccache -rk2 -ruk0; yes | sudo pacman -Sc; yes | paru -Sc --aur"
+alias cleansys="rm -rf ~/.cache/paru; yes | sudo paccache -rk2 -ruk0; yes | sudo pacman -Sc; yes | paru -Sc --aur"
 alias diskUsage="sudo du -h | sort -hr | head -10"
 
 # Git
+alias lg='lazygit'
 alias gs='git status'
 alias gadd='git add'
 alias gunstage='git restore --staged'
@@ -49,7 +50,7 @@ alias gcom='git add -A && git commit'
 alias gstash='git stash -u'
 alias gunstash='git stash pop'
 alias gamend='git add --all && git commit --amend --no-edit'
-alias gp='git pull'
+alias gp='git pull --autostash'
 alias gpush='git push'
 alias gmv='git checkout'
 #alias gme='git merge --squash'

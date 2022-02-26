@@ -1,6 +1,7 @@
 gui:
   mainPanelSplitMode: 'vertical'
   showFileTree: false
+  sidePanelWidth: 0.25
   theme:
       selectedLineBgColor:
         - '#3d3d3d'
@@ -9,6 +10,9 @@ gui:
 git:
   branchLogCmd: "git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=medium --oneline {{branchName}} --"
   allBranchesLogCmd: 'git log --graph --abbrev-commit --decorate --format=tformat:"%C(yellow)%h%C(reset)%C(reset)%C(auto)%d%C(reset) %s %C(white) -  %C(bold green)(%ar)%C(reset) %C(dim blue)<%an>%Creset"'
+  paging:
+    colorArg: always
+    useConfig: true
 keybinding:
   universal:
     quit: 'q'
