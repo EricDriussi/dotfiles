@@ -6,10 +6,11 @@
 	editor = nvim
 	autocrlf = input
 	excludesFile = ~/.gitignore-global
-        pager = delta --paging=never --24-bit-color=never
+        pager = delta --paging=never --true-color=always --wrap-right-percent 1
 
 [diff]
         tool = nvim
+        colorMoved = default
 
 [difftool "nvim"]
         cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
@@ -25,7 +26,7 @@
 	autostash = true
 
 [pull]
-	ff = only
+        rebase = true
 
 [mergetool "nvim"]
         path = /usr/bin/nvim
@@ -41,9 +42,14 @@
 
 [delta "decorations"]
         file-style = yellow bold none
-        file-decoration-style = yellow box
-	;hunk-header-style = magenta bold
-	;hunk-header-decoration-style = magenta box
+        file-decoration-style = white box
+        hunk-header-style = omit
 	minus-empty-line-marker-style = normal normal
 	plus-empty-line-marker-style = normal normal
-        line-numbers-right-format = "{np:^4}│ "
+        line-numbers-right-format = "│{nm:^2} {np:^2}│ "
+        line-numbers-left-format = " "
+        line-numbers-right-style = blue
+        line-numbers-minus-style = red
+        line-numbers-plus-style = green
+[init]
+	defaultBranch = master
