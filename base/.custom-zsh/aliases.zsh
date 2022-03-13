@@ -1,6 +1,6 @@
 alias l="exa -bghla"
 alias mkdir="mkdir -p"
-alias tree="tree -L 2 -C"
+alias tre="tree -L 2 -C"
 alias pass="keepassxc-cli clip ~/Documents/priv/pwds/Passwords-BitWarden.kdbx" 
 alias sctl="sudo systemctl"
 alias grep="grep --color=always"
@@ -9,6 +9,7 @@ alias cpd="cp -r"
 alias v="nvim"
 alias cb="cd .."
 alias cc="z"
+alias cl="clear"
 
 mkd() { mkdir "$1" && cd "$1" }
 c() { cd "$1" && l }

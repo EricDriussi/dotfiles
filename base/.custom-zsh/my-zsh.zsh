@@ -11,7 +11,7 @@ source ~/.custom-zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.custom-zsh/plugins/git.zsh
 source ~/.custom-zsh/plugins/nvm.zsh
 
-# Show info in bar
+# Show info in polybar
 if [[ "${TERM}" != "" && "${TERM}" == "alacritty" ]] then
     precmd(){
         # output CWD
