@@ -59,6 +59,7 @@ trymerge() { git merge "$1" --no-commit --no-ff; git merge --abort }
 alias rollback='git restore'
 alias gbr='git branch -a'
 alias ginit='git init && git config credential.helper store'
+alias gaddorigin='git remote set-url --add --push origin '
 alias glg='git log --graph --abbrev-commit --decorate --format=tformat:"%C(yellow)%h%C(reset)%C(reset)%C(auto)%d%C(reset) %s %C(white) -  %C(bold green)(%ar)%C(reset) %C(dim blue)<%an>%Creset"'
 alias glog=' git log  --name-only --graph --abbrev-commit --decorate --format=tformat:"%C(yellow)%h%C(reset)%C(reset)%C(auto)%d%C(reset) %s %C(white) -  %C(bold green)(%ar)%C(reset) %C(dim blue)<%an>%C(reset)" '
 
