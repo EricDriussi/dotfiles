@@ -248,6 +248,9 @@ for_window [class="Galculator" instance="galculator"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="qt5ct" instance="qt5ct"] floating enable
 
+# Make Calendar Float
+for_window [class="Gsimplecal"] sticky enable
+
 ################
 # Window Color #
 ################
