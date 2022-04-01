@@ -1,12 +1,13 @@
+---
 gui:
   mainPanelSplitMode: 'vertical'
   showFileTree: false
   sidePanelWidth: 0.25
   theme:
-      selectedLineBgColor:
-        - '#3d3d3d'
-      selectedRangeBgColor:
-        - '#3d3d3d'
+    selectedLineBgColor:
+      - '#3d3d3d'
+    selectedRangeBgColor:
+      - reverse
 git:
   branchLogCmd: "git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=medium --oneline {{branchName}} --"
   allBranchesLogCmd: 'git log --graph --abbrev-commit --decorate --format=tformat:"%C(yellow)%h%C(reset)%C(reset)%C(auto)%d%C(reset) %s %C(white) -  %C(bold green)(%ar)%C(reset) %C(dim blue)<%an>%Creset"'
@@ -17,10 +18,10 @@ keybinding:
   universal:
     quit: 'q'
     return: '<c-q>'
-    scrollLeft: '0' 
-    scrollRight: '$' 
-    prevBlock-alt: '<left>' 
-    nextBlock-alt: '<right>' 
+    scrollLeft: '0'
+    scrollRight: '$'
+    prevBlock-alt: '<left>'
+    nextBlock-alt: '<right>'
     nextTab: 'l'
     prevTab: 'h'
     confirm-alt1: '<enter>'
