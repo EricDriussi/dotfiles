@@ -15,10 +15,10 @@ source ~/.custom-zsh/plugins/nvm.zsh
 if [[ "${TERM}" != "" && "${TERM}" == "alacritty" ]] then
     precmd(){
         # output CWD
-        print -Pn "\e]0;Alacritty - %~\a"
+        print -Pn "\e]0;$USER 💀 %~\a"
     }
     preexec(){
         # output executed command
-        echo -en "\e]0;Alacritty - ${1}\a"
+        echo -en "\e]0;$USER 💀 ${1}\a"
     }
 fi
