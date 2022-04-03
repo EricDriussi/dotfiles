@@ -1,42 +1,5 @@
-" Always on previews
-:view!
-
-" Yank path to system clipboard
-nnoremap yp :!echo -n %c:p | xclip -selection clipboard %i<cr>:echo expand('%"c:p') "is yanked to clipboard"<cr>
-
-" Yank name
-nnoremap yn :!echo -n %c | xclip -selection clipboard %i<cr>:echo expand('%"c') "is yanked to clipboard"<cr>
-
-" Open selected dir in new pane and switch
-nnoremap <c-t> :sync %c <cr><space>
-
-" exit on cwd
-nnoremap <c-w> :sh<cr>
-
-" Rename
-nnoremap rn cw
-
-" Terminal
-nnoremap <a-t> :!alacritty &<cr>
-
-" Back home
-nnoremap cd :cd<cr>
-
-" Hidden files
-nnoremap <c-h> za
-
-" Resizing panes
-nnoremap - <C-w>5<
-nnoremap + <C-w>5>
-
-" Archiving commands
-command! zip apack %f.zip %f
-command! tar apack %f.tar.gz %f
-command! unpack aunpack %f
-
 set number relativenumber
 
-" ------------------------------------------------------------------------------
 " Default settings
 
 set vicmd=nvim
