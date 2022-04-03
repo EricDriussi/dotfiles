@@ -28,11 +28,12 @@
 [pull]
         rebase = true
 
-[mergetool "nvim"]
-        path = /usr/bin/nvim
-
 [merge]
         tool = nvim
+
+[mergetool "nvim"]
+        cmd = "nvim -f -c \"set signcolumn=no\" -c \"set rnu!\" -c \"Gvdiffsplit!\" -c \"set signcolumn=no\" \"$MERGED\""
+        path = /usr/bin/nvim
 
 [delta]
 	features = decorations

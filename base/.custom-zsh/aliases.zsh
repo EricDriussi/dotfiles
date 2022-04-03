@@ -1,10 +1,10 @@
 alias l="exa -bghla"
 alias mkdir="mkdir -p"
-alias tre="tree -L 2 -C"
+alias tre="tree -L 2 -C -a -I 'node_modules' -I 'build' -I '.git'"
 alias pass="keepassxc-cli clip ~/Documents/priv/pwds/Passwords-BitWarden.kdbx" 
 alias sctl="sudo systemctl"
 alias grep="grep --color=always"
-alias rmd="rm -rf"
+alias rmd="rm -r"
 alias cpd="cp -r"
 alias v="nvim"
 alias cb="cd .."
@@ -54,10 +54,13 @@ alias gamend='git add --all && git commit --amend --no-edit'
 alias gp='git pull --autostash'
 alias gpush='git push'
 alias gmv='git checkout'
-#alias gme='git merge --squash'
+alias gme='git merge --squash'
+alias gres='git mergetool'
 trymerge() { git merge "$1" --no-commit --no-ff; git merge --abort }
 alias rollback='git restore'
 alias gbr='git branch -a'
+alias grmb='git branch -D'
+gmkb() { git branch -b "$1" && git push --set-upstream origin "$1" }
 alias ginit='git init && git config credential.helper store'
 alias gaddorigin='git remote set-url --add --push origin '
 alias glg='git log -15 --graph --abbrev-commit --decorate --format=tformat:"%C(yellow)%h%C(reset)%C(reset)%C(auto)%d%C(reset) %s %C(white) -  %C(bold green)(%ar)%C(reset) %C(dim blue)<%an>%Creset"'
