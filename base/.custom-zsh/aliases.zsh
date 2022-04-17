@@ -1,9 +1,9 @@
 alias l="exa -bghla"
 alias mkdir="mkdir -p"
-alias tre="tree -L 2 -C -a -I 'node_modules' -I 'build' -I '.git'"
+alias tre="tree -L 2 -C -a -I 'node_modules' -I 'build' -I '.git' -I '.idea'"
 alias pass="keepassxc-cli clip ~/Documents/priv/pwds/Passwords-BitWarden.kdbx" 
 alias sctl="sudo systemctl"
-alias grep="grep --color=always"
+#alias grep="grep --color=always"
 alias rmd="rm -r"
 alias cpd="cp -r"
 alias v="nvim"
@@ -23,7 +23,7 @@ alias vf='vfm .'
 # Change ssh key
 alias ssh-auth='eval "$(ssh-agent -s)" && ssh-add'
 
-alias blogUpdate="hugo -D && rsync -rtvzP --rsh=ssh ~/Documents/website/public/* root@107.191.47.211:/var/www/unixmagick"
+alias blogUpdate="cd ~/Documents/website/ && hugo -D && rsync -rtvzP --rsh=ssh ~/Documents/website/public/* root@unixmagick.xyz:/var/www/website"
 alias nr='npm run'
 alias nv='source /usr/share/nvm/init-nvm.sh && nvm'
 
@@ -52,13 +52,14 @@ alias gstash='git stash -u'
 alias gunstash='git stash pop'
 alias gamend='git add --all && git commit --amend --no-edit'
 alias gp='git pull --autostash'
+alias gsuperp='git fetch origin && git reset --hard origin'
 alias gpush='git push'
 alias gmv='git checkout'
 alias gme='git merge --squash'
 alias gres='git mergetool'
 trymerge() { git merge "$1" --no-commit --no-ff; git merge --abort }
 alias rollback='git restore'
-alias gbr='git branch -a'
+alias gab='git branch -a'
 alias grmb='git branch -D'
 gmkb() { git branch -b "$1" && git push --set-upstream origin "$1" }
 alias ginit='git init && git config credential.helper store'
