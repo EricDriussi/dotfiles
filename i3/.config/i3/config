@@ -195,10 +195,10 @@ bindsym $Mod+Shift+Left  move left  30px
 bindsym $Mod+Shift+Right move right 30px
 
 # Size
-bindsym Mod1+Up    resize shrink height 10 px or 1 ppt
-bindsym Mod1+Down  resize grow   height 10 px or 1 ppt
-bindsym Mod1+Left  resize shrink width  10 px or 1 ppt
-bindsym Mod1+Right resize grow   width  10 px or 1 ppt
+bindsym Mod1+Up    resize shrink height 30 px or 3 ppt
+bindsym Mod1+Down  resize grow   height 30 px or 3 ppt
+bindsym Mod1+Left  resize shrink width  30 px or 3 ppt
+bindsym Mod1+Right resize grow   width  30 px or 3 ppt
 
 #################
 # Border & Gaps #
@@ -233,6 +233,7 @@ assign [class="(?i)(?:obsidian)"] → 9
 # Floating Windows #
 ####################
 
+for_window [class="vlc"] floating enable
 for_window [class="zoom"] floating enable
 for_window [class="pop"] floating enable
 for_window [class="(?i)(?:catfish)"]          floating enable
