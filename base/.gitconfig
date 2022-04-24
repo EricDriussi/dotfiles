@@ -19,7 +19,7 @@
 [difftool]
 	prompt = false
 
-[includeIf "gitdir:~/Documents/leanmind/"]
+[includeIf "gitdir:~/Documents/projects/leanmind/"]
         path = .gitconfig-leanmind
 
 [rebase]

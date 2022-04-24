@@ -1,12 +1,12 @@
 alias l="exa -bghla"
 alias mkdir="mkdir -p"
 alias tre="tree -L 2 -C -a -I 'node_modules' -I 'build' -I '.git' -I '.idea'"
-alias pass="keepassxc-cli clip ~/Documents/priv/pwds/Passwords-BitWarden.kdbx" 
 alias sctl="sudo systemctl"
 #alias grep="grep --color=always"
 alias rmd="rm -r"
 alias cpd="cp -r"
 alias v="nvim"
+alias basev="nvim -u ~/.config/nvim/base-init.vim"
 alias cb="cd .."
 alias cc="z"
 alias cl="clear"
@@ -23,7 +23,7 @@ alias vf='vfm .'
 # Change ssh key
 alias ssh-auth='eval "$(ssh-agent -s)" && ssh-add'
 
-alias blogUpdate="cd ~/Documents/website/ && hugo -D && rsync -rtvzP --rsh=ssh ~/Documents/website/public/* root@unixmagick.xyz:/var/www/website"
+alias blogUpdate="cd ~/Documents/projects/website/ && hugo -D && rsync -rtvzP --rsh=ssh ~/Documents/projects/website/public/* root@unixmagick.xyz:/var/www/website"
 alias nr='npm run'
 alias nv='source /usr/share/nvm/init-nvm.sh && nvm'
 
@@ -107,8 +107,8 @@ copyMe(){
 # Book!
 generate(){
     currentDir="$(pwd)"
-    cd ~/Documents/leanmind/savvily/savvily-book-converter
-    ./convert.sh "$1" ~/Documents/leanmind/savvily/codigo-sostenible/manuscript && notify-send "Pandoc is done!" " "
+    cd ~/Documents/projects/leanmind/savvily/savvily-book-converter
+    ./convert.sh "$1" ~/Documents/projects/leanmind/savvily/codigo-sostenible/manuscript && notify-send "Pandoc is done!" " "
     cd $currentDir
 }
 alias eview='ebook-viewer'
