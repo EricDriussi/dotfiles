@@ -235,6 +235,9 @@ assign [class="(?i)(?:obsidian)"] → 9
 
 for_window [class="vlc"] floating enable
 for_window [class="zoom"] floating enable
+for_window [class="Zoom"] floating enable
+for_window [class="join?action"] floating enable
+for_window [class="Zoom Meeting"] floating enable
 for_window [class="pop"] floating enable
 for_window [class="(?i)(?:catfish)"]          floating enable
 for_window [class="(?i)(?:Lxappearance)"]          floating enable
