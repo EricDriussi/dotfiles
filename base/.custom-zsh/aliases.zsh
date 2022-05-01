@@ -2,7 +2,7 @@ alias l="exa -bghla"
 alias mkdir="mkdir -p"
 alias tre="tree -L 2 -C -a -I 'node_modules' -I 'build' -I '.git' -I '.idea'"
 alias sctl="sudo systemctl"
-#alias grep="grep --color=always"
+alias grep="grep --color=always"
 alias rmd="rm -r"
 alias cpd="cp -r"
 alias v="nvim"
@@ -21,9 +21,9 @@ fd() { find . -name "*"$1"*" -ls }
 alias vfm=~/.config/vifm/vifmimg/vifmrun
 alias vf='vfm .'
 # Change ssh key
-alias ssh-auth='eval "$(ssh-agent -s)" && ssh-add'
+alias ssauth='eval "$(ssh-agent -s)" && ssh-add'
 
-alias blogUpdate="cd ~/Documents/projects/website/ && hugo -D && rsync -rtvzP --rsh=ssh ~/Documents/projects/website/public/* root@unixmagick.xyz:/var/www/website"
+alias blogUpdate="cd ~/Documents/projects/website/ && hugo -D && rsync -rtvzP --rsh=ssh ~/Documents/projects/website/public/* ansible@unixmagick.xyz:/var/www/website"
 alias nr='npm run'
 alias nv='source /usr/share/nvm/init-nvm.sh && nvm'
 
@@ -41,6 +41,7 @@ alias search="sudo pacman -Ss"
 alias cleansys="rm -rf ~/.cache/paru; yes | sudo paccache -rk2 -ruk0; yes | sudo pacman -Sc; yes | paru -Sc --aur"
 alias diskUsage="sudo du -h | sort -hr | head -10"
 
+commit (){ python3 -B ~/.co-author.py $1 $2 }
 # Git
 alias lg='lazygit'
 alias gs='git status'
