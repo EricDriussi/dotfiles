@@ -3,7 +3,7 @@ alias mkdir="mkdir -p"
 alias tre="tree -L 2 -C -a -I 'node_modules' -I 'build' -I '.git' -I '.idea'"
 alias sctl="sudo systemctl"
 alias grep="grep --color=always"
-alias rmd="rm -r"
+alias rmd="rm -rf"
 alias cpd="cp -r"
 alias v="nvim"
 alias basev="nvim -u ~/.config/nvim/base-init.vim"
@@ -69,7 +69,7 @@ alias glg='git log -15 --graph --abbrev-commit --decorate --format=tformat:"%C(y
 alias glog=' git log -10  --name-only --graph --abbrev-commit --decorate --format=tformat:"%C(yellow)%h%C(reset)%C(reset)%C(auto)%d%C(reset) %s %C(white) -  %C(bold green)(%ar)%C(reset) %C(dim blue)<%an>%C(reset)" '
 
 # Docker
-alias dnuke='docker stop $(docker container ls -a -q); docker system prune -a -f --volumes; docker rmi $(docker images -q)'
+alias dnuke='docker stop $(docker container ls -a -q); docker system prune -a -f --volumes'
 alias dup='docker-compose up -d'
 alias ddown='docker-compose down'
 alias dstop='docker stop'
