@@ -18,7 +18,7 @@ set $right l
 exec --no-startup-id obsidian
 exec --no-startup-id pavucontrol
 exec --no-startup-id thunderbird
-exec --no-startup-id slack
+#exec --no-startup-id slack
 exec --no-startup-id brave
 exec --no-startup-id nextcloud
 exec --no-startup-id emojione-picker
@@ -233,9 +233,10 @@ assign [class="(?i)(?:obsidian)"] → 9
 # Floating Windows #
 ####################
 
+for_window [class="(?i)(?:Calendar)"] floating enable
+for_window [class="(?i)(?:Msgcompose)"] floating enable
 for_window [class="vlc"] floating enable
 for_window [class="zoom"] floating enable
-for_window [class="Zoom"] floating enable
 for_window [class="join?action"] floating enable
 for_window [class="Zoom Meeting"] floating enable
 for_window [class="pop"] floating enable

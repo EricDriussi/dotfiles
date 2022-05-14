@@ -12,8 +12,8 @@ export PATH="/home/eric/.deno/bin:$PATH"
 export PATH=$PATH:/usr/local/nodejs/bin
 export NVM_DIR="$HOME/.nvm"
 export NVM_LAZY_LOAD=true
-# nvm won't persist otherwhise ¯\_(ツ)_/¯
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+ #nvm won't persist otherwhise ¯\_(ツ)_/¯
+#[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 # yes node, please take all my RAM
 export NODE_OPTIONS=--max_old_space_size=6000
 
