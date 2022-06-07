@@ -17,6 +17,7 @@ vo() { nvim "$(fzf)" }
 lo() { lvim "$(fzf)" }
 ports() { sudo ss -tulpn | grep LISTEN }
 fd() { find . -name "*"$1"*" -ls }
+alias qrpaste="xclip -o | qrencode -t utf8"
 
 alias vfm=~/.config/vifm/vifmimg/vifmrun
 alias vf='vfm .'
