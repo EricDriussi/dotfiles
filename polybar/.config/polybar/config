@@ -47,6 +47,11 @@ modules-right = memory separator cpu-temperature separator vol separator date se
 
 [bar/eDP1]
 monitor = eDP-1-1
+/*monitor = eDP*/
+/*tray-position = right*/
+/*tray-padding = 5*/
+/*tray-background = ${colors.darkgray}*/
+
 
 bottom = false
 width = 100%

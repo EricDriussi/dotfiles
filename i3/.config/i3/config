@@ -97,8 +97,8 @@ bindsym Print exec --no-startup-id flameshot gui
 bindsym $Mod+Shift+e exec emojione-picker
 
 # Audio
-bindsym Control+F7 exec --no-startup-id pactl set-sink-volume 0 -10% && pactl set-sink-volume 1 -10%
-bindsym Control+F8 exec --no-startup-id pactl set-sink-volume 0 +10% && pactl set-sink-volume 1 +10%
+bindsym Control+F7 exec --no-startup-id pactl set-sink-volume 0 -5% && pactl set-sink-volume 1 -5%
+bindsym Control+F8 exec --no-startup-id pactl set-sink-volume 0 +5% && pactl set-sink-volume 1 +5%
 bindsym Control+F6 exec --no-startup-id pactl set-sink-mute 0 toggle && pactl set-sink-mute 1 toggle
 
 # Media Keys
