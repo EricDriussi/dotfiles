@@ -27,6 +27,7 @@ alias ssauth='eval "$(ssh-agent -s)" && ssh-add'
 alias blogUpdate="cd ~/Documents/projects/website/ && hugo -D && rsync -rtvzP --rsh=ssh ~/Documents/projects/website/public/* ansible@unixmagick.xyz:/var/www/website"
 alias nr='npm run'
 alias nv='source /usr/share/nvm/init-nvm.sh && nvm'
+alias pr='pipenv run'
 
 # Shortcuts
 alias vov="cd ~/.config/nvim/ && nvim init.vim"
@@ -42,22 +43,22 @@ alias search="sudo pacman -Ss"
 alias cleansys="rm -rf ~/.cache/paru; yes | sudo paccache -rk2 -ruk0; yes | sudo pacman -Sc; yes | paru -Sc --aur"
 alias diskUsage="sudo du -h | sort -hr | head -10"
 
-commit (){ python3 -B ~/.co-author.py $1 $2 }
+coa (){ python3 -B ~/.co-author.py $1 $2 }
 # Git
 alias lg='lazygit'
 alias gs='git status'
 alias gadd='git add'
-alias gunstage='git restore --staged'
+alias gunstage='git restore --staged .'
 alias gc='git commit'
 alias gcom='git add -A && git commit'
 alias gstash='git stash -u'
 alias gunstash='git stash pop'
-alias gamend='git add --all && git commit --amend --no-edit'
+alias gamend='git add --all && git commit --amend'
 alias gp='git pull --autostash'
 alias gsuperp='git fetch origin && git reset --hard origin'
 alias gpush='git push'
 alias gmv='git checkout'
-alias gme='git merge --squash'
+alias gme='git merge --no-squash'
 alias gres='git mergetool'
 trymerge() { git merge "$1" --no-commit --no-ff; git merge --abort }
 alias rollback='git restore'
