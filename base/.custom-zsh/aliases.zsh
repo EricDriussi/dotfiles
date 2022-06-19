@@ -85,9 +85,6 @@ dlvideo() { noglob yt-dlp -o "%(title)s.%(ext)s" -P "~/Videos/" "$1" }
 dlalbum() { noglob yt-dlp --audio-format best -x --audio-quality 0 -o "%(album)s/%(title)s.%(ext)s" "$1" }
 dlsong() { noglob yt-dlp --audio-format best -x --audio-quality 0 -o "%(title)s.%(ext)s" "$1" }
 
-# Open CLI as GUI
-gui() { ("${@:?}" > /dev/null 2>&1 &) }
-
 # Show ctrl+c
 copyToStdout() {
     while clipnotify;

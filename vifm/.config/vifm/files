@@ -1,5 +1,3 @@
-
-
 " The file type is for the default programs to be used with
 " a file extension.
 " :filetype pattern1,pattern2 defaultprogram,program2

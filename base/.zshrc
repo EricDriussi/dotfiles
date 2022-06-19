@@ -3,6 +3,7 @@ export EDITOR="nvim"
 export VISUAL="nvim"
 export ZSH="~/.custom-zsh"
 export MANPAGER='nvim +Man!'
+export XDG_CONFIG_HOME=$HOME/.config
 
 export PATH=$HOME/bin:/usr/bin:$PATH
 export PATH=$PATH:/opt
@@ -50,5 +51,3 @@ export KEYTIMEOUT=1
 eval "$(lua /usr/share/z.lua/z.lua --init zsh)"
 
 source ~/.custom-zsh/my-zsh.zsh
-
-# ffmpeg -video_size 1920x1080 -framerate 30 -f x11grab -i :0.0+0,0 -f pulse -ac 2 -i 0 -c:v libx264rgb -crf 0 -preset ultrafast sample.mkv

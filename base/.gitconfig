@@ -1,61 +1,63 @@
 [user]
-	name = Eric Driussi
-	email = ericdriussi@gmail.com
+    name = Eric Driussi
+    email = ericdriussi@gmail.com
 
 [core]
-	editor = nvim
-	autocrlf = input
-	excludesFile = ~/.gitignore-global
-        pager = delta --paging=never --true-color=always --wrap-right-percent 1
+    editor = nvim
+    autocrlf = input
+    excludesFile = ~/.gitignore-global
+    pager = delta --paging=never --true-color=always --wrap-right-percent 1
+
+[init]
+    defaultBranch = master
 
 [diff]
-        tool = nvim
-        colorMoved = default
+    tool = nvim
+    colorMoved = default
 
 [difftool "nvim"]
-        cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
-        path = /usr/bin/nvim
+    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
+    path = /usr/bin/nvim
 
 [difftool]
-	prompt = false
+    prompt = false
 
 [includeIf "gitdir:~/Documents/projects/leanmind/"]
-        path = .gitconfig-leanmind
+    path = .gitconfig-leanmind
 
 [rebase]
-	autostash = true
+    autostash = true
 
 [pull]
-        rebase = true
+    rebase = true
 
 [merge]
-        tool = nvim
+    tool = nvim
 
 [mergetool "nvim"]
-        cmd = "nvim -f -c \"set signcolumn=no\" -c \"set rnu!\" -c \"Gvdiffsplit!\" -c \"set signcolumn=no\" \"$MERGED\""
-        path = /usr/bin/nvim
+    cmd = "nvim -f -c \"set signcolumn=no\" -c \"set rnu!\" -c \"Gvdiffsplit!\" -c \"set signcolumn=no\" \"$MERGED\""
+    path = /usr/bin/nvim
 
 [delta]
-	features = decorations
-        line-numbers = true
-        side-by-side = true
-        navigate = true
+    features = decorations
+    line-numbers = true
+    side-by-side = true
+    navigate = true
 
 [delta "decorations"]
-        file-style = yellow bold none
-        file-decoration-style = white box
-        hunk-header-style = omit
-	minus-empty-line-marker-style = normal normal
-	plus-empty-line-marker-style = normal normal
-        line-numbers-right-format = "│{nm:^2} {np:^2}│ "
-        line-numbers-left-format = " "
-        line-numbers-right-style = blue
-        line-numbers-minus-style = red
-        line-numbers-plus-style = green
-[init]
-	defaultBranch = master
+    file-style = yellow bold none
+    file-decoration-style = white box
+    hunk-header-style = omit
+    minus-empty-line-marker-style = normal normal
+    plus-empty-line-marker-style = normal normal
+    line-numbers-right-format = "│{nm:^2} {np:^2}│ "
+    line-numbers-left-format = " "
+    line-numbers-right-style = blue
+    line-numbers-minus-style = red
+    line-numbers-plus-style = green
+
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true

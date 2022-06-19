@@ -77,17 +77,3 @@ vmap ` xi``<Esc>P
 "Center search selection
 nnoremap n nzzzv
 nnoremap N Nzzzv
-
-"Replace word in Normal mode and selection in Visual mode
-nnoremap R *``cgn
-"vnoremap R y/\V<C-R>=escape(@",'/\')<CR><CR>Ncgn - No Work
-"FUCKS UP REG
-
-"Search selected text
-"vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR> - No Work
-
-"Move current line and selected lines - Can't find a good remap for multicursor
-"nmap <a-j> :m .+1<cr>==
-"nmap <a-k> :m .-2<cr>==
-"vnoremap <a-j> :m '>+1<cr>gv=gv
-"vnoremap <a-k> :m '<-2<cr>gv=gv
