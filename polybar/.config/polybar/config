@@ -1,10 +1,3 @@
-; Useful monitor setup
-;monitor-strict = false
-;monitor-exact = true
-;override-redirect = false
-;enable-ipc = true
-;fixed-center = false
-
 [colors]
 darkgray = ${xrdb:color8}
 background =#aa282828 
@@ -51,7 +44,6 @@ monitor = eDP-1-1
 /*tray-position = right*/
 /*tray-padding = 5*/
 /*tray-background = ${colors.darkgray}*/
-
 
 bottom = false
 width = 100%

@@ -30,7 +30,7 @@ if [[ -z "$MIXER" ]] ; then
             MIXER="pulse"
         fi
     fi
-    [ -n "$(lsmod | grep jack)" ] && MIXER="jackplug"
+    [ "$(lsmod | grep jack)" != "" ] && MIXER="jackplug"
     MIXER="${2:-$MIXER}"
 fi
 
@@ -38,7 +38,7 @@ fi
 # This defaults to the first control of your selected mixer
 # For a list of the available, use `amixer -D $Your_Mixer scontrols`
 if [[ -z "$SCONTROL" ]] ; then
-    SCONTROL="${BLOCK_INSTANCE:-$(amixer -D $MIXER scontrols |
+    SCONTROL="${BLOCK_INSTANCE:-$(amixer -D "$MIXER" scontrols |
                       sed -n "s/Simple mixer control '\([^']*\)',0/\1/p" |
                       head -n1
                     )}"
@@ -53,12 +53,12 @@ fi
 #------------------------------------------------------------------------
 
 capability() { # Return "Capture" if the device is a capture device
-  amixer -D $MIXER get $SCONTROL |
+  amixer -D "$MIXER" get "$SCONTROL" |
     sed -n "s/  Capabilities:.*cvolume.*/Capture/p"
 }
 
 volume() {
-  amixer -D $MIXER get $SCONTROL $(capability)
+  amixer -D "$MIXER" get "$SCONTROL" "$(capability)"
 }
 
 format() {
@@ -75,9 +75,9 @@ format() {
 #------------------------------------------------------------------------
 
 case $BLOCK_BUTTON in
-  3) amixer -q -D $MIXER sset $SCONTROL $(capability) toggle ;;  # right click, mute/unmute
-  4) amixer -q -D $MIXER sset $SCONTROL $(capability) ${STEP}+ unmute ;; # scroll up, increase
-  5) amixer -q -D $MIXER sset $SCONTROL $(capability) ${STEP}- unmute ;; # scroll down, decrease
+  3) amixer -q -D "$MIXER" sset "$SCONTROL" "$(capability)" toggle ;;  # right click, mute/unmute
+  4) amixer -q -D "$MIXER" sset "$SCONTROL" "$(capability)" "$STEP"+ unmute ;; # scroll up, increase
+  5) amixer -q -D "$MIXER" sset "$SCONTROL" "$(capability)" "$STEP"- unmute ;; # scroll down, decrease
 esac
 
 volume | format
