@@ -1,9 +1,9 @@
-[submodule "base/.custom-zsh/plugins/zsh-autosuggestions"]
-	path = base/.custom-zsh/plugins/zsh-autosuggestions
+[submodule "zsh-autosuggestions"]
+	path = custom-zsh/.config/custom-zsh/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
-[submodule "base/.custom-zsh/plugins/zsh-syntax-highlighting"]
-	path = base/.custom-zsh/plugins/zsh-syntax-highlighting
+[submodule "zsh-syntax-highlighting"]
+	path = custom-zsh/.config/custom-zsh/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
-[submodule "vifm/.config/vifm/vifmimg"]
+[submodule "vifm"]
 	path = vifm/.config/vifm/vifmimg
 	url = https://github.com/cirala/vifmimg.git
