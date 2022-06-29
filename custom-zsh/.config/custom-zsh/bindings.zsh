@@ -1,14 +1,3 @@
-# Enable colors and change prompt:
-autoload -U colors && colors
-# Black magick to make stuff work sensibly w/o OMZ
-autoload -U compinit && compinit -u
-zstyle ':completion:*' menu select
-# Auto complete with case insenstivity
-zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-zmodload zsh/complist
-compinit
-unsetopt nomatch
-
 # Make sure that the terminal is in application mode when zle is active, since
 # only then values from $terminfo are valid
 if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
@@ -66,6 +55,7 @@ bindkey '^H' backward-kill-word
 # [Ctrl-Delete] - Delete previous word
 bindkey '^[[3;5~' kill-word
 
+# Esc -> NVIM
 autoload -U edit-command-line
-zle -N edit-command-line
 bindkey '\033' edit-command-line
+zle -N edit-command-line
