@@ -1,7 +1,7 @@
 ---
 gui:
   mainPanelSplitMode: 'vertical'
-  showFileTree: false
+  showFileTree: true
   sidePanelWidth: 0.25
   theme:
     selectedLineBgColor:

@@ -18,6 +18,7 @@ lo() { lvim "$(fzf)" }
 ports() { sudo ss -tulpn | grep LISTEN }
 fd() { find . -name "*"$1"*" -ls }
 alias qrpaste="xclip -o | qrencode -t utf8"
+alias bt='btop'
 
 alias vfm=~/.config/vifm/vifmimg/vifmrun
 alias vf='vfm .'
@@ -66,7 +67,8 @@ alias gab='git branch -a'
 alias grmb='git branch -D'
 gmkb() { git branch -b "$1" && git push --set-upstream origin "$1" }
 alias ginit='git init && git config credential.helper store'
-alias gaddorigin='git remote set-url --add --push origin '
+gaddorigin() { git remote add origin "$1"; git remote set-url --add --push origin "$1" }
+alias gaddremote='git remote set-url --add --push origin'
 alias glg='git log -15 --graph --abbrev-commit --decorate --format=tformat:"%C(yellow)%h%C(reset)%C(reset)%C(auto)%d%C(reset) %s %C(white) -  %C(bold green)(%ar)%C(reset) %C(dim blue)<%an>%Creset"'
 alias glog=' git log -10  --name-only --graph --abbrev-commit --decorate --format=tformat:"%C(yellow)%h%C(reset)%C(reset)%C(auto)%d%C(reset) %s %C(white) -  %C(bold green)(%ar)%C(reset) %C(dim blue)<%an>%C(reset)" '
 
