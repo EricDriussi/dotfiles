@@ -63,6 +63,10 @@ nnoremap <C-M-k> :wincmd k<cr>
 "Better tabbing
 vnoremap < <gv
 vnoremap > >gv
+nnoremap <Tab> >>_
+nnoremap <S-Tab> <<_
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
 
 "Save all
 nnoremap <M-s> :wa <CR>
