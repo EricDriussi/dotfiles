@@ -32,7 +32,7 @@ alias pr='pipenv run'
 
 # Shortcuts
 alias vov="cd ~/.config/nvim/ && nvim init.vim"
-alias voz="nvim ~/dotfiles/base/.zshrc"
+alias voz="nvim ~/dotfiles/custom-zsh/.config/custom-zsh/exports.zsh"
 alias voa="nvim ~/dotfiles/custom-zsh/.config/custom-zsh/aliases.zsh"
 alias voi="nvim ~/dotfiles/i3/.config/i3/config"
 
