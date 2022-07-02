@@ -23,7 +23,7 @@ nnoremap <a-t> :!alacritty &<cr>
 nnoremap cd :cd<cr>
 
 " Hidden files
-nnoremap <c-h> za
+nnoremap <H> za
 
 " Resizing panes
 nnoremap - <C-w>5<
