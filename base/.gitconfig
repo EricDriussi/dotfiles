@@ -22,6 +22,9 @@
 [difftool]
     prompt = false
 
+[includeIf "gitdir:~/Documents/projects/leanmind/audiense"]
+    path = .gitconfig-audiense
+
 [includeIf "gitdir:~/Documents/projects/leanmind/"]
     path = .gitconfig-leanmind
 
