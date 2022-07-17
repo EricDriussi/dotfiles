@@ -81,7 +81,8 @@ bindsym Control+m exec touchpad-toggle
 bindsym $Mod+Shift+q kill
 
 # Terminal
-bindsym $Mod+Return exec --no-startup-id alacritty
+#bindsym $Mod+Return exec --no-startup-id alacritty
+bindsym $Mod+Return exec --no-startup-id kitty
 
 # Screenshot
 bindsym Print exec --no-startup-id flameshot gui
