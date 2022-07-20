@@ -7,3 +7,6 @@
 [submodule "custom-zsh/.config/custom-zsh/plugins/zsh-syntax-highlighting"]
 	path = custom-zsh/.config/custom-zsh/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "custom-zsh/.config/custom-zsh/plugins/z-lua"]
+	path = custom-zsh/.config/custom-zsh/plugins/z-lua
+	url = https://github.com/skywind3000/z.lua.git
