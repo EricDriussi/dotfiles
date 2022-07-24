@@ -228,7 +228,6 @@ assign [class="(?i)(?:obsidian)"] → 9
 
 for_window [class="(?i)(?:Calendar)"] floating enable
 for_window [class="(?i)(?:Msgcompose)"] floating enable
-for_window [class="vlc"] floating enable
 for_window [class="zoom"] floating enable
 for_window [class="Tandem"] floating enable
 for_window [class="join?action"] floating enable

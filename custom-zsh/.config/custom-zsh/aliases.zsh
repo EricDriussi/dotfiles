@@ -16,7 +16,7 @@ c() { cd "$1" && l }
 vo() { nvim "$(fzf)" }
 lo() { lvim "$(fzf)" }
 ports() { sudo ss -tulpn | grep LISTEN }
-fd() { find . -iname "*"$1"*" -ls }
+fd() { find . -iname "*"$1"*" | sort }
 alias qrpaste="xclip -o | qrencode -t utf8"
 alias bt='btop'
 
