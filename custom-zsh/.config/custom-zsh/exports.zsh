@@ -1,4 +1,4 @@
-export TERMINAL="alacritty"
+export TERMINAL="kitty"
 export EDITOR="nvim"
 export VISUAL="nvim"
 export ZSH="~/.custom-zsh"
@@ -19,17 +19,6 @@ export NODE_OPTIONS=--max_old_space_size=6000
 
 export PATH=$PATH:$HOME/intellijUlt/bin
 
-# Groovy
-export GRAILS_HOME=$HOME/grails-2.5.5
-export PATH=$PATH:$GRAILS_HOME/bin
-
-# Android
-export ANDROID_SDK_ROOT=$HOME/Android/Sdk/
-export PATH=$PATH:$ANDROID_SDK_ROOT
-export PATH=$PATH:$ANDROID_SDK_ROOT/tools
-export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
-export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
-
 # vifm
 export PATH=$PATH:$HOME/.config/vifm
 export PATH=$PATH:$HOME/.config/vifm/vifmimg
@@ -47,4 +36,3 @@ setopt HIST_IGNORE_ALL_DUPS
 # Vi mode
 #bindkey -v
 export KEYTIMEOUT=1
-
