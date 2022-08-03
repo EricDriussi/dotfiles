@@ -29,6 +29,7 @@ alias vfm=~/.config/vifm/vifmimg/vifmrun
 
 # Nvim
 alias basev="nvim -u ~/.config/nvim/base-init.vim"
+alias bigv="nvim -u ~/.config/nvim/big-init.vim"
 alias v="nvim"
 alias voa="nvim ~/dotfiles/custom-zsh/.config/custom-zsh/aliases.zsh"
 alias voi="nvim ~/dotfiles/i3/.config/i3/config"
@@ -90,15 +91,15 @@ alias dlist='echo -e "------------------------------------IMAGES----------------
 copyToStdout() {
     while clipnotify;
     do
-      SelectedText="$(xsel)"
-      CopiedText="$(xsel -b)"
-      if [[ $CopiedText == $SelectedText ]]; then
-          if [[ $# -eq 0 ]]; then
-            echo $CopiedText 
-            else 
+        SelectedText="$(xsel)"
+        CopiedText="$(xsel -b)"
+        if [[ $CopiedText == $SelectedText ]]; then
+            if [[ $# -eq 0 ]]; then
+                echo $CopiedText
+            else
                 echo $CopiedText | tee -a "$1"
-          fi
-      fi
+            fi
+        fi
     done
 }
 copyMe(){
