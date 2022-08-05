@@ -4,8 +4,8 @@ import sys
 from authorsMap import authors
 
 
-def buildCommit(message: str, commaSeparatedAliases: str):
-    authors = mapToAvailableAuthors(commaSeparatedAliases.split(","))
+def build_commit(message: str, comma_separated_aliases: str):
+    authors = map_to_available_authors(comma_separated_aliases.split(","))
     formatted_message = f"{message}\n\n{authors}"
 
     command = ["git", "commit", "-m", formatted_message]
@@ -13,7 +13,7 @@ def buildCommit(message: str, commaSeparatedAliases: str):
     subprocess.run(command)
 
 
-def mapToAvailableAuthors(aliases: list) -> str:
+def map_to_available_authors(aliases: list) -> str:
     return "\n".join(authors[alias] for alias in aliases)
 
 
@@ -43,7 +43,7 @@ if __name__ == "__main__":
         co_authors = input(
             'Enter your coworkers initials separated by commas: \n')
         message = input('Enter your commit message: \n')
-        buildCommit(message, co_authors)
+        build_commit(message, co_authors)
     except IndexError:
         print("INVALID PARAMETERS")
         sys.exit(1)
