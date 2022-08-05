@@ -1,41 +1,47 @@
-import subprocess
-import sys
+from subprocess import run, CalledProcessError
+from sys import exit
 from collections import OrderedDict
-
 from authorsMap import authors
 
 
-def build_commit(message: str, comma_separated_aliases: str):
-    co_authors = map_to_available_authors(comma_separated_aliases.split(" "))
-    formatted_message = f"{message}\n\n{co_authors}"
-
-    command = ["git", "commit", "-m", formatted_message]
-
-    subprocess.run(command)
+def run_git_commit(message: str):
+    command = ["git", "commit", "-m", message]
+    run(command)
 
 
-def map_to_available_authors(aliases: list) -> str:
-    return "\n".join(authors[alias] for alias in aliases)
+def build_commit_message(message: str, comma_separated_aliases: str) -> str:
+    co_authors = get_full_co_author_data_from(comma_separated_aliases)
+    return f"{message}\n\n{co_authors}"
 
 
-def print_authors_two_cols(authors: dict):
-    odd_number_of_authors = len(authors) % 2 != 0
+def get_full_co_author_data_from(aliases: list) -> str:
+    return "\n".join(authors[alias] for alias in aliases.split())
+
+
+def print_authors(authors: dict):
     even_number_of_authors = len(authors) % 2 == 0
+    col_vert_length = int(len(authors) / 2)
+    if even_number_of_authors:
+        print_even(authors, col_vert_length)
+    else:
+        print_odd(authors, col_vert_length)
 
-    column_vert_length = int(len(authors) / 2)
 
+def print_even(authors: dict, col_length: int):
     for index, first_col_author in enumerate(authors.items()):
-        if index >= column_vert_length:
-            if even_number_of_authors:
-                break
-            else:
-                print_single_author(first_col_author)
-                break
+        if index >= col_length:
+            break
+        second_col_author_index = col_length + index
+        second_col_author = list(authors.items())[second_col_author_index]
+        print_author_pair(first_col_author, second_col_author)
 
-        second_col_author_index = column_vert_length + index
-        if odd_number_of_authors:
-            second_col_author_index += 1
 
+def print_odd(authors: dict, col_length: int):
+    for index, first_col_author in enumerate(authors.items()):
+        if index >= col_length:
+            print_single_author(first_col_author)
+            break
+        second_col_author_index = col_length + index + 1
         second_col_author = list(authors.items())[second_col_author_index]
         print_author_pair(first_col_author, second_col_author)
 
@@ -45,32 +51,38 @@ def print_single_author(author: tuple):
 
 
 def print_author_pair(author1: tuple, author2: tuple):
-    print(format_author(author1) + "\t\t" + format_author(author2))
+    print(f"{format_author(author1)}\t\t{format_author(author2)}")
 
 
 def format_author(author: tuple) -> str:
-    return "⦔ " + author[0] + " -> " + get_full_name_from(author)
+    return f"⦔ {author[0]} -> {get_full_name_from(author)}"
 
 
 def get_full_name_from(item: tuple) -> str:
     return item[1].split(':')[1].split('<')[0].strip()
 
 
+def sort(authors: dict) -> dict:
+    return OrderedDict(sorted(authors.items()))
+
+
 if __name__ == "__main__":
     try:
-        sorted_authors = OrderedDict(sorted(authors.items()))
         print("Available Authors:")
-        print_authors_two_cols(sorted_authors)
-        print()
+        print_authors(sort(authors))
         co_authors = input(
-            'Enter your coworkers initials separated by spaces: \n')
+            '\nEnter your coworkers initials separated by spaces: \n'
+        )
         message = input('Enter your commit message: \n')
-        build_commit(message, co_authors)
+        run_git_commit(build_commit_message(message, co_authors))
+        exit(0)
+
     except IndexError:
         print("INVALID PARAMETERS")
-        sys.exit(1)
+        exit(1)
     except KeyError:
         print("INVALID ALIAS")
-        sys.exit(1)
-    else:
-        sys.exit(0)
+        exit(1)
+    except CalledProcessError:
+        print("GIT COMMAND FAILED")
+        exit(1)
