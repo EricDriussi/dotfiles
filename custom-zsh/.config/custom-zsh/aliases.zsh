@@ -7,6 +7,8 @@ alias mkdir="mkdir -p"
 alias rmd="rm -rf"
 alias sctl="sudo systemctl"
 alias tre="tree -L 2 -C -a -I 'node_modules' -I 'build' -I '.git' -I '.idea'"
+alias ali="alias -m"
+eje() { sudo eject "$1" && udisksctl power-off -b "$1" }
 fd() { find . -iname "*"$1"*" | sort }
 
 # Change ssh key
@@ -50,7 +52,7 @@ alias nv='source /usr/share/nvm/init-nvm.sh && nvm'
 alias pr='pipenv run'
 
 # Git
-coa (){ python3 -B ~/.co-author.py $1 $2 }
+alias coa="python3 -B ~/.co-author.py"
 gaddorigin() { git remote add origin "$1"; git remote set-url --add --push origin "$1" }
 gmkb() { git branch -b "$1" && git push --set-upstream origin "$1" }
 trymerge() { git merge "$1" --no-commit --no-ff; git merge --abort }
