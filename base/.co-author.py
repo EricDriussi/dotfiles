@@ -58,8 +58,9 @@ def get_full_name_from(item: tuple) -> str:
 
 if __name__ == "__main__":
     try:
+        sorted_authors = OrderedDict(sorted(authors.items()))
         print("Available Authors:")
-        print_authors_two_cols(authors)
+        print_authors_two_cols(sorted_authors)
         print()
         co_authors = input(
             'Enter your coworkers initials separated by spaces: \n')
