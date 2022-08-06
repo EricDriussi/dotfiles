@@ -1,6 +1,6 @@
 from subprocess import run, CalledProcessError
 from sys import exit
-from collections import OrderedDict
+import re
 # Provide your own dict, format described below
 from authors import authors
 
@@ -70,17 +70,35 @@ def print_author_pair(author1: tuple, author2: tuple):
 def format_author(author: tuple) -> str:
     author_alias = author[0]
     author_data = author[1]
-    return f"⦔ {author_alias} -> {get_full_name_from(author_data)}"
+    return f"⦔ {author_alias} -> {get_full_name_from(author_data)} [{get_username_from(author_data)}]  "
 
 
-def get_full_name_from(co_auth_data: tuple) -> str:
+username_expression = re.compile(
+    r"Co-authored-by:.+?<(.+?)@users.noreply.github.com>"
+)
+
+
+def get_username_from(co_auth_data: str) -> str:
+    """Discard all data except for author GH username"""
+    return username_expression.search(co_auth_data).group(1).strip()
+
+
+name_expression = re.compile(
+    r"Co-authored-by:(.+?)<.+?@users.noreply.github.com>"
+)
+
+
+def get_full_name_from(co_auth_data: str) -> str:
     """Discard all data except for full author name"""
-    return co_auth_data.split(':')[1].split('<')[0].strip()
+    return name_expression.search(co_auth_data).group(1).strip()
 
 
 def sort(authors: dict) -> dict:
     """Sort authors alphabetically by full name"""
-    return dict(sorted(authors.items(), key=lambda x: x[1]))
+    def by_name(author_tuple):
+        author_data = author_tuple[1]
+        return name_expression.search(author_data).group(1)
+    return dict(sorted(authors.items(), key=by_name))
 
 
 if __name__ == "__main__":
