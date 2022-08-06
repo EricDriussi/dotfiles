@@ -79,8 +79,8 @@ def get_full_name_from(co_auth_data: tuple) -> str:
 
 
 def sort(authors: dict) -> dict:
-    """Sort authors alphabetically by alias"""
-    return OrderedDict(sorted(authors.items()))
+    """Sort authors alphabetically by full name"""
+    return dict(sorted(authors.items(), key=lambda x: x[1]))
 
 
 if __name__ == "__main__":
