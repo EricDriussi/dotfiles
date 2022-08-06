@@ -68,9 +68,18 @@ def print_author_pair(author1: tuple, author2: tuple):
 
 
 def format_author(author: tuple) -> str:
+    """ASCII colors"""
+    col_green = "\033[32m"
+    col_purple = "\033[35m"
+    col_cyan = "\033[36m"
+    col_yellow = "\033[33m"
+    col_reset = "\033[00m"
     author_alias = author[0]
     author_data = author[1]
-    return f"⦔ {author_alias} -> {get_full_name_from(author_data)} [{get_username_from(author_data)}]  "
+    alias_prompt = f"{col_yellow}⦔ {col_purple}{author_alias} {col_green}->{col_reset}"
+    full_name = f"{get_full_name_from(author_data)}"
+    username = f"{col_cyan}[{get_username_from(author_data)}]  {col_reset}"
+    return f"{alias_prompt} {full_name} {username}"
 
 
 username_expression = re.compile(
@@ -106,7 +115,7 @@ if __name__ == "__main__":
         print("Available Authors:")
         print_authors(sort(authors))
         co_authors = input(
-            '\nEnter your coworkers initials separated by spaces: \n'
+            '\nEnter your coworkers aliases separated by spaces (or leave blank): \n'
         )
         message = input('Enter your commit message: \n')
         run_git_commit(build_commit_message(message, co_authors))
