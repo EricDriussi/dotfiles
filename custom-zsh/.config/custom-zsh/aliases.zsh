@@ -10,6 +10,8 @@ alias tre="tree -L 2 -C -a -I 'node_modules' -I 'build' -I '.git' -I '.idea'"
 alias ali="alias -m"
 eje() { sudo eject "$1" && udisksctl power-off -b "$1" }
 fd() { find . -iname "*"$1"*" | sort }
+redo() { for i in {1.."$1"}; do "${@:2}"; done }
+freeport() { lsof -i tcp:"$1" | awk 'NR!=1 {print $2}' | xargs kill }
 
 # Change ssh key
 alias ssauth='eval "$(ssh-agent -s)" && ssh-add'
@@ -72,7 +74,7 @@ alias gamend='git add --all && git commit --amend'
 alias gsuperp='git fetch origin && git reset --hard origin'
 alias ginit='git init && git config credential.helper store'
 alias gaddremote='git remote set-url --add --push origin'
-alias gme='git merge --no-squash'
+alias gme='git merge --no-squash --no-edit'
 alias gres='git mergetool'
 alias gab='git branch -a'
 alias grmb='git branch -D'
