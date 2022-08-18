@@ -6,12 +6,20 @@ alias l="exa -bghla"
 alias mkdir="mkdir -p"
 alias rmd="rm -rf"
 alias sctl="sudo systemctl"
+alias rg="rg --hidden -g '!.git'"
 alias tre="tree -L 2 -C -a -I 'node_modules' -I 'build' -I '.git' -I '.idea'"
 alias ali="alias -m"
 eje() { sudo eject "$1" && udisksctl power-off -b "$1" }
 fd() { find . -iname "*"$1"*" | sort }
 redo() { for i in {1.."$1"}; do "${@:2}"; done }
 freeport() { lsof -i tcp:"$1" | awk 'NR!=1 {print $2}' | xargs kill }
+
+# Globals!
+alias -g SU="| sort -u"
+alias -g G="| grep"
+alias -g NOER="2> /dev/null"
+alias -g NUL="> /dev/null 2>&1"
+alias -g L="| less"
 
 # Change ssh key
 alias ssauth='eval "$(ssh-agent -s)" && ssh-add'
@@ -58,8 +66,9 @@ alias coa="python3 -B ~/.co-author.py"
 gaddorigin() { git remote add origin "$1"; git remote set-url --add --push origin "$1" }
 gmkb() { git branch -b "$1" && git push --set-upstream origin "$1" }
 trymerge() { git merge "$1" --no-commit --no-ff; git merge --abort }
+alias olreliable='git reset --soft HEAD~1 && git stash && git pull && git stash pop'
 alias lg='lazygit'
-alias gp='git pull --autostash'
+alias gp='git pull'
 alias gs='git status'
 alias gadd='git add'
 alias gc='git commit'
