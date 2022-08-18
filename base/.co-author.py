@@ -1,6 +1,8 @@
 from subprocess import run, CalledProcessError
 from sys import exit
 import re
+# Not used directly, but improves input() behavior when loaded
+import readline
 # Provide your own dict, format described below
 from authors import authors
 
