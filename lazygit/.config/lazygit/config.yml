@@ -1,4 +1,5 @@
 ---
+promptToReturnFromSubprocess: false
 gui:
   mainPanelSplitMode: 'vertical'
   showFileTree: true
