@@ -10,8 +10,8 @@ nnoremap yn :!echo -n %c | xclip -selection clipboard %i<cr>:echo expand('%"c') 
 " Open selected dir in new pane and switch
 nnoremap <c-t> :sync %c <cr><space>
 
-" exit on cwd
-nnoremap <c-w> :sh<cr>
+" exit
+nnoremap <c-w> :q<cr>
 
 " Rename
 nnoremap rn cw

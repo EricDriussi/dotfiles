@@ -16,7 +16,6 @@ set $right l
 
 # run once
 exec --no-startup-id obsidian
-exec --no-startup-id pavucontrol
 exec --no-startup-id thunderbird
 #exec --no-startup-id slack
 exec --no-startup-id brave
@@ -219,7 +218,6 @@ gaps outer 0
 assign [class="(?i)(?:brave)"] → 1
 assign [class="(?i)(?:thunderbird)"]   → 2
 assign [class="(?i)(?:slack)"] → 6
-assign [class="(?i)(?:pavucontrol)"] → 7
 assign [class="(?i)(?:obsidian)"] → 9
 
 ####################
@@ -243,7 +241,6 @@ for_window [window_role="(?i)(?:pop-up|setup)"]      floating enable
 # EOS
 for_window [class="Yad" instance="yad"] floating enable
 for_window [class="Galculator" instance="galculator"] floating enable
-for_window [class="Pavucontrol"] floating enable
 for_window [class="qt5ct" instance="qt5ct"] floating enable
 
 # Make Calendar Float
