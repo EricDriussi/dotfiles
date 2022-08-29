@@ -12,24 +12,24 @@ ctrl_del="^[[3;5~"
 
 # Esc -> NVIM
 autoload -U edit-command-line
-bindkey -M viins $esc edit-command-line
+bindkey $esc edit-command-line
 zle -N edit-command-line
 # Esc -> Vi mode
 # bindkey -v
 
 # MOVEMENT
 # Go to beginning of line
-bindkey -M viins $home beginning-of-line
+bindkey $home beginning-of-line
 # Go to end of line
-bindkey -M viins $end_key end-of-line
+bindkey $end_key end-of-line
 # Move forward one word
-bindkey -M viins $ctrl_right forward-word
+bindkey $ctrl_right forward-word
 # Move backward one word
-bindkey -M viins $ctrl_left backward-word
+bindkey $ctrl_left backward-word
 
 # DELETE
 # Delete a single char
-bindkey -M viins $del delete-char
+bindkey $del delete-char
 # Delete word backwards
 bindkey $ctrl_backspace backward-kill-word
 # Delete word forewards
@@ -52,8 +52,8 @@ if [[ $up_arrow || $down_arrow ]]; then
     zle -N up-line-or-beginning-search
     zle -N down-line-or-beginning-search
     # Bind widgets
-    bindkey -M viins $up_arrow up-line-or-beginning-search
-    bindkey -M viins $down_arrow down-line-or-beginning-search
+    bindkey $up_arrow up-line-or-beginning-search
+    bindkey $down_arrow down-line-or-beginning-search
 fi
 
 # Make sure that the terminal is in application mode (not TTY) when zle is active
