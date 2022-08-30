@@ -11,7 +11,7 @@ export PATH=$HOME/bin:/usr/bin:$PATH
 export PATH=$PATH:/opt
 
 # Nodejs
-export PATH="/home/eric/.deno/bin:$PATH"
+export PATH=$HOME/.deno/bin:$PATH
 export PATH=$PATH:/usr/local/nodejs/bin
 export NVM_DIR="$HOME/.nvm"
 export NVM_LAZY_LOAD=true
