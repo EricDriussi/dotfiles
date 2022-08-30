@@ -17,7 +17,7 @@ nnoremap <c-w> :q<cr>
 nnoremap rn cw
 
 " Terminal
-nnoremap <a-t> :!alacritty &<cr>
+nnoremap <a-t> :!kitty &<cr>
 
 " Back home
 nnoremap cd :cd<cr>
