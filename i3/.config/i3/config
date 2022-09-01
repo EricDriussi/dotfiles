@@ -17,7 +17,7 @@ set $right l
 # run once
 exec --no-startup-id obsidian
 exec --no-startup-id thunderbird
-#exec --no-startup-id slack
+exec --no-startup-id slack
 exec --no-startup-id brave
 exec --no-startup-id nextcloud
 exec --no-startup-id emojione-picker

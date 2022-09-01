@@ -51,6 +51,8 @@ vo() { nvim "$(fzf)" }
 
 # Pacman
 alias cleansys="rm -rf ~/.cache/paru; yes | sudo paccache -rk2 -ruk0; yes | sudo pacman -Sc; yes | paru -Sc --aur"
+alias parupdate="paru -Syu --skipreview"
+alias paru="paru --skipreview"
 alias install="sudo pacman -S"
 alias remove="sudo pacman -Rs"
 alias search="sudo pacman -Ss"
