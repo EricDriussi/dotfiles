@@ -98,5 +98,8 @@ function prompt_exit_code() {
 # Original half-life prompt
 #PROMPT=$'%{$purple%}%n%{$reset_color%} in %{$limegreen%}%~%{$reset_color%}$vcs_info_msg_0_%{$orange%} λ%{$reset_color%} '
 
-PROMPT=$'%{$purple%}%n%{$reset_color%} 📂 %{$limegreen%}%~%{$reset_color%} \ue0a0$vcs_info_msg_0_ %F{$(prompt_exit_code)}λ %F{reset} %{$orange%}
+dir=$'%{$limegreen%}%~%{$reset_color%}'
+base=$'%{$orange%}%n%f@%{$purple%}%m%{$reset_color%}'
+git=$' \ue0a0$vcs_info_msg_0_ %F{$(prompt_exit_code)}'
+PROMPT=$base' 📂 '$dir$git$'λ %F{reset} %{$orange%}
 \U2994 %F{reset}'
