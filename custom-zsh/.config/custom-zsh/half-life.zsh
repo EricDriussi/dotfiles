@@ -8,6 +8,9 @@ setopt prompt_subst
 autoload -U add-zsh-hook
 autoload -Uz vcs_info
 
+############
+#  COLORS  #
+############
 #use extended color palette if available
 if [[ $TERM = *256color* || $TERM = *rxvt* ]]; then
     turquoise="%F{81}"
@@ -85,6 +88,9 @@ function steeef_precmd {
 }
 add-zsh-hook precmd steeef_precmd
 
+###############
+#  EXIT CODE  #
+###############
 function prompt_exit_code() {
     local EXIT="$?"
 
@@ -95,11 +101,21 @@ function prompt_exit_code() {
     fi
 }
 
-# Original half-life prompt
-#PROMPT=$'%{$purple%}%n%{$reset_color%} in %{$limegreen%}%~%{$reset_color%}$vcs_info_msg_0_%{$orange%} λ%{$reset_color%} '
+############
+#  PROMPT  #
+############
+user='%{$orange%}%n%f'
+host='%{$purple%}%m%f'
+user_host=$user'@'$host'%f'
 
-dir=$'%{$limegreen%}%~%{$reset_color%}'
-base=$'%{$orange%}%n%f@%{$purple%}%m%{$reset_color%}'
-git=$' \ue0a0$vcs_info_msg_0_ %F{$(prompt_exit_code)}'
-PROMPT=$base' 📂 '$dir$git$'λ %F{reset} %{$orange%}
-\U2994 %F{reset}'
+dir_separator=' 📂'
+dir='%{$limegreen%}%~%f'
+
+git_separator=$' \ue0a0'
+git='$vcs_info_msg_0_%f'
+exit_code=' %F{$(prompt_exit_code)}λ%f'
+
+line_one=$user_host$dir_separator$dir$git_separator$git$exit_code'%f'
+line_two=$'%{$orange%}\U2994%f '
+
+PROMPT=$line_one$'\n'$line_two
