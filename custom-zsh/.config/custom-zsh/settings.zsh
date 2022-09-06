@@ -15,14 +15,13 @@ unsetopt nomatch
 # Enable colors
 autoload -U colors && colors
 
-# Show info in polybar
-if [[ "${TERM}" != "" && "${TERM}" == "alacritty" || "${TERM}" == "kitty" ]] then
-    precmd(){
-        # output CWD
-        print -Pn "\e]0;$USER 💀 %~\a"
-    }
-    preexec(){
-        # output executed command
-        echo -en "\e]0;$USER 💀 ${1}\a"
-    }
-fi
+# Show info as title
+precmd(){
+    # output CWD
+    print -Pn "\e]0;📂 %~\a"
+}
+preexec(){
+    # output executed command
+    #echo -en "\e]0;${1}\a"
+    print -Pn "\e]0;🚀 ${1}\a"
+}
