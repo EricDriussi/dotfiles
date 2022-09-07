@@ -1,5 +1,5 @@
 from subprocess import run, CalledProcessError
-from sys import exit
+from sys import exit, argv
 import re
 # Not used directly, but improves input() behavior when loaded
 import readline
@@ -7,8 +7,11 @@ import readline
 from authors import authors
 
 
-def run_git_commit(message: str):
-    command = ["git", "commit", "-m", message]
+def run_git_commit(message: str, flags: str):
+    if flags == '':
+        command = ["git", "commit", "-m", message]
+    else:
+        command = ["git", "commit", flags, "-m", message]
     run(command)
 
 
@@ -120,7 +123,10 @@ if __name__ == "__main__":
             '\nEnter your coworkers aliases separated by spaces (or leave blank): \n'
         )
         message = input('Enter your commit message: \n')
-        run_git_commit(build_commit_message(message, co_authors))
+        flags = "".join(argv[1:])
+
+        run_git_commit(build_commit_message(
+            message, co_authors), flags)
         exit(0)
 
     except IndexError:
