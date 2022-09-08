@@ -1,13 +1,3 @@
-function virtualenv_info {
-    [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`') '
-}
-PR_GIT_UPDATE=1
-
-setopt prompt_subst
-
-autoload -U add-zsh-hook
-autoload -Uz vcs_info
-
 ############
 #  COLORS  #
 ############
@@ -26,18 +16,19 @@ else
     limegreen="$fg[green]"
 fi
 
-# enable VCS systems you use
-zstyle ':vcs_info:*' enable git svn
-
-# check-for-changes can be really slow.
-# you should disable it, if you work with large repositories
+###########
+#   VCS   #
+###########
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' enable git
+# Slow in large repos
 zstyle ':vcs_info:*:prompt:*' check-for-changes true
 
 # set formats
 # %b - branchname
-# %u - unstagedstr (see below)
-# %c - stagedstr (see below)
-# %a - action (e.g. rebase-i)
+# %u - unstagedstr
+# %c - stagedstr
+# %a - action
 # %R - repository path
 # %S - path in the repository
 PR_RST="%{${reset_color}%}"
@@ -52,41 +43,40 @@ zstyle ':vcs_info:*:prompt:*' actionformats "${FMT_BRANCH}${FMT_ACTION}"
 zstyle ':vcs_info:*:prompt:*' formats       "${FMT_BRANCH}"
 zstyle ':vcs_info:*:prompt:*' nvcsformats   ""
 
-
-function steeef_preexec {
+function custom_preexec_hook {
     case "$2" in
-        *git*)
-            PR_GIT_UPDATE=1
-            ;;
-        *svn*)
-            PR_GIT_UPDATE=1
-            ;;
+        *git*|*svn*) PR_GIT_UPDATE=1 ;;
     esac
 }
-add-zsh-hook preexec steeef_preexec
 
-function steeef_chpwd {
+function custom_chpwd_hook {
     PR_GIT_UPDATE=1
 }
-add-zsh-hook chpwd steeef_chpwd
 
+function custom_precmd_hook {
+    (( PR_GIT_UPDATE )) || return
 
-function steeef_precmd {
-    if [[ -n "$PR_GIT_UPDATE" ]] ; then
-        # check for untracked files or updated submodules, since vcs_info doesn't
-        if [[ ! -z $(git ls-files --other --exclude-standard 2> /dev/null) ]]; then
-            PR_GIT_UPDATE=1
-            FMT_BRANCH="${PM_RST} %{$turquoise%}%b%u%c%{$hotpink%} ●${PR_RST}"
-        else
-            FMT_BRANCH="${PM_RST} %{$turquoise%}%b%u%c${PR_RST}"
-        fi
-        zstyle ':vcs_info:*:prompt:*' formats       "${FMT_BRANCH}"
-
-        vcs_info 'prompt'
-        PR_GIT_UPDATE=
+    # check for untracked files or updated submodules, since vcs_info doesn't
+    if [[ -n "$(git ls-files --other --exclude-standard 2> /dev/null)" ]]; then
+        PR_GIT_UPDATE=1
+        FMT_BRANCH="${PM_RST} %{$turquoise%}%b%u%c%{$hotpink%} ●${PR_RST}"
+    else
+        FMT_BRANCH="${PM_RST} %{$turquoise%}%b%u%c${PR_RST}"
     fi
+    git_separator=$' \ue0a0'
+    zstyle ':vcs_info:*:prompt:*' formats       $git_separator"${FMT_BRANCH}"
+
+    vcs_info 'prompt'
+    PR_GIT_UPDATE=
 }
-add-zsh-hook precmd steeef_precmd
+
+# vcs_info running hooks
+PR_GIT_UPDATE=1
+
+autoload -U add-zsh-hook
+add-zsh-hook chpwd custom_chpwd_hook
+add-zsh-hook precmd custom_precmd_hook
+add-zsh-hook preexec custom_preexec_hook
 
 ###############
 #  EXIT CODE  #
@@ -108,14 +98,15 @@ user='%{$orange%}%n%f'
 host='%{$purple%}%m%f'
 user_host=$user'@'$host'%f'
 
-dir_separator=' 📂'
+dir_separator=' 📂 '
 dir='%{$limegreen%}%~%f'
 
-git_separator=$' \ue0a0'
 git='$vcs_info_msg_0_%f'
 exit_code=' %F{$(prompt_exit_code)}λ%f'
 
-line_one=$user_host$dir_separator$dir$git_separator$git$exit_code'%f'
-line_two=$'%{$orange%}\U2994%f '
+line_one=$user_host$dir_separator$dir$git'%f'
+line_two=$'%F{$(prompt_exit_code)}\U2994%f '
+#line_two=$'%{$orange%}\U2994%f '
 
+setopt prompt_subst
 PROMPT=$line_one$'\n'$line_two

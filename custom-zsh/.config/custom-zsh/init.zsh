@@ -5,7 +5,7 @@ source $CUSTOM_ZSH/bindings.zsh
 source $CUSTOM_ZSH/aliases.zsh
 
 # Theme
-source $CUSTOM_ZSH/half-life.zsh
+source $CUSTOM_ZSH/custom-prompt.zsh
 
 # Plugins
 source $CUSTOM_ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
