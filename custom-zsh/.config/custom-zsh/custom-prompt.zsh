@@ -2,7 +2,7 @@
 #  COLORS  #
 ############
 #use extended color palette if available
-if [[ $TERM = *256color* || $TERM = *rxvt* ]]; then
+if [[ $TERM = (*256color|*rxvt*) ]]; then
     turquoise="%F{81}"
     orange="%F{166}"
     purple="%F{135}"
@@ -102,11 +102,9 @@ dir_separator=' 📂 '
 dir='%{$limegreen%}%~%f'
 
 git='$vcs_info_msg_0_%f'
-exit_code=' %F{$(prompt_exit_code)}λ%f'
 
 line_one=$user_host$dir_separator$dir$git'%f'
 line_two=$'%F{$(prompt_exit_code)}\U2994%f '
-#line_two=$'%{$orange%}\U2994%f '
 
 setopt prompt_subst
 PROMPT=$line_one$'\n'$line_two
