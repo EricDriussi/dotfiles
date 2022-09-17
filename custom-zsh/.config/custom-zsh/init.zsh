@@ -1,4 +1,5 @@
 eval "$(lua ~/.config/custom-zsh/plugins/z-lua/z.lua --init zsh)"
+source $CUSTOM_ZSH/functions.zsh
 source $CUSTOM_ZSH/exports.zsh
 source $CUSTOM_ZSH/settings.zsh
 source $CUSTOM_ZSH/bindings.zsh

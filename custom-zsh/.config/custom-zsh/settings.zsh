@@ -12,16 +12,14 @@ zstyle ':completion:*:descriptions' format "$fg[yellow]%B--- %d%b"
 
 # Disables error if autocompletion returns no match
 unsetopt nomatch
+unsetopt BEEP
 # Enable colors
 autoload -U colors && colors
 
-# Show info as title
-precmd(){
-    # output CWD
-    print -Pn "\e]0;📂 %~\a"
-}
-preexec(){
-    # output executed command
-    #echo -en "\e]0;${1}\a"
-    print -Pn "\e]0;🚀 ${1}\a"
-}
+# Load custom functions
+autoload -U add-zsh-hook
+add-zsh-hook precmd set_title_cwd
+add-zsh-hook preexec set_title_process
+add-zsh-hook chpwd prompt_vcs_chpwd_hook
+add-zsh-hook precmd prompt_vcs_precmd_hook
+add-zsh-hook preexec prompt_vcs_preexec_hook
