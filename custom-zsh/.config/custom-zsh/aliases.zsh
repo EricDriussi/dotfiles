@@ -8,10 +8,10 @@ alias rmd="rm -rf"
 alias sctl="sudo systemctl"
 alias rg="rg --hidden -g '!.git'"
 alias tre="tree -L 2 -C -a -I 'node_modules' -I 'build' -I '.git' -I '.idea'"
-alias ali="alias -m"
 eje() { sudo eject "$1" && udisksctl power-off -b "$1" }
 fd() { find . -iname "*"$1"*" | sort }
 redo() { for i in {1.."$1"}; do "${@:2}"; done }
+ports() { sudo ss -tulpn | grep LISTEN }
 freeport() { lsof -i tcp:"$1" | awk 'NR!=1 {print $2}' | xargs kill }
 
 # Globals!
@@ -30,7 +30,6 @@ alias cc="z"
 alias cpd="cp -r"
 c() { cd "$1" && l }
 mkd() { mkdir "$1" && cd "$1" }
-ports() { sudo ss -tulpn | grep LISTEN }
 
 # Misc
 alias blogUpdate="cd ~/Documents/projects/website/ && hugo -D && rsync -rtvzP --rsh=ssh ~/Documents/projects/website/public/* ansible@unixmagick.xyz:/var/www/website"
