@@ -1,5 +1,6 @@
 export XDG_CONFIG_HOME=$HOME/.config
 export CUSTOM_ZSH=$XDG_CONFIG_HOME/custom-zsh
+export ZSH_PLUG=$CUSTOM_ZSH/.plug
 source $CUSTOM_ZSH/init.zsh
 
 # Load NVM stuff only if installed

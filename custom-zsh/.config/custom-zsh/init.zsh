@@ -1,4 +1,3 @@
-eval "$(lua ~/.config/custom-zsh/plugins/z-lua/z.lua --init zsh)"
 source $CUSTOM_ZSH/functions.zsh
 source $CUSTOM_ZSH/exports.zsh
 source $CUSTOM_ZSH/settings.zsh
@@ -9,7 +8,7 @@ source $CUSTOM_ZSH/aliases.zsh
 source $CUSTOM_ZSH/custom-prompt.zsh
 
 # Plugins
-source $CUSTOM_ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source $CUSTOM_ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $CUSTOM_ZSH/plugins/git.zsh
-source $CUSTOM_ZSH/plugins/nvm.zsh
+zsh_add_plugin "zsh-users/zsh-autosuggestions"
+zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
+zsh_add_plugin "skywind3000/z.lua"
+eval "$(lua $ZSH_PLUG/z.lua/z.lua --init zsh enhanced once)"

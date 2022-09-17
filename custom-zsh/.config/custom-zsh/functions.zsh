@@ -1,11 +1,14 @@
 function zsh_add_plugin() {
     PLUGIN_NAME=$(echo $1 | cut -d "/" -f 2)
-    if [ -d "$ZDOTDIR/plugins/$PLUGIN_NAME" ]; then
-        # For plugins
-        zsh_add_file "plugins/$PLUGIN_NAME/$PLUGIN_NAME.plugin.zsh" || \
-            zsh_add_file "plugins/$PLUGIN_NAME/$PLUGIN_NAME.zsh"
+    if [ -d "$ZSH_PLUG/$PLUGIN_NAME" ]; then
+        # If already present, source plugin
+        source "$ZSH_PLUG/$PLUGIN_NAME/$PLUGIN_NAME.plugin.zsh" || \
+            source "$ZSH_PLUG/$PLUGIN_NAME/$PLUGIN_NAME.zsh"
     else
-        git clone "https://github.com/$1.git" "$ZDOTDIR/plugins/$PLUGIN_NAME"
+        # Else, ssh-clone and source plugin
+        git clone "git@github.com:$1.git" "$ZSH_PLUG/$PLUGIN_NAME"
+        source "$ZSH_PLUG/$PLUGIN_NAME/$PLUGIN_NAME.plugin.zsh" || \
+            source "$ZSH_PLUG/$PLUGIN_NAME/$PLUGIN_NAME.zsh"
     fi
 }
 
