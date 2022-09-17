@@ -56,6 +56,10 @@ alias install="sudo pacman -S"
 alias remove="sudo pacman -Rs"
 alias search="sudo pacman -Ss"
 alias updatesys="sudo pacman -Syu"
+alias par='fzfparu'
+fzfparu () {
+    paru -Slq | fzf -m --preview 'cat <(paru -Si {1}) <(paru -Fl {1} | awk "{print \$2}")' | xargs -ro  paru -S
+}
 
 # Dev
 alias nr='npm run'
