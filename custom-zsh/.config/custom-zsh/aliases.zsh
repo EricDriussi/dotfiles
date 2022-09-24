@@ -41,7 +41,6 @@ alias cc="z"
 alias mkd="mkdir_and_cd"; mkdir_and_cd() { mkdir "$1" && cd "$1" }
 
 # Misc
-alias blogUpdate="cd ~/Documents/projects/website/ && hugo -D && rsync -rtvzP --rsh=ssh ~/Documents/projects/website/public/* ansible@unixmagick.xyz:/var/www/website"
 alias bt="btop"
 alias qrpaste="xclip -o | qrencode -t utf8"
 alias vf="vfm ."
