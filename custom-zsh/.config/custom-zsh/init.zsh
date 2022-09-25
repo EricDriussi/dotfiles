@@ -8,7 +8,7 @@ source $CUSTOM_ZSH/aliases.zsh
 source $CUSTOM_ZSH/custom-prompt.zsh
 
 # Plugins
-zsh_add_plugin "zsh-users/zsh-autosuggestions"
-zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
-zsh_add_plugin "skywind3000/z.lua"
+plug "zsh-users/zsh-autosuggestions"
+plug "zsh-users/zsh-syntax-highlighting"
+plug "skywind3000/z.lua"
 eval "$(lua $ZSH_PLUG/z.lua/z.lua --init zsh enhanced once)"
