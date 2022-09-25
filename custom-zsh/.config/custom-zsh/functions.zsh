@@ -1,28 +1,31 @@
-function zsh_add_plugin() {
-    PLUGIN_NAME=$(echo $1 | cut -d "/" -f 2)
-    if [ -d "$ZSH_PLUG/$PLUGIN_NAME" ]; then
-        # If already present, source plugin
-        source "$ZSH_PLUG/$PLUGIN_NAME/$PLUGIN_NAME.plugin.zsh" || \
-            source "$ZSH_PLUG/$PLUGIN_NAME/$PLUGIN_NAME.zsh"
+function plug {
+    plugin_name=$(echo $1 | cut -d "/" -f 2)
+    if [ -d "$ZSH_PLUG/$plugin_name" ]; then
+        # If already present, load plugin
+        load_plugin "$plugin_name"
     else
-        # Else, ssh-clone and source plugin
-        git clone "git@github.com:$1.git" "$ZSH_PLUG/$PLUGIN_NAME"
-        source "$ZSH_PLUG/$PLUGIN_NAME/$PLUGIN_NAME.plugin.zsh" || \
-            source "$ZSH_PLUG/$PLUGIN_NAME/$PLUGIN_NAME.zsh"
+        # Else, http-clone and load plugin
+        git clone "https://github.com/$1.git" "$ZSH_PLUG/$plugin_name"
+        load_plugin "$plugin_name"
     fi
 }
 
-function set_title_cwd(){
+function load_plugin {
+    local name="$1"
+    source "$ZSH_PLUG/$name/$name.plugin.zsh" || source "$ZSH_PLUG/$name/$name.zsh"
+}
+
+function set_title_cwd {
     print -Pn "\e]0;📂 %~\a"
 }
 
-function set_title_process(){
+function set_title_process {
     print -Pn "\e]0;🚀 ${1}\a"
 }
 
-function exit_code_color() {
-    local EXIT="$?"
-    if [ $EXIT -eq 0 ]; then
+function exit_code_color {
+    local exit_code="$?"
+    if [ $exit_code -eq 0 ]; then
         echo -n green
     else
         echo -n red
