@@ -54,9 +54,9 @@
         \ %pc
         \ vifmimg clear
 
-" TS
-filextype {*.ts},<application/ts> nvim %c
-fileviewer {*.ts},<application/ts> echo %c
+" JS & friends
+filextype {*.js,*.jsx,*.ts,*.tsx},<text/ts> nvim %c
+fileviewer {*.js,*.jsx,*.ts,*.tsx},<text/ts> cat %c
 
 " epub
 filetype *.epub,*.mobi,*.azw3 ebook-viewer %f
