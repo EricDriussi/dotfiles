@@ -4,3 +4,4 @@ authors.py
 *.scm
 thunar.xml
 .plug
+*.log
