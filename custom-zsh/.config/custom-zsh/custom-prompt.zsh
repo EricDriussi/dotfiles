@@ -37,9 +37,11 @@ FMT_ACTION=" performing a $limegreen%a$PR_RST"
 FMT_UNSTAGED="$orange ●"
 FMT_STAGED="$limegreen ●"
 
+git_separator=$' \ue0a0'
+
 zstyle ':vcs_info:*:prompt:*' unstagedstr   "${FMT_UNSTAGED}"
 zstyle ':vcs_info:*:prompt:*' stagedstr     "${FMT_STAGED}"
-zstyle ':vcs_info:*:prompt:*' actionformats "${FMT_BRANCH}${FMT_ACTION}"
+zstyle ':vcs_info:*:prompt:*' actionformats $git_separator" ${FMT_BRANCH}${FMT_ACTION}"
 zstyle ':vcs_info:*:prompt:*' formats       "${FMT_BRANCH}"
 zstyle ':vcs_info:*:prompt:*' nvcsformats   ""
 
