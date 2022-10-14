@@ -58,14 +58,13 @@ alias voz="nvim ~/dotfiles/custom-zsh/.config/custom-zsh/exports.zsh"
 
 # Pacman
 alias cleansys="rm -rf ~/.cache/paru; yes | sudo paccache -rk2 -ruk0; yes | sudo pacman -Sc; yes | paru -Sc --aur"
-alias install="sudo pacman -S"
-alias par="fzf_paru"; fzf_paru () {
-    paru -Slq | fzf -m --preview 'cat <(paru -Si {1}) <(paru -Fl {1} | awk "{print \$2}")' | xargs -ro  paru -S
+alias install="fzf_paru"; fzf_paru () {
+    paru -Slq | fzf -m --preview 'cat <(paru -Si {1}) <(paru -Fl {1} | awk "{print \$2}")' | xargs -ro  paru -S --skipreview
 }
 alias paru="paru --skipreview"
 alias parupdate="paru -Syu --skipreview"
 alias remove="sudo pacman -Rs"
-alias search="sudo pacman -Ss"
+alias search="pacman -Ss | paste -d '' - - | fzf --multi --preview 'pacman -Si {1}' | cut -d ' ' -f 1 | xargs -ro pacman -Ss"
 alias updatesys="sudo pacman -Syu"
 
 # Dev
