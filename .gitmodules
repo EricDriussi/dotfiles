@@ -1,6 +1,9 @@
-[submodule "vifm"]
+[submodule "vifm/.config/vifm/vifmimg"]
 	path = vifm/.config/vifm/vifmimg
 	url = https://github.com/cirala/vifmimg.git
-[submodule "not-my-zsh"]
+[submodule "zsh/.config/zsh/not-my-zsh"]
 	path = zsh/.config/zsh/not-my-zsh
 	url = https://github.com/EricDriussi/not-my-zsh.git
+[submodule "nvim"]
+	path = nvim
+	url = https://github.com/EricDriussi/nvim.git
