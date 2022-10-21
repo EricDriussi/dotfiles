@@ -3,7 +3,7 @@
 	url = https://github.com/cirala/vifmimg.git
 [submodule "zsh/.config/zsh/not-my-zsh"]
 	path = zsh/.config/zsh/not-my-zsh
-	url = https://github.com/EricDriussi/not-my-zsh.git
+	url = git@github.com:EricDriussi/not-my-zsh.git
 [submodule "nvim"]
 	path = nvim
-	url = https://github.com/EricDriussi/nvim.git
+	url = git@github.com:EricDriussi/nvim.git

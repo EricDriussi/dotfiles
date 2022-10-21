@@ -7,3 +7,4 @@ thunar.xml
 *.log
 not-my-zsh
 vifmimg
+.zsh_history
