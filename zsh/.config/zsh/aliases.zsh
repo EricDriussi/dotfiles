@@ -30,6 +30,7 @@ alias updatesys="sudo pacman -Syu"
 
 # Git
 alias coa="python3 -B ~/.co-author.py"
+alias gps="git submodule update"
 
 # Show ctrl+c
 copyToStdout() {
