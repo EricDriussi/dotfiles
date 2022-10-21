@@ -1,11 +1,7 @@
 export TERMINAL="kitty"
 export EDITOR="nvim"
 export VISUAL="nvim"
-export ZSH="$HOME/.custom-zsh"
 export MANPAGER='nvim +Man!'
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_DATA_HOME="$XDG_CONFIG_HOME/local/share"
-export XDG_CACHE_HOME="$XDG_CONFIG_HOME/cache"
 
 export PATH=$HOME/bin:/usr/bin:$PATH
 export PATH=$PATH:/opt
@@ -28,11 +24,3 @@ export PATH=$PATH:$HOME/.config/vifm/vifmimg
 export FZF_DEFAULT_COMMAND='rg --files -g "!node_modules/" -g "!.git/" --hidden .'
 export FZF_DEFAULT_OPTS='--height 70% --layout=reverse --border --preview="head -$LINES {}" --info=inline'
 
-# zsh_history settings
-export HISTFILE="$HOME/.zsh_history"
-export HISTSIZE=10000
-export SAVEHIST=10000
-setopt HIST_IGNORE_ALL_DUPS
-setopt HIST_SAVE_NO_DUPS
-
-export KEYTIMEOUT=1
