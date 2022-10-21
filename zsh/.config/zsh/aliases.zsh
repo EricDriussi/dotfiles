@@ -12,10 +12,10 @@ alias vfm=~/.config/vifm/vifmimg/vifmrun
 alias basev="nvim -u ~/.config/nvim/base-init.vim"
 alias bigv="nvim -u ~/.config/nvim/big-init.vim"
 alias vo="fzf_nvim"; fzf_nvim() { nvim "$(fzf)" }
-alias voa="nvim ~/dotfiles/custom-zsh/.config/custom-zsh/aliases.zsh"
-alias voi="nvim ~/dotfiles/i3/.config/i3/config"
+alias voa="nvim ~/.config/zsh/not-my-zsh/aliases.zsh"
+alias voz="nvim ~/.config/zsh/exports.zsh"
+alias voi="nvim ~/.config/i3/config"
 alias vov="cd ~/.config/nvim/ && nvim init.vim"
-alias voz="nvim ~/dotfiles/custom-zsh/.config/custom-zsh/exports.zsh"
 
 # Pacman
 alias cleansys="rm -rf ~/.cache/paru; yes | sudo paccache -rk2 -ruk0; yes | sudo pacman -Sc; yes | paru -Sc --aur"
