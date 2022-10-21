@@ -5,6 +5,5 @@ authors.py
 thunar.xml
 .plug
 *.log
-not-my-zsh
 vifmimg
 .zsh_history
