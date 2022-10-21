@@ -1,7 +1,15 @@
 export XDG_CONFIG_HOME=$HOME/.config
-export CUSTOM_ZSH=$XDG_CONFIG_HOME/custom-zsh
-export ZSH_PLUG=$CUSTOM_ZSH/.plug
-source $CUSTOM_ZSH/init.zsh
+export ZSH=$XDG_CONFIG_HOME/zsh
+source $ZSH/not-my-zsh/init.zsh
+
+# Plugins
+plug "zsh-users/zsh-autosuggestions"
+plug "zsh-users/zsh-syntax-highlighting"
+plug "skywind3000/z.lua"
+
+eval "$(lua $ZSH_PLUG/z.lua/z.lua --init zsh enhanced once)"
+
+source $ZSH/init.zsh
 
 # Load NVM stuff only if installed
 export NVM_DIR="$HOME/.nvm"
