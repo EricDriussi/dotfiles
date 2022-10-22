@@ -15,12 +15,12 @@ set $right l
 #############
 
 # run once
-exec --no-startup-id obsidian
-exec --no-startup-id thunderbird
-exec --no-startup-id slack
 exec --no-startup-id brave
-exec --no-startup-id nextcloud
 exec --no-startup-id emojione-picker
+exec --no-startup-id nextcloud
+exec --no-startup-id obsidian
+exec --no-startup-id slack
+exec --no-startup-id thunderbird
 
 # get auth work with polkit-gnome
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -181,15 +181,15 @@ bindsym $Mod+Shift+$up    move up    30px
 bindsym $Mod+Shift+$right move right 30px
 
 # alternatively, you can use the cursor keys:
-bindsym $Mod+Shift+Up    move up    30px
-bindsym $Mod+Shift+Down  move down  30px
 bindsym $Mod+Shift+Left  move left  30px
+bindsym $Mod+Shift+Down  move down  30px
+bindsym $Mod+Shift+Up    move up    30px
 bindsym $Mod+Shift+Right move right 30px
 
 # Size
-bindsym Mod1+Up    resize shrink height 30 px or 3 ppt
-bindsym Mod1+Down  resize grow   height 30 px or 3 ppt
 bindsym Mod1+Left  resize shrink width  30 px or 3 ppt
+bindsym Mod1+Down  resize grow   height 30 px or 3 ppt
+bindsym Mod1+Up    resize shrink height 30 px or 3 ppt
 bindsym Mod1+Right resize grow   width  30 px or 3 ppt
 
 #################
@@ -216,31 +216,31 @@ gaps outer 0
 ####################
 
 assign [class="(?i)(?:brave)"] → 1
-assign [class="(?i)(?:thunderbird)"]   → 2
-assign [class="(?i)(?:slack)"] → 6
 assign [class="(?i)(?:obsidian)"] → 9
+assign [class="(?i)(?:slack)"] → 6
+assign [class="(?i)(?:thunderbird)"]   → 2
 
 ####################
 # Floating Windows #
 ####################
 
 for_window [class="(?i)(?:Calendar)"] floating enable
-for_window [class="(?i)(?:Msgcompose)"] floating enable
-for_window [class="zoom"] floating enable
-for_window [class="Tandem"] floating enable
-for_window [class="join"] floating enable
-for_window [class="Zoom Meeting"] floating enable
-for_window [class="pop"] floating enable
-for_window [class="(?i)(?:catfish)"]          floating enable
 for_window [class="(?i)(?:Lxappearance)"]          floating enable
+for_window [class="(?i)(?:Msgcompose)"] floating enable
+for_window [class="(?i)(?:catfish)"]          floating enable
 for_window [class="(?i)(?:gparted)"]          floating enable
 for_window [class="(?i)(?:qt5ct|pinentry)"]          floating enable
+for_window [class="Tandem"] floating enable
+for_window [class="Zoom Meeting"] floating enable
+for_window [class="join"] floating enable
+for_window [class="pop"] floating enable
+for_window [class="zoom"] floating enable
 for_window [title="(?i)(?:copying|deleting|moving)"] floating enable
 for_window [window_role="(?i)(?:pop-up|setup)"]      floating enable
 
 # EOS
-for_window [class="Yad" instance="yad"] floating enable
 for_window [class="Galculator" instance="galculator"] floating enable
+for_window [class="Yad" instance="yad"] floating enable
 for_window [class="qt5ct" instance="qt5ct"] floating enable
 
 # Make Calendar Float
