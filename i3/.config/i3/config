@@ -250,23 +250,20 @@ for_window [class="Gsimplecal"] sticky enable
 # Window Color #
 ################
 
-# Define colors variables:
-set $darkblue		#08052b
-set $urgentred		#e53935
-set $white		#ffffff
-set $grey		#b0b5bd
-
 # Define colors variables from Xresources
-set_from_resource $red color9
-set_from_resource $lightBlue color12
 set_from_resource $bg background
-set_from_resource $darkGreen color2
-set_from_resource $foreground foreground
-set_from_resource $lightGray color7
+set_from_resource $black	color0
+set_from_resource $blue color12
+set_from_resource $fg foreground
+set_from_resource $green color2
+set_from_resource $grey	color8
+set_from_resource $lightgray color15
+set_from_resource $red color9
+set_from_resource $white color7
 
 # define colors for windows:
 #class		                border		   bground	     text	    indicator	        child_border
-client.focused		      $lightBlue	  $darkblue	    $white	    $lightGray          $lightGray
-client.unfocused	      $darkblue	          $darkblue         $grey	    $bg                 $bg
-client.focused_inactive	      $darkblue	          $darkblue	    $grey	    $bg                 $bg
-client.urgent		      $urgentred	  $urgentred        $white          $darkGreen          $red
+client.focused		      $blue	  $black	    $white	    $lightgray          $lightgray
+client.unfocused	      $black	          $black         $grey	    $bg                 $bg
+client.focused_inactive	      $black	          $black	    $grey	    $bg                 $bg
+client.urgent		      $red	  $red        $white          $green          $red
