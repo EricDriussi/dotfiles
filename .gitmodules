@@ -4,6 +4,6 @@
 [submodule "zsh/.config/zsh/not-my-zsh"]
 	path = zsh/.config/zsh/not-my-zsh
 	url = git@github.com:EricDriussi/not-my-zsh.git
-[submodule "nvim"]
-	path = nvim
+[submodule "nvim/.config/nvim"]
+	path = nvim/.config/nvim
 	url = git@github.com:EricDriussi/nvim.git
