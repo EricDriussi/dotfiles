@@ -18,7 +18,7 @@ set vimhelp
 " press Enter, l or Right Arrow, set this.
 set norunexec
 
-colorscheme gruv Default-256 Default
+colorscheme palenight
 set timefmt=%m/%d\ %H:%M
 
 " Show list of matches on tab completion in command-line mode
