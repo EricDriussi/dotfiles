@@ -1,4 +1,4 @@
-vifminfo.json*
+vifminfo*
 state.yml
 authors.py
 *.scm
