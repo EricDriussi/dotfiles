@@ -13,7 +13,7 @@ alias basev="nvim -u ~/.config/nvim/base-init.vim"
 alias bigv="nvim -u ~/.config/nvim/big-init.vim"
 alias vo="fzf_nvim"; fzf_nvim() { nvim "$(fzf)" }
 alias voa="nvim ~/.config/zsh/not-my-zsh/aliases.zsh"
-alias voz="nvim ~/.config/zsh/exports.zsh"
+alias voz="nvim ~/.config/zsh/env_vars.zsh"
 alias voi="nvim ~/.config/i3/config"
 alias vov="cd ~/.config/nvim/ && nvim init.vim"
 
