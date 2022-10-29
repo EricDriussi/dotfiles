@@ -16,7 +16,7 @@ set $right l
 
 # run once
 exec --no-startup-id brave
-exec --no-startup-id emojione-picker
+exec --no-startup-id emote
 exec --no-startup-id nextcloud
 exec --no-startup-id obsidian
 exec --no-startup-id slack
@@ -87,7 +87,7 @@ bindsym $Mod+Return exec --no-startup-id kitty
 bindsym Print exec --no-startup-id flameshot gui
 
 # emojis!
-bindsym $Mod+Shift+e exec emojione-picker
+bindsym $Mod+Shift+e exec emote
 
 # Audio
 bindsym Control+F7 exec --no-startup-id pactl set-sink-volume 0 -5% && pactl set-sink-volume 1 -5%
