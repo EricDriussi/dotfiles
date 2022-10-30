@@ -254,3 +254,4 @@ filextype */
         \ {View in thunar}
         \ Thunar %f &,
 
+fileviewer *[^/],.*[^/] bat --color always --wrap never --pager never %c -p
