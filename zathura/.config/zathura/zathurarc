@@ -11,4 +11,4 @@ map <C-i> recolor
 set adjust-open width
 set recolor true
 
-include catppuccin-mocha
+include gruv
