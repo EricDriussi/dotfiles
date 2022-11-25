@@ -1,0 +1,19 @@
+@import "common"
+@import "colors"
+
+configuration {
+    show-icons: false;
+}
+
+window {
+    width: 500;
+    height: 400;
+}
+
+listview {
+    columns: 8;
+}
+
+element-text, element-icon {
+    horizontal-align: 0.5;
+}

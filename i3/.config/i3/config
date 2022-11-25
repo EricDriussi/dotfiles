@@ -57,9 +57,9 @@ exec_always --no-startup-id autotiling
 ########
 
 # Launcher
-bindsym Mod1+space exec rofi -modi drun -show drun -config ~/.config/rofi/rofidmenu.rasi
-# Switcher
-bindsym $mod+t exec rofi -show window -config ~/.config/rofi/rofidmenu.rasi
+bindsym Mod1+space exec rofi -modi drun -show drun -config ~/.config/rofi/run_menu.rasi
+# Emoji
+bindsym $Mod+Shift+e exec rofi -modi emoji -show emoji -emoji-format '{emoji}' -config ~/.config/rofi/emoji_menu.rasi
 # Shutdown
 bindsym $Mod+x exec ~/.config/rofi/powermenu.sh
 
@@ -85,9 +85,6 @@ bindsym $Mod+Return exec --no-startup-id kitty
 
 # Screenshot
 bindsym Print exec --no-startup-id flameshot gui
-
-# emojis!
-bindsym $Mod+Shift+e exec emote
 
 # Audio
 bindsym Control+F7 exec --no-startup-id pactl set-sink-volume 0 -5% && pactl set-sink-volume 1 -5%
