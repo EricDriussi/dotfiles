@@ -1,4 +1,4 @@
-export TERMINAL="kitty"
+export TERMINAL="wezterm"
 export EDITOR="nvim"
 export VISUAL="nvim"
 export MANPAGER='nvim +Man!'
@@ -21,6 +21,8 @@ export PATH=$PATH:/usr/local/nodejs/bin
 export NVM_DIR=$HOME/.nvm
 export NVM_LAZY_LOAD=true
 export NODE_OPTIONS=--max_old_space_size=6000
+
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=240'
 
 # FZF
 export FZF_DEFAULT_COMMAND='rg --files -g "!node_modules/" -g "!.git/" --hidden .'
