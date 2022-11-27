@@ -7,6 +7,12 @@ alias bt="btop"
 alias qrpaste="xclip -o | qrencode -t utf8"
 alias vf="vfm ."
 alias vfm=~/.config/vifm/vifmimg/vifmrun
+alias bknotes="back_up_notes"; back_up_notes(){
+    currentDir="$(pwd)"
+    cd ~/Documents/personal/obsidian
+    git add . && git commit -m "" --allow-empty-message && git push
+    cd $currentDir
+}
 
 # Nvim
 alias basev="nvim -u ~/.config/nvim/base-init.lua"
