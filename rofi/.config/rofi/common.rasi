@@ -1,5 +1,5 @@
 configuration {
-    font: "Ubuntu Nerd Font Medium 14";
+    font: "Ubuntu Nerd Font Medium 13";
     show-icons:				true;
     icon-theme:				"Arc-X-D";
     display-drun:			"App";

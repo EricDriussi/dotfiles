@@ -3,16 +3,19 @@ local wez = require("wezterm")
 local wa = wez.action
 
 return {
+  front_end = "OpenGL",
+
   -- Font
   font = wez.font("Comic Code Ligatures"),
   font_size = 16.0,
   line_height = 1.3,
 
   -- UI
-  xcursor_theme = "Qogir",
+  xcursor_theme = "Adwaita",
   adjust_window_size_when_changing_font_size = false,
   color_scheme = gruv.name,
   color_schemes = gruv.scheme,
+  window_decorations = "RESIZE",
   window_padding = {
     left = 6,
     right = 4,
@@ -37,6 +40,11 @@ return {
     {
       key = "PageUp",
       mods = "CTRL",
+      action = wa.DisableDefaultAssignment
+    },
+    {
+      key = "Enter",
+      mods = "ALT",
       action = wa.DisableDefaultAssignment
     },
     {
