@@ -13,8 +13,8 @@ return {
   -- UI
   xcursor_theme = "Adwaita",
   adjust_window_size_when_changing_font_size = false,
-  color_scheme = gruv.name,
-  color_schemes = gruv.scheme,
+  color_scheme = gruv.medium,
+  color_schemes = gruv.schemes,
   window_decorations = "RESIZE",
   window_padding = {
     left = 6,
