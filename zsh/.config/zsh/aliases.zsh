@@ -53,18 +53,6 @@ copyToStdout() {
         fi
     done
 }
-copyMe(){
-    find ~/Music/spotify/$2 -type f -print0 | xargs -0 mv -t $1;
-}
-
-# Book!
-generate(){
-    currentDir="$(pwd)"
-    cd ~/Documents/projects/leanmind/savvily/savvily-book-converter
-    ./convert.sh "$1" ~/Documents/projects/leanmind/savvily/codigo-sostenible/manuscript && notify-send "Pandoc is done!" " "
-    cd $currentDir
-}
-alias eview="ebook-viewer"
 
 # pwds, keys, etc
 source ~/.sensible-aliases.zsh
