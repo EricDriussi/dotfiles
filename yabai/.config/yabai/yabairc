@@ -12,7 +12,10 @@ yabai -m config layout                       bsp
 yabai -m config bottom_padding               0
 yabai -m config left_padding                 0
 yabai -m config right_padding                0
-yabai -m config window_gap                   0
+yabai -m config window_gap                   2
 
+# Floating always on top
+yabai -m config window_topmost on
 
+# Exceptions
 yabai -m rule --add app='IntelliJ IDEA' title='^$' manage=off
