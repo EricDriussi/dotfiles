@@ -12,7 +12,6 @@ eval "$(lua $ZSH_PLUG/z.lua/z.lua --init zsh enhanced once)"
 source $ZSH/init.zsh
 
 # Load NVM stuff only if installed
-export NVM_DIR="$HOME/.nvm"
 if [ -d "$NVM_DIR" ] && [ -f "$NVM_DIR/nvm.sh" ]
 then
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
