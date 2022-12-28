@@ -1,0 +1,42 @@
+# open terminal
+cmd - return : /Applications/WezTerm.app/Contents/MacOS/wezterm
+cmd + shift - q : yabai -m window --close
+
+# change focus
+cmd - h : yabai -m window --focus west
+cmd - j : yabai -m window --focus south
+cmd - k : yabai -m window --focus north
+cmd - l : yabai -m window --focus east
+# (cmd) change focus (using arrow keys)
+cmd - left  : yabai -m window --focus west
+cmd - down  : yabai -m window --focus south
+cmd - up    : yabai -m window --focus north
+cmd - right : yabai -m window --focus east
+
+# shift window in current workspace
+cmd + shift - h : yabai -m window --swap west || $(yabai -m window --display west; yabai -m display --focus west)
+cmd + shift - j : yabai -m window --swap south || $(yabai -m window --display south; yabai -m display --focus south)
+cmd + shift - k : yabai -m window --swap north || $(yabai -m window --display north; yabai -m display --focus north)
+cmd + shift - l : yabai -m window --swap east || $(yabai -m window --display east; yabai -m display --focus east)
+# alternatively, use the arrow keys
+cmd + shift - left : yabai -m window --swap west || $(yabai -m window --display west; yabai -m display --focus west)
+cmd + shift - down : yabai -m window --swap south || $(yabai -m window --display south; yabai -m display --focus south)
+cmd + shift - up : yabai -m window --swap north || $(yabai -m window --display north; yabai -m display --focus north)
+cmd + shift - right : yabai -m window --swap east || $(yabai -m window --display east; yabai -m display --focus east)
+
+# move focused window to workspace
+cmd + shift - 1 : yabai -m window --space 1
+cmd + shift - 2 : yabai -m window --space 2
+cmd + shift - 3 : yabai -m window --space 3
+cmd + shift - 4 : yabai -m window --space 4
+cmd + shift - 5 : yabai -m window --space 5
+cmd + shift - 6 : yabai -m window --space 6
+cmd + shift - 7 : yabai -m window --space 7
+cmd + shift - 8 : yabai -m window --space 8
+cmd + shift - 9 : yabai -m window --space 9
+
+# fullscreen
+cmd - f : yabai -m window --toggle zoom-fullscreen
+
+# float
+cmd - space : yabai -m window --toggle float --grid 10:10:1:1:8:8
