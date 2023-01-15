@@ -40,3 +40,6 @@ cmd - f : yabai -m window --toggle zoom-fullscreen
 
 # float
 cmd - space : yabai -m window --toggle float --grid 10:10:1:1:8:8
+
+ctrl - left :  nothing
+ctrl - right : nothing
