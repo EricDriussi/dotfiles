@@ -7,6 +7,7 @@ export MANPAGER='nvim +Man!'
 export PATH=$PATH:/usr/bin
 export PATH=$PATH:/opt
 export PATH=/opt/homebrew/bin:$PATH
+export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
 # nvim - mason
 export PATH=$PATH:/$HOME/.config/local/share/nvim/mason/bin
 # intelliJ
