@@ -32,6 +32,7 @@ alias paru="paru --skipreview"
 alias parupdate="paru -Syu --skipreview"
 alias remove="sudo pacman -Rs"
 alias search="pacman -Ss | paste -d '' - - | fzf --multi --preview 'pacman -Si {1}' | cut -d ' ' -f 1 | xargs -ro pacman -Ss"
+alias searchcmd="sudo pacman -Fy "
 alias updatesys="sudo pacman -Syu"
 
 # Git
