@@ -24,36 +24,6 @@
 " You can also add %CLEAR if you want to clear screen before running FUSE
 " program.
 
-  fileviewer *.pdf
-        \ vifmimg pdf %px %py %pw %ph %c
-        \ %pc
-        \ vifmimg clear
-
-    fileviewer *.epub
-        \ vifmimg epub %px %py %pw %ph %c
-        \ %pc
-        \ vifmimg clear
-
-    fileviewer <video/*>
-        \ vifmimg video %px %py %pw %ph %c
-        \ %pc
-        \ vifmimg clear
-
-    fileviewer <image/*>
-        \ vifmimg draw %px %py %pw %ph %c
-        \ %pc
-        \ vifmimg clear
-
-    fileviewer <audio/*>
-        \ vifmimg audio %px %py %pw %ph %c
-        \ %pc
-        \ vifmimg clear
-
-    fileviewer <font/*>
-        \ vifmimg font %px %py %pw %ph %c
-        \ %pc
-        \ vifmimg clear
-
 " JS & friends
 filextype {*.js,*.jsx,*.ts,*.tsx},<text/ts> nvim %c
 fileviewer {*.js,*.jsx,*.ts,*.tsx},<text/ts> cat %c
@@ -61,9 +31,12 @@ fileviewer {*.js,*.jsx,*.ts,*.tsx},<text/ts> cat %c
 " epub
 filetype *.epub,*.mobi,*.azw3 ebook-viewer %f
 
-" Pdf
+" Pdf (Voodoo magic)
 filextype {*.pdf},<application/pdf> zathura %c %i &, apvlv %c, xpdf %c
-fileviewer {*.pdf},<application/pdf> pdftotext -nopgbrk %c -
+fileviewer {*.pdf},<application/pdf> 
+  \ tput cup %py %px > /dev/tty && convert -density 150 %c\[0\] -quality 90 /tmp/tempfile.jpg > /dev/null&& kitty +kitten icat --transfer-mode=file --place=%pwx%ph@%pxx%py /tmp/tempfile.jpg %N
+  \ %pc
+  \ kitty +kitten icat --transfer-mode=file --place=%pwx%ph@%pxx%py --clear %N
 
 " PostScript
 filextype {*.ps,*.eps,*.ps.gz},<application/postscript>
@@ -142,7 +115,9 @@ filextype {*.bmp,*.jpg,*.jpeg,*.png,*.xpm},<image/*>
         \ {View in shotwell}
         \ shotwell,
 fileviewer {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
-         \ identify %f
+  \ kitty +kitten icat --transfer-mode=file --place=%pwx%ph@%pxx%py %c %N
+  \ %pc
+  \ kitty +kitten icat --transfer-mode=file --place=%pwx%ph@%pxx%py --clear %N
 
 " OpenRaster
 filextype *.ora
