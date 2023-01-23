@@ -1,7 +1,6 @@
-
 " Ranger devicons for ViFM
 " https://github.com/cirala/vifm_devicons
-"
+
 " Filetypes/directories
 set classify=' :dir:/, :exe:, :reg:, :link:,? :?:, ::../::'
 
@@ -69,4 +68,3 @@ set classify+=' ::*.log::'
 set classify+=' ::*.doc,,*.docx,,*.adoc::'
 set classify+=' ::*.xls,,*.xls,,*.xlsmx::'
 set classify+=' ::*.pptx,,*.ppt::'
-

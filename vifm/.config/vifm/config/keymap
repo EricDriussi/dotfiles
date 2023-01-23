@@ -1,0 +1,63 @@
+" Exit
+nnoremap <c-w> :q<cr>
+
+" Back home
+nnoremap cd :cd<cr>
+
+" ------------------------------------------------------------------------------
+" UI
+
+" Always on previews
+:view!
+
+" Open selected dir in new pane and switch
+nnoremap <c-t> :sync %c <cr><space>
+
+" Resizing panes
+nnoremap - <C-w>5<
+nnoremap + <C-w>5>
+
+" Hidden files
+nnoremap <c-h> za
+
+" Display sorting dialog
+nnoremap S :sort<cr>
+
+" Toggle visibility of preview window
+nnoremap w :view<cr>
+vnoremap w :view<cr>gv
+
+" ------------------------------------------------------------------------------
+" FILES
+
+" Yank path to system clipboard
+nnoremap yp :!echo -n %c:p | xclip -selection clipboard %i<cr>:echo expand('%"c:p') "is yanked to clipboard"<cr>
+
+" Yank name
+nnoremap yn :!echo -n %c | xclip -selection clipboard %i<cr>:echo expand('%"c') "is yanked to clipboard"<cr>
+
+" Archiving commands
+command! zip apack %f.zip %f
+command! tar apack %f.tar.gz %f
+command! unpack aunpack %f
+
+" New file and dir
+nnoremap af :touch<space>
+nnoremap ad :mkdir<space>
+command! mkd :mkdir %a | cd %a
+
+" Mappings for faster renaming
+nnoremap I cw<c-a>
+nnoremap A cw
+nnoremap rn cw<c-u>
+
+" ------------------------------------------------------------------------------
+" SHELLS
+
+" New Terminal in cwd
+nnoremap <a-t> :!wezterm start --always-new-process --cwd .<cr>
+
+" Start shell in current directory
+nnoremap s :shell<cr>
+
+" ------------------------------------------------------------------------------

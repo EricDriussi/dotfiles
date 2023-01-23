@@ -1,0 +1,46 @@
+" ------------------------------------------------------------------------------
+" MISC
+
+set vicmd=nvim
+set nofollowlinks
+set syscalls
+set vimhelp
+
+set trash
+set history=100
+set undolevels=100
+
+set ignorecase
+set smartcase
+
+" Natural sort of (version) numbers within text.
+set sortnumbers
+
+" Don't run executables on Enter
+set norunexec
+
+" Show list of matches on tab completion in command-line mode
+set wildmenu
+set wildstyle=popup
+
+" Display suggestions in normal, visual and view modes
+set suggestoptions=normal,visual,view,otherpane,keys,marks,registers
+
+" What should be saved automatically between vifm sessions.
+set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
+    \phistory,fhistory,dirstack,registers,bookmarks,bmarks
+
+" ------------------------------------------------------------------------------
+" UI
+
+colorscheme palenight
+
+set number relativenumber
+set scrolloff=4
+set nohlsearch
+set incsearch
+set timefmt=%m/%d\ %H:%M
+
+" Set custom status line look
+highlight StatusLine ctermfg=black ctermbg=blue
+set statusline="%1*  %-20t \[\[ %A 🖖%o 🔒%u:%g \]\] %= %s 🏋️ %20d 📅  %*"
