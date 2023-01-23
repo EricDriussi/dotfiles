@@ -5,8 +5,7 @@ alias cc="z"
 # Misc
 alias bt="btop"
 alias qrpaste="xclip -o | qrencode -t utf8"
-alias vf="vfm ."
-alias vfm=~/.config/vifm/vifmimg/vifmrun
+alias vf="vifm ."
 alias bknotes="back_up_notes"; back_up_notes(){
     currentDir="$(pwd)"
     cd ~/Documents/personal/obsidian
