@@ -17,6 +17,13 @@ yabai -m config window_gap                   2
 # Floating always on top
 yabai -m config window_topmost on
 
+# Gaps
+yabai -m config top_padding    8 
+yabai -m config bottom_padding 8 
+yabai -m config left_padding   8 
+yabai -m config right_padding  8 
+yabai -m config window_gap     8 
+
 # Exceptions
 yabai -m rule --add app='IntelliJ IDEA' title='^$' manage=on
 yabai -m rule --add app='IntelliJ IDEA' subrole='AXStandardWindow' manage=off
