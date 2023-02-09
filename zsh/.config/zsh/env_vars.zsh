@@ -24,6 +24,10 @@ export NVM_DIR=$HOME/.nvm
 export NVM_LAZY_LOAD=true
 export NODE_OPTIONS=--max_old_space_size=6000
 
+# XDG
+export XDG_DATA_HOME=$XDG_CONFIG_HOME/local/share
+export XDG_CACHE_HOME=$XDG_CONFIG_HOME/cache
+
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=240'
 
 # FZF
