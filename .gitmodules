@@ -4,3 +4,6 @@
 [submodule "nvim/.config/nvim"]
 	path = nvim/.config/nvim
 	url = ../nvim.git
+[submodule "vifm/.config/vifm/vifmimg"]
+	path = vifm/.config/vifm/vifmimg
+	url = git@github.com:thimc/vifmimg.git
