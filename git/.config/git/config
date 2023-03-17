@@ -1,0 +1,51 @@
+[user]
+    name = Eric Driussi
+    username = EricDriussi
+    email = ericdriussi@gmail.com
+[core]
+    editor = nvim
+    excludesFile = ~/.config/git/gitignore-global
+    pager = delta
+
+[init]
+    defaultBranch = master
+[rebase]
+    autostash = true
+[pull]
+    rebase = true
+
+; Merge and Diff config
+[merge]
+    tool = nvimmerge
+[mergetool "nvimmerge"]
+  cmd = nvim -d $LOCAL $MERGED $REMOTE -c 'wincmd l' -c 'set signcolumn=no'
+[diff]
+    tool = nvimdiff
+    colorMoved = default
+[difftool "nvimdiff"]
+    cmd = nvim -d "$LOCAL" "$REMOTE"
+[difftool]
+    prompt = false
+
+; Delta pager config
+[delta]
+    paging = never
+    true-color = always 
+    wrap-right-percent = 1
+    features = decorations
+    line-numbers = true
+    side-by-side = true
+    navigate = true
+[delta "decorations"]
+    file-style = yellow bold none
+    file-decoration-style = white box
+    hunk-header-style = omit
+    line-numbers-right-format = "│{nm:^2} {np:^2}│ "
+    line-numbers-left-format = " "
+    line-numbers-right-style = blue
+    line-numbers-minus-style = red
+    line-numbers-plus-style = green
+
+; Project-specific configs
+[includeIf "gitdir:~/Documents/projects/leanmind/"]
+    path = ~/config/git/leanmind-config

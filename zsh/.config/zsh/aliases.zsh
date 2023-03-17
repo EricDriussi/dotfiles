@@ -36,7 +36,7 @@ alias searchcmd="sudo pacman -Fy "
 alias updatesys="sudo pacman -Syu"
 
 # Git
-alias coa="python3 -B ~/.co-author.py"
+alias coa="python3 -B ~/.config/git/co-author.py"
 alias gps="git submodule update --init && git submodule foreach git checkout master && git submodule foreach git pull"
 
 # Show ctrl+c
