@@ -7,3 +7,4 @@ thunar.xml
 *.log
 vifmimg
 .zsh_history
+.git-credentials
