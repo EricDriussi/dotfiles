@@ -13,6 +13,11 @@ alias bknotes="back_up_notes"; back_up_notes(){
     git add . && git commit -m "" --allow-empty-message && git push
     cd $currentDir
 }
+# Translate
+alias tran="trans -b"
+alias ctran="clip_trans"; clip_trans(){
+    xclip -o -sel clip | trans -b $@ | tee /dev/tty | xclip -i -sel clip
+}
 
 # Nvim
 alias basev="nvim -u ~/.config/nvim/base-init.lua"

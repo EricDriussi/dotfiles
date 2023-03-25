@@ -6,6 +6,7 @@ source $ZSH/not-my-zsh/init.zsh
 plug "zsh-users/zsh-autosuggestions"
 plug "zsh-users/zsh-syntax-highlighting"
 plug "skywind3000/z.lua"
+plug "soimort/translate-shell"
 
 eval "$(lua $ZSH_PLUG/z.lua/z.lua --init zsh enhanced once)"
 
