@@ -1,8 +1,9 @@
 local gruv = require("gruv")
 local wez = require("wezterm")
-local wa = wez.action
+local actions = wez.action
 
 return {
+  enable_kitty_keyboard = true,
   front_end = "OpenGL",
   -- Font
   font = wez.font_with_fallback({ "Comic Code Ligatures", "Noto Sans Symbols" }),
@@ -33,17 +34,17 @@ return {
     {
       key = "PageUp",
       mods = "CTRL",
-      action = wa.DisableDefaultAssignment,
+      action = actions.DisableDefaultAssignment,
     },
     {
       key = "Enter",
       mods = "ALT",
-      action = wa.DisableDefaultAssignment,
+      action = actions.DisableDefaultAssignment,
     },
     {
       key = "PageDown",
       mods = "CTRL",
-      action = wa.DisableDefaultAssignment,
+      action = actions.DisableDefaultAssignment,
     },
   },
 }
