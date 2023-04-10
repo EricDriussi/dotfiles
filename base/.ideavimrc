@@ -18,6 +18,7 @@ set iskeyword-=_
 set iskeyword-=-
 
 set number
+set relativenumber
 set mouse=a
 set hls
 

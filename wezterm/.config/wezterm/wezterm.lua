@@ -3,7 +3,6 @@ local wez = require("wezterm")
 local actions = wez.action
 
 return {
-  enable_kitty_keyboard = true,
   front_end = "OpenGL",
   -- Font
   font = wez.font_with_fallback({ "Comic Code Ligatures", "Noto Sans Symbols" }),
@@ -12,6 +11,7 @@ return {
   -- UI
   xcursor_theme = "Adwaita",
   adjust_window_size_when_changing_font_size = false,
+  check_for_updates = false,
   color_scheme = gruv.medium,
   color_schemes = gruv.schemes,
   window_decorations = "RESIZE",
