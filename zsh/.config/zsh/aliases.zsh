@@ -29,7 +29,7 @@ alias voi="nvim ~/.config/i3/config"
 alias vov="cd ~/.config/nvim/ && nvim init.lua"
 
 # Pacman
-alias cleansys="rm -rf ~/.cache/paru; yes | sudo paccache -rk2 -ruk0; yes | sudo pacman -Sc; yes | paru -Sc --aur"
+alias cleansys="sudo paccache -rk2 -ruk0; sudo pacman -Sc --noconfirm; paru -Sc --aur --noconfirm; setopt localoptions rmstarsilent; rm -rf ~/.local/share/Trash/*"
 alias install="fzf_paru"; fzf_paru () {
     paru -Slq | fzf -m --preview 'cat <(paru -Si {1}) <(paru -Fl {1} | awk "{print \$2}")' | xargs -ro  paru -S --skipreview
 }
@@ -43,22 +43,6 @@ alias updatesys="sudo pacman -Syu"
 # Git
 alias coa="python3 -B ~/.config/git/co-author.py"
 alias gps="git submodule update --init && git submodule foreach git checkout master && git submodule foreach git pull"
-
-# Show ctrl+c
-copyToStdout() {
-    while clipnotify;
-    do
-        SelectedText="$(xsel)"
-        CopiedText="$(xsel -b)"
-        if [[ $CopiedText == $SelectedText ]]; then
-            if [[ $# -eq 0 ]]; then
-                echo $CopiedText
-            else
-                echo $CopiedText | tee -a "$1"
-            fi
-        fi
-    done
-}
 
 # pwds, keys, etc
 source ~/.sensible-aliases.zsh
