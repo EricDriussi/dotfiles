@@ -57,11 +57,11 @@ exec_always --no-startup-id ~/.config/screenlayout/monitor.sh
 ########
 
 # Launcher
-bindsym Mod1+space exec rofi -modi drun -show drun -config ~/.config/rofi/run_menu.rasi
+bindsym $Mod+d exec rofi -modi drun -show drun -config ~/.config/rofi/run_menu.rasi
 # Emoji
-bindsym $Mod+Shift+e exec rofi -modi emoji -show emoji -emoji-format '{emoji}' -config ~/.config/rofi/emoji_menu.rasi
+bindsym $Mod+e exec rofi -modi emoji -show emoji -emoji-format '{emoji}' -config ~/.config/rofi/emoji_menu.rasi
 # Shutdown
-bindsym $Mod+x exec ~/.config/rofi/powermenu.sh
+bindsym $Mod+Shift+x exec ~/.config/rofi/powermenu.sh
 
 ############
 # Bindings #
@@ -69,9 +69,6 @@ bindsym $Mod+x exec ~/.config/rofi/powermenu.sh
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $Mod+Shift+r restart
-
-# reload the configuration file
-bindsym $Mod+Shift+c reload
 
 bindsym $Mod+f fullscreen toggle
 bindsym Control+m exec touchpad-toggle
@@ -133,8 +130,8 @@ bindsym $Mod+8 workspace 8
 bindsym $Mod+9 workspace 9
 
 # Switch To Next or Previous Workspace
-bindsym $mod+Mod1+Left workspace prev
-bindsym $mod+Mod1+Right workspace next
+bindsym $Mod+Mod1+Left workspace prev
+bindsym $Mod+Mod1+Right workspace next
 
 # Move Focused Window
 bindsym $Mod+Shift+1 move container to workspace 1; workspace 1
@@ -184,10 +181,10 @@ bindsym $Mod+Shift+Up    move up    30px
 bindsym $Mod+Shift+Right move right 30px
 
 # Size
-bindsym Mod1+Left  resize shrink width  30 px or 3 ppt
-bindsym Mod1+Down  resize grow   height 30 px or 3 ppt
-bindsym Mod1+Up    resize shrink height 30 px or 3 ppt
-bindsym Mod1+Right resize grow   width  30 px or 3 ppt
+bindsym  $Mod+minus        resize  shrink  width   30  px  or  3  ppt
+bindsym  $Mod+plus         resize  grow    width   30  px  or  3  ppt
+bindsym  $Mod+Shift+minus  resize  shrink  height  30  px  or  3  ppt
+bindsym  $Mod+Shift+plus   resize  grow    height  30  px  or  3  ppt
 
 #################
 # Border & Gaps #
@@ -212,55 +209,55 @@ gaps outer 0
 # Assign Workspace #
 ####################
 
-assign [class="(?i)(?:brave)"] → 1
-assign [class="(?i)(?:obsidian)"] → 9
-assign [class="(?i)(?:slack)"] → 6
-assign [class="(?i)(?:thunderbird)"]   → 2
+assign  [class="(?i)(?:brave)"]        →  1
+assign  [class="(?i)(?:obsidian)"]     →  9
+assign  [class="(?i)(?:slack)"]        →  6
+assign  [class="(?i)(?:thunderbird)"]  →  2
 
 ####################
 # Floating Windows #
 ####################
 
-for_window [class="(?i)(?:Calendar)"] floating enable
-for_window [class="(?i)(?:Lxappearance)"]          floating enable
-for_window [class="(?i)(?:Msgcompose)"] floating enable
-for_window [class="(?i)(?:catfish)"]          floating enable
-for_window [class="(?i)(?:gparted)"]          floating enable
-for_window [class="(?i)(?:qt5ct|pinentry)"]          floating enable
-for_window [class="Tandem"] floating enable
-for_window [class="Zoom Meeting"] floating enable
-for_window [class="join"] floating enable
-for_window [class="pop"] floating enable
-for_window [class="zoom"] floating enable
-for_window [title="(?i)(?:copying|deleting|moving)"] floating enable
-for_window [window_role="(?i)(?:pop-up|setup)"]      floating enable
+for_window  [class="(?i)(?:Calendar)"]                 floating   enable    
+for_window  [class="(?i)(?:Lxappearance)"]             floating   enable    
+for_window  [class="(?i)(?:Msgcompose)"]               floating   enable    
+for_window  [class="(?i)(?:catfish)"]                  floating   enable    
+for_window  [class="(?i)(?:gparted)"]                  floating   enable    
+for_window  [class="(?i)(?:qt5ct|pinentry)"]           floating   enable    
+for_window  [class="Tandem"]                           floating   enable    
+for_window  [class="Zoom Meeting"]                     floating   enable
+for_window  [class="join"]                             floating   enable    
+for_window  [class="pop"]                              floating   enable    
+for_window  [class="zoom"]                             floating   enable    
+for_window  [title="(?i)(?:copying|deleting|moving)"]  floating   enable    
+for_window  [window_role="(?i)(?:pop-up|setup)"]       floating   enable    
 
 # EOS
-for_window [class="Galculator" instance="galculator"] floating enable
-for_window [class="Yad" instance="yad"] floating enable
-for_window [class="qt5ct" instance="qt5ct"] floating enable
+for_window  [class="Galculator"  instance="galculator"]  floating  enable
+for_window  [class="Yad"         instance="yad"]         floating  enable
+for_window  [class="qt5ct"       instance="qt5ct"]       floating  enable
 
 # Make Calendar Float
-for_window [class="Gsimplecal"] sticky enable
+for_window  [class="Gsimplecal"]  sticky  enable
 
 ################
 # Window Color #
 ################
 
 # Define colors variables from Xresources
-set_from_resource $bg background
-set_from_resource $black	color0
-set_from_resource $blue color12
-set_from_resource $fg foreground
-set_from_resource $green color2
-set_from_resource $grey	color8
-set_from_resource $lightgray color15
-set_from_resource $red color9
-set_from_resource $white color7
+set_from_resource  $bg         background
+set_from_resource  $black      color0
+set_from_resource  $blue       color12
+set_from_resource  $fg         foreground
+set_from_resource  $green      color2
+set_from_resource  $grey       color8
+set_from_resource  $lightgray  color15
+set_from_resource  $red        color9
+set_from_resource  $white      color7
 
 # define colors for windows:
-#class		                border		   bground	     text	    indicator	        child_border
-client.focused		      $blue	  $black	    $white	    $lightgray          $lightgray
-client.unfocused	      $black	          $black         $grey	    $bg                 $bg
-client.focused_inactive	      $black	          $black	    $grey	    $bg                 $bg
-client.urgent		      $red	  $red        $white          $green          $red
+#class  border  bground  text  indicator  child_border
+client.focused           $blue   $black   $white  $lightgray  $lightgray
+client.unfocused         $black  $black   $grey   $bg         $bg
+client.focused_inactive  $black  $black   $grey   $bg         $bg
+client.urgent            $red    $red     $white  $green      $red
