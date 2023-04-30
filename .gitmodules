@@ -1,6 +1,3 @@
-[submodule "zsh/.config/zsh/not-my-zsh"]
-	path = zsh/.config/zsh/not-my-zsh
-	url = ../not-my-zsh.git
 [submodule "nvim/.config/nvim"]
 	path = nvim/.config/nvim
 	url = ../nvim.git
