@@ -1,10 +1,3 @@
-function find_fonts {
-    fc-list | grep -i "$1" | awk -F: '{print $2}' | sort | uniq
-}
-function kill_process_by_port {
-    lsof -i tcp:"$1" | awk 'NR!=1 {print $2}' | xargs kill
-}
-
 function repeat_command {
     cmd=("${@:2}")
     for i in {1.."$1"}; do
@@ -42,23 +35,11 @@ function run_on_change {
     done
 }
 
-function add_origin {
-    git remote add origin "$1" && git remote set-url --add --push origin "$1"
-}
-function new_branch {
-    git checkout -b "$(echo $@ | sed 's/ /-/g')"
-}
-function git_push {
-    git push --set-upstream origin "$(git rev-parse --abbrev-ref HEAD)"
-}
 function rm_all_branches {
     for branch in $(git for-each-ref --format '%(refname:short)' --merged HEAD refs/heads/)
     do
         git branch -d ${branch}
     done
-}
-function git_dry_merge {
-    git merge "$1" --no-commit --no-ff; git merge --abort
 }
 function git_log {
     git log -15 --graph --abbrev-commit --decorate --format=tformat:"%C(yellow)%h%C(reset)%C(reset)%C(auto)%d%C(reset) %s %C(white) -  %C(bold green)(%ar)%C(reset) %C(dim blue)<%an>%Creset"

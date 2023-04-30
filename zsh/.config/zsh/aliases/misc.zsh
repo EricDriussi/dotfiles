@@ -21,8 +21,8 @@ alias bknotes=back_up_notes
 alias diskUsage="sudo du -h | sort -hr | head -10"
 alias eje=eject_disk; eject_disk() { sudo eject "$1" && udisksctl power-off -b "$1" }
 alias fd=find_in_cwd; find_in_cwd() { find . -iname "*$1*" | sort }
-alias fonts=find_fonts
-alias freeport=kill_process_by_port
+alias fonts=find_fonts; find_fonts() { fc-list | grep -i "$1" | awk -F: '{print $2}' | sort | uniq }
+alias freeport=kill_process_by_port; kill_process_by_port() { lsof -i tcp:"$1" | awk 'NR!=1 {print $2}' | xargs kill }
 alias loop=repeat_command
 alias ports=open_ports; open_ports() { sudo ss -tulpn | grep LISTEN }
 alias qrpaste="xclip -o | qrencode -t utf8"
