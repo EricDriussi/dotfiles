@@ -124,10 +124,17 @@ function _get_available_shell {
     docker exec -it "$1" which bash 2>&1 1>/dev/null && echo "/bin/bash" || echo "/bin/sh"
 }
 
-function decode_jwt(){
+function decode_jwt {
     if [ "$#" -eq 0 ]; then
         xclip -o | jq -R 'split(".") | .[1] | @base64d | fromjson'
     else
         echo "$1" | jq -R 'split(".") | .[1] | @base64d | fromjson'
     fi
+}
+
+function back_up_notes {
+    currentDir="$(pwd)"
+    cd ~/Documents/personal/obsidian
+    git add . && git commit -m "" --allow-empty-message && git push
+    cd $currentDir
 }

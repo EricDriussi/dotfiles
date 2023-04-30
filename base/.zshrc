@@ -1,6 +1,5 @@
 [ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
 
-# Plugins
 plug "zsh-users/zsh-autosuggestions"
 plug "zsh-users/zsh-syntax-highlighting"
 plug "soimort/translate-shell"
@@ -10,11 +9,11 @@ eval "$(lua ~/.local/share/zap/plugins/z.lua/z.lua --init zsh enhanced once)"
 export XDG_CONFIG_HOME=$HOME/.config
 export ZSH=$XDG_CONFIG_HOME/zsh
 
-source "$ZSH/settings.zsh"
-source "$ZSH/key_bindings.zsh"
+# Don't change order
 source "$ZSH/env_vars.zsh"
-source "$ZSH/aliases.zsh"
-
+source "$ZSH/settings.zsh"
+source "$ZSH/keymap/init.zsh"
+source "$ZSH/aliases/init.zsh"
 source "$ZSH/prompt/init.zsh"
 
 # Load NVM stuff only if installed
