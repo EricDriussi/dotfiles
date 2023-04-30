@@ -17,6 +17,8 @@ export PATH=$PATH:$HOME/.config/vifm/vifmimg
 # nodejs
 export PATH=$PATH:$HOME/.deno/bin
 export PATH=$PATH:/usr/local/nodejs/bin
+# rust
+export PATH=$PATH:$HOME/.cargo/bin
 
 # NVM - NODE
 export NVM_DIR=$HOME/.nvm
