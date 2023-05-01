@@ -24,6 +24,7 @@ alias fd=find_in_cwd; find_in_cwd() { find . -iname "*$1*" | sort }
 alias fonts=find_fonts; find_fonts() { fc-list | grep -i "$1" | awk -F: '{print $2}' | sort | uniq }
 alias freeport=kill_process_by_port; kill_process_by_port() { lsof -i tcp:"$1" | awk 'NR!=1 {print $2}' | xargs kill }
 alias loop=repeat_command
+alias ol=open_links
 alias ports=open_ports; open_ports() { sudo ss -tulpn | grep LISTEN }
 alias qrpaste="xclip -o | qrencode -t utf8"
 alias ssauth='eval "$(ssh-agent -s)" && ssh-add'

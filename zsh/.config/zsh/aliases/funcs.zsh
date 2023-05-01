@@ -119,3 +119,9 @@ function back_up_notes {
     git add . && git commit -m "" --allow-empty-message && git push
     cd $currentDir
 }
+
+function open_links {
+    for link in "$@"; do
+        xdg-open "$link"
+    done
+}
