@@ -3,4 +3,4 @@
 	url = ../nvim.git
 [submodule "vifm/.config/vifm/vifmimg"]
 	path = vifm/.config/vifm/vifmimg
-	url = git@github.com:thimc/vifmimg.git
+	url = https://github.com/thimc/vifmimg.git
