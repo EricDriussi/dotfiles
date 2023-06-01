@@ -1,7 +1,8 @@
 {
     "global": {
+        "ask_for_confirmation_before_quitting": true,
         "check_for_updates_on_startup": true,
-        "show_in_menu_bar": true,
+        "show_in_menu_bar": false,
         "show_profile_name_in_menu_bar": false,
         "unsafe_ui": false
     },
@@ -74,21 +75,21 @@
                     "simple_modifications": [
                         {
                             "from": {
-                                "key_code": "non_us_backslash"
-                            },
-                            "to": [
-                                {
-                                    "key_code": "grave_accent_and_tilde"
-                                }
-                            ]
-                        },
-                        {
-                            "from": {
                                 "key_code": "grave_accent_and_tilde"
                             },
                             "to": [
                                 {
                                     "key_code": "non_us_backslash"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "non_us_backslash"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "grave_accent_and_tilde"
                                 }
                             ]
                         }
@@ -117,7 +118,7 @@
                     },
                     "to": [
                         {
-                            "consumer_key_code": "display_brightness_decrement"
+                            "key_code": "f1"
                         }
                     ]
                 },
@@ -127,7 +128,7 @@
                     },
                     "to": [
                         {
-                            "consumer_key_code": "display_brightness_increment"
+                            "key_code": "f2"
                         }
                     ]
                 },
@@ -137,7 +138,7 @@
                     },
                     "to": [
                         {
-                            "apple_vendor_keyboard_key_code": "mission_control"
+                            "key_code": "f3"
                         }
                     ]
                 },
@@ -147,7 +148,7 @@
                     },
                     "to": [
                         {
-                            "apple_vendor_keyboard_key_code": "spotlight"
+                            "key_code": "f4"
                         }
                     ]
                 },
@@ -157,7 +158,7 @@
                     },
                     "to": [
                         {
-                            "consumer_key_code": "dictation"
+                            "key_code": "f5"
                         }
                     ]
                 },
@@ -177,7 +178,7 @@
                     },
                     "to": [
                         {
-                            "consumer_key_code": "rewind"
+                            "key_code": "f7"
                         }
                     ]
                 },
@@ -187,7 +188,7 @@
                     },
                     "to": [
                         {
-                            "consumer_key_code": "play_or_pause"
+                            "key_code": "f8"
                         }
                     ]
                 },
@@ -197,7 +198,7 @@
                     },
                     "to": [
                         {
-                            "consumer_key_code": "fast_forward"
+                            "key_code": "f9"
                         }
                     ]
                 },
