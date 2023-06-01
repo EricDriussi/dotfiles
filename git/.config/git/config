@@ -16,6 +16,7 @@
 
 ; Merge and Diff config
 [merge]
+    ff = no
     tool = nvimmerge
 [mergetool "nvimmerge"]
   cmd = nvim -d $LOCAL $MERGED $REMOTE -c 'wincmd l' -c 'set signcolumn=no'
