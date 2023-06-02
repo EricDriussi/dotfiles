@@ -6,7 +6,7 @@ alias cpd="cp -ir"
 alias grep="grep --color=always"
 alias l="exa --group --all --long --icons"
 alias c=cd_and_ls; cd_and_ls() { cd "$1" && l }
-alias mkd=mkdir_and_cd; mkdir_and_cd() { mkdir "$1" && cd "$1" }
+alias mkd=mkdir_and_cd; mkdir_and_cd() { mkdir -p "$1" && cd "$1" }
 alias mkdir="mkdir -p"
 alias mv="mv -i"
 alias rg="rg --hidden -g '!.git'"
