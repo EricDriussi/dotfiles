@@ -11,6 +11,7 @@ plug "zsh-users/zsh-autosuggestions"
 plug "zsh-users/zsh-syntax-highlighting"
 plug "soimort/translate-shell"
 plug "skywind3000/z.lua"
+plug "lukechilds/zsh-nvm"
 eval "$(lua ~/.local/share/zap/plugins/z.lua/z.lua --init zsh enhanced once)"
 
 export XDG_CONFIG_HOME=$HOME/.config
@@ -22,10 +23,3 @@ source "$ZSH/settings.zsh"
 source "$ZSH/keymap/init.zsh"
 source "$ZSH/aliases/init.zsh"
 source "$ZSH/prompt/init.zsh"
-
-# Load NVM stuff only if installed
-if [ -d "$NVM_DIR" ] && [ -f "$NVM_DIR/nvm.sh" ]
-then
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-fi

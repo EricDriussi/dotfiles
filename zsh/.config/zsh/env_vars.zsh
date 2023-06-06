@@ -5,6 +5,7 @@ export MANPAGER='nvim +Man!'
 
 # PATH
 export PATH=$PATH:/usr/bin
+export PATH=$PATH:/usr/share/
 export PATH=$PATH:/opt
 export PATH=$PATH:/opt/homebrew/bin
 export PATH=$PATH:/opt/homebrew/opt/gnu-sed/libexec/gnubin
@@ -21,7 +22,9 @@ export PATH=$PATH:/usr/local/nodejs/bin
 export PATH=$PATH:$HOME/.cargo/bin
 
 # NVM - NODE
-export NVM_DIR=$HOME/.nvm
+export NVM_DIR=$XDG_CONFIG_HOME/.nvm
+export NVM_AUTO_USE=true
+export NVM_COMPLETION=true
 export NVM_LAZY_LOAD=true
 export NODE_OPTIONS='--max_old_space_size=6000'
 
