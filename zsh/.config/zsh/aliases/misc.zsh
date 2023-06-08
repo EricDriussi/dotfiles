@@ -18,6 +18,7 @@ alias vf="vfm ."
 alias vfm=~/.config/vifm/vifmimg/vifmrun
 
 alias bknotes=back_up_notes
+alias clc=calculate
 alias diskUsage="sudo du -h | sort -hr | head -10"
 alias eje=eject_disk; eject_disk() { sudo eject "$1" && udisksctl power-off -b "$1" }
 alias fd=find_in_cwd; find_in_cwd() { find . -iname "*$1*" | sort }
