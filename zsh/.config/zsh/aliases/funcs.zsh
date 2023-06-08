@@ -56,11 +56,10 @@ function create_PR {
 
 function docker_list {
     echo -e "\n------------------------------------IMAGES------------------------------------" && \
-        docker image ls && \
+        docker image ls --format "table {{.Repository}}\t{{.Tag}}\t{{.ID}}\t{{.CreatedSince}}" && \
         echo -e "\n----------------------------------CONTAINERS-----------------------------------" && \
         docker container ls --format "table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.Status}}" && \
-        echo -e "\n------------------------------------VOLUMES------------------------------------" && \
-        docker volume ls
+        echo -e "\n"
 }
 
 function docker_logs {
@@ -80,7 +79,6 @@ function docker_shell {
         container=$(_containers_selector)
         if [[ -n $container ]]; then
             container_id=$(_container_id $container)
-            echo $container_id
             shell=$(_get_available_shell $container_id)
             docker exec -it $container_id $shell
         fi
