@@ -28,6 +28,8 @@ set ideajoin
 "Default handlers
 sethandler a:ide
 sethandler <C-d> n:vim
+sethandler <C-i> n:vim
+sethandler <C-o> n:vim
 sethandler <C-p> n:vim
 sethandler <C-r> n:vim
 sethandler <C-u> n:vim
@@ -80,3 +82,8 @@ vmap ` xi``<Esc>P
 "Center search selection
 nnoremap n nzzzv
 nnoremap N Nzzzv
+
+nnoremap L $
+nnoremap H ^
+vnoremap L $
+vnoremap H ^
