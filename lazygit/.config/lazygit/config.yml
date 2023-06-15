@@ -1,4 +1,3 @@
----
 promptToReturnFromSubprocess: false
 gui:
   mainPanelSplitMode: 'vertical'
@@ -10,15 +9,15 @@ gui:
     selectedRangeBgColor:
       - reverse
 git:
-  branchLogCmd: "git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=medium --oneline {{branchName}} --"
-  allBranchesLogCmd: 'git log --graph --abbrev-commit --decorate --format=tformat:"%C(yellow)%h%C(reset)%C(reset)%C(auto)%d%C(reset) %s %C(white) -  %C(bold green)(%ar)%C(reset) %C(dim blue)<%an>%Creset"'
+  branchLogCmd: "git log --graph --color=always --abbrev-commit --decorate --date=relative
+    --pretty=medium --oneline {{branchName}} --"
+  allBranchesLogCmd: 'git log --graph --abbrev-commit --decorate --format=tformat:"%C(yellow)%h%C(reset)%C(reset)%C(auto)%d%C(reset)
+    %s %C(white) -  %C(bold green)(%ar)%C(reset) %C(dim blue)<%an>%Creset"'
   paging:
     colorArg: always
     useConfig: true
 keybinding:
   universal:
-    quit: 'q'
-    return: '<c-q>'
     scrollLeft: '0'
     scrollRight: '$'
     prevBlock-alt: '<left>'

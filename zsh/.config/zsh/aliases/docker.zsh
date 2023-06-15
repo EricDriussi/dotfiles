@@ -8,3 +8,4 @@ alias dshel=docker_shell
 alias dstop="docker stop"
 alias dup="docker-compose up -d"
 alias dv="docker volume ls"
+alias ld="lazydocker"
