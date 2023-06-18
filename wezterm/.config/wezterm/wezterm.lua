@@ -5,7 +5,7 @@ local actions = wez.action
 return {
   front_end = "OpenGL",
   -- Font
-  font = wez.font_with_fallback({ "Comic Code Ligatures", "Noto Sans Symbols" }),
+  font = wez.font_with_fallback({ "Comic Code Ligatures", "Symbols Nerd Font" }),
   font_size = 17.0,
   line_height = 1.3,
   -- UI
