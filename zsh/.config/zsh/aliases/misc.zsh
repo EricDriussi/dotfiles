@@ -35,3 +35,17 @@ alias tran="trans -b"
 alias ctran=clip_trans; clip_trans(){
     xclip -o -sel clip | trans -b $@ | tee /dev/tty | xclip -i -sel clip
 }
+
+# Re-run last command with sudo
+alias pls='sudo $(fc -ln -1)'
+# Re-run last command but copy output to clipboard
+alias rer=re_run_clip; re_run_clip() {
+    case `uname` in
+        Darwin)
+            $(fc -ln -1) | pbcopy
+            ;;
+        Linux)
+            $(fc -ln -1) | xclip -i -sel clip
+            ;;
+    esac
+}
