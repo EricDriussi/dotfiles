@@ -48,5 +48,7 @@
     line-numbers-plus-style = green
 
 ; Project-specific configs
-[includeIf "gitdir:~/Documents/projects/leanmind/"]
-    path = ~/config/git/leanmind-config
+[includeIf "gitdir:~/Documents/leanmind/"]
+    path = lm.gitconfig
+[includeIf "gitdir:~/Documents/audiense/"]
+    path = aud.gitconfig
