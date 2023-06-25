@@ -70,15 +70,15 @@ This script depends on:
 # Check whether the user-defined launcher is valid
 launcher_list=(rofi zenity)
 function check_launcher() {
-  if [[ ! "${launcher_list[@]}" =~ (^|[[:space:]])"$1"($|[[:space:]]) ]]; then
+  if [[ ! "${launcher_list[*]}" =~ (^|[[:space:]])"$1"($|[[:space:]]) ]]; then
     echo "Supported launchers: ${launcher_list[*]}"
     exit 1
   else
     # Get array with unique elements and preferred launcher first
     # Note: uniq expects a sorted list, so we cannot use it
     i=1
-    launcher_list=($(for l in "$1" "${launcher_list[@]}"; do printf "%i %s\n" "$i" "$l"; let i+=1; done \
-      | sort -uk2 | sort -nk1 | cut -d' ' -f2- | tr '\n' ' '))
+    launcher_list=("$(for l in "$1" "${launcher_list[@]}"; do printf "%i %s\n" "$i" "$l"; (( i+=1 )); done \
+      | sort -uk2 | sort -nk1 | cut -d' ' -f2- | tr '\n' ' ')")
   fi
 }
 
@@ -114,13 +114,13 @@ typeset -A menu
 # Menu with keys/commands
 
 menu=(
-  [ Shutdown]="systemctl poweroff"
-  [ Reboot]="systemctl reboot"
-  [ Suspend]="systemctl suspend"
-  [ Hibernate]="systemctl hibernate"
-  [ Lock]="~/.config/i3/scripts/blur-lock.sh"
-  [ Logout]="i3-msg exit"
-  [ Cancel]=""
+  [  Shutdown]="systemctl poweroff"
+  [  Reboot]="systemctl reboot"
+  [  Suspend]="systemctl suspend"
+  [  Hibernate]="systemctl hibernate"
+  [  Lock]="$HOME/.config/i3/scripts/blur-lock.sh"
+  [  Logout]="i3-msg exit"
+  [  Cancel]=""
 )
 
 menu_nrows=${#menu[@]}
@@ -158,7 +158,7 @@ if [[ -z "${launcher_exe}" ]]; then
   exit 1
 fi
 
-launcher=(${launcher_exe} "${launcher_options[@]}")
+launcher=("${launcher_exe}" "${launcher_options[@]}")
 selection="$(printf '%s\n' "${!menu[@]}" | sort | "${launcher[@]}")"
 
 function ask_confirmation() {
@@ -176,7 +176,7 @@ function ask_confirmation() {
   fi
 }
 
-if [[ $? -eq 0 && ! -z ${selection} ]]; then
+if [[ $? -eq 0 && -n ${selection} ]]; then
   if [[ "${enable_confirmation}" = true && \
         ${menu_confirm} =~ (^|[[:space:]])"${selection}"($|[[:space:]]) ]]; then
     ask_confirmation
