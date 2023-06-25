@@ -31,20 +31,17 @@ return {
   end),
   -- Keymap
   keys = {
-    {
-      key = "PageUp",
-      mods = "CTRL",
-      action = actions.DisableDefaultAssignment,
-    },
-    {
-      key = "Enter",
-      mods = "ALT",
-      action = actions.DisableDefaultAssignment,
-    },
-    {
-      key = "PageDown",
-      mods = "CTRL",
-      action = actions.DisableDefaultAssignment,
+    { key = "PageUp",   mods = "CTRL",       action = actions.DisableDefaultAssignment },
+    { key = "Enter",    mods = "ALT",        action = actions.DisableDefaultAssignment },
+    { key = "PageDown", mods = "CTRL",       action = actions.DisableDefaultAssignment },
+    { key = "u",        mods = "CTRL|SHIFT", action = actions.ScrollByPage( -1) },
+    { key = "d",        mods = "CTRL|SHIFT", action = actions.ScrollByPage(1) },
+  },
+  key_tables = {
+    search_mode = {
+      { key = "n",      mods = "CTRL",       action = actions.CopyMode("NextMatch") },
+      { key = "n",      mods = "SHIFT|CTRL", action = actions.CopyMode("PriorMatch") },
+      { key = "Escape", mods = "NONE",       action = actions.CopyMode("Close") },
     },
   },
 }
