@@ -104,15 +104,18 @@ bindsym XF86AudioPrev exec playerctl previous
 # Workspace-Monitor #
 #####################
 
-workspace 1 output HDMI-0
-workspace 2 output HDMI-0
-workspace 3 output HDMI-0
-workspace 4 output HDMI-0
-workspace 5 output HDMI-0
-workspace 6 output eDP-1-1
-workspace 7 output eDP-1-1
-workspace 8 output eDP-1-1
-workspace 9 output eDP-1-1
+set $main HDMI-0
+set $secondary eDP-1-1
+
+workspace 1 output $main
+workspace 2 output $main
+workspace 3 output $main
+workspace 4 output $main
+workspace 5 output $main
+workspace 6 output $secondary
+workspace 7 output $secondary
+workspace 8 output $secondary
+workspace 9 output $secondary
 
 #####################
 # Workspace Control #
