@@ -13,6 +13,8 @@
     autostash = true
 [pull]
     rebase = true
+[push]
+    followTags = true
 
 ; Merge and Diff config
 [merge]
