@@ -20,6 +20,8 @@ export PATH=$PATH:$HOME/.deno/bin
 export PATH=$PATH:/usr/local/nodejs/bin
 # rust
 export PATH=$PATH:$HOME/.cargo/bin
+# go
+export PATH=$PATH:$HOME/go/bin
 
 # NVM - NODE
 export NVM_DIR=$XDG_CONFIG_HOME/.nvm
