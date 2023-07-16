@@ -10,47 +10,13 @@ set $down j
 set $left h
 set $right l
 
-#############
-# Autostart #
-#############
+#######################
+# Autostart on reload #
+#######################
 
-# run once
-exec --no-startup-id brave
-exec --no-startup-id emote
-exec --no-startup-id nextcloud
-exec --no-startup-id obsidian
-exec --no-startup-id slack
-exec --no-startup-id thunderbird
-
-# get auth work with polkit-gnome
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-
-exec --no-startup-id picom -CGb
-exec --no-startup-id unclutter
-
-# networkmanager-applet
-exec --no-startup-id nm-applet
-
-# set wallpaper
-exec --no-startup-id nitrogen --restore
-
-# set powersavings for display:
-#exec --no-startup-id xset s 480 dpms 600 600 600
-exec --no-startup-id xset r rate 350 60
-
-# JESUS CHRIST THE SYSTEM BELL
-exec --no-startup-id xset b off
-
-# Desktop notifications
-exec --no-startup-id dbus-launch dunst --config ~/.config/dunst/dunstrc
-
-# run with reload
-exec_always --no-startup-id exec touchpad-toggle
+exec_always --no-startup-id ~/.config/screenlayout/monitor.sh
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id autotiling
-
-# setup displays
-exec_always --no-startup-id ~/.config/screenlayout/monitor.sh
 
 ########
 # Rofi #
@@ -71,7 +37,6 @@ bindsym $Mod+Shift+x exec ~/.config/rofi/powermenu.sh
 bindsym $Mod+Shift+r restart
 
 bindsym $Mod+f fullscreen toggle
-bindsym Control+m exec touchpad-toggle
 
 # kill focused window
 bindsym $Mod+Shift+q kill

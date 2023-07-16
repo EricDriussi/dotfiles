@@ -1,0 +1,21 @@
+~/.config/screenlayout/monitor.sh
+picom -CGb &
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+dbus-launch dunst --config ~/.config/dunst/dunstrc &
+
+# Screen turn off timer
+xset r rate 350 60 &
+# Bell
+xset b off &
+
+unclutter &
+nm-applet &
+nitrogen --restore &
+
+# GUI apps
+obsidian &
+brave &
+emote &
+nextcloud &
+slack &
+thunderbird &
