@@ -1,5 +1,5 @@
-source "$ZSH/prompt/colors.zsh"
-source "$ZSH/prompt/vcs.zsh"
+source "$ZDOTDIR/prompt/colors.zsh"
+source "$ZDOTDIR/prompt/vcs.zsh"
 
 function _exit_code_color {
     local exit_code="$?"

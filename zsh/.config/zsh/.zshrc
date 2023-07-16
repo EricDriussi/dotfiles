@@ -14,12 +14,7 @@ plug "skywind3000/z.lua"
 plug "lukechilds/zsh-nvm"
 eval "$(lua ~/.local/share/zap/plugins/z.lua/z.lua --init zsh enhanced once)"
 
-export XDG_CONFIG_HOME=$HOME/.config
-export ZSH=$XDG_CONFIG_HOME/zsh
-
-# Don't change order
-source "$ZSH/env_vars.zsh"
-source "$ZSH/settings.zsh"
-source "$ZSH/keymap/init.zsh"
-source "$ZSH/aliases/init.zsh"
-source "$ZSH/prompt/init.zsh"
+source "$ZDOTDIR/settings.zsh"
+source "$ZDOTDIR/keymap/init.zsh"
+source "$ZDOTDIR/aliases/init.zsh"
+source "$ZDOTDIR/prompt/init.zsh"

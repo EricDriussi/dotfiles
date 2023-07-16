@@ -1,7 +1,7 @@
 typeset  -g  -A  key
 
-source "$ZSH/keymap/keys.zsh"
-source "$ZSH/keymap/bindings.zsh"
+source "$ZDOTDIR/keymap/keys.zsh"
+source "$ZDOTDIR/keymap/bindings.zsh"
 
 # Make sure the terminal is in application mode when zle is active. Only then are the values from $terminfo valid.
 if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then

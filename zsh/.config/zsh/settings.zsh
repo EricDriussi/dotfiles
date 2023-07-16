@@ -31,7 +31,7 @@ function _fuzzy_history_search {
 
 # Zsh history settings
 function _history_settings {
-    export HISTFILE=$ZSH/.zsh_history
+    export HISTFILE=$ZDOTDIR/.zsh_history
     export HISTSIZE=10000
     export SAVEHIST=10000
     setopt HIST_IGNORE_ALL_DUPS

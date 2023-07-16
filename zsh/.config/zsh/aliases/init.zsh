@@ -1,11 +1,11 @@
-source "$ZSH/aliases/funcs.zsh"
+source "$ZDOTDIR/aliases/funcs.zsh"
 
-source "$ZSH/aliases/arch.zsh"
-source "$ZSH/aliases/dev.zsh"
-source "$ZSH/aliases/docker.zsh"
-source "$ZSH/aliases/git.zsh"
-source "$ZSH/aliases/misc.zsh"
-source "$ZSH/aliases/nvim.zsh"
+source "$ZDOTDIR/aliases/arch.zsh"
+source "$ZDOTDIR/aliases/dev.zsh"
+source "$ZDOTDIR/aliases/docker.zsh"
+source "$ZDOTDIR/aliases/git.zsh"
+source "$ZDOTDIR/aliases/misc.zsh"
+source "$ZDOTDIR/aliases/nvim.zsh"
 
 # Globals!
 alias -g C="| xclip -sel clipboard"
