@@ -36,6 +36,9 @@ sethandler <C-u> n:vim
 sethandler <C-w> n:vim
 sethandler <C-y> n:vim
 
+"Actions
+map rn <Action>(RenameElement)
+
 "Kinda scrolling
 nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
