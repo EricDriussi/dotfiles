@@ -1,8 +1,3 @@
-"CamelCase motion
-map w [w
-map e ]w
-map b [b
-
 "Center half-page jumps and add them to jumplist
 nnoremap <C-d> <C-d>zzm'
 nnoremap <C-u> <C-u>zzm'
