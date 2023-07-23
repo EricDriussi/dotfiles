@@ -1,0 +1,7 @@
+map rn <Action>(RenameElement)
+map <C-n> <Action>(NewElementInMenuGroup)
+map <C-g> <Action>(GithubCopyPathProvider)
+map <C-f> <Action>(GotoFile)
+map <C-b> <Action>(GotoDeclaration)
+map <C-A-l> <Action>(NextSplitter)
+map <C-A-h> <Action>(PrevSplitter)
