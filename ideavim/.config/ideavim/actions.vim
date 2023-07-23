@@ -1,9 +1,11 @@
 "IDE Actions
+map <leader>? <Action>(ShowSettings)
 map <leader>l <Action>(ShowReformatFileDialog)
 map <leader>e <Action>(ActivateProjectToolWindow)
 map <leader>S <Action>(ReplaceInPath)
 map <C-n> <Action>(NewElementInMenuGroup)
 map <C-g> <Action>(GithubCopyPathProvider)
+map <leader>yp <Action>(CopyPathFromRepositoryRootProvider)
 
 "Code
 map <CR> <Action>(EditorSelectWord)
@@ -14,6 +16,10 @@ map <A-CR> <Action>(ShowIntentionActions)
 map <leader>/ <Action>(CommentByLineComment)
 map ge <Action>(ShowErrorDescription)
 map <C-k> <Action>(QuickJavaDoc)
+map <leader>cg <Action>(Generate)
+map <leader>ci <Action>(ImplementMethods)
+map <leader>co <Action>(OverrideMethods)
+map <leader>cs <Action>(SurroundWith)
 
 "Gotos
 map gn <Action>(GotoNextError)
@@ -21,6 +27,7 @@ map gp <Action>(GotoPreviousError)
 map gi <Action>(GotoImplementation)
 map gr <Action>(FindUsages)
 map <C-b> <Action>(GotoDeclaration)
+map gt <Action>(GotoTest)
 
 "Git
 map <leader>gA <Action>(Annotate)
@@ -49,3 +56,9 @@ map zO <Action>(ExpandAllRegions)
 map zo <Action>(ExpandRegion)
 map zC <Action>(CollapseAllRegions)
 map zc <Action>(CollapseRegion)
+
+"Run/Debug
+map <leader>r <Action>(ChooseRunConfiguration)
+map <leader>nl <Action>(StepOver)
+map <leader>ni <Action>(StepInto)
+map <leader>nb <Action>(StepOut)
