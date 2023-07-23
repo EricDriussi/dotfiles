@@ -1,47 +1,48 @@
-"Settings
-set fileencoding=utf-8
-set noswapfile
-set nobackup
-
+"vim
 set smartcase
 set ignorecase
 set incsearch
-set cursorline
 set scrolloff=8
 set sidescrolloff=5
 set iskeyword-=_
 set iskeyword-=-
-
 set number
 set relativenumber
-set mouse=a
 set hls
-
-"FKN Bell...
-set noerrorbells
-set belloff=all
 set visualbell
 
+"ideavim
 set ideajoin
+"plugins
+set quickscope
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+set highlightedyank
+let g:highlightedyank_highlight_duration = "60"
+let g:highlightedyank_highlight_color = "rgba(187, 187, 187, 155)"
+
 " ---------------------------MAPPINGS---------------------------"
+let mapleader = " "
 
 "Default handlers
-sethandler a:ide
-sethandler <C-d> n:vim
-sethandler <C-i> n:vim
-sethandler <C-o> n:vim
-sethandler <C-p> n:vim
-sethandler <C-r> n:vim
-sethandler <C-u> n:vim
-sethandler <C-w> n:vim
-sethandler <C-y> n:vim
+sethandler a:vim
+sethandler <C-v> a:ide
+sethandler <C-c> a:ide
+sethandler <C-a> a:ide
+sethandler <C-z> a:ide
+sethandler <C-S-z> a:ide
 
 "Actions
 map rn <Action>(RenameElement)
+map <C-n> <Action>(NewElementInMenuGroup)
+map <C-g> <Action>(GithubCopyPathProvider)
+map <C-f> <Action>(GotoFile)
+map <C-b> <Action>(GotoDeclaration)
+map <C-A-l> <Action>(NextSplitter)
+map <C-A-h> <Action>(PrevSplitter)
 
-"Kinda scrolling
-nnoremap <C-d> <C-d>zz
-nnoremap <C-u> <C-u>zz
+"Center half-page jumps and add them to jumplist
+nnoremap <C-d> <C-d>zzm'
+nnoremap <C-u> <C-u>zzm'
 
 "Sensible copy-pasting to and from system clipboard
 vnoremap <C-y> "+y <bar> :echom 'Copied to system clipboard!'<CR>
@@ -49,7 +50,10 @@ nnoremap <C-y> "+yiw <bar> :echom 'Copied to system clipboard!'<CR>
 nnoremap <C-p> "+p <bar> :echom 'Pasted from system clipboard!'<CR>
 vnoremap <C-p> "+p <bar> :echom 'Pasted from system clipboard!'<CR>
 inoremap <C-p> <Esc>"+p <bar> :echom 'Pasted from system clipboard!'<CR>A
+
+"Better yank
 nnoremap Y y$
+vnoremap y ygv<ESC>
 
 "Paste over selected text without screwing the reg
 vnoremap p "_dP
@@ -62,18 +66,24 @@ nnoremap <Esc> :noh<return><Esc>
 nnoremap <C-w> :q<CR>
 inoremap <C-w> <Esc>:q<CR>
 
-"Nav
-nnoremap <C-M-l> :wincmd l<cr>
-nnoremap <C-M-h> :wincmd h<cr>
-nnoremap <C-M-j> :wincmd j<cr>
-nnoremap <C-M-k> :wincmd k<cr>
-
-"Better tabbing
-nnoremap <Tab> >>_
-nnoremap <S-Tab> <<_
+"Move lines
+"Left & Right
+nnoremap <Tab> >>
+nnoremap <S-Tab> <<
+nnoremap <A-h> <<
+nnoremap <A-l> >>
+vnoremap <A-h> <gv
+vnoremap <A-l> >gv
+vnoremap < <gv
+vnoremap > >gv
+"Up & Down
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
 
 "Save all
-nnoremap <M-s> :wa <CR>
+nnoremap <C-s> :wa<CR>
 
 "Home made Surround.vim
 vmap ( xi()<Esc>P
