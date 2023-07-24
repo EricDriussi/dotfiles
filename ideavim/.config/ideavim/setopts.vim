@@ -27,3 +27,5 @@ sethandler <C-c> a:ide
 sethandler <C-a> a:ide
 sethandler <C-z> a:ide
 sethandler <C-S-z> a:ide
+sethandler <C-n> a:ide
+sethandler <C-S-n> a:ide

@@ -3,7 +3,6 @@ map <leader>? <Action>(ShowSettings)
 map <leader>l <Action>(ShowReformatFileDialog)
 map <leader>e <Action>(ActivateProjectToolWindow)
 map <leader>S <Action>(ReplaceInPath)
-map <C-n> <Action>(NewElementInMenuGroup)
 map <C-g> <Action>(GithubCopyPathProvider)
 map <leader>yp <Action>(CopyPathFromRepositoryRootProvider)
 
@@ -20,6 +19,7 @@ map <leader>cg <Action>(Generate)
 map <leader>ci <Action>(ImplementMethods)
 map <leader>co <Action>(OverrideMethods)
 map <leader>cs <Action>(SurroundWith)
+map <leader>cf <Action>(NewElementInMenuGroup)
 
 "Gotos
 map gn <Action>(GotoNextError)
