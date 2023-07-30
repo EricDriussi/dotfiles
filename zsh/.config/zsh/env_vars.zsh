@@ -3,6 +3,11 @@ export EDITOR=nvim
 export VISUAL=nvim
 export MANPAGER='nvim +Man!'
 
+# XDG
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_DATA_HOME=$XDG_CONFIG_HOME/local/share
+export XDG_CACHE_HOME=$XDG_CONFIG_HOME/cache
+
 # PATH
 export PATH=$PATH:/usr/bin
 export PATH=$PATH:/usr/share/
@@ -10,11 +15,11 @@ export PATH=$PATH:/opt
 export PATH=$PATH:/opt/homebrew/bin
 export PATH=$PATH:/opt/homebrew/opt/gnu-sed/libexec/gnubin
 # nvim - mason
-export PATH=$PATH:/$HOME/.config/local/share/nvim/mason/bin
+export PATH=$PATH:/$XDG_CONFIG_HOME/local/share/nvim/mason/bin
 # intelliJ
 export PATH=$PATH:$HOME/intellijUlt/bin
 # vifm
-export PATH=$PATH:$HOME/.config/vifm/vifmimg
+export PATH=$PATH:$XDG_CONFIG_HOME/vifm/vifmimg
 # nodejs
 export PATH=$PATH:$HOME/.deno/bin
 export PATH=$PATH:/usr/local/nodejs/bin
@@ -29,10 +34,6 @@ export NVM_AUTO_USE=true
 export NVM_COMPLETION=true
 export NVM_LAZY_LOAD=true
 export NODE_OPTIONS='--max_old_space_size=6000'
-
-# XDG
-export XDG_DATA_HOME=$XDG_CONFIG_HOME/local/share
-export XDG_CACHE_HOME=$XDG_CONFIG_HOME/cache
 
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=240'
 
