@@ -36,6 +36,7 @@ map <leader>gB <Action>(ChangesView.Revert)
 map <leader>gn <Action>(VcsShowNextChangeMarker)
 map <leader>gp <Action>(VcsShowPrevChangeMarker)
 map <leader>gH <Action>(Vcs.ShowTabbedFileHistory)
+map <A-g> <Action>(ActivateVersionControlToolWindow)
 
 "Navigation
 map <leader>sv <Action>(MoveTabRight)
