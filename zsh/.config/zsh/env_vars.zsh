@@ -14,6 +14,7 @@ export PATH=$PATH:/usr/share/
 export PATH=$PATH:/opt
 export PATH=$PATH:/opt/homebrew/bin
 export PATH=$PATH:/opt/homebrew/opt/gnu-sed/libexec/gnubin
+export PATH=$PATH:/$HOME/.local/bin
 # nvim - mason
 export PATH=$PATH:/$XDG_CONFIG_HOME/local/share/nvim/mason/bin
 # intelliJ
