@@ -8,6 +8,7 @@ gui:
       - '#3d3d3d'
     selectedRangeBgColor:
       - reverse
+  commandLogSize: 1
 git:
   branchLogCmd: "git log --graph --color=always --abbrev-commit --decorate --date=relative
     --pretty=medium --oneline {{branchName}} --"
