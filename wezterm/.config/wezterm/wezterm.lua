@@ -5,7 +5,7 @@ local actions = wez.action
 return {
   front_end = "OpenGL",
   -- Font
-  font = wez.font_with_fallback({ "Comic Code Ligatures", "Symbols Nerd Font Mono" }),
+  font = wez.font_with_fallback({ "Comic Code Ligatures", "Symbols Nerd Font Mono", "Noto Sans Mono", "Fira Code" }),
   font_size = 17.0,
   line_height = 1.3,
   -- UI
@@ -34,7 +34,7 @@ return {
     { key = "PageUp",   mods = "CTRL",       action = actions.DisableDefaultAssignment },
     { key = "Enter",    mods = "ALT",        action = actions.DisableDefaultAssignment },
     { key = "PageDown", mods = "CTRL",       action = actions.DisableDefaultAssignment },
-    { key = "u",        mods = "CTRL|SHIFT", action = actions.ScrollByPage( -1) },
+    { key = "u",        mods = "CTRL|SHIFT", action = actions.ScrollByPage(-1) },
     { key = "d",        mods = "CTRL|SHIFT", action = actions.ScrollByPage(1) },
   },
   key_tables = {
