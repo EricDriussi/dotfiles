@@ -1,12 +1,10 @@
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_DATA_HOME=$XDG_CONFIG_HOME/local/share
+export XDG_CACHE_HOME=$XDG_CONFIG_HOME/cache
 export TERMINAL=wezterm
 export EDITOR=nvim
 export VISUAL=nvim
 export MANPAGER='nvim +Man!'
-
-# XDG
-export XDG_CONFIG_HOME=$HOME/.config
-export XDG_DATA_HOME=$XDG_CONFIG_HOME/local/share
-export XDG_CACHE_HOME=$XDG_CONFIG_HOME/cache
 
 # PATH
 export PATH=$PATH:/usr/bin
@@ -14,13 +12,13 @@ export PATH=$PATH:/usr/share/
 export PATH=$PATH:/opt
 export PATH=$PATH:/opt/homebrew/bin
 export PATH=$PATH:/opt/homebrew/opt/gnu-sed/libexec/gnubin
-export PATH=$PATH:/$HOME/.local/bin
 # nvim - mason
-export PATH=$PATH:/$XDG_CONFIG_HOME/local/share/nvim/mason/bin
+export PATH=$PATH:$XDG_DATA_HOME/nvim/mason/bin
 # intelliJ
 export PATH=$PATH:$HOME/intellijUlt/bin
+export PATH=$PATH:$XDG_DATA_HOME/JetBrains/Toolbox/scripts
 # vifm
-export PATH=$PATH:$XDG_CONFIG_HOME/vifm/vifmimg
+export PATH=$PATH:$HOME/.config/vifm/vifmimg
 # nodejs
 export PATH=$PATH:$HOME/.deno/bin
 export PATH=$PATH:/usr/local/nodejs/bin
@@ -41,3 +39,4 @@ export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=240'
 # FZF
 export FZF_DEFAULT_COMMAND='rg --files -g "!node_modules" -g "!.git" --hidden .'
 export FZF_DEFAULT_OPTS='--height 70% --layout=reverse --border --preview="head -$LINES {}" --info=inline'
+

@@ -1,3 +1,5 @@
+source "$ZDOTDIR/env_vars.zsh"
+
 # ZAP install
 ZAP="$HOME/.local/share/zap"
 if [[ -f "$ZAP/zap.zsh" ]]; then
@@ -12,7 +14,6 @@ plug "zsh-users/zsh-syntax-highlighting"
 plug "soimort/translate-shell"
 plug "skywind3000/z.lua"
 plug "lukechilds/zsh-nvm"
-eval "$(lua ~/.local/share/zap/plugins/z.lua/z.lua --init zsh enhanced once)"
 
 source "$ZDOTDIR/settings.zsh"
 source "$ZDOTDIR/keymap/init.zsh"
