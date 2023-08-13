@@ -1,9 +1,7 @@
 "IDE Actions
 map <leader>? <Action>(ShowSettings)
 map <leader>l <Action>(ShowReformatFileDialog)
-map <leader>e <Action>(ActivateProjectToolWindow)
 map <leader>S <Action>(ReplaceInPath)
-map <C-g> <Action>(GithubCopyPathProvider)
 map <leader>yp <Action>(CopyPathFromRepositoryRootProvider)
 
 "Code
@@ -36,7 +34,8 @@ map <leader>gB <Action>(ChangesView.Revert)
 map <leader>gn <Action>(VcsShowNextChangeMarker)
 map <leader>gp <Action>(VcsShowPrevChangeMarker)
 map <leader>gH <Action>(Vcs.ShowTabbedFileHistory)
-map <A-g> <Action>(ActivateVersionControlToolWindow)
+map <C-g> <Action>(GitHub.Copy.Link)
+map <C-S-g> <Action>(GitHub.Copy.Link)
 
 "Navigation
 map <leader>sv <Action>(MoveTabRight)
@@ -63,3 +62,10 @@ map <leader>r <Action>(ChooseRunConfiguration)
 map <leader>nl <Action>(StepOver)
 map <leader>ni <Action>(StepInto)
 map <leader>nb <Action>(StepOut)
+map <leader>s <Action>(Stop)
+
+"Multicursor
+map <C-Up> <Action>(EditorCloneCaretAbove)
+map <C-Down> <Action>(EditorCloneCaretBelow)
+map <C-n> <Action>(SelectNextOccurrence)
+map <C-S-n> <Action>(UnselectPreviousOccurrence)
