@@ -13,6 +13,9 @@ set undolevels=100
 set ignorecase
 set smartcase
 
+" Show hidden files
+normal za
+
 " Natural sort of (version) numbers within text.
 set sortnumbers
 
