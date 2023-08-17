@@ -13,6 +13,7 @@ set visualbell
 
 "ideavim
 set ideajoin
+set idearefactormode=keep
 "plugins
 set quickscope
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
