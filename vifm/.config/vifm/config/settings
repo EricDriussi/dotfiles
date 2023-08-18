@@ -14,7 +14,7 @@ set ignorecase
 set smartcase
 
 " Show hidden files
-normal za
+set dotfiles
 
 " Natural sort of (version) numbers within text.
 set sortnumbers
