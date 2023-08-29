@@ -92,7 +92,7 @@ function _docker_running {
 }
 
 function _containers_selector {
-    docker ps | awk '{if (NR!=1) print $2 " <-> " $1}' | fzf --height 40%
+    docker ps | awk '{if (NR!=1) print $2 " <-> " $NF}' | fzf --height 40% --no-preview
 }
 
 function _container_id {
