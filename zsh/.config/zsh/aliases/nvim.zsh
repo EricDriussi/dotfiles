@@ -4,5 +4,5 @@ alias v="nvim"
 alias vo=fzf_nvim; fzf_nvim() { nvim "$(fzf)" }
 alias voa="nvim ~/.config/zsh/aliases/"
 alias voi="nvim ~/.config/i3/config"
-alias vov="cd ~/.config/nvim && nvim init.lua"
+alias vov="cd ~/dotfiles/nvim/.config/nvim/ && nvim init.lua"
 alias voz="nvim ~/.config/zsh/env_vars.zsh"
