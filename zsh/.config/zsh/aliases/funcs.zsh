@@ -1,7 +1,7 @@
 function repeat_command {
     cmd=("${@:2}")
     for i in {1.."$1"}; do
-        $cmd
+        eval $cmd
         if [[ $? != 0 ]]; then
             echo "\nCommand failed on run $i"; return 1
         fi
