@@ -7,10 +7,12 @@ killall -q polybar
 while pgrep -u "$UID" -x polybar >/dev/null; do sleep 1; done
 
 # Launch based on available outputs
-outputs=$(xrandr --query | grep " connected")
-if [[ $outputs == *"HDMI"* ]]; then
-	polybar Main &
-	polybar Secondary &
+edp=$(xrandr --listactivemonitors | cut -d" " -f6 | \grep -i "edp")
+hdmi=$(xrandr --listactivemonitors | cut -d" " -f6 | \grep -i "hdmi")
+
+if [[ $hdmi ]]; then
+	MONITOR="$edp" polybar Main &
+	MONITOR="$hdmi" polybar Secondary &
 else
-	polybar Single &
+	MONITOR="$edp" polybar Single &
 fi

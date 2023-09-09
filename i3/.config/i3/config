@@ -69,8 +69,8 @@ bindsym XF86AudioPrev exec playerctl previous
 # Workspace-Monitor #
 #####################
 
-set $main HDMI-0
-set $secondary eDP-1-1
+set $main HDMI-1
+set $secondary eDP-1
 
 workspace 1 output $main
 workspace 2 output $main
