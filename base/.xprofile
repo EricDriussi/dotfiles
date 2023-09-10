@@ -1,13 +1,11 @@
 picom -CGb &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 dbus-launch dunst --config ~/.config/dunst/dunstrc &
+unclutter &
+nm-applet &
 
 # Bell
 xset b off &
-
-unclutter &
-nm-applet &
-nitrogen --restore &
 
 # GUI apps
 obsidian &
