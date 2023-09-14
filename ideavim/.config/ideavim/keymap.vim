@@ -2,13 +2,6 @@
 nnoremap <C-d> <C-d>zzm'
 nnoremap <C-u> <C-u>zzm'
 
-"Sensible copy-pasting to and from system clipboard
-vnoremap <C-y> "+y <bar> :echom 'Copied to system clipboard!'<CR>
-nnoremap <C-y> "+yiw <bar> :echom 'Copied to system clipboard!'<CR>
-nnoremap <C-p> "+p <bar> :echom 'Pasted from system clipboard!'<CR>
-vnoremap <C-p> "+p <bar> :echom 'Pasted from system clipboard!'<CR>
-inoremap <C-p> <Esc>"+p <bar> :echom 'Pasted from system clipboard!'<CR>A
-
 "Better yank
 nnoremap Y y$
 vnoremap y ygv<ESC>

@@ -4,6 +4,13 @@ map <leader>l <Action>(ShowReformatFileDialog)
 map <leader>S <Action>(ReplaceInPath)
 map <leader>yp <Action>(CopyPathFromRepositoryRootProvider)
 
+"Sensible copy-pasting to and from system clipboard
+vmap <C-y> <Action>(EditorCopy)
+nmap <C-y> <Action>(EditorCopy)
+nmap <C-p> <Action>(EditorPaste)
+vmap <C-p> <Action>(EditorPaste)
+imap <C-p> <Action>(EditorPaste)
+
 "Code
 map <CR> <Action>(EditorSelectWord)
 map <BS> <Action>(EditorUnSelectWord)
