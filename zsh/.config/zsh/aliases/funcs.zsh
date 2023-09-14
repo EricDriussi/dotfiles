@@ -42,10 +42,10 @@ function rm_all_branches {
     done
 }
 function git_log {
-    git log -15 --graph --abbrev-commit --decorate --format=tformat:"%C(yellow)%h%C(reset)%C(reset)%C(auto)%d%C(reset) %s %C(white) -  %C(bold green)(%ar)%C(reset) %C(dim blue)<%an>%Creset"
+    git log -15 --graph --abbrev-commit --decorate --format=tformat:"%C(yellow)%h%C(reset)%C(reset)%C(auto)%d%C(reset) %s %C(white)%C(bold green)(%ar)%C(reset) %C(dim blue)<%an>%Creset"
 }
 function git_log_files {
-    git log -10 --name-only --graph --abbrev-commit --decorate --format=tformat:"%C(yellow)%h%C(reset)%C(reset)%C(auto)%d%C(reset) %s %C(white) -  %C(bold green)(%ar)%C(reset) %C(dim blue)<%an>%C(reset)"
+    git log -10 --name-only --graph --abbrev-commit --decorate --format=tformat:"%C(yellow)%h%C(reset)%C(reset)%C(auto)%d%C(reset) %s %C(white)%C(bold green)(%ar)%C(reset) %C(dim blue)<%an>%C(reset)"
 }
 
 function create_PR {
