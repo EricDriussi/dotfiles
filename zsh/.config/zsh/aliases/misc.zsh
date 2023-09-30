@@ -1,4 +1,5 @@
 alias bt="btop"
+alias cat="bat"
 alias cb="cd .."
 alias cc="z"
 alias cl="clear"
