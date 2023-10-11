@@ -8,6 +8,7 @@ return {
   font = wez.font_with_fallback({ "Comic Code Ligatures", "Symbols Nerd Font Mono", "Noto Sans Mono", "Fira Code" }),
   font_size = 17.0,
   line_height = 1.3,
+	warn_about_missing_glyphs = false,
   -- UI
   xcursor_theme = "Adwaita",
   adjust_window_size_when_changing_font_size = false,
