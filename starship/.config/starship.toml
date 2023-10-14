@@ -1,0 +1,147 @@
+# Main conf
+"$schema" = 'https://starship.rs/config-schema.json'
+add_newline = false
+right_format = '$cmd_duration'
+format = """
+$username$hostname\
+$directory\
+$git_branch$git_commit$git_state$git_metrics$git_status\
+${custom.git}\
+$all\
+$character
+"""
+
+# Custom module configs
+[package]
+disabled = true
+[cmd_duration]
+format = '[$duration]($style)'
+
+[character]
+success_symbol = '[⦔](bold green)'
+error_symbol = '[⦔](bold red)'
+
+[hostname]
+ssh_only = false
+format = '[$ssh_symbol$hostname](blue)'
+[username]
+show_always = true
+format = '[$user](red)@'
+
+[directory]
+truncation_length = 0
+truncate_to_repo = false
+style = 'green'
+repo_root_style = 'bold green'
+format = ' 📂 [$path]($style)[$read_only]($read_only_style)'
+repo_root_format = """
+ 📂 [$before_root_path]($before_repo_root_style)\
+[$repo_root]($repo_root_style)\
+[$path]($style)[$read_only]($read_only_style)\
+"""
+
+[git_branch]
+format = '( [$symbol](white)[$branch(:$remote_branch)]($style))'
+style = 'cyan'
+
+[git_status]
+format = '( \[[$ahead_behind](bold cyan)\])'
+
+[custom.git]
+command = '''bash -c "
+# Untracked or Deleted files - Red
+if git status --porcelain | grep -qe '^?? ' -e '^[MARCDU ]D ' -e '^D[ UM]'; then
+    echo -n $'\e[31m●'
+fi
+
+# Modified (unstaged) and Renamed files - Yellow
+if git status --porcelain | grep -qe '^[ MARC]M ' -e '^R[ MD] '; then
+    echo -n $'\e[33m●'
+fi
+
+# Staged files - Green
+if git status --porcelain | grep -qe '^A[ MDAU] ' -e '^M[ MD] ' -e '^UA'; then
+    echo -n $'\e[32m●'
+fi"'''
+when = 'git rev-parse --is-inside-work-tree >/dev/null 2>&1'
+format = '( $output)'
+
+# Common module configs: only show if present and reduce verbosity
+[buf]
+format = ' ([$symbol$version ]($style))'
+[bun]
+format = ' ([$symbol($version )]($style))'
+[c]
+format = ' ([$symbol($version(-$name) )]($style))'
+[cmake]
+format = ' ([$symbol($version )]($style))'
+[cobol]
+format = ' ([$symbol($version )]($style))'
+[crystal]
+format = ' ([$symbol($version )]($style))'
+[daml]
+format = ' ([$symbol($version )]($style))'
+[dart]
+format = ' ([$symbol($version )]($style))'
+[deno]
+format = ' ([$symbol($version )]($style))'
+[dotnet]
+format = ' ([$symbol($version )(🎯 $tfm )]($style))'
+[elixir]
+format = ' ([$symbol($version \(OTP $otp_version\) )]($style))'
+[elm]
+format = ' ([$symbol($version )]($style))'
+[erlang]
+format = ' ([$symbol($version )]($style))'
+[fennel]
+format = ' ([$symbol($version )]($style))'
+[golang]
+format = ' ([$symbol($version )]($style))'
+[haskell]
+format = ' ([$symbol($version )]($style))'
+[helm]
+format = ' ([$symbol($version )]($style))'
+[java]
+format = ' ([$symbol($version )]($style))'
+[julia]
+format = ' ([$symbol($version )]($style))'
+[kotlin]
+format = ' ([$symbol($version )]($style))'
+[lua]
+format = ' ([$symbol($version )]($style))'
+[nim]
+format = ' ([$symbol($version )]($style))'
+[nodejs]
+format = ' ([$symbol($version )]($style))'
+[ocaml]
+format = ' ([$symbol($version )(\($switch_indicator$switch_name\) )]($style))'
+[opa]
+format = ' ([$symbo($version ]($style))"'
+[perl]
+format = ' ([$symbol($version )]($style))'
+[php]
+format = ' ([$symbol($version )]($style))'
+[purescript]
+format = ' ([$symbol($version )]($style))'
+[python]
+format = ' ([${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style))'
+[raku]
+format = ' ([$symbol($version-$vm_version )]($style))'
+[red]
+format = ' ([$symbol($version )]($style))'
+[rlang]
+format = ' ([$symbol($version )]($style))'
+[ruby]
+format = ' ([$symbol($version )]($style))'
+[rust]
+format = ' ([$symbol($version )]($style))'
+[scala]
+format = ' ([$symbol($version )]($style))'
+[swift]
+format = ' ([$symbol($version )]($style))'
+[vagrant]
+format = ' ([$symbol($version )]($style))'
+[vlang]
+format = ' ([$symbol($version )]($style))'
+[zig]
+format = ' ([$symbol($version )]($style))'
