@@ -48,21 +48,23 @@ style = 'cyan'
 format = '( \[[$ahead_behind](bold cyan)\])'
 
 [custom.git]
-command = '''bash -c "
-# Untracked or Deleted files - Red
-if git status --porcelain | grep -qe '^?? ' -e '^[MARCDU ]D ' -e '^D[ UM]'; then
+command = '''
+git_status=$(git status --porcelain)
+# Untracked or Deleted (unstaged) files - Red
+if echo ${git_status} | grep -qe '^?? ' -e '^[MARCDU ]D ' -e '^D[ UM]'; then
     echo -n $'\e[31m●'
 fi
 
 # Modified (unstaged) and Renamed files - Yellow
-if git status --porcelain | grep -qe '^[ MARC]M ' -e '^R[ MD] '; then
+if echo ${git_status} | grep -qe '^[ MARC]M ' -e '^R[ MD] '; then
     echo -n $'\e[33m●'
 fi
 
 # Staged files - Green
-if git status --porcelain | grep -qe '^A[ MDAU] ' -e '^M[ MD] ' -e '^UA'; then
+if echo ${git_status} | grep -qe '^A[ MDAU] ' -e '^M[ MD] ' -e '^UA' -e '^D '; then
     echo -n $'\e[32m●'
-fi"'''
+fi
+'''
 when = 'git rev-parse --is-inside-work-tree >/dev/null 2>&1'
 format = '( $output)'
 
