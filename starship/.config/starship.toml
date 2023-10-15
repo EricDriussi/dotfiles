@@ -51,7 +51,7 @@ format = '( \[[$ahead_behind](bold cyan)\])'
 command = '''
 git_status=$(git status --porcelain)
 # Untracked or Deleted (unstaged) files - Red
-if echo ${git_status} | grep -qe '^?? ' -e '^[MARCDU ]D ' -e '^D[ UM]'; then
+if echo ${git_status} | grep -qe '^?? ' -e '^[MARCDU ]D ' -e '^D[\sUM]'; then
     echo -n $'\e[31m●'
 fi
 

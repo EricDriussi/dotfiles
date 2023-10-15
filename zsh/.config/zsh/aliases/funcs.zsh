@@ -26,12 +26,12 @@ function run_on_change {
     }
 
     # Run command once
-    color_command "$@"
+    eval color_command "$@"
     # Loop and use inotify-tools to re-run on change
     while true; do
         inotifywait -qq -r -e create,modify,move,delete ./ &&
         printf "\n[ . . . Re-running command . . . ]\n" &&
-        color_command "$@"
+        eval color_command "$@"
     done
 }
 

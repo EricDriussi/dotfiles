@@ -39,4 +39,3 @@ export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=240'
 # FZF
 export FZF_DEFAULT_COMMAND='rg --files -g "!node_modules" -g "!.git" --hidden .'
 export FZF_DEFAULT_OPTS='--height 70% --layout=reverse --border --preview="head -$LINES {}" --info=inline'
-
