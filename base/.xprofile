@@ -9,7 +9,7 @@ xset b off &
 
 # GUI apps
 obsidian &
-brave &
+firefox &
 emote &
 nextcloud &
 slack &

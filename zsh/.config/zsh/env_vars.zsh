@@ -5,6 +5,7 @@ export TERMINAL=wezterm
 export EDITOR=nvim
 export VISUAL=nvim
 export MANPAGER='nvim +Man!'
+export BROWSER=firefox
 
 # PATH
 export PATH=$PATH:/usr/bin

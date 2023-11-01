@@ -1,5 +1,6 @@
 # Git
 alias coa="python3 -B ~/.config/git/co-author.py"
+alias gat=add_tag; add_tag() { git tag -a "$1" -m "$1" }
 alias ga="git add ."
 alias gaddorigin=add_origin; add_origin() { git remote add origin "$1" && git remote set-url --add --push origin "$1" }
 alias gaddremote="git remote set-url --add --push origin"

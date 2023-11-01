@@ -179,6 +179,7 @@ gaps outer 0
 ####################
 
 assign  [class="(?i)(?:brave)"]        →  1
+assign  [class="(?i)(?:firefox)"]        →  1
 assign  [class="(?i)(?:obsidian)"]     →  9
 assign  [class="(?i)(?:slack)"]        →  6
 assign  [class="(?i)(?:thunderbird)"]  →  2
@@ -193,11 +194,10 @@ for_window  [class="(?i)(?:Msgcompose)"]               floating   enable
 for_window  [class="(?i)(?:catfish)"]                  floating   enable    
 for_window  [class="(?i)(?:gparted)"]                  floating   enable    
 for_window  [class="(?i)(?:qt5ct|pinentry)"]           floating   enable    
-for_window  [class="Tandem"]                           floating   enable    
 for_window  [class="Zoom Meeting"]                     floating   enable
 for_window  [class="join"]                             floating   enable    
-for_window  [class="pop"]                              floating   enable    
 for_window  [class="zoom"]                             floating   enable    
+for_window  [window_role="Popup"]                             border none
 for_window  [title="(?i)(?:copying|deleting|moving)"]  floating   enable    
 for_window  [window_role="(?i)(?:pop-up|setup)"]       floating   enable    
 
