@@ -16,4 +16,6 @@ alias -g NOUT="> /dev/null 2>&1"
 alias -g SU="| sort -u"
 
 # pwds, keys, etc
-source ~/.sensible-aliases.zsh
+if [[ -f ~/.sensible-aliases.zsh ]]; then
+  source ~/.sensible-aliases.zsh
+fi
