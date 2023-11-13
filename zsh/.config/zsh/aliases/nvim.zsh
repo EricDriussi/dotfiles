@@ -6,3 +6,4 @@ alias voa="nvim ~/.config/zsh/aliases/"
 alias voi="nvim ~/.config/i3/config"
 alias vov="cd ~/dotfiles/nvim/.config/nvim/ && nvim init.lua"
 alias voz="nvim ~/.config/zsh/env_vars.zsh"
+alias remv=remote_nvim; remote_nvim() { nvim scp://"$1"//"$2" }
