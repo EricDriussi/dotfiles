@@ -7,6 +7,8 @@
     editor = nvim
     excludesFile = ~/.config/git/gitignore-global
     pager = delta
+[pager]
+    log = less
 [init]
     defaultBranch = master
 [rebase]
