@@ -9,3 +9,5 @@ vifmimg
 .zsh_history
 .zcompdump
 .git-credentials
+.trash_history
+__pycache__/

@@ -18,6 +18,7 @@ alias tre="eza --all --icons --group-directories-first --tree --level=2 --ignore
 alias tree="tree -L 2 -C -a -I 'node_modules' -I 'build' -I '.git' -I '.idea'"
 alias vf="vfm ."
 alias vfm=~/.config/vifm/vifmimg/vifmrun
+alias rn="ranger"
 
 alias bknotes=back_up_notes
 alias clc=calculate
