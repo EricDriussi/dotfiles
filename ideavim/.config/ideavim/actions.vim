@@ -76,3 +76,7 @@ map <C-Up> <Action>(EditorCloneCaretAbove)
 map <C-Down> <Action>(EditorCloneCaretBelow)
 map <C-n> <Action>(SelectNextOccurrence)
 map <C-S-n> <Action>(UnselectPreviousOccurrence)
+
+"Harpoon Plugin
+map <leader>a <Action>(AddToHarpoon)
+map <leader>h <Action>(ShowHarpoon)
