@@ -47,7 +47,12 @@ vmap ` xi``<Esc>P
 nnoremap n nzzzv
 nnoremap N Nzzzv
 
+"Easier to type
 nnoremap L $
 nnoremap H ^
 vnoremap L $
 vnoremap H ^
+
+"Increment/decrement number with alt
+nnoremap <M-a> <C-a>
+nnoremap <M-x> <C-x>
