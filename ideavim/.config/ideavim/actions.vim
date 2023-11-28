@@ -67,8 +67,9 @@ map zc <Action>(CollapseRegion)
 "Run/Debug
 map <leader>r <Action>(ChooseRunConfiguration)
 map <leader>nl <Action>(StepOver)
+map <leader>nb <Action>(Resume)
 map <leader>ni <Action>(StepInto)
-map <leader>nb <Action>(StepOut)
+map <leader>no <Action>(StepOut)
 map <leader>s <Action>(Stop)
 
 "Multicursor
