@@ -1,4 +1,4 @@
-alias cleansys="sudo paccache -rk2 -ruk0; sudo pacman -Sc --noconfirm; paru -Sc --aur --noconfirm; setopt localoptions rmstarsilent; rm -rf ~/.local/share/Trash/*"
+alias cleansys="sudo paccache -rk2 -ruk0; sudo pacman -Sc --noconfirm; paru -Sccd --noconfirm; setopt localoptions rmstarsilent; rm -rf ~/.local/share/Trash/*"
 alias install=fzf_paru; fzf_paru () {
     paru -Slq | fzf -m --preview 'cat <(paru -Si {1}) <(paru -Fl {1} | awk "{print \$2}")' | xargs -ro  paru -S --skipreview
 }
