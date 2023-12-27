@@ -8,9 +8,12 @@ nm-applet &
 xset b off &
 
 # GUI apps
-obsidian &
 firefox &
-emote &
-nextcloud &
 slack &
 thunderbird &
+
+if [[ -f "/etc/arch-release" ]]; then
+  obsidian &
+  nextcloud &
+  emote &
+fi

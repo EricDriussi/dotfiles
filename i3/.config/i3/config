@@ -1,3 +1,5 @@
+exec ~/.xprofile
+
 # Font
 font pango: UbuntuMedium 14
 font pango: JetBrainsMonoMedium 12
