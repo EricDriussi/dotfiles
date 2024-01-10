@@ -47,6 +47,10 @@ style = 'cyan'
 [git_status]
 format = '( \[[$ahead_behind](bold cyan)\])'
 
+[git_commit]
+format = '(  [($hash$tag)]($style))'
+style = 'red'
+
 [custom.git]
 command = '''
 git_status=$(git status --porcelain)
