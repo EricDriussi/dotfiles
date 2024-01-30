@@ -1,7 +1,14 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-temperature="$(sensors | awk '/^Core/{gsub(/[°C+]/,"",$3); s+=$3; c++} END {print s/c}')"
-max_temp="$(sensors | awk '/^Core/{gsub(/[°C+,]/,"",$6); s+=$6; c++} END{print s/c}')"
+sensors_output="$(sensors)"
+
+if echo "$sensors_output" | grep -q ".*Core.*"; then
+	temperature="$(echo "$sensors_output" | awk '/^Core/{gsub(/[°C+]/,"",$3); s+=$3; c++} END {print s/c}')"
+	max_temp="$(echo "$sensors_output" | awk '/^Core/{gsub(/[°C+,]/,"",$6); s+=$6; c++} END{print s/c}')"
+else
+	temperature="$(echo "$sensors_output" | awk '/^Tctl:/{gsub(/[°C+]/,"",$2); print$2}')"
+	max_temp="90"
+fi
 
 if (($(echo "$temperature < 45" | bc -l))); then
 	label='🥶'
