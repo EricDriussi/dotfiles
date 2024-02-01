@@ -1,5 +1,3 @@
-exec ~/.xprofile
-
 # Font
 font pango: UbuntuMedium 14
 font pango: JetBrainsMonoMedium 12
@@ -13,9 +11,7 @@ set $left h
 set $right l
 
 # Autostart on reload
-exec_always --no-startup-id ~/.config/screenlayout/monitor.sh
 exec_always --no-startup-id ~/.config/polybar/launch.sh
-exec_always --no-startup-id nitrogen --restore
 exec_always --no-startup-id autotiling
 
 # Workspace-Monitor
