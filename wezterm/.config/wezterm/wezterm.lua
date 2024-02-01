@@ -5,12 +5,11 @@ local actions = wez.action
 return {
   front_end = "OpenGL",
   -- Font
-  font = wez.font_with_fallback({ "Comic Code Ligatures", "Symbols Nerd Font Mono", "Noto Sans Mono", "Fira Code" }),
-  font_size = 17.0,
+  font = wez.font_with_fallback({ "Comic Code Ligatures", "Symbols Nerd Font Mono", "Noto Sans Mono", "Fira Code", "Monospace Regular" }),
+  font_size = 14.0,
   line_height = 1.3,
 	warn_about_missing_glyphs = false,
   -- UI
-  xcursor_theme = "Adwaita",
   adjust_window_size_when_changing_font_size = false,
   check_for_updates = false,
   color_scheme = gruv.medium,
