@@ -2,7 +2,7 @@
     name = Eric Driussi
     username = EricDriussi
     email = ericdriussi@gmail.com
-	  signingkey = 990EDEF4DD99BEF14AAE633EF18C37C25179D7D0
+    signingkey = 990EDEF4DD99BEF14AAE633EF18C37C25179D7D0
 [core]
     editor = nvim
     excludesFile = ~/.config/git/gitignore-global
@@ -18,7 +18,7 @@
 [push]
     followTags = true
 [commit]
-	gpgsign = true
+    gpgsign = true
 
 ; Merge and Diff config
 [include]
@@ -30,7 +30,7 @@
 ; Project-specific config
 [includeIf "gitdir:~/Documents/leanmind/"]
     path = lm.conf
-[includeIf "gitdir:~/Documents/alea/"]
-    path = alea.conf
+[includeIf "gitdir:~/Documents/colab/"]
+    path = colab.conf
 [includeIf "hasconfig:remote.*.url:git@github.com:lean-mind/**"]
     path = lm.conf

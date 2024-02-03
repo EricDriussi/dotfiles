@@ -25,6 +25,7 @@ export PATH=$PATH:$HOME/.deno/bin
 export PATH=$PATH:/usr/local/nodejs/bin
 # rust
 export PATH=$PATH:$HOME/.cargo/bin
+export PATH=$PATH:$HOME/.cargo/env
 # go
 export PATH=$PATH:$HOME/go/bin
 
