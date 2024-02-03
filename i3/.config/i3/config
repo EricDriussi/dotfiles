@@ -13,6 +13,7 @@ set $right l
 # Autostart on reload
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id autotiling
+exec_always --no-startup-id nitrogen --restore
 
 # Workspace-Monitor
 set $main HDMI-0

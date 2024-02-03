@@ -1,9 +1,6 @@
 picom -CGb &
 unclutter &
 
-# Bell
-xset b off &
-
 # GUI apps
 firefox &
 slack &
@@ -14,3 +11,6 @@ if [[ -f "/etc/arch-release" ]]; then
   nextcloud &
   emote &
 fi
+
+# Bell
+xset b off &
