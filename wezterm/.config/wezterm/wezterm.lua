@@ -6,7 +6,7 @@ return {
   front_end = "OpenGL",
   -- Font
   font = wez.font_with_fallback({ "Comic Code Ligatures", "Symbols Nerd Font Mono", "Noto Sans Mono", "Fira Code", "Monospace Regular" }),
-  font_size = 14.0,
+  font_size = 16.0,
   line_height = 1.3,
 	warn_about_missing_glyphs = false,
   -- UI
