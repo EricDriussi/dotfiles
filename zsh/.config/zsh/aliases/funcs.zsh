@@ -123,7 +123,3 @@ function open_links {
         xdg-open "$link"
     done
 }
-
-function calculate {
-    echo $(( $@ ))
-}

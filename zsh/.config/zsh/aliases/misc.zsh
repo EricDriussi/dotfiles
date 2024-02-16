@@ -1,4 +1,3 @@
-alias bt="btop"
 alias cat="bat"
 alias cb="cd .."
 alias cc="z"
@@ -21,7 +20,8 @@ alias vfm=~/.config/vifm/vifmimg/vifmrun
 alias rn="ranger"
 
 alias bknotes=back_up_notes
-alias clc=calculate
+alias clc=calculate; calculate() { echo $(( $@ )) }
+alias clip="xclip -sel clipboard |"
 alias diskUsage="sudo du -h | sort -hr | head -10"
 alias eje=eject_disk; eject_disk() { sudo eject "$1" && udisksctl power-off -b /dev/"$1" }
 alias fd=find_in_cwd; find_in_cwd() { find . -iname "*$1*" | sort }
@@ -37,18 +37,4 @@ alias ssauth='eval "$(ssh-agent -s)" && ssh-add'
 alias tran="trans -b"
 alias ctran=clip_trans; clip_trans(){
     xclip -o -sel clip | trans -b $@ | tee /dev/tty | xclip -i -sel clip
-}
-
-# Re-run last command with sudo
-alias pls='sudo $(fc -ln -1)'
-# Re-run last command but copy output to clipboard
-alias rer=re_run_clip; re_run_clip() {
-    case `uname` in
-        Darwin)
-            $(fc -ln -1) | pbcopy
-            ;;
-        Linux)
-            $(fc -ln -1) | xclip -i -sel clip
-            ;;
-    esac
 }
