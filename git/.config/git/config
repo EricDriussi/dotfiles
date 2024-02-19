@@ -17,8 +17,11 @@
     rebase = true
 [push]
     followTags = true
+    default = current
 [commit]
     gpgsign = true
+[help]
+    autocorrect = 30
 
 ; Merge and Diff config
 [include]
