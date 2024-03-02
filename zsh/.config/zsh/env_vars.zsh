@@ -7,28 +7,6 @@ export VISUAL=nvim
 export MANPAGER='nvim +Man!'
 export BROWSER=firefox
 
-# PATH
-export PATH=$PATH:/usr/bin
-export PATH=$PATH:/usr/share/
-export PATH=$PATH:/opt
-export PATH=$PATH:/opt/homebrew/bin
-export PATH=$PATH:/opt/homebrew/opt/gnu-sed/libexec/gnubin
-# nvim - mason
-export PATH=$PATH:$XDG_DATA_HOME/nvim/mason/bin
-# intelliJ
-export PATH=$PATH:$HOME/intellijUlt/bin
-export PATH=$PATH:$XDG_DATA_HOME/JetBrains/Toolbox/scripts
-# vifm
-export PATH=$PATH:$HOME/.config/vifm/vifmimg
-# nodejs
-export PATH=$PATH:$HOME/.deno/bin
-export PATH=$PATH:/usr/local/nodejs/bin
-# rust
-export PATH=$PATH:$HOME/.cargo/bin
-export PATH=$PATH:$HOME/.cargo/env
-# go
-export PATH=$PATH:$HOME/go/bin
-
 # NVM - NODE
 export NVM_DIR=$XDG_CONFIG_HOME/.nvm
 export NVM_AUTO_USE=true
@@ -41,3 +19,32 @@ export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=240'
 # FZF
 export FZF_DEFAULT_COMMAND='rg --files -g "!node_modules" -g "!.git" --hidden .'
 export FZF_DEFAULT_OPTS='--height 70% --layout=reverse --border --preview="head -$LINES {}" --info=inline'
+
+# PATH
+dirs=(
+    /usr/bin
+    /usr/share/
+    /opt
+    /opt/homebrew/bin
+    /opt/homebrew/opt/gnu-sed/libexec/gnubin
+    # nvim - mason
+    $XDG_DATA_HOME/nvim/mason/bin
+    # intelliJ
+    $HOME/intellijUlt/bin
+    $XDG_DATA_HOME/JetBrains/Toolbox/scripts
+    # vifm
+    $HOME/.config/vifm/vifmimg
+    # nodejs
+    $HOME/.deno/bin
+    /usr/local/nodejs/bin
+    # rust
+    $HOME/.cargo/env
+    # go
+    $HOME/go/bin
+)
+
+for dir in "${dirs[@]}"; do
+    if [[ ! ":$PATH:" == *":$dir:"* ]]; then
+        export PATH=$dir:$PATH
+    fi
+done
