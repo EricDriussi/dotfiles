@@ -1,0 +1,162 @@
+keymap:
+  - name: mate
+    remap:
+      Super-Shift-C:
+        launch: ["mate-session-save", "--force-logout"]
+      Super-Shift-X:
+        launch: ["mate-session-save", "--shutdown-dialog"]
+
+  - name: rofi
+    remap:
+      Super-D:
+        launch: ["rofi", "-modi", "drun", "-show", "drun", "-config", "~/.config/rofi/run_menu.rasi"]
+      Super-E:
+        launch: ["rofi", "-modi", "emoji", "-show", "emoji", "-emoji-format", "'{emoji}'", "-config", "~/.config/rofi/emoji_menu.rasi"]
+
+  - name: audio
+    remap:
+      Mute:
+        launch: ["pactl", "set-sink-mute", "0", "toggle"]
+      VolumeDown:
+        launch: ["pactl", "set-sink-volume", "0", "-5%"]
+      VolumeUp:
+        launch: ["pactl", "set-sink-volume", "0", "+5%"]
+      Ctrl_L-F6:
+        launch: ["pactl", "set-sink-mute", "0", "toggle"]
+      Ctrl_L-F7:
+        launch: ["pactl", "set-sink-volume", "0", "-5%"]
+      Ctrl_L-F8:
+        launch: ["pactl", "set-sink-volume", "0", "+5%"]
+
+  - name: apps
+    remap:
+      Super-Enter:
+        launch: ["wezterm"]
+      KEY_SYSRQ: # print key
+        launch: ["flameshot", "gui"]
+
+  - name: i3wm
+    remap:
+      Super-F:
+        launch: ["i3-msg", "fullscreen toggle"]
+      Super-Shift-R:
+        launch: ["i3-msg", "restart"]
+      Super-Shift-Q:
+        launch: ["i3-msg", "kill"]
+      Super-Space:
+        launch: ["i3-msg", "floating toggle"]
+
+  - name: Switch to workspace
+    remap:
+      Super-1:
+        launch: ["i3-msg", "workspace 1"]
+      Super-2:
+        launch: ["i3-msg", "workspace 2"]
+      Super-3:
+        launch: ["i3-msg", "workspace 3"]
+      Super-4:
+        launch: ["i3-msg", "workspace 4"]
+      Super-5:
+        launch: ["i3-msg", "workspace 5"]
+      Super-6:
+        launch: ["i3-msg", "workspace 6"]
+      Super-7:
+        launch: ["i3-msg", "workspace 7"]
+      Super-8:
+        launch: ["i3-msg", "workspace 8"]
+      Super-9:
+        launch: ["i3-msg", "workspace 9"]
+
+  - name: Move focused window to workspace
+    remap:
+      Super-Shift-1:
+        launch: ["i3-msg", "move container to workspace 1; workspace 1"]
+      Super-Shift-2:
+        launch: ["i3-msg", "move container to workspace 2; workspace 2"]
+      Super-Shift-3:
+        launch: ["i3-msg", "move container to workspace 3; workspace 3"]
+      Super-Shift-4:
+        launch: ["i3-msg", "move container to workspace 4; workspace 4"]
+      Super-Shift-5:
+        launch: ["i3-msg", "move container to workspace 5; workspace 5"]
+      Super-Shift-6:
+        launch: ["i3-msg", "move container to workspace 6; workspace 6"]
+      Super-Shift-7:
+        launch: ["i3-msg", "move container to workspace 7; workspace 7"]
+      Super-Shift-8:
+        launch: ["i3-msg", "move container to workspace 8; workspace 8"]
+      Super-Shift-9:
+        launch: ["i3-msg", "move container to workspace 9; workspace 9"]
+
+
+  - name: Change focus
+    remap:
+      Super-Left:
+        launch: ["i3-msg", "focus left"]
+      Super-Right:
+        launch: ["i3-msg", "focus right"]
+      Super-Down:
+        launch: ["i3-msg", "focus down"]
+      Super-Up:
+        launch: ["i3-msg", "focus up"]
+      Super-H:
+        launch: ["i3-msg", "focus left"]
+      Super-L:
+        launch: ["i3-msg", "focus right"]
+      Super-J:
+        launch: ["i3-msg", "focus down"]
+      Super-K:
+        launch: ["i3-msg", "focus up"]
+
+  - name: Move focused window
+    remap:
+      Super-Shift-Left:
+        launch: ["i3-msg", "move left"]
+      Super-Shift-Right:
+        launch: ["i3-msg", "move right"]
+      Super-Shift-Down:
+        launch: ["i3-msg", "move down"]
+      Super-Shift-Up:
+        launch: ["i3-msg", "move up"]
+      Super-Shift-H:
+        launch: ["i3-msg", "move left"]
+      Super-Shift-L:
+        launch: ["i3-msg", "move right"]
+      Super-Shift-J:
+        launch: ["i3-msg", "move down"]
+      Super-Shift-K:
+        launch: ["i3-msg", "move up"]
+
+  - name: Size
+    remap:
+      # Super-KPMinus:
+      Super-RightBrace:
+        launch: ["i3-msg", "resize shrink width 30px or 3 ppt"]
+      # Super-KPPlus:
+      Super-Slash:
+        launch: ["i3-msg", "resize grow width 30px or 3 ppt"]
+      # Super-Shift-KPMinus:
+      Super-Shift-RightBrace:
+        launch: ["i3-msg", "resize shrink height 30px or 3 ppt"]
+      # Super-Shift-KPPlus:
+      Super-Shift-Slash:
+        launch: ["i3-msg", "resize grow height 30px or 3 ppt"]
+
+modmap:
+  - name: terminal
+    remap:
+      CapsLock:
+        held: CapsLock
+        alone: Esc
+        alone_timeout_millis: 100
+    application:
+      only: [ 
+        org.wezfurlong.wezterm.org.wezfurlong.wezterm, 
+        kitty.kitty, 
+        Alacritty.Alacritty, 
+        xfce4-terminal.Xfce4-terminal, 
+        obsidian.obsidian, 
+        jetbrains-idea.jetbrains-idea 
+        ]
+
+

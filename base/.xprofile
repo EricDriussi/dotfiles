@@ -1,3 +1,4 @@
+xremap ~/.config/xremap/config.yml --watch &
 picom -CGb &
 unclutter &
 
