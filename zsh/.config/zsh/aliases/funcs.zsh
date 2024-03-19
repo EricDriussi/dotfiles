@@ -1,5 +1,5 @@
 function repeat_command {
-    cmd=("${@:2}")
+    local cmd=("${@:2}")
     for i in {1.."$1"}; do
         eval $cmd
         if [[ $? != 0 ]]; then
@@ -11,14 +11,14 @@ function repeat_command {
 function run_on_change {
     color_command(){
         # Modify these values to change behavior
-        pass_terms="\<pass\>|\<ok\>|\<success\>"
-        fail_terms="\<fail\>|\<failed\>|\<failure\>"
-        pass_color=$'\e[1;32m'
-        fail_color=$'\e[1;31m'
-        reset_color=$'\e[0m'
+        local pass_terms="\<pass\>|\<ok\>|\<success\>"
+        local fail_terms="\<fail\>|\<failed\>|\<failure\>"
+        local pass_color=$'\e[1;32m'
+        local fail_color=$'\e[1;31m'
+        local reset_color=$'\e[0m'
 
-        colored_pass_terms="✅ ${pass_color}&${reset_color}"
-        colored_fail_terms="❌ ${fail_color}&${reset_color}"
+        local colored_pass_terms="✅ ${pass_color}&${reset_color}"
+        local colored_fail_terms="❌ ${fail_color}&${reset_color}"
 
         # Use sed to parse output and color it
         "$@" | sed -E "s/${pass_terms}/${colored_pass_terms}/I" |\
@@ -64,7 +64,7 @@ function docker_list {
 
 function docker_logs {
     if _docker_running; then
-        container=$(_containers_selector)
+        local container=$(_containers_selector)
         if [[ -n $container ]]; then
             container_id=$(_container_id $container)
             docker logs -f $container_id
@@ -76,7 +76,7 @@ function docker_logs {
 
 function docker_shell {
     if _docker_running; then
-        container=$(_containers_selector)
+        local container=$(_containers_selector)
         if [[ -n $container ]]; then
             container_id=$(_container_id $container)
             shell=$(_get_available_shell $container_id)
@@ -112,7 +112,7 @@ function decode_jwt {
 }
 
 function back_up_notes {
-    currentDir="$(pwd)"
+    local currentDir="$(pwd)"
     cd ~/Documents/personal/obsidian
     git add . && git commit -m "" --allow-empty-message && git push
     cd $currentDir
@@ -125,9 +125,9 @@ function open_links {
 }
 
 function super_alias() {
-    alias_output=$(alias "$1")
-    possible_function=$(echo "$alias_output" | cut -d '=' -f 2)
-    function_output=$(functions "$possible_function")
+    local alias_output=$(alias "$1")
+    local possible_function=$(echo "$alias_output" | cut -d '=' -f 2)
+    local function_output=$(functions "$possible_function")
     if [ $? -eq 0 ]; then
         echo "$function_output"
         return 0
