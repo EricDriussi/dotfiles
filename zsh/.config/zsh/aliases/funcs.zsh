@@ -123,3 +123,17 @@ function open_links {
         xdg-open "$link"
     done
 }
+
+function super_alias() {
+    alias_output=$(alias "$1")
+    possible_function=$(echo "$alias_output" | cut -d '=' -f 2)
+    function_output=$(functions "$possible_function")
+    if [ $? -eq 0 ]; then
+        echo "$function_output"
+        return 0
+    elif [ -n "$alias_output" ]; then
+        echo "$alias_output"
+        return 0
+    fi
+    return 1
+}

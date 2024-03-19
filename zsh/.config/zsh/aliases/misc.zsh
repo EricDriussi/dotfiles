@@ -1,3 +1,4 @@
+alias ali=super_alias
 alias cat="bat"
 alias cb="cd .."
 alias cc="z"
