@@ -1,29 +1,35 @@
 promptToReturnFromSubprocess: false
 gui:
   mainPanelSplitMode: 'vertical'
-  showFileTree: true
-  sidePanelWidth: 0.25
+  sidePanelWidth: 0.20
+  commandLogSize: 1
   theme:
     selectedLineBgColor:
       - '#3d3d3d'
-    selectedRangeBgColor:
-      - reverse
-  commandLogSize: 1
+
 git:
-  branchLogCmd: "git log --graph --color=always --abbrev-commit --decorate --date=relative
-    --pretty=medium --oneline {{branchName}} --"
-  allBranchesLogCmd: 'git log --graph --abbrev-commit --decorate --format=tformat:"%C(yellow)%h%C(reset)%C(reset)%C(auto)%d%C(reset)
-    %s %C(white) -  %C(bold green)(%ar)%C(reset) %C(dim blue)<%an>%Creset"'
+  branchLogCmd: "git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=medium --oneline {{branchName}} --"
+  allBranchesLogCmd: 'git log --graph --abbrev-commit --decorate --format=tformat:"%C(yellow)%h%C(reset)%C(reset)%C(auto)%d%C(reset) %s %C(white) -  %C(bold green)(%ar)%C(reset) %C(dim blue)<%an>%Creset"'
+  commit:
+    autoWrapCommitMessage: false
   paging:
     colorArg: always
     useConfig: true
+
 keybinding:
   universal:
-    scrollLeft: '0'
-    scrollRight: '$'
-    prevBlock-alt: '<left>'
-    nextBlock-alt: '<right>'
-    nextTab: 'l'
-    prevTab: 'h'
-    confirm-alt1: '<enter>'
     copyToClipboard: 'y'
+    nextBlock-alt: '<right>'
+    nextScreenMode: '+'
+    nextTab: 'l'
+    openRecentRepos: '<disabled>'
+    prevBlock-alt: '<left>'
+    prevScreenMode: '-'
+    prevTab: 'h'
+    redo: '<c-r>'
+    undo: 'u'
+  commits:
+    amendToCommit: 'a'
+    cherryPickCopy: '<c-y>'
+    copyCommitAttributeToClipboard: 'Y'
+    pasteCommits: '<c-p>'
