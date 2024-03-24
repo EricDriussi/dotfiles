@@ -125,14 +125,14 @@ function open_links {
 }
 
 function super_alias() {
-    local alias_output=$(alias "$1")
-    local possible_function=$(echo "$alias_output" | cut -d '=' -f 2)
-    local function_output=$(functions "$possible_function")
+    local simple_alias=$(alias "$1")
+    local maybe_func=$(echo "$simple_alias" | cut -d '=' -f 2)
+    functions "$maybe_func" > /dev/null 2>&1
     if [ $? -eq 0 ]; then
-        echo "$function_output"
+        functions "$maybe_func"
         return 0
-    elif [ -n "$alias_output" ]; then
-        echo "$alias_output"
+    elif [ -n "$simple_alias" ]; then
+        echo "$simple_alias"
         return 0
     fi
     return 1
