@@ -1,6 +1,6 @@
 "IDE Actions
 map <leader>? <Action>(ShowSettings)
-map <leader>l <Action>(ShowReformatFileDialog)
+map <leader>l <Action>(ReformatCode)
 map <leader>S <Action>(ReplaceInPath)
 map <leader>yp <Action>(CopyPathFromRepositoryRootProvider)
 
@@ -15,6 +15,7 @@ imap <C-p> <Action>(EditorPaste)
 map <CR> <Action>(EditorSelectWord)
 map <BS> <Action>(EditorUnSelectWord)
 map rn <Action>(RenameElement)
+map rf <Action>(Refactorings.QuickListPopupAction)
 map <C-A-f> <Action>(Refactorings.QuickListPopupAction)
 map <A-CR> <Action>(ShowIntentionActions)
 map <leader>/ <Action>(CommentByLineComment)
