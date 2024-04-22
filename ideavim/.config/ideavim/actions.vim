@@ -65,7 +65,12 @@ map zC <Action>(CollapseAllRegions)
 map zc <Action>(CollapseRegion)
 
 "Run/Debug
-map <leader>r <Action>(ChooseRunConfiguration)
+if &ide =~? 'JetBrains Rider'
+	map <leader>r <Action>(RiderUnitTestRepeatPreviousRunAction)
+else
+	map <leader>r <Action>(ChooseRunConfiguration)
+endif
+
 map <leader>nl <Action>(StepOver)
 map <leader>nb <Action>(Resume)
 map <leader>ni <Action>(StepInto)
