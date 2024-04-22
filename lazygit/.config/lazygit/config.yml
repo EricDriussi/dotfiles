@@ -22,7 +22,7 @@ keybinding:
     nextBlock-alt: '<right>'
     nextScreenMode: '+'
     nextTab: 'l'
-    openRecentRepos: '<disabled>'
+    openRecentRepos: ''
     prevBlock-alt: '<left>'
     prevScreenMode: '-'
     prevTab: 'h'
