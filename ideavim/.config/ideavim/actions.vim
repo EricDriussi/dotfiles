@@ -25,7 +25,7 @@ map <leader>cg <Action>(Generate)
 map <leader>ci <Action>(ImplementMethods)
 map <leader>co <Action>(OverrideMethods)
 map <leader>cs <Action>(SurroundWith)
-map <leader>cf <Action>(NewElementInMenuGroup)
+map <leader>cf <Action>(NewElement)
 
 "Gotos
 map gn <Action>(GotoNextError)
