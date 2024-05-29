@@ -24,6 +24,7 @@ alias bknotes=back_up_notes
 alias clc=calculate; calculate() { echo $(( $@ )) }
 alias clip="xclip -sel clipboard |"
 alias diskUsage="sudo du -h | sort -hr | head -10"
+alias emojify=make_emoji
 alias eje=eject_disk; eject_disk() { sudo eject "$1" && udisksctl power-off -b /dev/"$1" }
 alias fd=find_in_cwd; find_in_cwd() { find . -iname "*$1*" | sort }
 alias fonts=find_fonts; find_fonts() { fc-list | grep -i "$1" | awk -F: '{print $2}' | sort | uniq }

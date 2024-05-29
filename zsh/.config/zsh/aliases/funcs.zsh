@@ -124,7 +124,7 @@ function open_links {
     done
 }
 
-function super_alias() {
+function super_alias {
     local simple_alias=$(alias "$1")
     local maybe_func=$(echo "$simple_alias" | cut -d '=' -f 2)
     functions "$maybe_func" > /dev/null 2>&1
@@ -136,4 +136,17 @@ function super_alias() {
         return 0
     fi
     return 1
+}
+
+function make_emoji {
+    extension="${1##*.}"
+    output_file="emoji.$extension"
+    
+    for percent in $(seq 100 -5 5); do
+        convert "$1" -quality 100 -resize "$percent%" "$output_file"
+        size=$(stat -c%s "$output_file")
+        if [ $size -le 131072 ]; then # 128KB
+            break
+        fi
+    done
 }
