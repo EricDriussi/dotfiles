@@ -1,4 +1,5 @@
-killall xremap; xremap ~/.config/xremap/config.yml --watch &
+killall xremap
+xremap ~/.config/xremap/config.yml --watch &
 picom -CGb &
 unclutter &
 
@@ -8,10 +9,18 @@ slack &
 thunderbird &
 
 if [[ -f "/etc/arch-release" ]]; then
-  obsidian &
-  nextcloud &
-  emote &
+	obsidian &
+	nextcloud &
+	emote &
 fi
 
 # Bell
 xset b off &
+
+# Bind Wacom Pen and Pad to big screen
+IDs=$(xinput | grep "Wacom" | cut -f 2 | cut -c 4-5)
+if [[ -n "$IDs" ]]; then
+	for ID in "${IDs[@]}"; do
+		xinput map-to-output "$ID" HDMI-0
+	done
+fi
