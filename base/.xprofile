@@ -11,31 +11,5 @@ firefox &
 slack &
 thunderbird &
 obsidian &
-
-if [[ -f "/etc/arch-release" ]]; then
-	nextcloud &
-	emote &
-        main_monitor="HDMI-0"
-else
-        main_monitor="HDMI-1"
-fi
-
-# Bind Wacom Pen and Pad to main screen
-# Try for 30 seconds, then give up
-timeout=30
-interval=1
-elapsed=0
-
-while [ $elapsed -lt $timeout ]; do
-    IDs=$(xinput | grep "Wacom" | cut -f 2 | cut -c 4-5)
-    if [ -n "$IDs" ]; then
-        echo "$IDs" | while IFS= read -r ID
-        do 
-            xinput map-to-output "$ID" "$main_monitor"
-        done
-        break
-    else
-        sleep $interval
-        elapsed=$((elapsed + interval))
-    fi
-done
+nextcloud &
+emote &

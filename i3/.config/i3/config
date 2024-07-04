@@ -14,6 +14,7 @@ set $right l
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id autotiling
 exec_always --no-startup-id nitrogen --restore
+exec_always --no-startup-id ~/.config/wacom/setup.sh
 
 # Workspace-Monitor
 set $main HDMI-0
