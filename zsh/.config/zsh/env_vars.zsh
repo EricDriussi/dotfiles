@@ -1,11 +1,13 @@
-export XDG_CONFIG_HOME=$HOME/.config
-export XDG_DATA_HOME=$XDG_CONFIG_HOME/local/share
-export XDG_CACHE_HOME=$XDG_CONFIG_HOME/cache
 export TERMINAL=wezterm
 export EDITOR=nvim
 export VISUAL=nvim
 export MANPAGER='nvim +Man!'
 export BROWSER=firefox
+ 
+# XDG
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_CACHE_HOME=$HOME/.cache
 
 # NVM - NODE
 export NVM_DIR=$XDG_CONFIG_HOME/.nvm
@@ -23,10 +25,7 @@ export FZF_DEFAULT_OPTS='--height 70% --layout=reverse --border --preview="head 
 # PATH
 dirs=(
     /usr/bin
-    /usr/share/
-    /opt
-    /opt/homebrew/bin
-    /opt/homebrew/opt/gnu-sed/libexec/gnubin
+    $HOME/.local/bin
     # nvim - mason
     $XDG_DATA_HOME/nvim/mason/bin
     # intelliJ
