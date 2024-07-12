@@ -2,6 +2,7 @@ killall xremap
 xremap ~/.config/xremap/config.yml --watch &
 picom -CGb &
 unclutter &
+aw-qt &
 
 # Bell
 xset b off &
