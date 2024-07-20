@@ -1,15 +1,17 @@
 function repeat_command {
     local cmd=("${@:2}")
     for i in {1.."$1"}; do
-        eval $cmd
+        eval "$cmd"
         if [[ $? != 0 ]]; then
-            echo "\nCommand failed on run $i"; return 1
+            echo "\nCommand failed on run $i"
+            return 1
         fi
-    done; echo "\nCommand never failed"
+    done
+    echo "\nCommand never failed"
 }
 
 function run_on_change {
-    color_command(){
+    color_command() {
         # Modify these values to change behavior
         local pass_terms="\<pass\>|\<ok\>|\<success\>"
         local fail_terms="\<fail\>|\<failed\>|\<failure\>"
@@ -21,7 +23,7 @@ function run_on_change {
         local colored_fail_terms="❌ ${fail_color}&${reset_color}"
 
         # Use sed to parse output and color it
-        "$@" | sed -E "s/${pass_terms}/${colored_pass_terms}/I" |\
+        "$@" | sed -E "s/${pass_terms}/${colored_pass_terms}/I" |
             sed -E "s/${fail_terms}/${colored_fail_terms}/I"
     }
 
@@ -30,15 +32,14 @@ function run_on_change {
     # Loop and use inotify-tools to re-run on change
     while true; do
         inotifywait -qq -r -e create,modify,move,delete ./ &&
-        printf "\n[ . . . Re-running command . . . ]\n" &&
-        eval color_command "$@"
+            printf "\n[ . . . Re-running command . . . ]\n" &&
+            eval color_command "$@"
     done
 }
 
 function rm_all_branches {
-    for branch in $(git for-each-ref --format '%(refname:short)' --merged HEAD refs/heads/)
-    do
-        git branch -d ${branch}
+    for branch in "$(git for-each-ref --format '%(refname:short)' --merged HEAD refs/heads/)"; do
+        git branch -d "$branch"
     done
 }
 function git_log {
@@ -55,10 +56,10 @@ function create_PR {
 }
 
 function docker_list {
-    echo -e "\n------------------------------------IMAGES------------------------------------" && \
-        docker image ls --format "table {{.Repository}}\t{{.Tag}}\t{{.ID}}\t{{.CreatedSince}}" && \
-        echo -e "\n----------------------------------CONTAINERS-----------------------------------" && \
-        docker container ls --format "table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.Status}}" && \
+    echo -e "\n------------------------------------IMAGES------------------------------------" &&
+        docker image ls --format "table {{.Repository}}\t{{.Tag}}\t{{.ID}}\t{{.CreatedSince}}" &&
+        echo -e "\n----------------------------------CONTAINERS-----------------------------------" &&
+        docker container ls --format "table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.Status}}" &&
         echo -e "\n"
 }
 
@@ -66,8 +67,8 @@ function docker_logs {
     if _docker_running; then
         local container=$(_containers_selector)
         if [[ -n $container ]]; then
-            container_id=$(_container_id $container)
-            docker logs -f $container_id
+            container_id=$(_container_id "$container")
+            docker logs -f "$container_id"
         fi
     else
         echo "Docker daemon is not running! (ಠ_ಠ)"
@@ -78,9 +79,9 @@ function docker_shell {
     if _docker_running; then
         local container=$(_containers_selector)
         if [[ -n $container ]]; then
-            container_id=$(_container_id $container)
-            shell=$(_get_available_shell $container_id)
-            docker exec -it $container_id $shell
+            container_id=$(_container_id "$container")
+            shell=$(_get_available_shell "$container_id")
+            docker exec -it "$container_id" "$shell"
         fi
     else
         echo "Docker daemon is not running! (ಠ_ಠ)"
@@ -112,11 +113,12 @@ function decode_jwt {
 }
 
 function back_up_notes {
-    local currentDir="$(pwd)"
+    local currentDir="$PWD"
     cd ~/Documents/personal/obsidian
     git add . && git commit -m "" --allow-empty-message && git push
-    cd $currentDir
+    cd "$currentDir"
 }
+
 
 function open_links {
     for link in "$@"; do
@@ -127,11 +129,11 @@ function open_links {
 function super_alias {
     local simple_alias=$(alias "$1")
     local maybe_func=$(echo "$simple_alias" | cut -d '=' -f 2)
-    functions "$maybe_func" > /dev/null 2>&1
+    functions "$maybe_func" >/dev/null 2>&1
     if [ $? -eq 0 ]; then
         functions "$maybe_func"
         return 0
-    elif [ -n "$simple_alias" ]; then
+    elif [ "$simple_alias" != "" ]; then
         echo "$simple_alias"
         return 0
     fi
@@ -141,11 +143,11 @@ function super_alias {
 function make_emoji {
     extension="${1##*.}"
     output_file="emoji.$extension"
-    
-    for percent in $(seq 100 -5 5); do
+
+    for percent in "$(seq 100 -5 5)"; do
         convert "$1" -quality 100 -resize "$percent%" "$output_file"
         size=$(stat -c%s "$output_file")
-        if [ $size -le 131072 ]; then # 128KB
+        if [ "$size" -le 131072 ]; then # 128KB
             break
         fi
     done

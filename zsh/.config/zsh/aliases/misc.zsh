@@ -38,5 +38,5 @@ alias ssauth='eval "$(ssh-agent -s)" && ssh-add'
 # Translate
 alias tran="trans -b"
 alias ctran=clip_trans; clip_trans(){
-    xclip -o -sel clip | trans -b $@ | tee /dev/tty | xclip -i -sel clip
+    xclip -o -sel clip | trans -b "$@" | tee /dev/tty | xclip -i -sel clip
 }
