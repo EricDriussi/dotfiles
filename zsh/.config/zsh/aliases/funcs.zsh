@@ -119,6 +119,10 @@ function back_up_notes {
     cd "$currentDir"
 }
 
+function back_up_ha {
+    local tarball=$(ssh ha 'ls -t /backup | head -n 1')
+    scp ha:/backup/"$tarball" ~/Documents/personal/obsidian/Backup/ha/"$tarball"
+}
 
 function open_links {
     for link in "$@"; do

@@ -21,6 +21,7 @@ alias vfm=~/.config/vifm/vifmimg/vifmrun
 alias rn="ranger"
 
 alias bknotes=back_up_notes
+alias bkha=back_up_ha
 alias clc=calculate; calculate() { echo $(( $@ )) }
 alias clip="xclip -sel clipboard |"
 alias diskUsage="sudo du -h | sort -hr | head -10"
