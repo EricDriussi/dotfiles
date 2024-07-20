@@ -6,4 +6,5 @@ alias voa="nvim ~/dotfiles/zsh/.config/zsh/aliases/init.zsh"
 alias voi="nvim ~/dotfiles/i3/.config/i3/config"
 alias vov="cd ~/dotfiles/nvim/.config/nvim/ && nvim init.lua"
 alias voz="nvim ~/dotfiles/zsh/.config/zsh/env_vars.zsh"
+alias ncurl='nvim -c "CurlOpen global" -c "tabonly"'
 alias remv=remote_nvim; remote_nvim() { nvim scp://"$1"//"$2" }
