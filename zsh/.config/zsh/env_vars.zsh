@@ -47,3 +47,5 @@ for dir in "${dirs[@]}"; do
         export PATH=$dir:$PATH
     fi
 done
+
+export NIX_PATH=$HOME/.nix-defexpr/channels/
